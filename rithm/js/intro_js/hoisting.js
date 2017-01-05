@@ -80,11 +80,19 @@ catName("Tigger");
 
 //or
 
-catName("Chloe"); //function declared first 
+catName("Chloe"); //function declared first
 
 function catName(name) {
   console.log("My cat's name is " + name);
 }
+var x = 1; // Initialize x
+console.log(x + " " + y);  //y is undefined
+var y = 2;
+//the above code and the below code are the same
 
+var x = 1; // Initialize x
+var y; // Declare y
+console.log(x + " " + y);  //y is undefined
+y = 2; // Initialize y
 
-//
+//Exercises 
