@@ -68,8 +68,23 @@ returnMyName(); //undefined - myName is hoisted in the function
 //What does happen is that variable and function declarations are put
 // into memory during the compile phase, but stays exactly where you typed it in your coding.
 
+// One of the advantages you get from JavaScript putting function
+// declarations into the memory before it executes any code segment, is
+// this allows you to use a function before you declare it in your code.
+// For example:
+function catName(name) {
+  console.log("My cat's name is " + name);
+}
 
+catName("Tigger");
 
+//or
+
+catName("Chloe"); //function declared first 
+
+function catName(name) {
+  console.log("My cat's name is " + name);
+}
 
 
 //
