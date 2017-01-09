@@ -63,7 +63,7 @@ returnMyName(); //undefined - myName is hoisted in the function
 // returnMyName function is getting logged. It is hoisted to the top of
 // the function and created as soon as the function executes. Since
 // nothing has been assigned to myName until later in the program, myName
-// starts out undefined 
+// starts out undefined  
 
 
 
