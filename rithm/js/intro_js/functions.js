@@ -377,7 +377,7 @@ personObject.setName("Mary"); //
 personObject.getName(); // "Mary"
 person; // ReferenceError: person is not defined
 
-
+//Exercises 
 
 
 
