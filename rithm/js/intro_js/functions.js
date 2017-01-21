@@ -324,7 +324,20 @@ var expression = function(){
     return "I am a function expression!";
 };
 
+//IIFE: Immediately Invoked Function Expressions
+//simply wrap your anonymous function in parentheses, and then call the function:
 
+(function(){
+    var person = "Elie";
+    return person;
+})();
+
+var result = (function(){
+    var person = "Elie";
+    return person;
+})();
+
+console.log(result);
 
 
 
