@@ -319,6 +319,7 @@ function declaredFunction(){
 }
 
 // The second is a function expression:
+//The function without a name is called an anonymous function.
 var expression = function(){
     return "I am a function expression!";
 };
