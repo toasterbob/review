@@ -312,6 +312,18 @@ function onlyCapitalLetters(str){
 ////////////////////////////////////////////////////////////////////////////
 //Anonymous Functions and IIFEs.
 
+//Creating Functions: 2 Different Ways
+//The first is a function declaration:
+function declaredFunction(){
+    return "I am a function declaration!";
+}
+
+// The second is a function expression:
+var expression = function(){
+    return "I am a function expression!";
+};
+
+
 
 
 
