@@ -311,3 +311,24 @@ function onlyCapitalLetters(str){
 }
 ////////////////////////////////////////////////////////////////////////////
 //Anonymous Functions and IIFEs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
