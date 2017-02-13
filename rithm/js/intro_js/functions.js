@@ -295,9 +295,19 @@ function onlyCapitalLetters(str){
   return capital.join("");
 }
 
-onlyCapitalLetters("Amazing") // "A"
-onlyCapitalLetters("nothing") // ""
-onlyCapitalLetters("EVERYTHING") // "EVERYTHING"
+onlyCapitalLetters("Amazing"); // "A"
+onlyCapitalLetters("nothing"); // ""
+onlyCapitalLetters("EVERYTHING"); // "EVERYTHING"
 
-
-//
+//other way to solve
+function onlyCapitalLetters(str){
+    var newStr = '';
+    for(var i = 0; i < str.length; i++){
+        if(str[i].charCodeAt(0) < 91 && str[i].charCodeAt(0) > 64 ){
+            newStr += str[i];
+        }
+    }
+    return newStr;
+}
+////////////////////////////////////////////////////////////////////////////
+//Anonymous Functions and IIFEs.
