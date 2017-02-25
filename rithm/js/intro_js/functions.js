@@ -284,7 +284,16 @@ function trickyScopePractice() {
 trickyScopePractice();
 console.log(tricky); //"Hello from function scope"
 
-
+function onlyCapitalLetters(str){
+  str = str.split("");
+  let capital = [];
+  for(var i = 0; i < str.length; i++){
+    if(str[i] === str[i].toUpperCase()){
+      capital.push(str[i]);
+    }
+  }
+  return capital.join("");
+}
 
 
 
