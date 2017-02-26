@@ -295,7 +295,9 @@ function onlyCapitalLetters(str){
   return capital.join("");
 }
 
-
+onlyCapitalLetters("Amazing") // "A"
+onlyCapitalLetters("nothing") // ""
+onlyCapitalLetters("EVERYTHING") // "EVERYTHING"
 
 
 //
