@@ -78,6 +78,14 @@ class Array
     joined
   end
 
+  def my_reverse
+    reversed = []
+    self.each do |el|
+      reversed.unshift(el)
+    end
+    reversed
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -129,4 +137,7 @@ p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
 a = [ "a", "b", "c", "d" ]
 p a.my_join         # => "abcd"
 p a.my_join("$")    # => "a$b$c$d"
+
+p [ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
+p [ 1 ].my_reverse               #=> [1]
 end
