@@ -69,6 +69,15 @@ class Array
     rotated
   end
 
+  def my_join(spacer = "")
+    joined = ""
+    self.each_with_index do |el, i|
+      joined << el
+      joined << spacer unless i == (self.length - 1)
+    end
+    joined
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
@@ -116,4 +125,8 @@ p a.my_rotate         #=> ["b", "c", "d", "a"]
 p a.my_rotate(2)      #=> ["c", "d", "a", "b"]
 p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
 p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
+
+a = [ "a", "b", "c", "d" ]
+p a.my_join         # => "abcd"
+p a.my_join("$")    # => "a$b$c$d"
 end
