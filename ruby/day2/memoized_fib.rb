@@ -17,7 +17,7 @@ class MemoizedFibonacci
       fibs(num - 1) + fibs(num - 2)
     end
 
-  end
+  end 
 
 end
 
