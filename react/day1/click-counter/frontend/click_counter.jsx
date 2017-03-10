@@ -17,7 +17,10 @@ class ClickCounter extends React.Component {
 
   reset(event) {
     event.preventDefault();
-    this.setState({ count: 0 });
+    let previousCounts = this.state.previousCounts;
+    previousCounts.push(this.state.count);
+    this.setState({ count: 0, previousCounts });
+
     // event.preventDefault();
     // const previousCounts = this.state.previousCounts;
     // previousCounts.push(this.state.count);

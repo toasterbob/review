@@ -21552,7 +21552,10 @@
 	    key: 'reset',
 	    value: function reset(event) {
 	      event.preventDefault();
-	      this.setState({ count: 0 });
+	      var previousCounts = this.state.previousCounts;
+	      previousCounts.push(this.state.count);
+	      this.setState({ count: 0, previousCounts: previousCounts });
+	
 	      // event.preventDefault();
 	      // const previousCounts = this.state.previousCounts;
 	      // previousCounts.push(this.state.count);
