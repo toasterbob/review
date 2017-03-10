@@ -180,7 +180,7 @@ function average(arr){
   return total/arr.length;
 }
 
-function average(arr){
+function average2(arr){
     var total = 0;
     for(var i = 0; i < arr.length; i++){
         total += arr[i];
@@ -220,8 +220,19 @@ findStudentByFirstName('Janey'); // false
 findStudentByFirstName('TIM'); // true
 findStudentByFirstName('MMMaaaTTTtttTTT'); // false
 
-
-
+function extractEveryThird(arr){
+  var result = [];
+  for(var i = 0; i < arr.length; i++){
+    if((i + 1) % 3 === 0){
+      result.push(i);
+    }
+  }
+  return result;
+}
+extractEveryThird([1,2,3]); // [3]
+extractEveryThird([1,2,3,4,5,6]); // [3,6]
+extractEveryThird(["a","b","c","d"]); // ["c"]
+extractEveryThird(["first value", "second value", "third value"]); // ["third value"]
 
 
 
