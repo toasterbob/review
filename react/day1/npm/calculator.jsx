@@ -17,8 +17,8 @@ class Calculator extends React.Component {
 
   setNum2(e) {
     const num2 = e.target.value ? parseInt(e.target.value) : "";
-    this.setState({ num2 });
     console.log(this.state.num2);
+    this.setState({ num2 });
   }
 
 
