@@ -21603,88 +21603,47 @@
 	  value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	// const Counts = ({ previousCounts }) => (
-	//   <ul>
-	//     {
-	//       previousCounts.map((count, idx) => <li key={idx}>{count}</li>)
-	//     }
-	//   </ul>
-	// );
+	var Counts = function Counts(_ref) {
+	  var previousCounts = _ref.previousCounts;
+	  return _react2.default.createElement(
+	    'ul',
+	    null,
+	    previousCounts.map(function (count, idx) {
+	      return _react2.default.createElement(
+	        'li',
+	        { key: idx },
+	        count
+	      );
+	    })
+	  );
+	};
 	
 	// For lifecycle method demo:
 	//
-	var Counts = function (_React$Component) {
-	  _inherits(Counts, _React$Component);
-	
-	  function Counts() {
-	    _classCallCheck(this, Counts);
-	
-	    return _possibleConstructorReturn(this, (Counts.__proto__ || Object.getPrototypeOf(Counts)).apply(this, arguments));
-	  }
-	
-	  _createClass(Counts, [{
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      debugger;
-	    }
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      debugger;
-	    }
-	  }, {
-	    key: 'componentWillReceiveProps',
-	    value: function componentWillReceiveProps(nextProps) {
-	      debugger;
-	    }
-	  }, {
-	    key: 'componentWillUpdate',
-	    value: function componentWillUpdate(nextProps, nextState) {
-	      debugger;
-	    }
-	  }, {
-	    key: 'componentDidUpdate',
-	    value: function componentDidUpdate(prevProps, prevState) {
-	      debugger;
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      debugger;
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'ul',
-	        null,
-	        this.props.previousCounts.map(function (count, idx) {
-	          return _react2.default.createElement(
-	            'li',
-	            { key: idx },
-	            count
-	          );
-	        })
-	      );
-	    }
-	  }]);
-	
-	  return Counts;
-	}(_react2.default.Component);
+	// class Counts extends React.Component {
+	//   componentWillMount() { debugger }
+	//   componentDidMount() { debugger }
+	//   componentWillReceiveProps(nextProps) { debugger }
+	//   componentWillUpdate(nextProps, nextState) { debugger }
+	//   componentDidUpdate(prevProps, prevState) { debugger }
+	//   componentWillUnmount() { debugger }
+	//
+	//   render() {
+	//     return (
+	//       <ul>
+	//         {
+	//           this.props.previousCounts.map((count, idx) => <li key={idx}>{count}</li>)
+	//         }
+	//       </ul>
+	//     )
+	//   }
+	// }
 	
 	exports.default = Counts;
 
