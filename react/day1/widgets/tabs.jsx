@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 class Tabs extends React.Component {
 
   constructor(props) {
-    super(props);
+    super(props); 
     this.state = { tab: 1, text: "I am the first" };
     this.tab1 = this.tab1.bind(this);
     this.tab2 = this.tab2.bind(this);
