@@ -1,4 +1,5 @@
 import React from 'react';
+import WordInput from './word';
 
 class Calculator extends React.Component {
   constructor(props) {

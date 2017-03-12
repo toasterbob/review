@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class WordInput extends React.Component {
   constructor() {
@@ -6,23 +6,23 @@ class WordInput extends React.Component {
     this.state = {
       word: ''
     };
-    this.linkState = this.linkState.bind(this)
+    this.linkState = this.linkState.bind(this);
   }
 
-  linkState(key) {
+  linkState(e) {
     // here we use '[key]' to set the key to be the value of the 'key' variable,
     // as opposed to a string of 'key'
-    return (event => this.setState({[key]: event.currentTarget.value}));
+    this.setState({ word: event.currentTarget.value });
   }
 
   render () {
     return (
       <div>
-        <input onChange={this.linkState('word')} value={this.state.word}/>
-        <span>The word is: {this.state.word}<span>
+        <input onChange={this.linkState} value={this.state.word}/>
+        <span>The word is: {this.state.word}</span>
       </div>
     );
   }
-});
+}
 
 export default WordInput;
