@@ -3,7 +3,7 @@ import WordInput from './word';
 
 class Calculator extends React.Component {
   constructor(props) {
-    super(props);
+    super(props); 
     this.state = { result: 0, num1: "", num2: ""};
 
     this.setNum1 = this.setNum1.bind(this);
