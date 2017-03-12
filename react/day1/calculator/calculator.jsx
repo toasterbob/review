@@ -69,7 +69,7 @@ class Calculator extends React.Component {
         <br />
         <WordInput />
       </div>
-    );
+    ); 
   }
 }
 
