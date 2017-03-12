@@ -1,4 +1,5 @@
 import React from 'react';
+import WordInput from 'word';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -43,7 +44,7 @@ class Calculator extends React.Component {
 
   divide() {
     const result = this.state.num1 / this.state.num2;
-    this.setState({ result }); 
+    this.setState({ result });
   }
 
   clear() {
@@ -65,6 +66,8 @@ class Calculator extends React.Component {
         <button onClick={this.multiply}>*</button>
         <button onClick={this.divide}>/</button>
         <button onClick={this.clear}>Clear</button>
+        <br />
+        <WordInput />
       </div>
     );
   }
