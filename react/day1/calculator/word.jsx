@@ -6,6 +6,7 @@ class WordInput extends React.Component {
     this.state = {
       word: ''
     };
+    this.linkState = this.linkState.bind(this)
   }
 
   linkState(key) {
