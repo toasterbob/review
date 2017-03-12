@@ -7,7 +7,7 @@ class WordInput extends React.Component {
       word: ''
     };
   }
-
+ 
   linkState(key) {
     // here we use '[key]' to set the key to be the value of the 'key' variable,
     // as opposed to a string of 'key'
