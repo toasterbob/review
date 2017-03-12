@@ -65,6 +65,8 @@ class Calculator extends React.Component {
         <button onClick={this.multiply}>*</button>
         <button onClick={this.divide}>/</button>
         <button onClick={this.clear}>Clear</button>
+        <br />
+        <WordInput />
       </div>
     );
   }
