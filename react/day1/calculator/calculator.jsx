@@ -69,8 +69,8 @@ class Calculator extends React.Component {
         <br />
         <WordInput />
       </div>
-    ); 
-  }
+    );
+  } 
 }
 
 export default Calculator;
