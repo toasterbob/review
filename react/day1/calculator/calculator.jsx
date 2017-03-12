@@ -71,6 +71,6 @@ class Calculator extends React.Component {
       </div>
     );
   }
-} 
+}
 
 export default Calculator;
