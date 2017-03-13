@@ -7,13 +7,19 @@ class Clock extends React.Component {
 
   }
 
-  render() {
+  componentDidMount() {
+    this.intervalId = setInterval(this.tick, 1000);
+  }
 
+  render() {
+    let hours = this.state.time.getHours();
+    let minutes = this.state.time.getMinutes();
+    let seconds = this.state.time.getSeconds();
     return (
       <div className = "clock">
         Time: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        {hours}:{minutes}:{seconds} PDT
         <br/>
         Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
