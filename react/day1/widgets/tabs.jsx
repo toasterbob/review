@@ -31,7 +31,6 @@ class Tabs extends React.Component {
 
         <div className = "clock_holder">
           <h1>Clock</h1>
-          <br/>
           <Clock />
         </div>
 
