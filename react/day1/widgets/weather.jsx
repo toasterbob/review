@@ -19,12 +19,13 @@ class Weather extends React.Component {
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(this.pollWeather);
-    console.log(navigator.geolocation.getCurrentPosition());
   }
 
   pollWeather(location) {
     let lat = location.coords.latitude;
+    console.log(lat);
     let long = location.coords.longitude;
+    console.log(long);
     let url = 'http://api.openweathermap.org/data/2.5/weather?';
     let params = {
       lat: location.coords.latitude,
