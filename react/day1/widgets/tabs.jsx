@@ -4,7 +4,7 @@ import Clock from './clock';
 import Weather from './weather';
 
 class Tabs extends React.Component {
-
+ 
   constructor(props) {
     super(props);
     this.state = { tab: 1, text: "I am the first", one: "selected", two: "tab", three: "tab" };
@@ -28,6 +28,7 @@ class Tabs extends React.Component {
   render() {
 
     return (
+      <div className = "main">
       <div className = "layout">
 
         <div className = "clock_holder">
@@ -60,6 +61,7 @@ class Tabs extends React.Component {
         </div>
 
 
+      </div>
       </div>
     );
   }

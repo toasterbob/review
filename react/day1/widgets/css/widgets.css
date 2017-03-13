@@ -1,4 +1,17 @@
+.root {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.main {
+  width: 100%; 
+  display: flex;
+  justify-content: space-around;
+}
+
 .layout {
+  width: 650px;
   flex-direction: row;
   align-items: center;
 }
