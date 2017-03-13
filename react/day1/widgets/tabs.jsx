@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Clock from './clock';
+import Weather from './weather';
 
 class Tabs extends React.Component {
 
@@ -34,8 +35,9 @@ class Tabs extends React.Component {
           <Clock />
         </div>
 
-        <div className = "weather">
+        <div className = "weather_holder">
           <h1>Weather</h1>
+          <Weather />
         </div>
 
         <div className = "two">
@@ -47,7 +49,7 @@ class Tabs extends React.Component {
                 <div className = {this.state.two} onClick={this.tab2}>two</div>
                 <div className = {this.state.three} onClick={this.tab3}>three</div>
               </div>
-              <div className = "box"><br/><br/><br/><br/>{this.state.text}</div>
+              <div className = "box"><br/><br/><br/>{this.state.text}</div>
             </div>
           </div>
 
