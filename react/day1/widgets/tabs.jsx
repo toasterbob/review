@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 class Tabs extends React.Component {
 
   constructor(props) {
-    super(props); 
-    this.state = { tab: 1, text: "I am the first" };
+    super(props);
+    this.state = { tab: 1, text: "I am the first", one: "tab", two: "tab", three: "tab" };
     this.tab1 = this.tab1.bind(this);
     this.tab2 = this.tab2.bind(this);
     this.tab3 = this.tab3.bind(this);
@@ -24,6 +24,7 @@ class Tabs extends React.Component {
   }
 
   render() {
+
     return (
       <div className = "layout">
 
@@ -40,9 +41,9 @@ class Tabs extends React.Component {
             <h1>Tabs</h1>
             <div className = "tabs">
               <div className = "navbar">
-                <div className = "tab" onClick={this.tab1}>one</div>
-                <div className = "tab" onClick={this.tab2}>two</div>
-                <div className = "tab" onClick={this.tab3}>three</div>
+                <div className = {this.state.one} onClick={this.tab1}>one</div>
+                <div className = {this.state.one} onClick={this.tab2}>two</div>
+                <div className = {this.state.one} onClick={this.tab3}>three</div>
               </div>
               <div className = "box"><br/><br/><br/><br/>{this.state.text}</div>
             </div>
