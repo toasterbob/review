@@ -19,6 +19,7 @@ class Weather extends React.Component {
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(this.pollWeather);
+    console.log(navigator.geolocation.getCurrentPosition());
   }
 
   pollWeather(location) {
