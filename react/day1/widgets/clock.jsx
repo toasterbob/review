@@ -19,6 +19,10 @@ class Clock extends React.Component {
     let hours = this.state.time.getHours();
     let minutes = this.state.time.getMinutes();
     let seconds = this.state.time.getSeconds();
+    hours = hours < 10 ? `0${hours}` : hours;
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+    seconds = seconds < 10 ? `0${seconds}` : seconds; 
+
     return (
       <div className = "clock">
         Time: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
