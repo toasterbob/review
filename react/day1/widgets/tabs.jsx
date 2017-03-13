@@ -5,22 +5,22 @@ class Tabs extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { tab: 1, text: "I am the first", one: "tab", two: "tab", three: "tab" };
+    this.state = { tab: 1, text: "I am the first", one: "selected", two: "tab", three: "tab" };
     this.tab1 = this.tab1.bind(this);
     this.tab2 = this.tab2.bind(this);
     this.tab3 = this.tab3.bind(this);
   }
 
   tab1() {
-    this.setState({ tab: 1, text: "I am the first" });
+    this.setState({ tab: 1, text: "I am the first",  one: "selected", two: "tab", three: "tab"});
   }
 
   tab2() {
-    this.setState({ tab: 2, text: "I am the second" });
+    this.setState({ tab: 2, text: "I am the second", one: "tab", two: "selected", three: "tab"});
   }
 
   tab3() {
-    this.setState({ tab: 3, text: "I am the third" });
+    this.setState({ tab: 3, text: "I am the third", one: "tab", two: "tab", three: "selected" });
   }
 
   render() {
@@ -42,8 +42,8 @@ class Tabs extends React.Component {
             <div className = "tabs">
               <div className = "navbar">
                 <div className = {this.state.one} onClick={this.tab1}>one</div>
-                <div className = {this.state.one} onClick={this.tab2}>two</div>
-                <div className = {this.state.one} onClick={this.tab3}>three</div>
+                <div className = {this.state.two} onClick={this.tab2}>two</div>
+                <div className = {this.state.three} onClick={this.tab3}>three</div>
               </div>
               <div className = "box"><br/><br/><br/><br/>{this.state.text}</div>
             </div>
