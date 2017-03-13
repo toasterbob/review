@@ -25,7 +25,7 @@ class Tabs extends React.Component {
 
   render() {
 
-    return (
+    return ( 
       <div className = "layout">
 
         <div className = "clock">
