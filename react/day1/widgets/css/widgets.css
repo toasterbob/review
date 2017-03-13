@@ -9,6 +9,11 @@
 
 }
 
+.clock {
+  width: 500px;
+  border: 1px solid black; 
+}
+
 .two {
   display: flex;
   justify-content: space-between;

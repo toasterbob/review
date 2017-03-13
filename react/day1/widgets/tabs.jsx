@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Clock from './clock';
 
 class Tabs extends React.Component {
 
@@ -25,11 +26,13 @@ class Tabs extends React.Component {
 
   render() {
 
-    return ( 
+    return (
       <div className = "layout">
 
-        <div className = "clock">
+        <div className = "clock_holder">
           <h1>Clock</h1>
+          <br/>
+          <Clock />
         </div>
 
         <div className = "weather">
