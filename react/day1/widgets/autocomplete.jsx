@@ -7,9 +7,17 @@ class Autocomplete extends React.Component {
   }
 
   render() {
+    let names = this.props.names.map((name) => {
+      return(
+        <li>{name}</li>
+      );
+    });
     return (
       <div className="autocomplete">
         Hello
+        <ul>
+          {names}
+        </ul>
       </div>
     );
   }

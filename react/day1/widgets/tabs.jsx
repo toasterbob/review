@@ -60,7 +60,7 @@ class Tabs extends React.Component {
 
           <div>
             <h1>Autocomplete</h1>
-            <Autocomplete />
+            <Autocomplete names = {Names}/>
           </div>
 
         </div>
