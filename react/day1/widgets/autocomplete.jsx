@@ -15,11 +15,26 @@ class Autocomplete extends React.Component {
 
   selectName(event){
     this.setState({ value: event.currentTarget.innerText});
-    console.log(this.state.value);
+  }
+
+  getNames(){
+    let newList = [];
+    if (this.state.value.length === 0) {
+      return this.props.names;
+    }
+    this.props.names.forEach(name => {
+      let subword = name.slice(0, this.state.value.length);
+      console.log(subword);
+      console.log(this.state.value);
+      if (subword.toLowerCase() === this.state.value.toLowerCase()){
+        newList.push(name);
+      }
+    });
+    return newList;
   }
 
   render() {
-    let names = this.props.names.map((name, idx) => {
+    let names = this.getNames().map((name, idx) => {
       return(
         <li key={idx} onClick={this.selectName}>{name}</li>
       );
