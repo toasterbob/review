@@ -1,11 +1,10 @@
 {
-  "name": "widgets",
+  "name": "minesweeper",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "minesweeper.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack",
-    "start": "webpack-dev-server --inline"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -17,14 +16,10 @@
     "babel-preset-react": "^6.23.0",
     "lodash": "^4.17.4",
     "react": "^15.4.2",
-    "react-addons-css-transition-group": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
     "react-router": "^4.0.0",
     "redux": "^3.6.0",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
-  },
-  "devDependencies": {},
-  "description": ""
+    "webpack": "^2.2.1"
+  }
 }
