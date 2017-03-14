@@ -25,8 +25,8 @@ class Autocomplete extends React.Component {
 
     this.props.names.forEach(name => {
       let subword = name.slice(0, this.state.value.length);
-      console.log(subword);
-      console.log(this.state.value);
+      // console.log(subword);
+      // console.log(this.state.value);
       if (subword.toLowerCase() === this.state.value.toLowerCase()){
         newList.push(name);
       }
