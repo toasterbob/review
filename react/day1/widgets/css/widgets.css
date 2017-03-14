@@ -5,9 +5,18 @@
 }
 
 .main {
-  width: 100%; 
+  width: 100%;
   display: flex;
   justify-content: space-around;
+}
+
+.autocomplete {
+  width: 210px;
+  height: 240px;
+  border: 2px solid black;
+  background-image: url(https://hd.unsplash.com/6/blurred_lines.jpeg);
+  background-size: cover;
+  background-position-y: 20%;
 }
 
 .layout {
