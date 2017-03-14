@@ -43,7 +43,7 @@ class Autocomplete extends React.Component {
     let names = this.getNames().map((name, idx) => {
       return(
         <li key={idx} onClick={this.selectName}>{name}</li>
-      ); 
+      );
     });
     return (
       <div className="autocomplete">
