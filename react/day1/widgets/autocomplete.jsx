@@ -22,6 +22,7 @@ class Autocomplete extends React.Component {
     if (this.state.value.length === 0) {
       return this.props.names;
     }
+
     this.props.names.forEach(name => {
       let subword = name.slice(0, this.state.value.length);
       console.log(subword);
@@ -30,6 +31,11 @@ class Autocomplete extends React.Component {
         newList.push(name);
       }
     });
+
+    if (newList.length === 0){
+      newList.push("Sorry, no matches!");
+    }
+
     return newList;
   }
 
