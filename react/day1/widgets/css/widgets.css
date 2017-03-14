@@ -25,6 +25,10 @@
   padding-top: 20px;
 }
 
+.autocomplete li:hover {
+  cursor: pointer; 
+}
+
 .layout {
   width: 650px;
   flex-direction: row;
