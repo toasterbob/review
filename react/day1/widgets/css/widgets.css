@@ -161,7 +161,7 @@ h1 {
 
  .auto-enter {
    opacity: 0.01;
-   transform: translateY(500%);
+   transform: translateY(-500%);
  }
 
  .auto-enter.auto-enter-active {
