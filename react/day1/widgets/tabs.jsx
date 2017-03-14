@@ -4,6 +4,9 @@ import Clock from './clock';
 import Weather from './weather';
 import Autocomplete from './autocomplete';
 
+const Names = ["Abba", "Barney", "Barbara", "Jess", "Jenny", "Mark",
+               "Sarah", "Sally", "Zoolander"];
+
 class Tabs extends React.Component {
 
   constructor(props) {
@@ -57,7 +60,7 @@ class Tabs extends React.Component {
 
           <div>
             <h1>Autocomplete</h1>
-            <Autocomplete names = ""/>
+            <Autocomplete />
           </div>
 
         </div>
