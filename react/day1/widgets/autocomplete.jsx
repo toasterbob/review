@@ -14,7 +14,7 @@ class Autocomplete extends React.Component {
     });
     return (
       <div className="autocomplete">
-        Hello
+        <input placeholder="search..."></input>
         <ul>
           {names}
         </ul>
