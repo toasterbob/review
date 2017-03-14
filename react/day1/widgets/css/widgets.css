@@ -42,6 +42,10 @@ h1{
   margin: 20px 10px 0px 0px;
 }
 
+input {
+  width: 140px;
+}
+
 .weather {
   padding-left: 30px;
   padding-top: 10px;
