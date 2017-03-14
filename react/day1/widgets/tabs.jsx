@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Clock from './clock';
 import Weather from './weather';
+import Autocomplete from './autocomplete';
 
 class Tabs extends React.Component {
- 
+
   constructor(props) {
     super(props);
     this.state = { tab: 1, text: "I am the first", one: "selected", two: "tab", three: "tab" };
@@ -56,6 +57,7 @@ class Tabs extends React.Component {
 
           <div>
             <h1>Autocomplete</h1>
+            <Autocomplete />
           </div>
 
         </div>
