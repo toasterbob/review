@@ -23,9 +23,9 @@ class Weather extends React.Component {
 
   pollWeather(location) {
     let lat = location.coords.latitude;
-    console.log(lat);
+    // console.log(lat);
     let long = location.coords.longitude;
-    console.log(long);
+    // console.log(long);
     let url = 'http://api.openweathermap.org/data/2.5/weather?';
     let params = {
       lat: location.coords.latitude,
