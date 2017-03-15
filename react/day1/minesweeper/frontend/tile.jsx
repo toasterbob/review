@@ -9,11 +9,11 @@ class Tile extends React.Component {
   render(){
     let tiles = this.props.tiles.map((tile, idx) => {
       return (
-        <p> {tile} </p>
+        <div key={idx}> Tile {tile.adjacentBombCount()} </div>
       );
     });
     return(
-      {tiles}
+      <div className="row">{tiles}</div>
     );
   }
 }
