@@ -7,9 +7,14 @@ class Board extends React.Component {
   }
 
   render() {
+    let board = this.props.board.map((tile, idx) => {
+      return (
+        <div key={idx}> <Tile tile={tile}/> </div>
+      );
+    });
     return(
       <div>
-        <Tile />
+        {board}
       </div>
     );
   }
