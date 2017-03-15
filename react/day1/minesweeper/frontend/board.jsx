@@ -9,7 +9,7 @@ class Board extends React.Component {
   render() {
     return(
       <div>
-        Hello
+        <Tile />
       </div>
     );
   }
