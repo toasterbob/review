@@ -7,11 +7,15 @@ class Tile extends React.Component {
   }
 
   render(){
-
+    let tiles = this.props.tiles.map((tile, idx) => {
+      return (
+        <p> {tile} </p>
+      );
+    });
     return(
-      <p>T</p>
+      {tiles}
     );
   }
 }
 
-export default Tile; 
+export default Tile;
