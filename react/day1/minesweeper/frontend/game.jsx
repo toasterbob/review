@@ -18,9 +18,15 @@ class Game extends React.Component {
   render() {
 
     return(
+      <div className="holder">
       <div className="game">
-        "Minesweeper"
+        <h2>Minesweeper</h2>
+        <p>Click to explore a tile.
+          <br/>
+          Alt + click to flag a tile.</p>
+
         <Board board={this.state.board} updateGame={this.state.updateGame} />
+      </div>
       </div>
     );
   }

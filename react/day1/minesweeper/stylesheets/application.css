@@ -1,3 +1,8 @@
+.holder {
+  display: flex;
+  justify-content: space-around;
+}
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -6,11 +11,23 @@
 .game {
   width: 300px;
   height: 300px;
+  text-align: center;
 }
 
 .tile {
-  background-color: grey;
+  text-align: center;
+  background-color: lightgrey;
   width: 11.1%;
   height: 11.1%;
-  border: 1px solid black;
+  border: 1px solid grey;
+
+}
+
+.value {
+  /*visibility: hidden;*/
+}
+
+p {
+  line-height: 1;
+  font-size: 14px;
 }

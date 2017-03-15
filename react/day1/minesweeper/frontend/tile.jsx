@@ -8,8 +8,9 @@ class Tile extends React.Component {
 
   render(){
     let tiles = this.props.tiles.map((tile, idx) => {
+      let value = tile.bombed ? "b" : tile.adjacentBombCount();
       return (
-        <div className="tile" key={idx}>{tile.adjacentBombCount()} </div>
+        <div className="tile" key={idx}><div className="value">{value}</div> </div>
       );
     });
     return(
