@@ -1,4 +1,5 @@
 import React from 'react';
+import Tile from './tile';
 
 class Board extends React.Component {
   constructor(props){
@@ -14,4 +15,4 @@ class Board extends React.Component {
   }
 }
 
-export default Board; 
+export default Board;
