@@ -1,0 +1,16 @@
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.game {
+  width: 300px;
+  height: 300px;
+}
+
+.tile {
+  background-color: grey;
+  width: 11.1%;
+  height: 11.1%;
+  border: 1px solid black;
+}

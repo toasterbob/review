@@ -9,7 +9,7 @@ class Tile extends React.Component {
   render(){
     let tiles = this.props.tiles.map((tile, idx) => {
       return (
-        <div key={idx}> Tile {tile.adjacentBombCount()} </div>
+        <div className="tile" key={idx}>{tile.adjacentBombCount()} </div>
       );
     });
     return(
