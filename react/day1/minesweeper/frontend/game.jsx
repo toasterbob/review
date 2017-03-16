@@ -11,8 +11,8 @@ class Game extends React.Component {
     this.updateGame = this.updateGame.bind(this);
   }
 
-  updateGame() {
-    console.log("clicked");
+  updateGame(tile, flagged) {
+    console.log(tile);
   }
 
   render() {
