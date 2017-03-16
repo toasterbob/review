@@ -7,14 +7,15 @@ class Tile extends React.Component {
   }
 
   handleClick(){
-
+    console.log("clicked");
+    this.props.updateGame;
   }
 
   render(){
     let tiles = this.props.tiles.map((tile, idx) => {
       let value = tile.bombed ? "b" : tile.adjacentBombCount();
       return (
-        <div className="tile" key={idx}><div className="value">{value}</div> </div>
+        <div className="tile" key={idx} onClick={this.handleClick}><div className="value">{value}</div> </div>
       );
     });
     return(
