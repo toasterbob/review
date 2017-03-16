@@ -13,7 +13,7 @@ export class Tile {
       if (neighbor.bombed) {
         bombCount++;
       }
-    });
+    }); 
     return bombCount;
   }
 
