@@ -4,11 +4,12 @@ class Tile extends React.Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
+
   }
 
-  handleClick(){
-    console.log("clicked");
-    this.props.updateGame;
+  handleClick(e){
+
+    this.props.updateGame();
   }
 
   render(){
