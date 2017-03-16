@@ -8,8 +8,8 @@ class Tile extends React.Component {
   }
 
   handleClick(e){
-
-    this.props.updateGame();
+    const flagged = e.altKey ? true : false;
+    this.props.updateGame(this.props.tile, flagged);
   }
 
   render(){
