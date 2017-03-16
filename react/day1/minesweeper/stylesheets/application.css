@@ -17,10 +17,11 @@
 .tile {
   text-align: center;
   background-color: lightgrey;
-  width: 11.1%;
-  height: 11.1%;
-  border: 1px solid grey;
+  width: 20px;
+  height: 20px;
 
+  border-style: outset;
+  border-width: 2px;
 }
 
 .value {
