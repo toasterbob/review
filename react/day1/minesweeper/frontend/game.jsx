@@ -25,7 +25,7 @@ class Game extends React.Component {
           <br/>
           Alt + click to flag a tile.</p>
 
-        <Board board={this.state.board} updateGame={this.state.updateGame} />
+        <Board board={this.state.board} updateGame={this.updateGame} />
       </div>
       </div>
     );
