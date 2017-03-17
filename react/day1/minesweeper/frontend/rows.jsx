@@ -1,4 +1,5 @@
 import React from 'react';
+import Tile from './tile';
 
 class Rows extends React.Component {
   constructor(props){
