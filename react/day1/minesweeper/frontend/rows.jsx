@@ -15,9 +15,8 @@ class Rows extends React.Component {
 
   render(){
     let tiles = this.props.tiles.map((tile, idx) => {
-      let value = tile.bombed ? "b" : tile.adjacentBombCount();
       return (
-        <div className="tile" key={idx} onClick={this.handleClick}><div className="value">{value}</div> </div>
+        <div className="tile" key={idx} ><Tile tile={tile} updateGame={this.props.updateGame}/></div>
       );
     });
     return(
