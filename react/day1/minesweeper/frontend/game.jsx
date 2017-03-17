@@ -8,6 +8,7 @@ class Game extends React.Component {
     let board = new Minesweeper.Board(9, 10);
     this.state = { board: board };
     this.updateGame = this.updateGame.bind(this);
+    this.restartGame = this.restartGame.bind(this);
   }
 
   updateGame(tile, flagged) {
@@ -17,6 +18,11 @@ class Game extends React.Component {
       tile.explore();
     }
     this.setState({ board: this.state.board });
+  }
+
+  restartGame(){
+    let board = new Minesweeper.Board(9, 10);
+    this.setState({ board: board });
   }
 
   render() {
@@ -29,7 +35,7 @@ class Game extends React.Component {
         text = "You win!";
       }
 
-      modal = text;
+      modal = <div onClick={this.restartGame}>{text}</div>;
     }
     return(
       <div className="holder">
