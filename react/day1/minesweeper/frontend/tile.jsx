@@ -13,11 +13,12 @@ class Tile extends React.Component {
 
   render(){
     let tile = this.props.tile;
-    let value = tile.bombed ? "b" : tile.adjacentBombCount();
+    let value = tile.bombed ? '\u2622' : tile.adjacentBombCount();
+    value = value === 0 ? "" : value;
     return(
       <div onClick={this.handleClick}><div className="value">{value}</div> </div>
     );
   }
 }
 
-export default Tile; 
+export default Tile;
