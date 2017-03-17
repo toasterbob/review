@@ -5,7 +5,7 @@ class Board extends React.Component {
   constructor(props){
     super(props);
   }
- 
+
   render() {
     let board = this.props.board.grid.map((tiles, idx) => {
       return (
