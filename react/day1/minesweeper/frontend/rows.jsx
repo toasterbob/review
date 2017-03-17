@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Tiles extends React.Component {
+class Rows extends React.Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -25,4 +25,4 @@ class Tiles extends React.Component {
   }
 }
 
-export default Tiles;
+export default Rows;

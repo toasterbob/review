@@ -1,5 +1,5 @@
 import React from 'react';
-import Tiles from './tiles';
+import Rows from './rows';
 
 class Board extends React.Component {
   constructor(props){
@@ -9,7 +9,7 @@ class Board extends React.Component {
   render() {
     let board = this.props.board.grid.map((tiles, idx) => {
       return (
-        <div key={idx}> <Tiles tiles={tiles} updateGame={this.props.updateGame}/> </div>
+        <div key={idx}> <Rows tiles={tiles} updateGame={this.props.updateGame}/> </div>
       );
     });
     return(
