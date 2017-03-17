@@ -35,7 +35,12 @@ class Game extends React.Component {
         text = "You win!";
       }
 
-      modal = <div onClick={this.restartGame}>{text}</div>;
+      modal = <div className="modal-screen">
+                <div className="modal-content">
+                    <p>{text}</p>
+                    <p><button onClick={this.restartGame}>Play Again</button></p>
+                </div>
+              </div>;
     }
     return(
       <div className="holder">
