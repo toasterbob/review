@@ -20,7 +20,17 @@ class Game extends React.Component {
   }
 
   render() {
+    let modal;
+    if (this.state.board.lost() || this.state.board.won()){
+      let text;
+      if (this.state.board.lost()){
+        text = "You lost!";
+      } else if (this.state.board.won()){
+        text = "You win!";
+      }
 
+      modal = text;
+    }
     return(
       <div className="holder">
       <div className="game">
@@ -28,7 +38,7 @@ class Game extends React.Component {
         <p>Click to explore a tile.
           <br/>
           Alt + click to flag a tile.</p>
-
+        {modal}
         <Board board={this.state.board} updateGame={this.updateGame} />
       </div>
       </div>

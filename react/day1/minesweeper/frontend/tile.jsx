@@ -4,17 +4,13 @@ class Tile extends React.Component {
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = { class: "tile", value: "hidden" };
+
   }
 
   handleClick(e){
     const flagged = e.altKey ? true : false;
     this.props.updateGame(this.props.tile, flagged);
-    if (flagged) {
-      this.setState({ value: flagged });
-    } else {
-      this.setState({ class: "revealed", value: "revealed2"});
-    }
+
   }
 
   render(){
@@ -27,7 +23,9 @@ class Tile extends React.Component {
       theClassName = "revealed";
       displayValue = "revealed2";
     } else if (tile.flagged) {
-      theClassName = "flagged";
+      theClassName = "tile";
+      value = '\u2691';
+      displayValue = "revealed2";
     }
     return(
       <div className={theClassName} onClick={this.handleClick}><div className={displayValue}>{value}</div> </div>
