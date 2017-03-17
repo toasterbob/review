@@ -12,7 +12,7 @@ class Tile extends React.Component {
   }
 
   render(){
-    let tile = this.props.tile;
+    let tile = this.props.tile; 
     let value = tile.bombed ? '\u2622' : tile.adjacentBombCount();
     value = value === 0 ? "" : value;
     return(
