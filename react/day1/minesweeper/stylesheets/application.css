@@ -9,8 +9,9 @@
 }
 
 .game {
-  width: 240px;
-  height: 240px;
+  width: 243px;
+  height: 243px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -46,6 +47,12 @@
 
 .hidden {
   visibility: hidden;
+}
+
+.flagged {
+  color: red;
+  visibility: hidden;
+  background-image: '\u2691'
 }
 
 p {
