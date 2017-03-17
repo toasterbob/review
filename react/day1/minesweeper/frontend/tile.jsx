@@ -21,8 +21,16 @@ class Tile extends React.Component {
     let tile = this.props.tile;
     let value = tile.bombed ? '\u2622' : tile.adjacentBombCount();
     value = value === 0 ? "" : value;
+    let theClassName = "tile";
+    let displayValue = "hidden";
+    if (tile.explored) {
+      theClassName = "revealed";
+      displayValue = "revealed2";
+    } else if (tile.flagged) {
+      theClassName = "flagged";
+    }
     return(
-      <div className={this.state.class} onClick={this.handleClick}><div className={this.state.value}>{value}</div> </div>
+      <div className={theClassName} onClick={this.handleClick}><div className={displayValue}>{value}</div> </div>
     );
   }
 }
