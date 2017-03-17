@@ -19,15 +19,33 @@
   background-color: lightgrey;
   width: 20px;
   height: 20px;
-
+  float: left;
   border-style: outset;
   border-width: 2px;
   line-height: 20px;
   padding-left: 3px;
+  font-size: 14px;
 }
 
-.value {
-  /*visibility: hidden;*/
+.revealed {
+  text-align: center;
+  background-color: lightgrey;
+  width: 20px;
+  height: 20px;
+  border-style: inset;
+  border-width: 2px;
+  line-height: 20px;
+  padding-left: 2px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.revealed {
+
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 p {

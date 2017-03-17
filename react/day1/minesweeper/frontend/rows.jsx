@@ -16,7 +16,7 @@ class Rows extends React.Component {
   render(){
     let tiles = this.props.tiles.map((tile, idx) => {
       return (
-        <div className="tile" key={idx} ><Tile tile={tile} updateGame={this.props.updateGame}/></div>
+        <div key={idx} ><Tile tile={tile} updateGame={this.props.updateGame}/></div>
       );
     });
     return(
