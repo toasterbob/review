@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import reducer from './reducer.js';
-import { addOrange, addApple } from './actions.js';
+import { addOrange, addApple, addGrapes } from './actions.js';
 
 const store = createStore(reducer); // instantiate app's store with app's reducer
 
