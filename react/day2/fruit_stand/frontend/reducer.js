@@ -4,7 +4,7 @@ const reducer = (state = [], action) => {
       return [
         ...state,
         action.fruit
-      ];
+      ]; 
     default:
       return state;
   }
