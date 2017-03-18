@@ -9,5 +9,5 @@ window.store = store;
 window.addOrange = addOrange;
 window.addApple = addApple;
 window.addGrapes = addGrapes;
-window.addFruit = addFruit; 
-window.removeLast = removeLast;
+window.addFruit = addFruit;
+window.sellFruit = removeLast;
