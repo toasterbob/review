@@ -8,3 +8,4 @@ const store = createStore(reducer); // instantiate app's store with app's reduce
 window.store = store;
 window.addOrange = addOrange;
 window.addApple = addApple;
+window.addGrapes = addGrapes;
