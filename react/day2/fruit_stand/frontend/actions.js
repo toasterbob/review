@@ -14,6 +14,11 @@ export const addGrapes = {
   fruit: 'grapes'
 };
 
+export const addFruit = fruit => ({
+	type: "ADD_FRUIT",
+	fruit
+});
+
 export const removeLast = {
   type: 'REMOVE_FRUIT'
 };
