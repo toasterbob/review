@@ -8,3 +8,8 @@ export const addApple = {
   type: 'ADD_FRUIT',
   fruit: 'apple'
 };
+
+export const addGrapes = {
+  type: 'ADD_FRUIT',
+  fruit: 'grapes'
+};
