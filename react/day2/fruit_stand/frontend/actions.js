@@ -13,3 +13,7 @@ export const addGrapes = {
   type: 'ADD_FRUIT',
   fruit: 'grapes'
 };
+
+export const removeLast = {
+  type: 'REMOVE_FRUIT'
+};
