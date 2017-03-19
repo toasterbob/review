@@ -8,6 +8,7 @@ const FruitStand = ({fruits, addApple, addOrange, addFruit, clearFruit}) => (
     </ul>
 
     <button onClick={addApple}>Add Apple</button>
+    &nbsp;
     <button onClick={addOrange}>Add Orange</button>
     <br/><br/>
     <AddFruit addFruit={addFruit}/>
