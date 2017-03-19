@@ -8,6 +8,8 @@ const FruitStand = ({fruits, addApple, addOrange, clearFruit}) => (
 
     <button onClick={addApple}>Apple</button>
     <button onClick={addOrange}>Orange</button>
+    
+    <br/>
     <button onClick={clearFruit}>Clear</button>
   </div>
 )
