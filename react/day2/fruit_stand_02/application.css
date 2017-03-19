@@ -1,3 +1,11 @@
 body {
   font-family: 'Varela Round', sans-serif;
 }
+
+button {
+  background-color: lightblue;
+}
+
+button:hover {
+  background-color: yellow;
+}
