@@ -24,12 +24,12 @@ class Note {
   }
 
   start() {
-    this.gainNode.gain.value = 0.3;
+    this.gainNode.gain.value = 0.4;
   }
 
   stop() {
     this.gainNode.gain.value = 0;
   }
-};
+}
 
 export default Note;
