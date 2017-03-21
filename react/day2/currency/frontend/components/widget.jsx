@@ -1,6 +1,6 @@
 import React from 'react';
 import Currency from './currency';
-import selectCurrency from '../actions'; 
+import selectCurrency from '../actions';
 
 class Widget extends React.Component {
 
@@ -12,6 +12,7 @@ class Widget extends React.Component {
     this.props.store.subscribe(this.forceUpdate);
     this.currencies = ["USD", "EUR", "CAD", "JPY", "GBP", "CNY"];
     this.selectCurrency = selectCurrency.bind(this);
+    this.state = { amount: ""};
   }
 
   fetchRates(currency) {
@@ -46,11 +47,13 @@ class Widget extends React.Component {
       )
     );
 
+    const amount = this.state.amount === "" ? 1 : this.state.amount; 
     const currencyNames = Object.keys(rates);
     const currencyRates = currencyNames.map( (currency) => (
       <Currency name={currency}
                 rate={rates[currency]}
-                key={currency} />
+                key={currency}
+                amount={amount}/>
       )
     );
 

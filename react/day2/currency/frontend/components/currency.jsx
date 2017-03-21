@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Currency = ({name, rate}) => {
+const Currency = ({name, rate, amount}) => {
   let color = "green";
   if(rate < 1) {
     color = "red";
@@ -10,7 +10,7 @@ const Currency = ({name, rate}) => {
     <div className={color}>
       {name}
       &nbsp;
-      {rate}
+      {rate * amount}
     </div>
   );
 };
