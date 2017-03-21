@@ -8,4 +8,4 @@ export const TONES = {
   'g': 783.99
 };
 
-export const NOTE_NAMES = Object.keys(TONES); 
+export const NOTE_NAMES = Object.keys(TONES);
