@@ -47,7 +47,7 @@ class Widget extends React.Component {
       )
     );
 
-    const amount = this.state.amount === "" ? 1 : this.state.amount; 
+    const amount = this.state.amount === "" ? 1 : this.state.amount;
     const currencyNames = Object.keys(rates);
     const currencyRates = currencyNames.map( (currency) => (
       <Currency name={currency}
@@ -61,7 +61,9 @@ class Widget extends React.Component {
       <div>
         <h1>Currency Exchange Rates</h1>
         <h3>Base Currency: {baseCurrency}</h3>
-
+        Amount <input ></input>
+        <br/>
+        <br/>
         <div className="currency-selector">
           Get Rates:
           {currencyOptions}
