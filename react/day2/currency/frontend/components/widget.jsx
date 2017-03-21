@@ -13,6 +13,11 @@ class Widget extends React.Component {
     this.currencies = ["USD", "EUR", "CAD", "JPY", "GBP", "CNY"];
     this.selectCurrency = selectCurrency.bind(this);
     this.state = { amount: ""};
+    this.updateAmount = this.updateAmount.bind(this);
+  }
+
+  updateAmount(e){
+    this.setState({amount: e.target.value});
   }
 
   fetchRates(currency) {
@@ -47,7 +52,7 @@ class Widget extends React.Component {
       )
     );
 
-    const amount = this.state.amount === "" ? 1 : this.state.amount;
+    const amount = this.state.amount === "" ? 1 : parseFloat(this.state.amount);
     const currencyNames = Object.keys(rates);
     const currencyRates = currencyNames.map( (currency) => (
       <Currency name={currency}
@@ -61,13 +66,14 @@ class Widget extends React.Component {
       <div>
         <h1>Currency Exchange Rates</h1>
         <h3>Base Currency: {baseCurrency}</h3>
-        Amount <input ></input>
-        <br/>
-        <br/>
         <div className="currency-selector">
           Get Rates:
           {currencyOptions}
         </div>
+
+        <br/>
+        <br/>
+        Amount <input onChange={this.updateAmount} value={this.state.amount}></input>
         <div className="rates-list">
           {currencyRates}
         </div>

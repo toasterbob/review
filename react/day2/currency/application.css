@@ -18,3 +18,7 @@
 .rates-list {
   padding-top: 10px;
 }
+
+input {
+  border: 1px solid lightgrey; 
+}
