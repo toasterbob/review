@@ -1,28 +1,27 @@
-//webpack.config.js
-
- const path = require("path");
+"use strict";
+const path = require('path');
 
 module.exports = {
   context: __dirname,
   entry: "./frontend/synthesizer.jsx",
   output: {
-    path: path.join(__dirname),
-    filename: "bundle.js"
+    path: path.resolve(__dirname),
+    filename: "./bundle.js"
   },
   module: {
     loaders: [
       {
-        test: [/\.jsx?$/, /\.js?$/],
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        test: [/\.jsx?$/],
+        exclude: /node_modules/,
+        loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015']
         }
       }
     ]
   },
   devtool: 'source-maps',
   resolve: {
-    extensions: ["", ".js", ".jsx" ]
+    extensions: [".js", '.jsx', '*'],
   }
 };
