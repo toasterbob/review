@@ -1,5 +1,5 @@
 import {KEY_PRESSED, KEY_RELEASED} from '../actions/notes_actions';
-import {NOTE_NAMES} from '..util/tones';
+import {NOTE_NAMES} from '../util/tones';
 
 const notesReducer = (state = [], action) => {
   let validNote = NOTE_NAMES.includes(action.key);
