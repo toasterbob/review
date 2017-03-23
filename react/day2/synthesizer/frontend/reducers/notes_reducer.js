@@ -6,7 +6,7 @@ const notesReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type){
     case KEY_PRESSED:
-      if (state.includes(action.key) && validNote){
+      if (state.includes(action.key) || !validNote){
         return state;
       } else {
           return [...state, action.key];
