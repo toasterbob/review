@@ -11,3 +11,5 @@ class Synth extends React.Component {
     );
   }
 }
+
+export default Synth; 
