@@ -1,0 +1,12 @@
+.keyboard {
+  display: flex;
+  justify-content: center;
+}
+
+.key {
+  height: 200px;
+  width: 50px;
+  border: 1px solid grey;
+  text-align: center;
+
+}

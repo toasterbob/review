@@ -46,7 +46,7 @@ class Synth extends React.Component {
     window.notes = this.notes;
     let notes = NOTE_NAMES.map(note => (<div><NoteKey note={note} /></div>));
     return(
-      <div>
+      <div className="keyboard">
         {notes}
 
       </div>
