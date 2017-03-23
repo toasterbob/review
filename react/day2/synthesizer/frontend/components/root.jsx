@@ -4,8 +4,8 @@ import App from './app';
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <App/>
+    <App />
   </Provider>
 );
 
-export default Root; 
+export default Root;
