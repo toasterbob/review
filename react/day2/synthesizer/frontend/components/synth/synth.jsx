@@ -2,6 +2,7 @@ import React from 'react';
 import { NOTE_NAMES, TONES } from '../../util/tones';
 import Note from '../../util/note';
 import $ from 'jquery';
+import NoteKey from './note_key';
 
 class Synth extends React.Component {
   constructor(props){
@@ -15,7 +16,7 @@ class Synth extends React.Component {
   onKeyDown(e){
     this.props.keyPressed(e.key);
     console.log(this.props.notes);
-    
+
   }
 
   onKeyUp(e){
@@ -43,9 +44,10 @@ class Synth extends React.Component {
   render() {
     this.playNotes();
     window.notes = this.notes;
+    let notes = NOTE_NAMES.map(note => (<div><NoteKey note={note} /></div>));
     return(
       <div>
-        Synth
+        {notes}
 
       </div>
 
