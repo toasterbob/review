@@ -15,19 +15,19 @@ class Synth extends React.Component {
   onKeyDown(e){
     this.props.keyPressed(e.key);
     console.log(this.props.notes);
-    this.notes[0].play();
+    
   }
 
   onKeyUp(e){
     this.props.keyReleased(e.key);
     console.log(this.props.notes);
-    this.notes[0].stop();
+
   }
 
   playNotes(){
     NOTE_NAMES.forEach((note, idx) => {
       if(this.props.notes.indexOf(note) !== -1){
-        this.notes[idx].play();
+        this.notes[idx].start();
       } else {
         this.notes[idx].stop();
       }
