@@ -13,7 +13,10 @@ const notesReducer = (state = [], action) => {
       }
     case KEY_RELEASED:
       if (state.includes(action.key) && validNote){
-        return [...state].remove(action.key);
+        const idx = state.indexOf(action.key);
+        let newState = [...state];
+        newState.splice(idx, 1);
+        return newState;
       } else {
           return state;
       }
@@ -22,4 +25,4 @@ const notesReducer = (state = [], action) => {
   }
 };
 
-export default notesReducer; 
+export default notesReducer;
