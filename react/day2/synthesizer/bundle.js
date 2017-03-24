@@ -10589,7 +10589,9 @@ var _root_reducer2 = _interopRequireDefault(_root_reducer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var preloadedState = {
-  notes: []
+  notes: [],
+  isRecording: false,
+  tracks: {}
 };
 
 var configureStore = function configureStore() {
