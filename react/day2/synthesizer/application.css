@@ -22,13 +22,26 @@
 }
 
 .black-key {
-  height: 100px;
-  width: 60px;
+  height: 120px;
+  width: 40px;
   border: 1px solid black;
-  box-shadow: 0 10px 2px 0 grey;
+  box-shadow: 0 5px 2px 0 grey;
   border-radius: 5px;
   background: black;
-  margin-left: -30px; 
+  margin-left: -20px;
+  position: absolute;
+  color: white
+}
+
+.black-key-pressed {
+  height: 120px;
+  width: 40px;
+  border: 1px solid black;
+  box-shadow: 0 2px 5px 0 grey;
+  border-radius: 5px;
+  background: grey;
+  margin-left: -20px;
+  position: absolute;
 }
 
 .note-name {
