@@ -23,14 +23,17 @@ export const TONES = {
   ']': 1479.98,
   'Enter': 1567.98,
   '\\': 1661.22,
-  ',': 1760.00,
-  '.': 1864.66,
-  '/': 1975.53,
-  'Shift': 2093.00
+  'n': 1760.00,
+  'm': 1864.66,
+  ',': 1975.53,
+
+  '.': 2093.00,
+  '/': 2217.46,
+  'Shift': 2349.32
 };
 
 export const NOTE_NAMES = Object.keys(TONES);
-export const BLACKS = ['w', 'e', 't', 'y', 'u', 'o', 'p', ']', '\\', '.'];
+export const BLACKS = ['w', 'e', 't', 'y', 'u', 'o', 'p', ']', '\\', 'm', '/'];
 
 
 // export const TONES = {
