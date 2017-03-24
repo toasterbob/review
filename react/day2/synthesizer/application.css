@@ -4,7 +4,7 @@
 }
 
 .white-key {
-  height: 200px;
+  height: 220px;
   width: 60px;
   border: 1px solid black;
   box-shadow: 0 10px 2px 0 grey;
@@ -13,7 +13,7 @@
 }
 
 .white-key-pressed {
-  height: 200px;
+  height: 220px;
   width: 60px;
   border: 1px solid black;
   background: grey;
@@ -22,7 +22,7 @@
 }
 
 .black-key {
-  height: 120px;
+  height: 125px;
   width: 40px;
   border: 1px solid black;
   box-shadow: 0 5px 2px 0 grey;
@@ -34,7 +34,7 @@
 }
 
 .black-key-pressed {
-  height: 120px;
+  height: 125px;
   width: 40px;
   border: 1px solid black;
   box-shadow: 0 2px 5px 0 grey;
