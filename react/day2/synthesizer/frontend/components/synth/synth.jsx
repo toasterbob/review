@@ -15,13 +15,11 @@ class Synth extends React.Component {
 
   onKeyDown(e){
     this.props.keyPressed(e.key);
-    console.log(this.props.notes);
 
   }
 
   onKeyUp(e){
     this.props.keyReleased(e.key);
-    console.log(this.props.notes);
 
   }
 
@@ -44,7 +42,7 @@ class Synth extends React.Component {
   render() {
     this.playNotes();
     window.notes = this.notes;
-    let notes = NOTE_NAMES.map((note, idx) => (<div><NoteKey idx={idx} note={note} pressed={this.props.notes.includes(note)}/></div>));
+    let notes = NOTE_NAMES.map((note, idx) => (<div><NoteKey key={idx} idx={idx} note={note} pressed={this.props.notes.includes(note)}/></div>));
     return(
       <div className="keyboard">
         {notes}

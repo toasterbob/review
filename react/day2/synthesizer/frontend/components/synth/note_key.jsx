@@ -1,21 +1,9 @@
 import React from 'react';
 
-class NoteKey extends React.Component {
-  constructor({note, pressed, idx}){
-    super({note, pressed, idx});
-    this.note = note;
-    this.pressed = pressed;
-    this.idx = idx;
-  }
-
-  render(){
-
-    return(
-      <div id={this.idx} className={this.pressed ? "white-key-pressed" : "white-key"}>
-        <div id={this.idx} className="note-name">{this.note}</div>
-      </div>
-    );
-  }
-}
+const NoteKey = ({note, pressed, idx}) => (
+  <div key={idx} className={pressed ? "white-key-pressed" : "white-key"}>
+    <div key={idx} className="note-name">{note}</div>
+  </div>
+);
 
 export default NoteKey;
