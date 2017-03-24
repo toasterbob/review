@@ -174,11 +174,20 @@ sayHello("BB8"); //"Hello BB8"
 sayHello("Mark"); //"Hello Boss"
 
 function average(arr){
-  total = arr.reduce(function (accum, el){
-    return accum + el
-  }, 0)
-  return total/arr.length
+  var total = arr.reduce(function (accum, el){
+    return accum + el;
+  }, 0);
+  return total/arr.length;
 }
+
+function average(arr){
+    var total = 0;
+    for(var i = 0; i < arr.length; i++){
+        total += arr[i];
+    }
+    return total / arr.length;
+}
+
 average([1,2,3,4,5]); // 3
 average([1,2,3,4,5,6]); // 3.5
 average([10,20]); // 15
