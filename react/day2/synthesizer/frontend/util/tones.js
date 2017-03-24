@@ -25,7 +25,8 @@ export const TONES = {
   '\\': 1661.22,
   ',': 1760.00,
   '.': 1864.66,
-  '/': 1975.53
+  '/': 1975.53,
+  'Shift': 2093.00
 };
 
 export const NOTE_NAMES = Object.keys(TONES);
