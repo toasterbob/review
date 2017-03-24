@@ -21,6 +21,16 @@
   box-shadow: 0 2px 10px 0 grey;
 }
 
+.black-key {
+  height: 100px;
+  width: 60px;
+  border: 1px solid black;
+  box-shadow: 0 10px 2px 0 grey;
+  border-radius: 5px;
+  background: black;
+  margin-left: -30px; 
+}
+
 .note-name {
   text-align: center;
   font-size: 20px;
