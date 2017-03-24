@@ -3,13 +3,19 @@
   justify-content: center;
 }
 
-.key {
+.white-key {
   height: 200px;
   width: 60px;
   border: 1px solid black;
   box-shadow: 0 10px 2px 0 grey;
   border-radius: 5px;
+  background: white;
+}
 
+.white-key-pressed {
+  background: grey;
+  color: white;
+  box-shadow: 0 2px 10px 0 grey;
 }
 
 .note-name {

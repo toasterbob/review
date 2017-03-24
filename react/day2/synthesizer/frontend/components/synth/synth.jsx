@@ -44,7 +44,7 @@ class Synth extends React.Component {
   render() {
     this.playNotes();
     window.notes = this.notes;
-    let notes = NOTE_NAMES.map(note => (<div><NoteKey note={note} /></div>));
+    let notes = NOTE_NAMES.map(note => (<div><NoteKey note={note} pressed={this.props.notes.includes(note)}/></div>));
     return(
       <div className="keyboard">
         {notes}
