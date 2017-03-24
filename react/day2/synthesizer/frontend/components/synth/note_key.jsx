@@ -9,7 +9,9 @@ class NoteKey extends React.Component {
   render(){
 
     return(
-      <div className="key">{this.note}</div>
+      <div className="key">
+        <div className="note-name">{this.note}</div>
+      </div>
     );
   }
 }
