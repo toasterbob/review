@@ -30,8 +30,8 @@
   background: black;
   margin-left: -20px;
   position: absolute;
-  color: white
-}
+  color: white;
+} 
 
 .black-key-pressed {
   height: 125px;
