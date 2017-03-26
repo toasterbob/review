@@ -34,7 +34,7 @@ class Synth extends React.Component {
     });
   }
 
-
+ 
   componentDidMount() {
     $(document).on('keydown', e => this.onKeyDown(e));
     $(document).on('keyup', e => this.onKeyUp(e));
