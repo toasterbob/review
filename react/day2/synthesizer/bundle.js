@@ -10816,11 +10816,11 @@ var Synth = function (_React$Component) {
         return _tones.BLACKS.includes(note) ? _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_black_key2.default, { id: idx, key: idx, idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
+          _react2.default.createElement(_black_key2.default, { key: idx, idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
         ) : _react2.default.createElement(
           'div',
           null,
-          _react2.default.createElement(_note_key2.default, { id: idx, key: idx, idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
+          _react2.default.createElement(_note_key2.default, { key: idx, idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
         );
       });
       return _react2.default.createElement(
