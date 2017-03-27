@@ -35650,6 +35650,10 @@ var _tracks_actions = __webpack_require__(243);
 
 var _merge = __webpack_require__(325);
 
+var _merge2 = _interopRequireDefault(_merge);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var currTrackId = 0;
@@ -35662,18 +35666,18 @@ var tracksReducer = function tracksReducer() {
   switch (action.type) {
     case _tracks_actions.START_RECORDING:
       currTrackId++;
-      return (0, _merge.merge)({}, state, {
+      return (0, _merge2.default)({}, state, {
         id: currTrackId,
         name: 'Track ' + currTrackId,
         roll: [],
         timeStart: action.timeNow
       });
     case _tracks_actions.STOP_RECORDING:
-      return (0, _merge.merge)({}, state, {
+      return (0, _merge2.default)({}, state, {
         roll: [].concat(_toConsumableArray(state.roll), [{ notes: [], timeSlice: action.timeNow - state.timeStart }])
       });
     case _tracks_actions.ADD_NOTES:
-      return (0, _merge.merge)({}, state, {
+      return (0, _merge2.default)({}, state, {
         roll: [].concat(_toConsumableArray(state.roll), [{ notes: action.notes, timeSlice: action.timeNow - state.timeStart }])
       });
     default:
