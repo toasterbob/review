@@ -10860,11 +10860,14 @@ var _synth2 = _interopRequireDefault(_synth);
 
 var _notes_actions = __webpack_require__(57);
 
+var _tracks_actions = __webpack_require__(243);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    notes: state.notes
+    notes: state.notes,
+    isRecording: state.isRecording
   };
 };
 
@@ -10875,6 +10878,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     keyReleased: function keyReleased(key) {
       return dispatch((0, _notes_actions.keyReleased)(key));
+    },
+    addNotes: function addNotes(notes) {
+      return dispatch((0, _tracks_actions.addNotes)(notes));
     }
   };
 };
