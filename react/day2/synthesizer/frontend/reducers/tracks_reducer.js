@@ -16,6 +16,7 @@ const tracksReducer = (state = [], action) => {
         timeStart: action.timeNow
       });
     case STOP_RECORDING:
+      return
     case ADD_NOTES:
     default:
       return state;
