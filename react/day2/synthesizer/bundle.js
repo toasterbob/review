@@ -37864,6 +37864,7 @@ var Recorder = function (_React$Component) {
     value: function render() {
       var startRecording = this.props.startRecording;
       var stopRecording = this.props.stopRecording;
+      var isReocrding = this.props.isReocrding;
       return _react2.default.createElement(
         "div",
         { className: "recorder" },
@@ -37881,7 +37882,7 @@ var Recorder = function (_React$Component) {
             null,
             _react2.default.createElement(
               "button",
-              { onClick: startRecording },
+              { onClick: startRecording, disabled: isRecording },
               "start"
             )
           ),
@@ -37890,7 +37891,7 @@ var Recorder = function (_React$Component) {
             null,
             _react2.default.createElement(
               "button",
-              { onClick: stopRecording },
+              { onClick: stopRecording, disabled: !isRecording },
               "stop"
             )
           )
