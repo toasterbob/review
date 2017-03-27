@@ -12,7 +12,7 @@ class Synth extends React.Component {
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
     this.playNotes = this.playNotes.bind(this);
-  }
+  } 
 
   onKeyDown(e){
     this.props.keyPressed(e.key);
@@ -34,7 +34,7 @@ class Synth extends React.Component {
     });
   }
 
- 
+
   componentDidMount() {
     $(document).on('keydown', e => this.onKeyDown(e));
     $(document).on('keyup', e => this.onKeyUp(e));
