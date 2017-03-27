@@ -8,7 +8,7 @@ class Recorder extends React.Component {
   render(){
 
     return(
-      <div>Recorder</div>
+      <div></div>
     );
   }
 }
