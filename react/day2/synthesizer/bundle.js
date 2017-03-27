@@ -10779,11 +10779,17 @@ var Synth = function (_React$Component) {
     key: 'onKeyDown',
     value: function onKeyDown(e) {
       this.props.keyPressed(e.key);
+      if (this.props.isRecording) {
+        this.props.addNotes(this.props.notes);
+      }
     }
   }, {
     key: 'onKeyUp',
     value: function onKeyUp(e) {
       this.props.keyReleased(e.key);
+      if (this.props.isRecording) {
+        this.props.addNotes(this.props.notes);
+      }
     }
   }, {
     key: 'playNotes',
