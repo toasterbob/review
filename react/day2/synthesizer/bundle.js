@@ -10950,7 +10950,9 @@ var _is_recording_reducer2 = _interopRequireDefault(_is_recording_reducer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
-  notes: _notes_reducer2.default
+  notes: _notes_reducer2.default,
+  tracks: _tracks_reducer2.default,
+  isRecording: _is_recording_reducer2.default
 });
 
 exports.default = rootReducer;
