@@ -56,7 +56,7 @@ class Synth extends React.Component {
       </div>
 
     );
-  }
+  } 
 }
 
 export default Synth;
