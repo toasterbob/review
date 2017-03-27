@@ -11,3 +11,8 @@ const mapDispatchToProps = dispatch => ({
   startRecording: () => dispatch(startRecording()),
   stopRecording: () => dispatch(stopRecording())
 });
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Recorder);

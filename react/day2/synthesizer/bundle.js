@@ -10630,13 +10630,18 @@ var _synth_container = __webpack_require__(103);
 
 var _synth_container2 = _interopRequireDefault(_synth_container);
 
+var _recorder_container = __webpack_require__(329);
+
+var _recorder_container2 = _interopRequireDefault(_recorder_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
   return _react2.default.createElement(
     'div',
     { className: 'app' },
-    _react2.default.createElement(_synth_container2.default, null)
+    _react2.default.createElement(_synth_container2.default, null),
+    _react2.default.createElement(_recorder_container2.default, null)
   );
 };
 
@@ -37819,6 +37824,98 @@ function toPlainObject(value) {
 
 module.exports = toPlainObject;
 
+
+/***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(12);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Recorder = function (_React$Component) {
+  _inherits(Recorder, _React$Component);
+
+  function Recorder(props) {
+    _classCallCheck(this, Recorder);
+
+    return _possibleConstructorReturn(this, (Recorder.__proto__ || Object.getPrototypeOf(Recorder)).call(this, props));
+  }
+
+  _createClass(Recorder, [{
+    key: "render",
+    value: function render() {
+
+      return _react2.default.createElement(
+        "div",
+        null,
+        "Recorder"
+      );
+    }
+  }]);
+
+  return Recorder;
+}(_react2.default.Component);
+
+exports.default = Recorder;
+
+/***/ }),
+/* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(86);
+
+var _recorder = __webpack_require__(328);
+
+var _recorder2 = _interopRequireDefault(_recorder);
+
+var _track_actions = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../actions/track_actions.js\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    tracks: state.tracks,
+    isRecordingReducer: state.isRecording
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    startRecording: function startRecording() {
+      return dispatch((0, _track_actions.startRecording)());
+    },
+    stopRecording: function stopRecording() {
+      return dispatch((0, _track_actions.stopRecording)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_recorder2.default);
 
 /***/ })
 /******/ ]);
