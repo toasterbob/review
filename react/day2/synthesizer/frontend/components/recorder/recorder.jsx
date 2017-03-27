@@ -8,7 +8,7 @@ class Recorder extends React.Component {
   render(){
     let startRecording = this.props.startRecording;
     let stopRecording = this.props.stopRecording;
-    let isReocrding = this.props.isReocrding; 
+    let isRecording = this.props.isReocrding; 
     return(
       <div className="recorder">
         <br/>
