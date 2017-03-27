@@ -1,7 +1,7 @@
-import * as tracks from '../actions/tracks_actions';
+import { START_RECORDING, STOP_RECORDING, ADD_NOTES } from '../actions/tracks_actions';
 
-const recordingReducer = (state = [], action) => {
+const isRecordingReducer = (state = [], action) => {
 
 };
 
-export default recordingReducer;
+export default isRecordingReducer;
