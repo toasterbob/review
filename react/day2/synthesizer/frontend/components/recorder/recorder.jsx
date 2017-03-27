@@ -8,7 +8,18 @@ class Recorder extends React.Component {
   render(){
 
     return(
-      <div></div>
+      <div className="recorder">
+        <br/>
+        <h2>Record your song!</h2>
+        <div className="buttons">
+          <div>
+            <button>start</button>
+          </div>
+          <div>
+            <button>stop</button>
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -37863,7 +37863,38 @@ var Recorder = function (_React$Component) {
     key: "render",
     value: function render() {
 
-      return _react2.default.createElement("div", null);
+      return _react2.default.createElement(
+        "div",
+        { className: "recorder" },
+        _react2.default.createElement("br", null),
+        _react2.default.createElement(
+          "h2",
+          null,
+          "Record your song!"
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "buttons" },
+          _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement(
+              "button",
+              null,
+              "start"
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            null,
+            _react2.default.createElement(
+              "button",
+              null,
+              "stop"
+            )
+          )
+        )
+      );
     }
   }]);
 
