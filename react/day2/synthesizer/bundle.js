@@ -37862,7 +37862,8 @@ var Recorder = function (_React$Component) {
   _createClass(Recorder, [{
     key: "render",
     value: function render() {
-
+      var startRecording = this.props.startRecording;
+      var stopRecording = this.props.stopRecording;
       return _react2.default.createElement(
         "div",
         { className: "recorder" },
@@ -37880,7 +37881,7 @@ var Recorder = function (_React$Component) {
             null,
             _react2.default.createElement(
               "button",
-              null,
+              { onClick: startRecording },
               "start"
             )
           ),
@@ -37889,7 +37890,7 @@ var Recorder = function (_React$Component) {
             null,
             _react2.default.createElement(
               "button",
-              null,
+              { onClick: stopRecording },
               "stop"
             )
           )
@@ -37927,7 +37928,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return {
     tracks: state.tracks,
-    isRecordingReducer: state.isRecording
+    isRecording: state.isRecording
   };
 };
 
