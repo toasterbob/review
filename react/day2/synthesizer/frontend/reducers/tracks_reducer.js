@@ -16,8 +16,19 @@ const tracksReducer = (state = [], action) => {
         timeStart: action.timeNow
       });
     case STOP_RECORDING:
-      return
+      return merge ({}, state, {
+        roll: [
+          ...state.roll,
+          { notes: [], timeSlice: action.timeNow - state.timeStart }
+        ]
+      });
     case ADD_NOTES:
+      return merge ({}, state, {
+        roll: [
+          ...state.roll,
+          { notes: action.notes, timeSlice: action.timeNow - state.timeStart }
+        ]
+      });
     default:
       return state;
   }
