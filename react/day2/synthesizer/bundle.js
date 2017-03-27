@@ -37893,7 +37893,7 @@ var _recorder = __webpack_require__(328);
 
 var _recorder2 = _interopRequireDefault(_recorder);
 
-var _track_actions = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../../actions/track_actions.js\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+var _tracks_actions = __webpack_require__(243);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37907,10 +37907,10 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     startRecording: function startRecording() {
-      return dispatch((0, _track_actions.startRecording)());
+      return dispatch((0, _tracks_actions.startRecording)());
     },
     stopRecording: function stopRecording() {
-      return dispatch((0, _track_actions.stopRecording)());
+      return dispatch((0, _tracks_actions.stopRecording)());
     }
   };
 };

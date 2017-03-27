@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Recorder from './recorder';
-import { startRecording, stopRecording, addNotes } from '../../actions/track_actions.js';
+import { startRecording, stopRecording, addNotes } from '../../actions/tracks_actions.js';
 
 const mapStateToProps = state => ({
   tracks: state.tracks,
