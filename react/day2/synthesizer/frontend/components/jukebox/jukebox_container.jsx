@@ -15,7 +15,9 @@ const mapDispatchToProps = dispatch => ({
     let playBackStartTime = Date.now();
     let currNote = 0;
     let timeElapsed;
-    
+    let interval = (() => {
+
+    }, 1);
   }
 });
 
