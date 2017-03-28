@@ -12,7 +12,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onPlay: track => e => {
     dispatch(startPlaying());
-    let playBackStartTime = Date.now(); 
+    let playBackStartTime = Date.now();
+    let currNote = 0;
+    let timeElapsed;
+    
   }
 });
 
