@@ -12,11 +12,17 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onPlay: track => e => {
     dispatch(startPlaying());
+    let roll = track.roll;
     let playBackStartTime = Date.now();
     let currNote = 0;
     let timeElapsed;
     let interval = (() => {
+    if (currNote < roll.length){
 
+    } else {
+      clearInterval(interval);
+      dispatch(stopPlaying());
+    }
     }, 1);
   }
 });
