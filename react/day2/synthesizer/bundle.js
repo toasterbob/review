@@ -6934,6 +6934,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var KEY_PRESSED = exports.KEY_PRESSED = "KEY_PRESSED";
 var KEY_RELEASED = exports.KEY_RELEASED = "KEY_RELEASED";
+var GROUP_UPDATE = exports.GROUP_UPDATE = "GROUP_UPDATE";
 
 var keyPressed = exports.keyPressed = function keyPressed(key) {
   return {
@@ -6946,6 +6947,13 @@ var keyReleased = exports.keyReleased = function keyReleased(key) {
   return {
     type: KEY_RELEASED,
     key: key
+  };
+};
+
+var groupUpdate = exports.groupUpdate = function groupUpdate(notes) {
+  return {
+    type: GROUP_UPDATE,
+    notes: notes
   };
 };
 
