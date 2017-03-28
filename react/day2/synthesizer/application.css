@@ -3,9 +3,13 @@
   justify-content: center;
 }
 
+.play {
+  text-align: center;
+}
+
 .buttons {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .white-key {

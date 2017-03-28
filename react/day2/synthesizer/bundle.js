@@ -10642,6 +10642,10 @@ var _recorder_container = __webpack_require__(329);
 
 var _recorder_container2 = _interopRequireDefault(_recorder_container);
 
+var _jukebox_container = __webpack_require__(333);
+
+var _jukebox_container2 = _interopRequireDefault(_jukebox_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -10649,7 +10653,8 @@ var App = function App() {
     'div',
     { className: 'app' },
     _react2.default.createElement(_synth_container2.default, null),
-    _react2.default.createElement(_recorder_container2.default, null)
+    _react2.default.createElement(_recorder_container2.default, null),
+    _react2.default.createElement(_jukebox_container2.default, null)
   );
 };
 
@@ -38008,6 +38013,96 @@ var isPlayingReducer = function isPlayingReducer() {
 };
 
 exports.default = isPlayingReducer;
+
+/***/ }),
+/* 332 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(12);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Jukebox = function Jukebox(_ref) {
+  var tracks = _ref.tracks,
+      isRecording = _ref.isRecording,
+      isPlaying = _ref.isPlaying,
+      onPlay = _ref.onPlay;
+  return _react2.default.createElement(
+    "div",
+    { className: "play" },
+    "Play recordings"
+  );
+};
+
+exports.default = Jukebox;
+
+/***/ }),
+/* 333 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(86);
+
+var _playing_actions = __webpack_require__(330);
+
+var _notes_actions = __webpack_require__(57);
+
+var _jukebox = __webpack_require__(332);
+
+var _jukebox2 = _interopRequireDefault(_jukebox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    tracks: state.tracks,
+    isRecording: state.isRecording,
+    isPlaying: state.isPlaying
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    onPlay: function onPlay(track) {
+      return function (e) {
+        dispatch((0, _playing_actions.startPlaying)());
+        var roll = track.roll;
+        var playBackStartTime = Date.now();
+        var currNote = 0;
+        var timeElapsed = void 0;
+        var interval = (function () {
+          if (currNote < roll.length) {
+            timeElapsed = Date.now() - playBackStartTime;
+            if (timeElapsed >= roll[currNote].timeSlice) {
+              dispatch((0, _notes_actions.groupUpdate)(roll[currNote.notes]));
+              currNote++;
+            }
+          } else {
+            clearInterval(interval);
+            dispatch((0, _playing_actions.stopPlaying)());
+          }
+        }, 1);
+      };
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_jukebox2.default);
 
 /***/ })
 /******/ ]);
