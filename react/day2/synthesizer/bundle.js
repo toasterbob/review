@@ -38016,34 +38016,10 @@ exports.default = isPlayingReducer;
 
 /***/ }),
 /* 332 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(12);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Jukebox = function Jukebox(_ref) {
-  var tracks = _ref.tracks,
-      isRecording = _ref.isRecording,
-      isPlaying = _ref.isPlaying,
-      onPlay = _ref.onPlay;
-  return _react2.default.createElement(
-    "div",
-    { className: "play" },
-    "Play recordings"
-  );
-};
-
-exports.default = Jukebox;
+throw new Error("Module build failed: SyntaxError: Adjacent JSX elements must be wrapped in an enclosing tag (6:2)\n\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[36mconst\u001b[39m \u001b[33mJukebox\u001b[39m \u001b[33m=\u001b[39m ({tracks\u001b[33m,\u001b[39m isRecording\u001b[33m,\u001b[39m isPlaying\u001b[33m,\u001b[39m onPlay}) \u001b[33m=>\u001b[39m (\n \u001b[90m 5 | \u001b[39m  \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"play\"\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m\u001b[33mPlay\u001b[39m recordings\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mh3\u001b[39m\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 | \u001b[39m  \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"track-list\"\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m   | \u001b[39m  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 | \u001b[39m    {\u001b[33mObject\u001b[39m\u001b[33m.\u001b[39mkeys(tracks)\u001b[33m.\u001b[39mmap(id \u001b[33m=>\u001b[39m (\n \u001b[90m 8 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mTrack\u001b[39m \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 9 | \u001b[39m    ))}\u001b[0m\n");
 
 /***/ }),
 /* 333 */
