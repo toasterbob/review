@@ -38056,7 +38056,12 @@ var Jukebox = function Jukebox(_ref) {
       'div',
       { className: 'track-list' },
       Object.keys(tracks).map(function (id) {
-        return _react2.default.createElement(_track2.default, null);
+        return _react2.default.createElement(_track2.default, {
+          key: id,
+          track: tracks[id],
+          disabled: isRecording || isPlaying,
+          onPlay: onPlay(tracks[id])
+        });
       })
     )
   );
@@ -38141,16 +38146,17 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Track = function Track(_ref) {
-  var isRecording = _ref.isRecording,
-      isPlaying = _ref.isPlaying,
-      onPlay = _ref.onPlay;
+  var track = _ref.track,
+      onPlay = _ref.onPlay,
+      disabled = _ref.disabled;
   return _react2.default.createElement(
     'div',
-    null,
-    'Track \xA0 ',
+    { className: 'track', key: track.id },
+    track.name,
+    ' \xA0 ',
     _react2.default.createElement(
       'button',
-      { onClick: onPlay(track), disabled: isRecording || isPlaying },
+      { onClick: onPlay, disabled: disabled },
       'play'
     )
   );
