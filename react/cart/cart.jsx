@@ -5,4 +5,11 @@ class Cart extends React.Component {
     super(props);
     this.state = {shopCart: []};
   }
+
+  render() {
+
+    return(
+      <div></div>
+    )
+  }
 }
