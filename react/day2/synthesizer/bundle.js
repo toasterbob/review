@@ -11648,6 +11648,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         var timeElapsed = void 0;
         var interval = void 0;
         console.log(1);
+
         interval = (function () {
           console.log(1.5);
           if (currNote < roll.length) {
@@ -11668,6 +11669,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         console.log(5);
       };
     }
+
   };
 };
 

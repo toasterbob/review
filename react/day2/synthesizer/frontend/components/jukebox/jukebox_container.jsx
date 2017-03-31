@@ -18,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
     let timeElapsed;
     let interval;
     console.log(1);
+
     interval = (() => {
       console.log(1.5);
       if (currNote < roll.length){
@@ -37,6 +38,7 @@ const mapDispatchToProps = dispatch => ({
 
     console.log(5);
   }
+
 });
 
 export default connect(
