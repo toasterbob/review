@@ -11652,12 +11652,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         interval = setInterval(function () {
           console.log(1.5);
           if (currNote < roll.length) {
-            console.log(2);
+            console.log(timeElapsed);
+            console.log(roll[currNote].timeSlice);
+            console.log(timeElapsed >= roll[currNote].timeSlice);
             timeElapsed = Date.now() - playBackStartTime;
             if (timeElapsed >= roll[currNote].timeSlice) {
-              dispatch((0, _notes_actions.groupUpdate)(roll[currNote.notes]));
-              currNote++;
               console.log(3);
+              dispatch((0, _notes_actions.groupUpdate)(roll[currNote].notes));
+              currNote++;
             }
           } else {
             console.log(4);
