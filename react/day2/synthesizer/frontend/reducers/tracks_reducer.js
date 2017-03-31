@@ -29,7 +29,7 @@ const tracksReducer = (state = [], action) => {
       return merge({}, state, {
         [currTrackId]: {
           roll: [
-            ...state.roll,
+            ...state[currTrackId].roll,
             { notes: action.notes, timeSlice: action.timeNow - state.timeStart }
           ]
 
