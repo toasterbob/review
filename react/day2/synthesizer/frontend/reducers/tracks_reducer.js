@@ -21,7 +21,7 @@ const tracksReducer = (state = [], action) => {
         [currTrackId]: {
           roll: [
             ...state[currTrackId].roll,
-            { notes: [], timeSlice: action.timeNow - state.timeStart }
+            { notes: [], timeSlice: action.timeNow - state[currTrackId].timeStart }
           ]
         }
       });
@@ -30,7 +30,7 @@ const tracksReducer = (state = [], action) => {
         [currTrackId]: {
           roll: [
             ...state[currTrackId].roll,
-            { notes: action.notes, timeSlice: action.timeNow - state.timeStart }
+            { notes: action.notes, timeSlice: action.timeNow - state[currTrackId].timeStart }
           ]
 
         }

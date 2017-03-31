@@ -12244,11 +12244,11 @@ var tracksReducer = function tracksReducer() {
       }));
     case _tracks_actions.STOP_RECORDING:
       return (0, _merge5.default)({}, state, _defineProperty({}, currTrackId, {
-        roll: [].concat(_toConsumableArray(state[currTrackId].roll), [{ notes: [], timeSlice: action.timeNow - state.timeStart }])
+        roll: [].concat(_toConsumableArray(state[currTrackId].roll), [{ notes: [], timeSlice: action.timeNow - state[currTrackId].timeStart }])
       }));
     case _tracks_actions.ADD_NOTES:
       return (0, _merge5.default)({}, state, _defineProperty({}, currTrackId, {
-        roll: [].concat(_toConsumableArray(state[currTrackId].roll), [{ notes: action.notes, timeSlice: action.timeNow - state.timeStart }])
+        roll: [].concat(_toConsumableArray(state[currTrackId].roll), [{ notes: action.notes, timeSlice: action.timeNow - state[currTrackId].timeStart }])
 
       }));
     default:
