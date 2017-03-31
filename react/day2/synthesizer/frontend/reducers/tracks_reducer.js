@@ -9,12 +9,12 @@ const tracksReducer = (state = [], action) => {
   switch(action.type){
     case START_RECORDING:
       currTrackId++;
-      return merge({}, state, {
+      return {
         id: currTrackId,
         name: `Track ${currTrackId}`,
         roll: [],
         timeStart: action.timeNow
-      });
+      };
     case STOP_RECORDING:
       return merge({}, state, {
         roll: [
