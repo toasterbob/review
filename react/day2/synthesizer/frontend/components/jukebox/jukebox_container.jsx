@@ -19,15 +19,15 @@ const mapDispatchToProps = dispatch => ({
     let interval;
     console.log(1);
 
-    interval = (() => {
+    interval = setInterval(() => {
       console.log(1.5);
       if (currNote < roll.length){
-        timeElapsed = Date.now() - playBackStartTime;
         console.log(2);
+        timeElapsed = Date.now() - playBackStartTime;
         if (timeElapsed >= roll[currNote].timeSlice) {
-          console.log(3);
           dispatch(groupUpdate(roll[currNote.notes]));
           currNote++;
+          console.log(3);
         }
       } else {
         console.log(4);
