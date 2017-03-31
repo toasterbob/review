@@ -12206,13 +12206,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _tracks_actions = __webpack_require__(29);
 
-var _merge = __webpack_require__(234);
+var _merge4 = __webpack_require__(234);
 
-var _merge2 = _interopRequireDefault(_merge);
+var _merge5 = _interopRequireDefault(_merge4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var currTrackId = 0;
 
@@ -12224,20 +12226,21 @@ var tracksReducer = function tracksReducer() {
   switch (action.type) {
     case _tracks_actions.START_RECORDING:
       currTrackId++;
-      return {
+      return (0, _merge5.default)({}, state, _defineProperty({}, currTrackId, {
         id: currTrackId,
         name: 'Track ' + currTrackId,
         roll: [],
         timeStart: action.timeNow
-      };
+      }));
     case _tracks_actions.STOP_RECORDING:
-      return (0, _merge2.default)({}, state, {
-        roll: [].concat(_toConsumableArray(state.roll), [{ notes: [], timeSlice: action.timeNow - state.timeStart }])
-      });
+      return (0, _merge5.default)({}, state, _defineProperty({}, currTrackId, {
+        roll: [].concat(_toConsumableArray(state[currTrackId].roll), [{ notes: [], timeSlice: action.timeNow - state.timeStart }])
+      }));
     case _tracks_actions.ADD_NOTES:
-      return (0, _merge2.default)({}, state, {
+      return (0, _merge5.default)({}, state, _defineProperty({}, currTrackId, {
         roll: [].concat(_toConsumableArray(state.roll), [{ notes: action.notes, timeSlice: action.timeNow - state.timeStart }])
-      });
+
+      }));
     default:
       return state;
   }

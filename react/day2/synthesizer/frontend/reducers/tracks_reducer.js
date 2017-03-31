@@ -3,31 +3,37 @@ import merge from 'lodash/merge';
 
 let currTrackId = 0;
 
-
 const tracksReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type){
     case START_RECORDING:
       currTrackId++;
-      return {
+      return merge({}, state, {
+      [currTrackId]: {
         id: currTrackId,
         name: `Track ${currTrackId}`,
         roll: [],
         timeStart: action.timeNow
-      };
+      }
+      });
     case STOP_RECORDING:
       return merge({}, state, {
-        roll: [
-          ...state.roll,
-          { notes: [], timeSlice: action.timeNow - state.timeStart }
-        ]
+        [currTrackId]: {
+          roll: [
+            ...state[currTrackId].roll,
+            { notes: [], timeSlice: action.timeNow - state.timeStart }
+          ]
+        }
       });
     case ADD_NOTES:
       return merge({}, state, {
-        roll: [
-          ...state.roll,
-          { notes: action.notes, timeSlice: action.timeNow - state.timeStart }
-        ]
+        [currTrackId]: {
+          roll: [
+            ...state.roll,
+            { notes: action.notes, timeSlice: action.timeNow - state.timeStart }
+          ]
+
+        }
       });
     default:
       return state;
