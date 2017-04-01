@@ -11584,7 +11584,8 @@ var Jukebox = function Jukebox(_ref) {
   var tracks = _ref.tracks,
       isRecording = _ref.isRecording,
       isPlaying = _ref.isPlaying,
-      onPlay = _ref.onPlay;
+      onPlay = _ref.onPlay,
+      onDelete = _ref.onDelete;
   return _react2.default.createElement(
     'div',
     null,
@@ -11605,7 +11606,8 @@ var Jukebox = function Jukebox(_ref) {
           key: id,
           track: tracks[id],
           disabled: isRecording || isPlaying,
-          onPlay: onPlay(tracks[id])
+          onPlay: onPlay(tracks[id]),
+          onDelete: onDelete(tracks[id])
         });
       })
     )
@@ -11649,6 +11651,11 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
+    onDelete: function onDelete(track) {
+      return function (e) {
+        return dispatch((0, _tracks_actions.deleteTrack)(track));
+      };
+    },
     onPlay: function onPlay(track) {
       return function (e) {
         dispatch((0, _playing_actions.startPlaying)());
@@ -11698,7 +11705,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Track = function Track(_ref) {
   var track = _ref.track,
       onPlay = _ref.onPlay,
-      disabled = _ref.disabled;
+      disabled = _ref.disabled,
+      onDelete = _ref.onDelete;
   return _react2.default.createElement(
     'div',
     { className: 'track', key: track.id },
@@ -11712,7 +11720,7 @@ var Track = function Track(_ref) {
     '\xA0 ',
     _react2.default.createElement(
       'button',
-      { onClick: onPlay },
+      { onClick: onDelete },
       'delete'
     )
   );

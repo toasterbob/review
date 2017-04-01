@@ -11,6 +11,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  onDelete: track => e => dispatch(deleteTrack(track)),
   onPlay: track => e => {
     dispatch(startPlaying());
     let roll = track.roll;
