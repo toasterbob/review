@@ -12007,12 +12007,12 @@ var Synth = function (_React$Component) {
       var notes = _tones.NOTE_NAMES.map(function (note, idx) {
         return _tones.BLACKS.includes(note) ? _react2.default.createElement(
           'div',
-          null,
-          _react2.default.createElement(_black_key2.default, { key: idx, idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
+          { key: idx },
+          _react2.default.createElement(_black_key2.default, { idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
         ) : _react2.default.createElement(
           'div',
-          null,
-          _react2.default.createElement(_note_key2.default, { key: idx, idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
+          { key: idx },
+          _react2.default.createElement(_note_key2.default, { idx: idx, note: note, pressed: _this4.props.notes.includes(note) })
         );
       });
       return _react2.default.createElement(

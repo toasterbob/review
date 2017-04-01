@@ -49,8 +49,8 @@ class Synth extends React.Component {
     window.notes = this.notes;
     let notes = NOTE_NAMES.map((note, idx) => (
       BLACKS.includes(note) ?
-      <div><BlackKey key={idx} idx={idx} note={note} pressed={this.props.notes.includes(note)}/></div> :
-      <div><NoteKey key={idx} idx={idx} note={note} pressed={this.props.notes.includes(note)}/></div>
+      <div key={idx}><BlackKey idx={idx} note={note} pressed={this.props.notes.includes(note)}/></div> :
+      <div key={idx}><NoteKey idx={idx} note={note} pressed={this.props.notes.includes(note)}/></div>
     )
     );
     return(
