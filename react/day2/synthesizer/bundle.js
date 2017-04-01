@@ -11724,7 +11724,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Recorder = function Recorder(_ref) {
   var startRecording = _ref.startRecording,
       stopRecording = _ref.stopRecording,
-      isRecording = _ref.isRecording;
+      isRecording = _ref.isRecording,
+      isPlaying = _ref.isPlaying;
   return _react2.default.createElement(
     "div",
     { className: "recorder" },
@@ -11742,7 +11743,7 @@ var Recorder = function Recorder(_ref) {
         null,
         _react2.default.createElement(
           "button",
-          { onClick: startRecording, disabled: isRecording },
+          { onClick: startRecording, disabled: isRecording || isPlaying },
           "start"
         )
       ),
@@ -11785,7 +11786,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return {
     tracks: state.tracks,
-    isRecording: state.isRecording
+    isRecording: state.isRecording,
+    isPlaying: state.isPlaying
   };
 };
 
