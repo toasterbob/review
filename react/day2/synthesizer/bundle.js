@@ -11607,7 +11607,7 @@ var Jukebox = function Jukebox(_ref) {
           track: tracks[id],
           disabled: isRecording || isPlaying,
           onPlay: onPlay(tracks[id]),
-          onDelete: onDelete(tracks[id])
+          onDelete: onDelete(id)
         });
       })
     )
