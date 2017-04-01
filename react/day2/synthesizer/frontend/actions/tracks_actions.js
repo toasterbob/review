@@ -1,6 +1,7 @@
 export const START_RECORDING = "START_RECORDING";
 export const STOP_RECORDING = "STOP_RECORDING";
 export const ADD_NOTES = "ADD_NOTES";
+export const DELETE_TRACK = "DELETE_TRACK";
 
 export const startRecording = () => ({
   type: START_RECORDING,
@@ -17,3 +18,8 @@ export const addNotes = (notes) => ({
   timeNow: Date.now(),
   notes
 });
+
+export const deleteTrack = (track) => ({
+  type: DELETE_TRACK,
+  track
+})

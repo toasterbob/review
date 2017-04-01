@@ -3545,6 +3545,7 @@ Object.defineProperty(exports, "__esModule", {
 var START_RECORDING = exports.START_RECORDING = "START_RECORDING";
 var STOP_RECORDING = exports.STOP_RECORDING = "STOP_RECORDING";
 var ADD_NOTES = exports.ADD_NOTES = "ADD_NOTES";
+var DELETE_TRACK = exports.DELETE_TRACK = "DELETE_TRACK";
 
 var startRecording = exports.startRecording = function startRecording() {
   return {
@@ -3565,6 +3566,13 @@ var addNotes = exports.addNotes = function addNotes(notes) {
     type: ADD_NOTES,
     timeNow: Date.now(),
     notes: notes
+  };
+};
+
+var deleteTrack = exports.deleteTrack = function deleteTrack(track) {
+  return {
+    type: DELETE_TRACK,
+    track: track
   };
 };
 
@@ -11698,6 +11706,12 @@ var Track = function Track(_ref) {
       'button',
       { onClick: onPlay, disabled: disabled },
       'play'
+    ),
+    '\xA0 ',
+    _react2.default.createElement(
+      'button',
+      { onClick: onPlay },
+      'delete'
     )
   );
 };
