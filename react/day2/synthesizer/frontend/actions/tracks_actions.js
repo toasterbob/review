@@ -22,4 +22,4 @@ export const addNotes = (notes) => ({
 export const deleteTrack = (track) => ({
   type: DELETE_TRACK,
   track
-})
+});

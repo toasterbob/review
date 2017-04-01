@@ -11631,6 +11631,8 @@ var _playing_actions = __webpack_require__(75);
 
 var _notes_actions = __webpack_require__(44);
 
+var _tracks_actions = __webpack_require__(29);
+
 var _jukebox = __webpack_require__(131);
 
 var _jukebox2 = _interopRequireDefault(_jukebox);
@@ -12258,8 +12260,11 @@ var tracksReducer = function tracksReducer() {
     case _tracks_actions.ADD_NOTES:
       return (0, _merge5.default)({}, state, _defineProperty({}, currTrackId, {
         roll: [].concat(_toConsumableArray(state[currTrackId].roll), [{ notes: action.notes, timeSlice: action.timeNow - state[currTrackId].timeStart }])
-
       }));
+    case _tracks_actions.DELETE_TRACK:
+      var newState = (0, _merge5.default)({}, state);
+      delete newState[action.track];
+      return newState;
     default:
       return state;
   }

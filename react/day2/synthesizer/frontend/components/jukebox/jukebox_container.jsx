@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { startPlaying, stopPlaying} from '../../actions/playing_actions';
 import { groupUpdate } from '../../actions/notes_actions';
+import { deleteTrack } from '../../actions/tracks_actions';
 import Jukebox from './jukebox';
 
 const mapStateToProps = state => ({
@@ -17,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
     let currNote = 0;
     let timeElapsed;
     let interval;
-    
+
 
     interval = setInterval(() => {
       if (currNote < roll.length){
