@@ -17,6 +17,7 @@ const mapDispatchToProps = dispatch => ({
     let currNote = 0;
     let timeElapsed;
     let interval;
+    
 
     interval = setInterval(() => {
       if (currNote < roll.length){
