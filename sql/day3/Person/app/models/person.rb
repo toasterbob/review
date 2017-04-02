@@ -1,4 +1,3 @@
-class Person < ActiveRecord::Base
+class People < ActiveRecord::Base
   validates :name, presence: true
-  validates :house_id, presence: true
 end
