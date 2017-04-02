@@ -5,7 +5,7 @@ const preloadedState = {
   notes: [],
   isRecording: false,
   tracks: {}
-};
+}; 
 
 
 const configureStore = (state = preloadedState) => (
