@@ -2935,6 +2935,50 @@ module.exports = React;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var START_RECORDING = exports.START_RECORDING = "START_RECORDING";
+var STOP_RECORDING = exports.STOP_RECORDING = "STOP_RECORDING";
+var ADD_NOTES = exports.ADD_NOTES = "ADD_NOTES";
+var DELETE_TRACK = exports.DELETE_TRACK = "DELETE_TRACK";
+
+var startRecording = exports.startRecording = function startRecording() {
+  return {
+    type: START_RECORDING,
+    timeNow: Date.now()
+  };
+};
+
+var stopRecording = exports.stopRecording = function stopRecording() {
+  return {
+    type: STOP_RECORDING,
+    timeNow: Date.now()
+  };
+};
+
+var addNotes = exports.addNotes = function addNotes(notes) {
+  return {
+    type: ADD_NOTES,
+    timeNow: Date.now(),
+    notes: notes
+  };
+};
+
+var deleteTrack = exports.deleteTrack = function deleteTrack(track) {
+  return {
+    type: DELETE_TRACK,
+    track: track
+  };
+};
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -2957,7 +3001,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports) {
 
 /**
@@ -2992,7 +3036,7 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3276,7 +3320,7 @@ module.exports = EventPluginHub;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3292,7 +3336,7 @@ module.exports = EventPluginHub;
 
 
 
-var EventPluginHub = __webpack_require__(25);
+var EventPluginHub = __webpack_require__(26);
 var EventPluginUtils = __webpack_require__(53);
 
 var accumulateInto = __webpack_require__(109);
@@ -3416,7 +3460,7 @@ module.exports = EventPropagators;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3469,7 +3513,7 @@ var ReactInstanceMap = {
 module.exports = ReactInstanceMap;
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3531,50 +3575,6 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var START_RECORDING = exports.START_RECORDING = "START_RECORDING";
-var STOP_RECORDING = exports.STOP_RECORDING = "STOP_RECORDING";
-var ADD_NOTES = exports.ADD_NOTES = "ADD_NOTES";
-var DELETE_TRACK = exports.DELETE_TRACK = "DELETE_TRACK";
-
-var startRecording = exports.startRecording = function startRecording() {
-  return {
-    type: START_RECORDING,
-    timeNow: Date.now()
-  };
-};
-
-var stopRecording = exports.stopRecording = function stopRecording() {
-  return {
-    type: STOP_RECORDING,
-    timeNow: Date.now()
-  };
-};
-
-var addNotes = exports.addNotes = function addNotes(notes) {
-  return {
-    type: ADD_NOTES,
-    timeNow: Date.now(),
-    notes: notes
-  };
-};
-
-var deleteTrack = exports.deleteTrack = function deleteTrack(track) {
-  return {
-    type: DELETE_TRACK,
-    track: track
-  };
-};
 
 /***/ }),
 /* 30 */
@@ -4365,7 +4365,7 @@ module.exports = ReactBrowserEventEmitter;
 
 
 
-var SyntheticUIEvent = __webpack_require__(28);
+var SyntheticUIEvent = __webpack_require__(29);
 var ViewportMetrics = __webpack_require__(108);
 
 var getEventModifierState = __webpack_require__(61);
@@ -6097,7 +6097,7 @@ module.exports = ReactErrorUtils;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(12);
-var ReactInstanceMap = __webpack_require__(27);
+var ReactInstanceMap = __webpack_require__(28);
 var ReactInstrumentation = __webpack_require__(9);
 var ReactUpdates = __webpack_require__(11);
 
@@ -7039,7 +7039,7 @@ var _prodInvariant = __webpack_require__(18);
 var ReactNoopUpdateQueue = __webpack_require__(68);
 
 var canDefineProperty = __webpack_require__(70);
-var emptyObject = __webpack_require__(23);
+var emptyObject = __webpack_require__(24);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
 
@@ -7933,7 +7933,7 @@ module.exports = identity;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsArguments = __webpack_require__(179),
-    isObjectLike = __webpack_require__(24);
+    isObjectLike = __webpack_require__(25);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -9202,14 +9202,14 @@ var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDOMContainerInfo = __webpack_require__(252);
 var ReactDOMFeatureFlags = __webpack_require__(254);
 var ReactFeatureFlags = __webpack_require__(102);
-var ReactInstanceMap = __webpack_require__(27);
+var ReactInstanceMap = __webpack_require__(28);
 var ReactInstrumentation = __webpack_require__(9);
 var ReactMarkupChecksum = __webpack_require__(274);
 var ReactReconciler = __webpack_require__(21);
 var ReactUpdateQueue = __webpack_require__(58);
 var ReactUpdates = __webpack_require__(11);
 
-var emptyObject = __webpack_require__(23);
+var emptyObject = __webpack_require__(24);
 var instantiateReactComponent = __webpack_require__(113);
 var invariant = __webpack_require__(1);
 var setInnerHTML = __webpack_require__(41);
@@ -11633,7 +11633,7 @@ var _playing_actions = __webpack_require__(75);
 
 var _notes_actions = __webpack_require__(44);
 
-var _tracks_actions = __webpack_require__(29);
+var _tracks_actions = __webpack_require__(23);
 
 var _jukebox = __webpack_require__(131);
 
@@ -11803,7 +11803,7 @@ var _recorder = __webpack_require__(134);
 
 var _recorder2 = _interopRequireDefault(_recorder);
 
-var _tracks_actions = __webpack_require__(29);
+var _tracks_actions = __webpack_require__(23);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12047,7 +12047,7 @@ var _synth2 = _interopRequireDefault(_synth);
 
 var _notes_actions = __webpack_require__(44);
 
-var _tracks_actions = __webpack_require__(29);
+var _tracks_actions = __webpack_require__(23);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12115,7 +12115,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _tracks_actions = __webpack_require__(29);
+var _tracks_actions = __webpack_require__(23);
 
 var isRecordingReducer = function isRecordingReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
@@ -12233,7 +12233,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _tracks_actions = __webpack_require__(29);
+var _tracks_actions = __webpack_require__(23);
 
 var _merge4 = __webpack_require__(234);
 
@@ -23917,7 +23917,7 @@ module.exports = baseFor;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(32),
-    isObjectLike = __webpack_require__(24);
+    isObjectLike = __webpack_require__(25);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]';
@@ -23995,7 +23995,7 @@ module.exports = baseIsNative;
 
 var baseGetTag = __webpack_require__(32),
     isLength = __webpack_require__(93),
-    isObjectLike = __webpack_require__(24);
+    isObjectLike = __webpack_require__(25);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -25562,7 +25562,7 @@ module.exports = constant;
 /***/ (function(module, exports, __webpack_require__) {
 
 var isArrayLike = __webpack_require__(49),
-    isObjectLike = __webpack_require__(24);
+    isObjectLike = __webpack_require__(25);
 
 /**
  * This method is like `_.isArrayLike` except that it also checks if `value`
@@ -25602,7 +25602,7 @@ module.exports = isArrayLikeObject;
 
 var baseGetTag = __webpack_require__(32),
     getPrototype = __webpack_require__(86),
-    isObjectLike = __webpack_require__(24);
+    isObjectLike = __webpack_require__(25);
 
 /** `Object#toString` result references. */
 var objectTag = '[object Object]';
@@ -25896,7 +25896,7 @@ module.exports = AutoFocusUtils;
 
 
 
-var EventPropagators = __webpack_require__(26);
+var EventPropagators = __webpack_require__(27);
 var ExecutionEnvironment = __webpack_require__(6);
 var FallbackCompositionState = __webpack_require__(245);
 var SyntheticCompositionEvent = __webpack_require__(288);
@@ -26501,8 +26501,8 @@ module.exports = CSSPropertyOperations;
 
 
 
-var EventPluginHub = __webpack_require__(25);
-var EventPropagators = __webpack_require__(26);
+var EventPluginHub = __webpack_require__(26);
+var EventPropagators = __webpack_require__(27);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
@@ -26912,7 +26912,7 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(26);
+var EventPropagators = __webpack_require__(27);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticMouseEvent = __webpack_require__(38);
 
@@ -27536,7 +27536,7 @@ var React = __webpack_require__(22);
 var ReactComponentEnvironment = __webpack_require__(56);
 var ReactCurrentOwner = __webpack_require__(12);
 var ReactErrorUtils = __webpack_require__(57);
-var ReactInstanceMap = __webpack_require__(27);
+var ReactInstanceMap = __webpack_require__(28);
 var ReactInstrumentation = __webpack_require__(9);
 var ReactNodeTypes = __webpack_require__(106);
 var ReactReconciler = __webpack_require__(21);
@@ -27545,7 +27545,7 @@ if (process.env.NODE_ENV !== 'production') {
   var checkReactTypeSpec = __webpack_require__(297);
 }
 
-var emptyObject = __webpack_require__(23);
+var emptyObject = __webpack_require__(24);
 var invariant = __webpack_require__(1);
 var shallowEqual = __webpack_require__(45);
 var shouldUpdateReactComponent = __webpack_require__(64);
@@ -28565,7 +28565,7 @@ var DOMLazyTree = __webpack_require__(20);
 var DOMNamespaces = __webpack_require__(52);
 var DOMProperty = __webpack_require__(14);
 var DOMPropertyOperations = __webpack_require__(98);
-var EventPluginHub = __webpack_require__(25);
+var EventPluginHub = __webpack_require__(26);
 var EventPluginRegistry = __webpack_require__(36);
 var ReactBrowserEventEmitter = __webpack_require__(37);
 var ReactDOMComponentFlags = __webpack_require__(99);
@@ -31658,7 +31658,7 @@ module.exports = REACT_ELEMENT_TYPE;
 
 
 
-var EventPluginHub = __webpack_require__(25);
+var EventPluginHub = __webpack_require__(26);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -31896,7 +31896,7 @@ module.exports = ReactHostOperationHistoryHook;
 
 
 var DOMProperty = __webpack_require__(14);
-var EventPluginHub = __webpack_require__(25);
+var EventPluginHub = __webpack_require__(26);
 var EventPluginUtils = __webpack_require__(53);
 var ReactComponentEnvironment = __webpack_require__(56);
 var ReactEmptyComponent = __webpack_require__(101);
@@ -32035,7 +32035,7 @@ module.exports = ReactMarkupChecksum;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactComponentEnvironment = __webpack_require__(56);
-var ReactInstanceMap = __webpack_require__(27);
+var ReactInstanceMap = __webpack_require__(28);
 var ReactInstrumentation = __webpack_require__(9);
 
 var ReactCurrentOwner = __webpack_require__(12);
@@ -33464,7 +33464,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(26);
+var EventPropagators = __webpack_require__(27);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInputSelection = __webpack_require__(104);
@@ -33664,7 +33664,7 @@ module.exports = SelectEventPlugin;
 var _prodInvariant = __webpack_require__(3);
 
 var EventListener = __webpack_require__(77);
-var EventPropagators = __webpack_require__(26);
+var EventPropagators = __webpack_require__(27);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticAnimationEvent = __webpack_require__(286);
 var SyntheticClipboardEvent = __webpack_require__(287);
@@ -33675,7 +33675,7 @@ var SyntheticMouseEvent = __webpack_require__(38);
 var SyntheticDragEvent = __webpack_require__(289);
 var SyntheticTouchEvent = __webpack_require__(293);
 var SyntheticTransitionEvent = __webpack_require__(294);
-var SyntheticUIEvent = __webpack_require__(28);
+var SyntheticUIEvent = __webpack_require__(29);
 var SyntheticWheelEvent = __webpack_require__(295);
 
 var emptyFunction = __webpack_require__(10);
@@ -34063,7 +34063,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(28);
+var SyntheticUIEvent = __webpack_require__(29);
 
 /**
  * @interface FocusEvent
@@ -34146,7 +34146,7 @@ module.exports = SyntheticInputEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(28);
+var SyntheticUIEvent = __webpack_require__(29);
 
 var getEventCharCode = __webpack_require__(60);
 var getEventKey = __webpack_require__(301);
@@ -34235,7 +34235,7 @@ module.exports = SyntheticKeyboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(28);
+var SyntheticUIEvent = __webpack_require__(29);
 
 var getEventModifierState = __webpack_require__(61);
 
@@ -34619,7 +34619,7 @@ var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(12);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactInstanceMap = __webpack_require__(27);
+var ReactInstanceMap = __webpack_require__(28);
 
 var getHostComponentFromComposite = __webpack_require__(111);
 var invariant = __webpack_require__(1);
@@ -36141,7 +36141,7 @@ var ReactElement = __webpack_require__(17);
 var ReactPropTypeLocationNames = __webpack_require__(69);
 var ReactNoopUpdateQueue = __webpack_require__(68);
 
-var emptyObject = __webpack_require__(23);
+var emptyObject = __webpack_require__(24);
 var invariant = __webpack_require__(1);
 var warning = __webpack_require__(2);
 
@@ -37477,7 +37477,7 @@ var _assign = __webpack_require__(4);
 var ReactComponent = __webpack_require__(67);
 var ReactNoopUpdateQueue = __webpack_require__(68);
 
-var emptyObject = __webpack_require__(23);
+var emptyObject = __webpack_require__(24);
 
 /**
  * Base class helpers for the updating state of a component.
