@@ -53,6 +53,7 @@ def below_average_years
     .where("score < 5")
     .group(:yr)
     .order("bad_movies DESC")
+
 end
 
 def alphabetized_actors
