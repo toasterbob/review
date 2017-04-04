@@ -5,4 +5,6 @@ class Track < ActiveRecord::Base
     foreign_key: :album_id,
     primary_key: :id
   )
+
+  
 end
