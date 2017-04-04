@@ -59,7 +59,10 @@ def directed_by_one_of(them)
   # We can use IN to test if an element is present in an array.
   #
   # Find the id and title of all the movies directed by one of 'them'.
-
+  Movie
+    .select(:id, :title)
+    .joins(:director)
+    .where("actors.name IN (?)", them)
 end
 
 def movie_names_before_1940
