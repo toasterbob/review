@@ -1,4 +1,4 @@
-exitclass Actor < ActiveRecord::Base
+class Actor < ActiveRecord::Base
 
   has_many :castings,
     class_name: "Casting",
