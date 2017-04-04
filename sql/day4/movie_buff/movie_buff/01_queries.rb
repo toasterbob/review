@@ -24,7 +24,9 @@ def harrison_ford
   Movie
     .select(:id, :title)
     .joins(:actors)
-    .where('actors.name = "Harrison Ford"')
+    .where(actors: { name: 'Harrison Ford' })
+    .where.not("castings.ord = 1")
+    # .where.not(castings: { ord: 1 })
 end
 
 def biggest_cast
