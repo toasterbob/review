@@ -25,7 +25,7 @@ def harrison_ford
     .select(:id, :title)
     .joins(:actors)
     .where(actors: { name: 'Harrison Ford' })
-    .where.not("castings.ord = 1")
+    .where.not("castings.ord = 1") 
     # .where.not(castings: { ord: 1 })
 end
 
