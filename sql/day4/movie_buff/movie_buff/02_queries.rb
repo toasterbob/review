@@ -44,6 +44,6 @@ def most_supportive
     .joins(:castings)
     .where("castings.ord > 1")
     .group("actors.id")
-    .sort("roles DESC")
+    .order("roles DESC")
     .limit(2)
 end
