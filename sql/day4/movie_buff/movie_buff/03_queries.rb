@@ -29,7 +29,8 @@ def costars(name)
   .joins(:movies)
   .where.not(actors: { name: name })
   .where(movies: { id: subquery })
-
+  .distinct
+  .plucd(:name )
 end
 
 def actor_out_of_work
