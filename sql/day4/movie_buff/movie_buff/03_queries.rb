@@ -25,7 +25,8 @@ def costars(name)
   # Hint: use a subquery
   subquery = Movie
               .select(:id)
-              .where(name: name)
+              .join(:actors)
+              .where(actors: {name: name})
 
   Actor
   .joins(:movies)
