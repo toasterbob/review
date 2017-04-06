@@ -16,7 +16,7 @@ def golden_age
     .group("decade")
     .order("AVG(score) DESC")
     .first
-    .decade
+    .decade 
 
 end
 
