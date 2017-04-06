@@ -28,6 +28,7 @@ def costars(name)
   Actor
   .joins(:movies)
   .where.not(actors: { name: name })
+  .where(movies: { id: subquery })
 
 end
 
