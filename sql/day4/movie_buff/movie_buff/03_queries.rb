@@ -11,7 +11,7 @@ end
 
 def golden_age
   # Find the decade with the highest average movie score.
-   
+   Move.select("AVG(score)")
 end
 
 def costars(name)
