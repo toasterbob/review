@@ -31,7 +31,7 @@ def costars(name)
   .where.not(actors: { name: name })
   .where(movies: { id: subquery })
   .distinct
-  .pluck(:name )
+  .pluck(:name)
 end
 
 def actor_out_of_work
