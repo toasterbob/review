@@ -25,6 +25,7 @@ def costars(name)
   # Hint: use a subquery
   subquery = Movie
               .select(:id)
+              .where(name: name)
 
   Actor
   .joins(:movies)
@@ -32,7 +33,7 @@ def costars(name)
   .where(movies: { id: subquery })
   .distinct
   .pluck(:name)
-end  
+end
 
 def actor_out_of_work
   # Find the number of actors in the database who have not appeared in a movie
