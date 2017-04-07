@@ -42,7 +42,7 @@ def actor_out_of_work
     .select(:name)
     .joins(:castings)
     .where(castings: { movie_id: nil })
-    .count
+    .count 
 
 end
 
