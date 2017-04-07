@@ -39,7 +39,9 @@ end
 def actor_out_of_work
   # Find the number of actors in the database who have not appeared in a movie
   Actor
-    select("COUNT(actors.name) AS actor_out_of_work")
+    .select("COUNT(actors.name) AS actor_out_of_work")
+    .joins(:castings)
+
 end
 
 def starring(whazzername)
