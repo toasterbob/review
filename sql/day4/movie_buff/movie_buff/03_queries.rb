@@ -41,6 +41,7 @@ def actor_out_of_work
   Actor
     .select("COUNT(actors.name) AS actor_out_of_work")
     .joins(:castings)
+    .actor_out_of_work
 
 end
 
