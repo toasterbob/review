@@ -57,6 +57,7 @@ def starring(whazzername)
   .joins(:actors)
   .where("UPPER(actors.name) LIKE UPPER(?)", matcher)
 
+# Actor.where("name ilike ?", matcher).first.movies
 end
 
 def longest_career
