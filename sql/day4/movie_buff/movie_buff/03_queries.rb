@@ -54,8 +54,8 @@ def starring(whazzername)
   # ex. "Sylvester Stallone" is like "sylvester" and "lester stone" but not like "stallone sylvester" or "zylvester ztallone"
   matcher = "%#{whazzername.split(//).join("%")}%"
   Movie
-  .select(:title)
   .joins(:actors)
+  .where("UPPER(actors.name) LIKE UPPER(?)", matcher)
 
 end
 
