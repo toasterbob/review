@@ -42,7 +42,7 @@ def actor_out_of_work
     .select(:name)
     .joins("LEFT OUTER JOIN castings on castings.actor_id = actors.id")
     .where(castings: { movie_id: nil })
-    .count 
+    .count
 
 end
 
@@ -52,7 +52,9 @@ def starring(whazzername)
   # ignoring case, in order.
 
   # ex. "Sylvester Stallone" is like "sylvester" and "lester stone" but not like "stallone sylvester" or "zylvester ztallone"
-
+  .select(:title)
+  .joins(:actors)
+  
 end
 
 def longest_career
