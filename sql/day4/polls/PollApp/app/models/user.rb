@@ -8,6 +8,8 @@ class User
   has_many :responses,
   primary_key: :id,
   foreign_key: :user_id,
-  class_name: Response  
+  class_name: Response
+
+  
 
 end
