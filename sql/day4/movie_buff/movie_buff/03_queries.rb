@@ -68,6 +68,6 @@ def longest_career
     .select(:id, :name, "MAX(movies.yr) - MIN(movies.yr) AS career")
     .joins(:movies)
     .group(:id)
-    .order("career DESC")
+    .order("career DESC, name")
     .limit(3)
 end
