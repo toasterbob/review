@@ -52,9 +52,11 @@ def starring(whazzername)
   # ignoring case, in order.
 
   # ex. "Sylvester Stallone" is like "sylvester" and "lester stone" but not like "stallone sylvester" or "zylvester ztallone"
+  matcher = "%#{whazzername.split(//).join("%")}%"
+  Movie
   .select(:title)
   .joins(:actors)
-  
+
 end
 
 def longest_career
