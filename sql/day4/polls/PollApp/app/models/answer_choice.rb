@@ -4,8 +4,8 @@ class AnswerChoice
   foreign_key: :question_id,
   class_name: :Question
 
-  has_many :response,
+  has_many :responses,
   primary_key: :id,
   foreign_key: :answer,
-  class_name: :Response 
+  class_name: :Response
 end
