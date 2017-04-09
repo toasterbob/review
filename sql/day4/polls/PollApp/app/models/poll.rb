@@ -7,6 +7,6 @@ class Poll
 
   has_many :questions,
   primary_key: :id,
-  foreign_key: :question_id,
-  class_name: :Poll 
+  foreign_key: :poll_id,
+  class_name: :Poll
 end
