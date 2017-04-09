@@ -1,4 +1,4 @@
-class User
+class User < ActiveRecord::Base
 
   has_many :authored_polls,
   primary_key: :id,

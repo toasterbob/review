@@ -1,4 +1,4 @@
-class AnswerChoice
+class AnswerChoice < ActiveRecord::Base
   belongs_to :question,
   primary_key: :id,
   foreign_key: :question_id,

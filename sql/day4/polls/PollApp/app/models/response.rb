@@ -1,4 +1,4 @@
-class Response
+class Response < ActiveRecord::Base
   has_many :answer_choices,
   primary_key: :id,
   foreign_key: :answer,
@@ -7,5 +7,5 @@ class Response
   belongs_to :respondent,
   primary_key: :id,
   foreign_key: :user_id,
-  class_name: :User 
+  class_name: :User
 end

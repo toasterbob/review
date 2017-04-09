@@ -1,4 +1,4 @@
-class Question
+class Question < ActiveRecord::Base
   has_many :answer_choices,
   primary_key: :id,
   foreign_key: :question_id,
@@ -7,5 +7,5 @@ class Question
   belongs_to :poll,
   primary_key: :id,
   foreign_key: :poll_id,
-  class_name: :Poll 
+  class_name: :Poll
 end
