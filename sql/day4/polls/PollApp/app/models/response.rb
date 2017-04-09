@@ -3,4 +3,8 @@ class Response
   primary_key: :id,
   foreign_key: :answer,
   class_name: :Response
+
+  belongs_to :respondent,
+  primary_key: :id,
+  
 end
