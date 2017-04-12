@@ -10,7 +10,7 @@ ActiveRecord::Base.transaction do
   u2 = User.create!(user_name: "Julia Childs")
 
   p1 = Poll.create!(title: "Pony Boy Eats a Ship", author_id: u1.id)
- 
+   
   q1 = Question.create!(text: "Is the bonga bonga the goldfish king?", poll_id: p1.id)
   ac1 = AnswerChoice.create!(text: "Jeep Cherokee", question_id: q1.id)
   ac2 = AnswerChoice.create!(text: "Energy equals mass times the speed of light", question_id: q1.id)
