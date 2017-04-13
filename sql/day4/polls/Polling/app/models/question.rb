@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
 
-  validates :body, :poll_id, presence: true 
+  validates :body, :poll_id, presence: true
 
   belongs_to :poll,
   primary_key: :id,
@@ -11,4 +11,8 @@ class Question < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :question_id,
   class_name: :AnswerChoice
+
+  has_many :responses,
+  through: :answer_choices,
+  source: :responses 
 end
