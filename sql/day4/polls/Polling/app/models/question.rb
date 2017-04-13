@@ -14,5 +14,13 @@ class Question < ActiveRecord::Base
 
   has_many :responses,
   through: :answer_choices,
-  source: :responses 
+  source: :responses
+
+  def results_n_plus_1
+    results = {}
+    self.answer_choices.each do |ac|
+      results[ac.answer_text] = ac.responses.count
+    end
+    results
+  end
 end
