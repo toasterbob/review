@@ -23,4 +23,4 @@ def do_three_times(object, method_name)
   3.times { object.send(method_name) }
 end
 
-do_three_times(dog, :bark)
+do_three_times(dog, "bark")
