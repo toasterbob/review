@@ -110,3 +110,22 @@ d1 = Dog.new("Fido")
 d2 = Dog.new("Fido 2.0")
 
 p Dog.all
+
+class Dog
+  def self.all
+    @@dogs ||= []
+  end
+
+  def initialize(name)
+    @name = name
+
+    self.class.all << self
+  end
+end
+
+class Husky < Dog
+end
+
+h = Husky.new("Rex")
+
+Dog.all # => #<Husky:0x007f95421b5560 @name="Rex">
