@@ -59,34 +59,34 @@ earl = Cat.new
 earl.say_hello # puts "hello"
 earl.say_goodbye # puts "goodbye"
 
-class ActiveRecord::Base
-  def method_missing(method_name, *args)
-    method_name = method_name.to_s
-    if method_name.start_with?("find_by_")
-      # attributes_string is, e.g., "first_name_and_last_name"
-      attributes_string = method_name[("find_by_".length)..-1]
-
-      # attribute_names is, e.g., ["first_name", "last_name"]
-      attribute_names = attributes_string.split("_and_")
-
-      unless attribute_names.length == args.length
-        raise "unexpected # of arguments"
-      end
-
-      search_conditions = {}
-      attribute_names.length.times do |i|
-        search_conditions[attribute_names[i]] = args[i]
-      end
-
-      # Imagine search takes a hash of search conditions and finds
-      # objects with the given properties.
-      self.search(search_conditions)
-    else
-      # complain about the missing method
-      super
-    end
-  end
-end
+# class ActiveRecord::Base
+#   def method_missing(method_name, *args)
+#     method_name = method_name.to_s
+#     if method_name.start_with?("find_by_")
+#       # attributes_string is, e.g., "first_name_and_last_name"
+#       attributes_string = method_name[("find_by_".length)..-1]
+#
+#       # attribute_names is, e.g., ["first_name", "last_name"]
+#       attribute_names = attributes_string.split("_and_")
+#
+#       unless attribute_names.length == args.length
+#         raise "unexpected # of arguments"
+#       end
+#
+#       search_conditions = {}
+#       attribute_names.length.times do |i|
+#         search_conditions[attribute_names[i]] = args[i]
+#       end
+#
+#       # Imagine search takes a hash of search conditions and finds
+#       # objects with the given properties.
+#       self.search(search_conditions)
+#     else
+#       # complain about the missing method
+#       super
+#     end
+#   end
+# end
 
 Object.is_a?(Object) # => true
 Object.class # => Class
