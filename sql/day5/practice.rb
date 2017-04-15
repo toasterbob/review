@@ -18,3 +18,9 @@ dog.grr
 
 Dog.makes_sound(:bow_wow)
 dog.bow_wow
+
+def do_three_times(object, method_name)
+  3.times { object.send(method_name) }
+end
+
+do_three_times(dog, :bark)
