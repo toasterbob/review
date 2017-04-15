@@ -105,3 +105,8 @@ class Dog
     self.class.all << self
   end
 end
+
+d1 = Dog.new("Fido")
+d2 = Dog.new("Fido 2.0")
+
+p Dog.all
