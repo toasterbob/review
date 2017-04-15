@@ -89,3 +89,6 @@ class ActiveRecord::Base
 end
 
 Object.is_a?(Object) # => true
+Object.class # => Class
+Class.superclass # => Module
+Class.superclass.superclass # => Object
