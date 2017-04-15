@@ -92,3 +92,16 @@ Object.is_a?(Object) # => true
 Object.class # => Class
 Class.superclass # => Module
 Class.superclass.superclass # => Object
+
+
+class Dog
+  def self.all
+    @dogs ||= []
+  end
+
+  def initialize(name)
+    @name = name
+
+    self.class.all << self
+  end
+end
