@@ -24,3 +24,14 @@ def do_three_times(object, method_name)
 end
 
 do_three_times(dog, "bark")
+
+
+class T
+  def method_missing(*args)
+    p args
+  end
+end
+
+T.new.adfasdfa(:a, :b, :c)
+
+T.new.hello
