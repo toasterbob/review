@@ -87,3 +87,5 @@ class ActiveRecord::Base
     end
   end
 end
+
+Object.is_a?(Object) # => true
