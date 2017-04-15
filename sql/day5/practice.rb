@@ -1,29 +1,29 @@
-class Dog
-  # defines a class method that will define more methods; this is
-  # called a **macro**.
-
-  def self.makes_sound(name)
-    define_method(name) { puts "#{name}!" }
-  end
-
-  makes_sound(:woof)
-  makes_sound(:bark)
-  makes_sound(:grr)
-end
-
-dog = Dog.new
-dog.woof
-dog.bark
-dog.grr
-
-Dog.makes_sound(:bow_wow)
-dog.bow_wow
-
-def do_three_times(object, method_name)
-  3.times { object.send(method_name) }
-end
-
-do_three_times(dog, "bark")
+# class Dog
+#   # defines a class method that will define more methods; this is
+#   # called a **macro**.
+#
+#   def self.makes_sound(name)
+#     define_method(name) { puts "#{name}!" }
+#   end
+#
+#   makes_sound(:woof)
+#   makes_sound(:bark)
+#   makes_sound(:grr)
+# end
+#
+# dog = Dog.new
+# dog.woof
+# dog.bark
+# dog.grr
+#
+# Dog.makes_sound(:bow_wow)
+# dog.bow_wow
+#
+# def do_three_times(object, method_name)
+#   3.times { object.send(method_name) }
+# end
+#
+# do_three_times(dog, "bark")
 
 
 class T
@@ -94,22 +94,22 @@ Class.superclass # => Module
 Class.superclass.superclass # => Object
 
 
-class Dog
-  def self.all
-    @dogs ||= []
-  end
-
-  def initialize(name)
-    @name = name
-
-    self.class.all << self
-  end
-end
-
-d1 = Dog.new("Fido")
-d2 = Dog.new("Fido 2.0")
-
-p Dog.all
+# class Dog
+#   def self.all
+#     @dogs ||= []
+#   end
+#
+#   def initialize(name)
+#     @name = name
+#
+#     self.class.all << self
+#   end
+# end
+#
+# d1 = Dog.new("Fido")
+# d2 = Dog.new("Fido 2.0")
+#
+# p Dog.all
 
 class Dog
   def self.all
@@ -128,4 +128,4 @@ end
 
 h = Husky.new("Rex")
 
-Dog.all # => #<Husky:0x007f95421b5560 @name="Rex">
+p Dog.all # => #<Husky:0x007f95421b5560 @name="Rex">
