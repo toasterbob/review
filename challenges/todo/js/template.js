@@ -12,6 +12,7 @@
 		=	'<li data-id="{{id}}">'
 		+		'<div class="view">'
 		+			'<label>{{title}}</label>'
+    +     '<button class="finished"</button>'
 		+			'<button class="destroy"></button>'
 		+		'</div>'
 		+	'</li>';
