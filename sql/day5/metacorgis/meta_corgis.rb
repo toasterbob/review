@@ -107,6 +107,7 @@ class MetaCorgiSnacks
   def initialize(snack_box, box_id)
     @snack_box = snack_box
     @box_id = box_id
+    snack_box.methods.grep(/^get_(.*)_info$/) { MetaCorgiSnacks.define_snack $1 }
   end
 
   # def method_missing(name, *args)
@@ -125,13 +126,12 @@ class MetaCorgiSnacks
       tastiness > 30 ? "* #{result}" : result
     end
 
-
   end
 end
 
-load 'meta_corgis.rb'
-MetaCorgiSnacks.define_snack("bone")
-snack_box = SnackBox.new
-meta_snacks = MetaCorgiSnacks.new(snack_box, 1)
-meta_snacks.bone
-meta_snacks.kibble
+# load 'meta_corgis.rb'
+# snack_box = SnackBox.new
+# meta_snacks = MetaCorgiSnacks.new(snack_box, 1)
+# meta_snacks.bone
+# meta_snacks.kibble
+# meta_snacks.treat
