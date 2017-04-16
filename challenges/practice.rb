@@ -9,8 +9,7 @@ def StairCase(n)
 end
 
 def summation(numbers)
-
-    numbers.inject(0,:+)
+  numbers.inject(0,:+)
 end
 
 
