@@ -121,3 +121,8 @@ class MetaCorgiSnacks
     # Your code goes here...
   end
 end
+
+# load 'meta_corgis.rb'
+# snack_box = SnackBox.new
+# meta_snacks = MetaCorgiSnacks.new(snack_box, 1)
+# meta_snacks.bone
