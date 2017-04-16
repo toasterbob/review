@@ -111,9 +111,10 @@ class MetaCorgiSnacks
 
   def method_missing(name, *args)
     meta_data = "@snack_box[1][#{name}]"
-    data2 = send(meta_data)
-    result = "Treat: #{data2.info}: #{data2.tastiness} "
-    puts data2.tastiness > 30 ? "* #{result}" : result
+    puts meta_data
+    # data2 = send(meta_data)
+    # result = "Treat: #{data2.info}: #{data2.tastiness} "
+    # puts data2.tastiness > 30 ? "* #{result}" : result
   end
 
 
