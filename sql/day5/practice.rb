@@ -128,4 +128,5 @@ end
 
 h = Husky.new("Rex")
 
-p Dog.all # => #<Husky:0x007f95421b5560 @name="Rex">
+p
+Dog.all # => #<Husky:0x007f95421b5560 @name="Rex">

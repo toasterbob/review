@@ -110,7 +110,7 @@ class MetaCorgiSnacks
   end
 
   def method_missing(name, *args)
-    
+    self.send()
   end
 
 
