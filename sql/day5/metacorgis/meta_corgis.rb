@@ -110,6 +110,7 @@ class MetaCorgiSnacks
   end
 
   def method_missing(name, *args)
+    meta_method = "@snack_box[1][]"
     self.send()
   end
 
