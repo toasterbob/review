@@ -4,7 +4,7 @@
 	/**
 	 * Takes a model and view and acts as the controller between them
 	 *
-	 * @constructor
+	 * @constructor 
 	 * @param {object} model The model instance
 	 * @param {object} view The view instance
 	 */
