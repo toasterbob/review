@@ -113,7 +113,7 @@ class MetaCorgiSnacks
     meta_data = "@snack_box[1][#{name}]"
     data2 = send(meta_data)
     result = "Treat: #{data2.info}: #{data2.tastiness} "
-    data2.tastiness > 30 ? "* #{result}" : result
+    puts data2.tastiness > 30 ? "* #{result}" : result
   end
 
 
