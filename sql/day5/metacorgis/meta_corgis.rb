@@ -110,11 +110,11 @@ class MetaCorgiSnacks
   end
 
   def method_missing(name, *args)
-    # Your code goes here...
+    
   end
 
 
   def self.define_snack(name)
     # Your code goes here...
-  end 
+  end
 end
