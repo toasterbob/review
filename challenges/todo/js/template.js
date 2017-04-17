@@ -43,7 +43,7 @@
 
 			template = template.replace('{{id}}', data[i].id);
 			template = template.replace('{{title}}', data[i].title);
-
+      template = template.replace('{{completed}}', data[i].completed);
 			view = view + template;
 		}
 

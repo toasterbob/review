@@ -22,6 +22,8 @@
 
 			localStorage[name] = JSON.stringify(data);
 		}
+    var data2 = JSON.parse(localStorage[this._dbName]);
+    window.data = data2;
 
 		callback.call(this, JSON.parse(localStorage[name]));
 	}
@@ -119,7 +121,6 @@
 				break;
 			}
 		}
-
 		localStorage[this._dbName] = JSON.stringify(data);
 		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
 	};
@@ -137,4 +138,5 @@
 	// Export to window
 	window.app = window.app || {};
 	window.app.Store = Store;
+
 })(window);
