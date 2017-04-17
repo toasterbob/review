@@ -23,7 +23,7 @@
 
 		var newItem = {
 			title: title.trim(),
-      finished: false
+      finished: false 
 		};
 
 		this.storage.save(newItem, callback);
