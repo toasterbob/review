@@ -8,6 +8,7 @@
 	 * @constructor
 	 */
 	function Template() {
+    
 		this.defaultTemplate
 		=	'<li data-id="{{id}}">'
 		+		'<div class="view">'
@@ -43,7 +44,7 @@
 
 			template = template.replace('{{id}}', data[i].id);
 			template = template.replace('{{title}}', data[i].title);
-      template = template.replace('{{completed}}', data[i].completed);
+      // template = template.replace('{{completed}}', data[i].completed);
 			view = view + template;
 		}
 
