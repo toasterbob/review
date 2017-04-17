@@ -164,7 +164,7 @@
         } else if (event === 'itemEditCancel') {
             that._bindItemEditCancel(handler);
         }
-    }; 
+    };
 
     // Export to window
     window.app = window.app || {};
