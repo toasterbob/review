@@ -11,7 +11,7 @@
      *     Takes a todo application event and registers the handler
      *   - render(command, parameterObject)
      *     Renders the given command with the options
-     */ 
+     */
     function View(template) {
         this.template = template;
 
@@ -164,7 +164,7 @@
         } else if (event === 'itemEditCancel') {
             that._bindItemEditCancel(handler);
         }
-    };
+    }; 
 
     // Export to window
     window.app = window.app || {};
