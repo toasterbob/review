@@ -23,7 +23,7 @@
 
 		var newItem = {
 			title: title.trim(),
-      finished: false 
+      finished: false
 		};
 
 		this.storage.save(newItem, callback);
@@ -101,7 +101,7 @@
 
 		this.storage.findAll(function (data) {
 			data.forEach(function (todo) {
-        if(!todos.finished){
+        if(!todo.finished){
           todos.active++;
         }
 
