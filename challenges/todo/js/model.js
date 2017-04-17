@@ -101,7 +101,9 @@
 
 		this.storage.findAll(function (data) {
 			data.forEach(function (todo) {
-				todos.active++;
+        if(!todos.finished){
+          todos.active++;
+        }
 
 				todos.total++;
 			});
