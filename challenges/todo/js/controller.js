@@ -101,7 +101,7 @@
   Controller.prototype.finishItem = function (id) {
 		var that = this;
 		that.model.update(id, {id: id, finished: true}, function () {
-      that.view.render('editItemDone', {id: id});
+      that.view.render('editItemDone', {id: id});  
     });
 	};
 
