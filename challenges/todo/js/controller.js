@@ -98,6 +98,13 @@
 		});
 	};
 
+  Controller.prototype.finishItem = function (id) {
+		var that = this;
+		that.model.update(id, {finished: true}, function () {
+      that.view.render('editItemDone', {id: id});
+    });
+	};
+
 	/*
 	 * Finishes the item editing mode successfully.
 	 */
