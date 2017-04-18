@@ -4,7 +4,7 @@
 	/**
 	 * Takes a model and view and acts as the controller between them
 	 *
-	 * @constructor 
+	 * @constructor
 	 * @param {object} model The model instance
 	 * @param {object} view The view instance
 	 */
@@ -19,6 +19,10 @@
 
 		that.view.bind('itemEdit', function (item) {
 			that.editItem(item.id);
+		});
+
+    that.view.bind('itemFinished', function (item) {
+			that.finishItem(item.id);
 		});
 
 		that.view.bind('itemEditDone', function (item) {

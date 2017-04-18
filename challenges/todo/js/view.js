@@ -158,6 +158,10 @@
                 handler({id: that._itemId(this)});
             });
 
+        } else if (event === 'itemFinished') {
+            $live('#todo-list .finished', 'click', function () {
+                handler({finished: that._itemId(this)});
+            });
         } else if (event === 'itemEditDone') {
             that._bindItemEditDone(handler);
 
