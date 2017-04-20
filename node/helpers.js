@@ -1,5 +1,5 @@
 module.exports = {
-  name: "Elie",
+  name: "Mark",
   sayHi(){
     console.log(`Hi ${this.name}!`);
   }
