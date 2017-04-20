@@ -8,3 +8,5 @@ console.log(path.join('/first', 'second', 'something', 'then', '..'));
 
 // Resolve a path (find the absolute path)
 console.log(path.resolve('first.js'));
+
+// Find the extention of a filename
