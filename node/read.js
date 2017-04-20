@@ -1,5 +1,5 @@
 var fs = require("fs");
 
-fs.readFile('data.txt', function(err,data){
+fs.readFile('data.txt', (err,data) => {
   console.log(data.toString());
 });
