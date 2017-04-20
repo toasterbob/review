@@ -7,3 +7,4 @@ console.log(path.normalize('test/test1//2slashes/1slash/tab/..'));
 console.log(path.join('/first', 'second', 'something', 'then', '..'));
 
 // Resolve a path (find the absolute path)
+console.log(path.resolve('first.js'));
