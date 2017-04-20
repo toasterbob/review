@@ -10,4 +10,6 @@ console.log(path.join('/first', 'second', 'something', 'then', '..'));
 console.log(path.resolve('first.js'));
 
 // Find the extention of a filename
-console.log(path.extname('main.js')); 
+console.log(path.extname('main.js'));
+
+console.log(process.argv);
