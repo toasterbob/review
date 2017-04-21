@@ -11,3 +11,4 @@ console.log(path.resolve('first.js'));
 
 // Find the extention of a filename
 console.log(path.extname('main.js'));
+ 
