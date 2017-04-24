@@ -5,5 +5,5 @@ exports.sayHello = function(){
 
 exports.sayGoodbye = function(){
   console.log("Goodbye!");
-}; 
+};  
 exports.firstName = "Bob";
