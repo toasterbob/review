@@ -234,8 +234,54 @@ extractEveryThird([1,2,3,4,5,6]); // [3,6]
 extractEveryThird(["a","b","c","d"]); // ["c"]
 extractEveryThird(["first value", "second value", "third value"]); // ["third value"]
 
+//refactor 
+function extractEveryThird(arr){
+    var newArr = [];
+    for(var i = 2; i < arr.length; i += 3){
+        newArr.push(arr[i]);
+    }
+    return newArr;
+}
 
 
+function countEvensAndOdds(arr){
+  var count = {odd: 0, even: 0};
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      count.odd += 1;
+    } else {
+      count.even += 1;
+    }
+  }
+  return count;
+}
+countEvensAndOdds([1,2,3,4]); //{odd: 2, even: 2}
+countEvensAndOdds([1,2,3,4,5,6,7]); // {odd: 3, even: 4}
+
+var myVar = "Hello from global";
+
+function scopePractice() {
+   var myVar = "Hello from function scope";
+}
+
+scopePractice();
+console.log(myVar); //Hello from global
+
+var tricky = "Hello from global";
+
+function trickyScopePractice() {
+    tricky = "Hello from function scope";
+}
+
+console.log(tricky); //"Hello from global" - beacause we didn't invoke function
+
+var tricky = "Hello from global";
+
+function trickyScopePractice() {
+    tricky = "Hello from function scope";
+}
+trickyScopePractice();
+console.log(tricky); //"Hello from function scope"
 
 
 
