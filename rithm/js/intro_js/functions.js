@@ -234,8 +234,19 @@ extractEveryThird([1,2,3,4,5,6]); // [3,6]
 extractEveryThird(["a","b","c","d"]); // ["c"]
 extractEveryThird(["first value", "second value", "third value"]); // ["third value"]
 
-
-
+function countEvensAndOdds(arr){
+  var count = {odd: 0, even: 0};
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      count.odd += 1;
+    } else {
+      count.even += 1;
+    }
+  }
+  return count;
+}
+countEvensAndOdds([1,2,3,4]); //{odd: 2, even: 2}
+countEvensAndOdds([1,2,3,4,5,6,7]); // {odd: 3, even: 4}
 
 
 
