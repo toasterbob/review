@@ -60,8 +60,8 @@
     <script>
       window.addEventListener('keydown', (e) => {
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        if(!audio) return; // Stop the function from running 
-        console.log(audio);
+        if(!audio) return; // Stop the function from running
+        audio.play();
       });
     </script>
 
