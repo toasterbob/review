@@ -67,9 +67,13 @@
         key.classList.add('playing'); //jquery: key.addClass('playing')
       });
 
+      function removeTransition(e) {
+        console.log(e)
+      }
+
       const keys = document.querySelectorAll('.key');
       keys.forEach(key => key.addEventListener('transitioned', removeTransition));
-      
+
     </script>
 
 
