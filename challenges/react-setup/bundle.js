@@ -20015,10 +20015,17 @@ var Clock = function (_React$Component) {
     var mins = time.getMinutes();
     var secs = time.getSeconds();
     _this.state = { hours: hours, mins: mins, secs: secs };
+    setInterval(_this.updateTime, 1000);
     return _this;
   }
 
   _createClass(Clock, [{
+    key: 'updateTime',
+    value: function updateTime() {
+      var secs = this.state.secs + 1;
+      this.setState({ secs: secs });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var hours = this.state.hours < 10 ? '0' + this.state.hours : this.state.hours;

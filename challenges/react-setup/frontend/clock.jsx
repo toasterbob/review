@@ -8,6 +8,12 @@ class Clock extends React.Component {
     let mins = time.getMinutes();
     let secs = time.getSeconds();
     this.state = {hours: hours, mins: mins, secs: secs};
+    setInterval(this.updateTime, 1000);
+  }
+
+  updateTime(){
+    let secs = this.state.secs + 1;
+    this.setState({secs: secs});
   }
 
   render(){
