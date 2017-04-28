@@ -68,6 +68,14 @@
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
 
+    .hand:last-child {
+      background: red;
+    }
+
+    .hand:first-child {
+      transform: width(-60px);
+    }
+
   </style>
 
   <script>
@@ -89,7 +97,7 @@
       minHand.style.transform = `rotate(${minsDegrees}deg)`;
       hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
-      console.log(`${hours}:${mins}:${seconds}  ${minsDegrees}`)
+      console.log(`${hours}:${mins}:${seconds}`)
     }
 
     setInterval(setDate, 1000)
