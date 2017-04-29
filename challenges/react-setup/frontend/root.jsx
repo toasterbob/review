@@ -7,7 +7,7 @@ import Clock from './clock';
 class Root extends React.Component {
   render() {
     return(
-      <div>
+      <div className="main">
         <Clock />
       </div>
     );
