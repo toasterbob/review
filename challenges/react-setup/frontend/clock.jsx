@@ -10,7 +10,7 @@ class Clock extends React.Component {
     let secs = time.getSeconds();
     this.state = {hours: hours, mins: mins, secs: secs};
     this.updateTime = this.updateTime.bind(this);
-    setInterval(this.updateTime, 1000);
+    setInterval(this.updateTime, 1000); 
   }
 
   updateTime(){
