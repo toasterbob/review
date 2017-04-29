@@ -20022,7 +20022,7 @@ var Clock = function (_React$Component) {
   }
 
   _createClass(Clock, [{
-    key: 'updateTime',
+    key: "updateTime",
     value: function updateTime() {
       var secs = this.state.secs + 1;
       var mins = this.state.mins;
@@ -20044,18 +20044,18 @@ var Clock = function (_React$Component) {
       this.setState({ secs: secs, mins: mins, hours: hours });
     }
   }, {
-    key: 'render',
+    key: "render",
     value: function render() {
-      var hours = this.state.hours < 10 ? '0' + this.state.hours : this.state.hours;
-      var mins = this.state.mins < 10 ? '0' + this.state.mins : this.state.mins;
-      var secs = this.state.secs < 10 ? '0' + this.state.secs : this.state.secs;
+      var hours = this.state.hours < 10 ? "0" + this.state.hours : this.state.hours;
+      var mins = this.state.mins < 10 ? "0" + this.state.mins : this.state.mins;
+      var secs = this.state.secs < 10 ? "0" + this.state.secs : this.state.secs;
       return _react2.default.createElement(
-        'div',
-        null,
+        "div",
+        { className: "clock" },
         hours,
-        ':',
+        ":",
         mins,
-        ':',
+        ":",
         secs
       );
     }
