@@ -5,7 +5,7 @@ class Clock extends React.Component {
     super(props);
     let time = new Date();
     let hours = time.getHours() % 12;
-    hours = hours == 0 ? 12 : hours; 
+    hours = hours == 0 ? 12 : hours;
     let mins = time.getMinutes();
     let secs = time.getSeconds();
     this.state = {hours: hours, mins: mins, secs: secs};
@@ -31,7 +31,7 @@ class Clock extends React.Component {
       hours = 1;
     }
 
-    this.setState({secs: secs});
+    this.setState({secs: secs, mins: mins, hours: hours});
   }
 
   render(){

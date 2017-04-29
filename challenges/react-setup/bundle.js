@@ -20041,7 +20041,7 @@ var Clock = function (_React$Component) {
         hours = 1;
       }
 
-      this.setState({ secs: secs });
+      this.setState({ secs: secs, mins: mins, hours: hours });
     }
   }, {
     key: 'render',
