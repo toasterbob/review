@@ -39,7 +39,9 @@ class Clock extends React.Component {
     let mins = this.state.mins < 10 ? `0${this.state.mins}` : this.state.mins;
     let secs = this.state.secs < 10 ? `0${this.state.secs}` : this.state.secs;
     return(
-      <div className="clock">{hours}:{mins}:{secs}</div>
+      <div className="holder">
+        <div className="clock">{hours}:{mins}:{secs}</div>
+      </div>
     );
   }
 }

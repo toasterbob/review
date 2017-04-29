@@ -20051,12 +20051,16 @@ var Clock = function (_React$Component) {
       var secs = this.state.secs < 10 ? "0" + this.state.secs : this.state.secs;
       return _react2.default.createElement(
         "div",
-        { className: "clock" },
-        hours,
-        ":",
-        mins,
-        ":",
-        secs
+        { className: "holder" },
+        _react2.default.createElement(
+          "div",
+          { className: "clock" },
+          hours,
+          ":",
+          mins,
+          ":",
+          secs
+        )
       );
     }
   }]);
