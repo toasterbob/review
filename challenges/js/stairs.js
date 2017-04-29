@@ -6,4 +6,4 @@ function StairCase(n) {
 
 }
 
-console.log(StairCase(6));
+StairCase(6);
