@@ -1,7 +1,9 @@
 function StairCase(n) {
-  let result = "";
+  let result = ""
   for(let i=1; i <= n; i++){
-     console.log(i);
+     let space = " ".repeat(n - i);
+     let stairs = "#".repeat(i);
+     console.log(space + stairs);
   }
 
 }
