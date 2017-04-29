@@ -1,5 +1,9 @@
 .main{
-  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+  background-color: grey;
 }
 
 .clock {
@@ -7,5 +11,5 @@
   font-family: monospace;
   color: green;
   background-color: black;
-  width: 250px;
+  width: 240px;
 }
