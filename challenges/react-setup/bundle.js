@@ -20012,9 +20012,11 @@ var Clock = function (_React$Component) {
 
     var time = new Date();
     var hours = time.getHours() % 12;
+    hours = hours == 0 ? 12 : hours;
     var mins = time.getMinutes();
     var secs = time.getSeconds();
     _this.state = { hours: hours, mins: mins, secs: secs };
+    _this.updateTime = _this.updateTime.bind(_this);
     setInterval(_this.updateTime, 1000);
     return _this;
   }
@@ -20023,6 +20025,22 @@ var Clock = function (_React$Component) {
     key: 'updateTime',
     value: function updateTime() {
       var secs = this.state.secs + 1;
+      var mins = this.state.mins;
+      var hours = this.state.hours;
+      if (secs > 59) {
+        secs = 0;
+        mins++;
+      }
+
+      if (mins > 59) {
+        mins = 0;
+        hours++;
+      }
+
+      if (hours > 12) {
+        hours = 1;
+      }
+
       this.setState({ secs: secs });
     }
   }, {
