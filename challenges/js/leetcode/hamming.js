@@ -18,3 +18,7 @@ var hammingDistance = function(x, y) {
     }
     return ham;
 };
+
+var hammingDistance2 = function(x, y) {
+    return (x ^ y).toString(2).replace(/0/g, '').length;
+};
