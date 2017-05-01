@@ -24,7 +24,18 @@ function main() {
     var n = parseInt(readLine());
     height = readLine().split(' ');
     height = height.map(Number);
-    let highest = Math.max(height);
-    console.log(height);
+    let highest = height[0];
+    height.forEach(num => {
+        if(highest < num){
+            highest = num;
+        }
+    })
+    let count = 0;
+    height.forEach(num => {
+        if(num == highest){
+            count++;
+        }
+    })
+    console.log(count);
 
 }
