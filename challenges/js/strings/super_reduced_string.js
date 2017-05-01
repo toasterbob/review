@@ -13,7 +13,7 @@ function processData(input) {
             }
         }
         input = result;
-    }
+    } 
 
     if(input === ""){
         console.log("Empty String");
