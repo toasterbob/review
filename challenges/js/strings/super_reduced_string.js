@@ -1,19 +1,25 @@
 function processData(input) {
     //Enter your code here
-    let result = "";
-    for(let i = 0; i < input.length; i++){
-        if(input[i] !== input[i + 1]){
-            result += input[i];
-        } else{
-            i++;
+    let check = false;
+    while(!check){
+        let result = "";
+        check = true;
+        for(let i = 0; i < input.length; i++){
+            if(input[i] !== input[i + 1]){
+                result += input[i]
+            } else {
+                i++;
+                check = false;
+            }
         }
-    }
-    if(result === ""){
-        console.log("Empty String");
-    } else{
-        console.log(result);
+        input = result;
     }
 
+    if(input === ""){
+        console.log("Empty String");
+    } else{
+        console.log(input);
+    }
 }
 
 process.stdin.resume();
