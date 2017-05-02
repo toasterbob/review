@@ -14,3 +14,10 @@ console.log(b); // b is 5, but a is not defined.
 
 
 // Number 3
+function multiply(a){
+  return function(b){
+    return function(c){
+      return a * b * c; 
+    }
+  }
+}
