@@ -13,11 +13,14 @@ function integer_check(num){
 console.log(b); // b is 5, but a is not defined.
 
 
-// Number 3
+// Number 3 - currying
 function multiply(a){
   return function(b){
     return function(c){
-      return a * b * c; 
-    }
-  }
+      return a * b * c;
+    };
+  };
 }
+
+let d = multiply(5)(6);
+d(2) //60
