@@ -18,3 +18,21 @@ function LetterChanges(str) {
   return result;
 
 }
+
+function LetterChanges2(str) { 
+    let result = "";
+    str.split("").forEach(letter => {
+        if(letter >= "a" && letter <= "z"){
+            let num = letter.charCodeAt() + 1;
+            num = num === 123 ? 123 - 26 : num;
+            let new_letter = String.fromCharCode(num);
+            if(new_letter === "a" || new_letter === "e" || new_letter === "i" || new_letter === "o" || new_letter === "u" ){
+                new_letter = new_letter.toUpperCase();
+            }
+            result += new_letter;
+        } else {
+            result += letter;
+        }
+     })
+    return result;
+}
