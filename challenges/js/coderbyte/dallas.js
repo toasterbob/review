@@ -1,4 +1,4 @@
 function whatIsThis() {
   return this;
 }
-console.log(whatIsThis()); 
+console.log(whatIsThis());

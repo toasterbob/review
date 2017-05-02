@@ -11,7 +11,7 @@ function integer_check(num){
 })();
 
 console.log(b); // b is 5, but a is not defined.
-
+// But b is not declared anywhere in the function with var so it is set equal to 5 in the global scope.
 
 // Number 3 - currying
 function multiply(a){
