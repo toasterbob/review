@@ -36,3 +36,14 @@ console.log(fullName()); // => Hello this is undefined undefined
 // create a person object and pass its values to the fullName function
 var person = {first: "Foo", last: "Bar"};
 console.log(fullName.bind(person)()); // => Hello this is Foo Bar
+
+//Number 5 -
+//The "use strict" literal is entered at the top of a JavaScript program
+//or at the top of a function and it helps you write safer JavaScript
+//code by throwing an error if a global variable is created by mistake.
+//For example, the following program will throw an error:
+
+function doSomething(val) {
+  "use strict";
+  x = val + 10; // let x = val + 10; 
+}
