@@ -1,3 +1,5 @@
+//https://coderbyte.com/algorithm/10-common-javascript-interview-questions
+
 // Number 1
 function integer_check(num){
   return num === Math.floor(num);
@@ -45,5 +47,19 @@ console.log(fullName.bind(person)()); // => Hello this is Foo Bar
 
 function doSomething(val) {
   "use strict";
-  x = val + 10; // let x = val + 10; 
+  x = val + 10; // let x = val + 10;
 }
+
+//6. What is the difference between == and ===?
+
+// The difference is that == performs implicit type conversion to check if
+// values are equal to each other. So it will convert the values to true
+// or false boolean values and then compare them. Below are some weird
+// results of this implicit type conversion using the double equal
+// operator:
+
+"1" == 1 // true
+true == 1 // true
+[] == false // true
+"" == false // true
+undefined == null // true
