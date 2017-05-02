@@ -63,3 +63,22 @@ true == 1 // true
 [] == false // true
 "" == false // true
 undefined == null // true
+
+"1" === 1 // false
+true === 1 // false
+[] === false // false
+"" === false // false
+undefined === null // false
+
+// 7
+Array.prototype.average = function(){
+  let total = 0;
+  this.forEach(num => {
+    total += num;
+  })
+  return total/this.length;
+}
+
+var arr = [1, 2, 3, 4, 5];
+var avg = arr.average();
+console.log(avg);
