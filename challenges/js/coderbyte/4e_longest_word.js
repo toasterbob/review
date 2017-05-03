@@ -3,7 +3,7 @@ function LongestWord(sen) {
   sen.split(" ").forEach(word => {
       let new_word = "";
       word.split("").forEach(letter => {
-          if(letter.toLowerCase() >= "a" && letter.toLowerCase() <= "z"){
+          if((letter.toLowerCase() >= "a" && letter.toLowerCase() <= "z") ||  (letter >= "0" && letter <= "9" )){
               new_word += letter;
           }
       })
@@ -17,10 +17,10 @@ function LongestWord(sen) {
 }
 
 // keep this function call here
-LongestWord2(readline());
+LongestWord(readline());
 
 
-function LongestWord(sen) {
+function LongestWord2(sen) {
 
   sen = sen.trim();
   sen = sen.replace(/[^a-zA-Zsd]/g, '');
