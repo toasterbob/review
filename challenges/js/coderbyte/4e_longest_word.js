@@ -20,7 +20,7 @@ function LongestWord(sen) {
 LongestWord(readline());
 
 
-function LongestWord(sen) {
+function LongestWord2(sen) {
 
   sen = sen.trim();
   sen = sen.replace(/[^a-zA-Z0-9 ]/g, '');
@@ -33,4 +33,8 @@ function LongestWord(sen) {
 
   return longest;
 
+}
+
+function LongestWord3(sen) {
+  return sen.match(/w+/g).reduce((item, next) => item.length >= next.length ? item : next);  
 }
