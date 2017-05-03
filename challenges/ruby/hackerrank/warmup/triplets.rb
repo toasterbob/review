@@ -40,3 +40,26 @@ c.each do |a, b|
 end
 
 puts "#{alice} #{bob}"
+
+
+#########################
+
+#!/bin/ruby
+
+def solve2(a, b)
+    alice, bob = 0, 0
+    c = a.zip(b)
+
+    c.each do |alice_score, bob_score|
+        alice += 1 if alice_score > bob_score
+        bob += 1 if bob_score > alice_score
+    end
+    [alice, bob]
+end
+
+a = gets.strip.split(' ').map{|aa| aa.to_i}
+
+b = gets.strip.split(' ').map{|bb| bb.to_i}
+
+result = solve2(a, b)
+print result.join(" ")
