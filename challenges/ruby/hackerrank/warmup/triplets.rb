@@ -22,3 +22,21 @@ b1 = b1.to_i
 b2 = b2.to_i
 result = solve(a0, a1, a2, b0, b1, b2)
 print result.join(" ")
+
+
+###
+a = gets.strip.split(' ').map(&:to_i)
+b = gets.strip.split(' ').map(&:to_i)
+c = a.zip(b)
+
+alice = 0
+bob = 0
+c.each do |a, b|
+  if a > b
+    alice += 1
+  elsif a < b
+    bob += 1
+  end
+end
+
+puts "#{alice} #{bob}"
