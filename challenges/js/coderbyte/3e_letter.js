@@ -37,7 +37,7 @@ function LetterChanges2(str) {
     return result;
 }
 
-function LetterChanges3(str) { 
+function LetterChanges3(str) {
   let result = "";
   str.split("").forEach(letter => {
       if(letter >= "a" && letter <= "z"){
@@ -52,5 +52,19 @@ function LetterChanges3(str) {
       result += letter;
   })
   return result;
+
+}
+
+function LetterChanges4(str) {
+
+  // code goes here
+  var converted = str.replace(/[a-z]/gi,function(char){
+      return (char === 'z' || char === 'Z') ? 'a' :String.fromCharCode(char.charCodeAt()+1);
+  });
+
+  var capitalized = converted.replace(/a|e|i|o|u/gi,function(vowel){
+      return vowel.toUpperCase();
+  });
+  return capitalized;
 
 }
