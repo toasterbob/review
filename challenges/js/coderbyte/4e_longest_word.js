@@ -23,14 +23,14 @@ LongestWord(readline());
 function LongestWord(sen) {
 
   sen = sen.trim();
-  sen = sen.replace(/[^a-zA-Zsd ]/g, '');
+  sen = sen.replace(/[^a-zA-Z0-9 ]/g, '');
 
-  var arr = sen.split(" ");
+  let longest = ""
 
-  arr.sort(function(a, b) {return a.length - b.length});
+  var arr = sen.split(" ").forEach(word => {
+      if(word.length > longest.length) longest = word;
+  })
 
-  return arr.pop();
-
+  return longest;
 
 }
-   
