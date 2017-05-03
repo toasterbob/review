@@ -113,3 +113,18 @@ a = 0.1 + 0.2 //0.30000000000000004
 // doing arithmetic with decimal numbers.
 
 //10
+function func() {
+  var priv = "secret code";
+}
+
+console.log(priv); // throws error
+
+function func() {
+  var priv = "secret code";
+  return function() {
+    return priv;
+  }
+}
+
+var getPriv = func();
+console.log(getPriv()); // => secret code
