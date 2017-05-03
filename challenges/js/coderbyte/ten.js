@@ -173,3 +173,22 @@ function celebrityID () {
 mjID.getID(); // 999​
 mjID.setID(567); // Changes the outer function's variable​
 mjID.getID(); // 567: It returns the updated celebrityId variable 
+
+//closures 3
+​function celebrityIDCreator (theCelebrities) {
+    var i;
+    var uniqueID = 100;
+    for (i = 0; i < theCelebrities.length; i++) {
+      theCelebrities[i]["id"] = function ()  {
+        return uniqueID + i;
+      }
+    }
+
+    return theCelebrities;
+}
+​
+​var actionCelebs = [{name:"Stallone", id:0}, {name:"Cruise", id:0}, {name:"Willis", id:0}];
+​
+​var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
+​
+​var stalloneID = createIdForActionCelebs [0];  console.log(stalloneID.id()); // 103
