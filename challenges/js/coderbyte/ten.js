@@ -130,3 +130,21 @@ function func() {
 
 var getPriv = func();
 console.log(getPriv()); // => secret code
+
+
+// closure
+
+function weird(){
+  let my_hash = []
+  return function (input){
+    if(my_hash[input]){
+      my_hash[input]++;
+    } else {
+      my_hash[input] = 1;
+    }
+    return my_hash[input];
+  }
+}
+
+let crazy = weird();
+crazy("a");
