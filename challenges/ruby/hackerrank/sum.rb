@@ -1,4 +1,4 @@
 def summation(numbers)
-    numbers.reduce(0, :+);
+    numbers.reduce(0, :+)
 
 end
