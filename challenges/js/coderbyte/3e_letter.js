@@ -19,7 +19,7 @@ function LetterChanges(str) {
 
 }
 
-function LetterChanges2(str) { 
+function LetterChanges2(str) {
     let result = "";
     str.split("").forEach(letter => {
         if(letter >= "a" && letter <= "z"){
@@ -35,4 +35,22 @@ function LetterChanges2(str) {
         }
      })
     return result;
+}
+
+function LetterChanges3(str) { 
+  let result = "";
+  str.split("").forEach(letter => {
+      if(letter >= "a" && letter <= "z"){
+          let num = letter.charCodeAt() + 1;
+          if(num >= 123) num -= 26;
+          letter = String.fromCharCode(num);
+          if(letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u" ) {
+              letter = letter.toUpperCase();
+          }
+
+      }
+      result += letter;
+  })
+  return result;
+
 }
