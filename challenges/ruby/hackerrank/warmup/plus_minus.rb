@@ -11,6 +11,6 @@ arr.each do |num|
     zero += 1 if num == 0
 end
 
-puts '%.6f' % (pos.to_f/arr.length)
-puts '%.6f' % (neg.to_f/arr.length)
-puts '%.6f' % (zero.to_f/arr.length)
+puts '%.6f' % (pos.to_f/n)
+puts '%.6f' % (neg.to_f/n)
+puts '%.6f' % (zero.to_f/n)
