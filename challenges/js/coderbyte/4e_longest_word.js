@@ -20,18 +20,17 @@ function LongestWord(sen) {
 LongestWord(readline());
 
 
-function LongestWord2(sen) {
+function LongestWord(sen) {
 
   sen = sen.trim();
-  sen = sen.replace(/[^a-zA-Zsd]/g, '');
+  sen = sen.replace(/[^a-zA-Zsd ]/g, '');
 
-  var arr = sen.split(' ');
+  var arr = sen.split(" ");
 
-  arr.sort(function(a, b) {return b.length - a.length});
+  arr.sort(function(a, b) {return a.length - b.length});
 
-  return arr.shift();
+  return arr.pop();
 
-  // code goes here
-  return sen;
 
 }
+   
