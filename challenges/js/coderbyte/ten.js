@@ -5,7 +5,9 @@ function integer_check(num){
   return num === Math.floor(num);
 }
 
-
+function integer_chec2k(num){
+  return num % 1 === 0;
+}
 // Number 2
 
 (function() {
