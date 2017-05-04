@@ -10,3 +10,12 @@ def pangram(sentence)
 end
 
 puts pangram(string)
+
+
+#############################
+
+if gets.strip.downcase.scan(/[a-z]/).uniq.count == 26
+    puts "pangram"
+else
+    puts "not pangram"
+end 
