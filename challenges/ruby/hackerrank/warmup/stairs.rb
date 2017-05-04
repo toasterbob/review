@@ -8,3 +8,16 @@ def StairCase(n)
     end
 
 end
+
+##########
+#!/bin/ruby
+
+n = gets.strip.to_i
+i = 1
+
+while i <= n
+    spaces = " " * (n - i)
+    steps = "#" * i
+    puts "#{spaces}#{steps}"
+    i += 1
+end
