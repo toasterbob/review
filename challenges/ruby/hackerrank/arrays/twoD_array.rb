@@ -6,7 +6,7 @@ hash = {}
 letters.each do |char|
     hash[char] = letters.index(char) + 1
 end
-values = Hash.new(false)
+values = {}
 total = 0
 prev = nil
 
