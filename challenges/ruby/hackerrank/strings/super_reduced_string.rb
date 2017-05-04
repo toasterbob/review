@@ -22,4 +22,24 @@ while !finished do
 end
 input = "Empty String" if input == ""
 
-puts input 
+puts input
+
+
+##########################
+s=gets.chomp
+100.times{s=s.sub(/(.)\1/,"")}
+puts s.empty? ? "Empty String" : s
+#####################################
+
+
+old = ''
+
+str = gets.chomp
+
+while str != old
+    old = str
+    str = str.gsub(/(.)\1/, '')
+end
+
+puts str == '' ? 'Empty String' : str
+##########################################
