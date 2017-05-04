@@ -17,26 +17,9 @@ s = "uyetuppelecblwipdsqabzsvyfaezeqhpnalahnpkdbhzjglcuqfjnzpmbwprelbayyzovkhacg
 
 #!/bin/ruby
 
-
 # len = gets.strip.to_i
 # s = gets.strip
 
-
-def sorter(s)
-    sorted = false
-    while !sorted do
-        sorted = true
-        i = 0;
-        while i < s.length
-            if s[i] == s[i + 1]
-                s = s.delete(s[i])
-                sorted = false
-            end
-            i += 1
-        end
-    end
-    s
-end
 
 def sorted?(s)
     i = 0
@@ -47,26 +30,19 @@ def sorted?(s)
     true
 end
 
-s = sorter(s)
+
 def search_two(s)
     top = 0;
     unique = s.split("").uniq
 
-    i = 0
-    while i < unique.length - 1
+    unique.combination(2).to_a.each do |letter1, letter2|
+        two_letters = s.scan(/[#{letter1}#{letter2}]/)
 
-        j = i + 1
-        while j < unique.length
-
-            two_letters = s.scan(/[#{unique[i]}#{unique[j]}]/)
-
-            if two_letters.count > top
-                top = two_letters.count if sorted?(two_letters)
-            end
-            j += 1
+        if two_letters.count > top
+            top = two_letters.count if sorted?(two_letters)
         end
-        i += 1
     end
+
     top
 end
 
