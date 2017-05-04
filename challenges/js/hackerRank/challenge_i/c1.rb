@@ -1,3 +1,5 @@
+#7.5 mins
+
 def countHoles(num)
     holes = 0
     no_holes = [1, 2, 3, 5, 7]
@@ -9,4 +11,4 @@ def countHoles(num)
         holes += 2 if number == "8"
     end
     holes
-end 
+end
