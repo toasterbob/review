@@ -8,3 +8,4 @@ p negative, positive, zero
 
 puts s.split(/[A-Z]/).count
 p gets.count("A-Z") + 1
+p gets.scan(/[A-Z][a-z]*/).count+1
