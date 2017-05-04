@@ -4,12 +4,12 @@ input = gets.strip
 i = 0
 finished = false
 
-while !finished
+while !finished do
     finished = true
     result = ""
     i = 0
 
-    while i < input.length
+    while i < input.length do
         if input[i] == input[i + 1]
             i += 1
             finished = false
@@ -20,5 +20,6 @@ while !finished
     end
     input = result
 end
+input = "Empty String" if input == ""
 
 puts input 
