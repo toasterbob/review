@@ -22,3 +22,11 @@ class ShoppingList extends React.Component {
 
 // Your components tell React what you want to render – then React will
 // efficiently update and render just the right components when your data changes.
+
+ // ShoppingList is a React component class, or React component type. A component
+ // takes in parameters, called props, and returns a hierarchy of views to
+ // display via the render method.
+
+ // You can put any JavaScript expression within braces inside JSX. Each React 
+ // element is a real JavaScript object that you can store in a variable or
+ // pass around your program.
