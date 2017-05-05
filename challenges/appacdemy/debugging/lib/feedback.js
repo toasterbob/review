@@ -28,6 +28,6 @@ const renderFeedback = (answerIsCorrect) => {
       wrongFeedback.style.display = "none";
     }, 2000);
   }
-};
+}; 
 
 export { renderFeedback, getNumberFact };
