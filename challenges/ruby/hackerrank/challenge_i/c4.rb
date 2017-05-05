@@ -23,3 +23,7 @@ def fractionSum(str)
     result
 
 end
+
+a = ["13/17+7/13", "12/22+13/15"]
+
+puts fractionSum(a)

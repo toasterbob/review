@@ -26,8 +26,8 @@ def countX(steps)
         end
     end
 
-    p result
+
     result = result.flatten
-    p result
+
     result.count(result.max)
 end
