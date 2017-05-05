@@ -21,13 +21,15 @@ arr2 = ["sggkurbcnpjltuikliodnxcpifcnsgqklwvipxlcmvmfsvrddffsfijmnkzfqpqdnnmdkzg
 
 
 
-n = gets.chomp.to_i
 
-arr = []
 
-n.times do
-    arr << gets.chomp
-end
+# n = gets.chomp.to_i
+#
+# arr = []
+#
+# n.times do
+#     arr << gets.chomp
+# end
 
 arr2.each do |string|
     result = []
@@ -36,8 +38,8 @@ arr2.each do |string|
     i = 0
     while i < string.length - 1
         finish = string.length - 1 - i
-
-        if (string[i + 1].ord - string[i].ord) != (string[finish].ord - string[finish - 1].ord)
+        
+        if (string[i + 1].ord - string[i].ord).abs != (string[finish].ord - string[finish - 1].ord).abs
             puts "Not Funny"
             i = string.length + 2
         else
@@ -48,3 +50,14 @@ arr2.each do |string|
 
 
 end
+
+# Not Funny
+# Funny
+# Funny
+# Funny
+# Funny
+# Funny
+# Not Funny
+# Funny
+# Funny
+# Funny
