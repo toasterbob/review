@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 
   describe 'validations' do
-    # validation tests go here
+    it { should validate_presence_of(:username) }
   end
 
   describe 'associations' do
