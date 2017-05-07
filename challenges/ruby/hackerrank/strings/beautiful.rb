@@ -2,7 +2,7 @@
 
 
 def next_check(num, str)
-
+  
 end
 
 def beautiful(str)
