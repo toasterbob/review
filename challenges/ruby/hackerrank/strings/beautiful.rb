@@ -1,5 +1,10 @@
 #!/bin/ruby
 
+
+def next_check(num, str)
+
+end 
+
 def beautiful(str)
     n = str.length / 2
     i = 0;
