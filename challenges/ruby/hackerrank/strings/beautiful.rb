@@ -3,7 +3,7 @@
 
 def next_check(num, str)
 
-end 
+end
 
 def beautiful(str)
     n = str.length / 2
