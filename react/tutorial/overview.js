@@ -67,7 +67,16 @@ class Square extends React.Component {
     );
   }
 }
-// Whenever this.setState is called, an update to the component is scheduled, 
+// Whenever this.setState is called, an update to the component is scheduled,
 // causing React to merge in the passed state update and rerender the
 // component along with its descendants. When the component rerenders,
 // this.state.value will be 'X' so you'll see an X in the grid.
+
+
+handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    this.setState({squares: squares});
+  }
+
+// We call .slice() to copy the squares array instead of mutating the existing array.
