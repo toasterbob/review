@@ -83,3 +83,11 @@ handleClick(i) {
 
 // Square no longer keeps its own state; it receives its value from its parent Board
 // and informs its parent when it's clicked. We call components like this controlled components.
+
+
+// Functional Components
+// We've removed the constructor, and in fact, React supports a simpler
+// syntax called functional components for component types like Square
+// that only consist of a render method. Rather than define a class
+// extending React.Component, simply write a function that takes props
+// and returns what should be rendered.
