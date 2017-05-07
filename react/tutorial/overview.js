@@ -80,3 +80,6 @@ handleClick(i) {
   }
 
 // We call .slice() to copy the squares array instead of mutating the existing array.
+
+// Square no longer keeps its own state; it receives its value from its parent Board
+// and informs its parent when it's clicked. We call components like this controlled components.
