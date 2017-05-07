@@ -1,3 +1,5 @@
+#!/bin/ruby
+
 def beautiful(str)
     n = str.length / 2
     i = 0;
@@ -7,8 +9,13 @@ def beautiful(str)
         while j < str.length
             increments = num.to_s.length
             next_num = str[j, increments].to_i
+            next_num2 = str[j, increments + 1].to_i
             p [num, next_num]
-            j = str.length + 10 unless (next_num - num) === 1
+            if num += 1 === next_num
+
+            elsif num += 1 === next_num2
+
+            end
             j += increments
             return "YES #{num}" if j === str.length
         end
