@@ -25,6 +25,7 @@ end
 def between_sets(a, b)
     first = a.max if factor(a, a.max)
     last = b.min if factor2(b, b.min)
+    return 0 if first.nil? or last.nil?
     result = [first, last]
     (first + 1).upto(last - 1) do |i|
         result << i if factor(a, i) && factor2(b, i)
