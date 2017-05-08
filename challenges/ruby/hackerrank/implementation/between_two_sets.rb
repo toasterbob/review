@@ -23,13 +23,17 @@ def factor2(arr, factor)
 end
 
 def between_sets(a, b)
+    result = []
     first = a.max if factor(a, a.max)
+    result << first unless first.nil?
     last = b.min if factor2(b, b.min)
-    return 0 if first.nil? or last.nil?
-    result = [first, last]
-    (first + 1).upto(last - 1) do |i|
+    result << last unless last.nil?
+    return 0 if first.nil? && last.nil?
+    return 0 if a.max > b.min
+    (a.max + 1).upto(b.min - 1) do |i|
         result << i if factor(a, i) && factor2(b, i)
     end
+    return 0 if result.length == 1 && result[0] == 1
     return result.length
 end
 
