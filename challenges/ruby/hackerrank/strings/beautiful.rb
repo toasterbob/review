@@ -16,8 +16,10 @@ def next_check(num, str)
 end
 
 def beautiful(str)
+    return "NO" if str.length < 2
     n = str.length / 2
     i = 0;
+    # p str
     while i <= n
         num = str[0, i + 1].to_i
 
@@ -27,8 +29,15 @@ def beautiful(str)
     return "NO"
 end
 
-q = gets.strip.to_i
-for a0 in (0..q-1)
-    s = gets.strip
-    puts beautiful(s)
-end
+# q = gets.strip.to_i
+# for a0 in (0..q-1)
+    arr = [ "1",
+          "2",
+          "33",
+          "4445",
+          "8889",
+          "8910"]
+    arr.each do |s|
+      puts beautiful(s)
+    end
+# end
