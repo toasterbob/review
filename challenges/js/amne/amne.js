@@ -6,6 +6,11 @@ const priceRange = function(first, range){
   let arr = range.split(" ").map(a => { return parseInt(a)});
   console.log(nums);
   console.log(arr);
+  for(let i = 0; i <= nums[0] - nums[1]; i++){
+    for(let j = i; j < nums[1] + i; j++){
+      console.log(j);
+    }
+  }
 }
 
 
