@@ -1,18 +1,14 @@
 #!/bin/ruby
 
 def next_check(num, str)
-    length = (num += 1).to_s.length
+    return false if str.length == 0
+    length = (num + 1).to_s.length
     i = 0
     while i < str.length
         next_num = str.slice!(0, length).to_i
-        #p num
-        #p next_num
-        if (num + 1) != next_num
-            p num + 1
-            p next_num
-            p num + 1 == next_num
-            p "HERE"
 
+        if (num + 1) != next_num
+            return false
         end
         num += 1
     end
@@ -24,8 +20,7 @@ def beautiful(str)
     i = 0;
     while i <= n
         num = str[0, i + 1].to_i
-        #p num
-        #p num, str[i+1..-1]
+
         return "YES #{num}" if next_check(num, str[i+1..-1])
         i += 1
     end
