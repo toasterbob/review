@@ -1,8 +1,8 @@
 #!/bin/ruby
 
 def next_check(num, str)
-    return false if str.length == 0
     length = (num + 1).to_s.length
+    return false if str.length < length
     i = 0
     while i < str.length
         next_num = str.slice!(0, length).to_i
