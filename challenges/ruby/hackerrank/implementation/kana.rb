@@ -23,6 +23,7 @@ def kanga(x1, v1, x2, v2)
             x2 += v2
         end
     end
+    return "NO"
 end
 
 puts kanga(x1, v1, x2, v2)
