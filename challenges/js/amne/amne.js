@@ -1,7 +1,11 @@
+var fs = require("fs");
 
+fs.readFile('input.txt', (err,data) => {
+  let ranges = data.toString().split("\n");
+  priceRange(ranges);
+});
 
 const priceRange = function(data){
-
 
   let first = data[0]; //"5 3";
   let range = data[1]; //"188930 194123 201345 154243 154243";
@@ -29,10 +33,3 @@ const priceRange = function(data){
     console.log(total);
   }
 };
-
-var fs = require("fs");
-
-fs.readFile('input.txt', (err,data) => {
-  let ranges = data.toString().split("\n");
-  priceRange(ranges);
-});
