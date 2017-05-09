@@ -1,14 +1,16 @@
-var fs = require("fs");
-// import fs from "fs"
 
-fs.readFile('input.txt', (err,data) => {
-  console.log(data.toString());
-});
 
 
 const priceRange = function(){
-  let first = "5 3";
-  let range = "188930 194123 201345 154243 154243";
+  var fs = require("fs");
+  let ranges;
+
+  fs.readFile('input.txt', (err,data) => {
+    ranges = data.toString().split("\n");
+  });
+
+  let first = ranges[0]; //"5 3";
+  let range = ranges[1]; //"188930 194123 201345 154243 154243";
 
   let nums = first.split(" ").map(a => { return parseInt(a);});
   let arr = range.split(" ").map(a => { return parseInt(a);});
