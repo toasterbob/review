@@ -1,16 +1,10 @@
 
 
+const priceRange = function(data){
 
-const priceRange = function(){
-  var fs = require("fs");
-  let ranges;
 
-  fs.readFile('input.txt', (err,data) => {
-    ranges = data.toString().split("\n");
-  });
-
-  let first = ranges[0]; //"5 3";
-  let range = ranges[1]; //"188930 194123 201345 154243 154243";
+  let first = data[0]; //"5 3";
+  let range = data[1]; //"188930 194123 201345 154243 154243";
 
   let nums = first.split(" ").map(a => { return parseInt(a);});
   let arr = range.split(" ").map(a => { return parseInt(a);});
@@ -36,5 +30,9 @@ const priceRange = function(){
   }
 };
 
+var fs = require("fs");
 
-priceRange();
+fs.readFile('input.txt', (err,data) => {
+  let ranges = data.toString().split("\n");
+  priceRange(ranges);
+});
