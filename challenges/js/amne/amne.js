@@ -3,7 +3,7 @@ var fs = require("fs");
 fs.readFile('input.txt', (err,data) => {
   let ranges = data.toString().split("\n");
   priceRange(ranges);
-}); 
+});
 
 const priceRange = function(data){
 
