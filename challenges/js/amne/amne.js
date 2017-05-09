@@ -7,9 +7,20 @@ const priceRange = function(first, range){
   console.log(nums);
   console.log(arr);
   for(let i = 0; i <= nums[0] - nums[1]; i++){
-    for(let j = i; j < nums[1] + i; j++){
-      console.log(j);
+    let total = 0;
+
+    for(let j = i; j < nums[1] + i - 1; j++){
+      if(arr[j] < arr[j+1]){
+        decrease_streak = 0;
+        total += (1 + increase_streak)
+        increase_streak += 1;
+      } else if (arr[j] > arr[j+1]){
+        increase_streak = 0
+        total -= (1 + decrease_streak)
+        decrease_streak += 1;
+      }
     }
+    console.log(total);
   }
 }
 
