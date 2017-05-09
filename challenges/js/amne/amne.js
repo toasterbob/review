@@ -1,4 +1,6 @@
 
+
+
 const priceRange = function(){
   let first = "5 3";
   let range = "188930 194123 201345 154243 154243";
