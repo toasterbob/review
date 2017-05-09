@@ -1,4 +1,9 @@
+var fs = require("fs");
+// import fs from "fs"
 
+fs.readFile('input.txt', (err,data) => {
+  console.log(data.toString());
+});
 
 
 const priceRange = function(){
