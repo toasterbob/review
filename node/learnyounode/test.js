@@ -33,17 +33,16 @@ function sortNumber(a,b){
 // }
 
 function optimizeFoo(a, target){
-  a = a.sort(sortNumber); //this is O(n)
+  a = a.sort(sortNumber); //this is O(n log n)
 
-  //this is 0(n)
+  //this is 0(n^2)
   for(let i = 0; i < a.length - 2; i++){
     let j = i + 1;
     let k = a.length - 1 ;//last element
-    let n = 0;
+
     while(k > j){ //when k equals j the loop ends
-      console.log(n++);
       if(a[i] + a[j] + a[k] === target){
-        return [i, j, k];
+        return true;
       } else if (a[i] + a[j] + a[k] < target){
         j++; // if the total is too small, increase j
       } else if (a[i] + a[j] + a[k] > target){
