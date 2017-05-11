@@ -6,6 +6,7 @@ fs.readdir(file, (err, list) => {
   if (err) throw err;
   list = list.toString();
   console.log(list);
+  console.log(`.${ext}`);
 });
 
 // fs.readFile( ext, (err, data) => {
