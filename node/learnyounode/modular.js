@@ -20,7 +20,7 @@ var ext = process.argv[3];
 //      }
 
 mymodule(file, ext, (err, data) => {
-    if(err) throw err;
+    // if(err) throw err;
     data.forEach(line => {
       console.log(line);
     });
