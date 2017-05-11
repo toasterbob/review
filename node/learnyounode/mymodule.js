@@ -6,7 +6,7 @@ var ext = process.argv[3];
 
 module.exports = function (files, exts, callback){
   fs.readdir(file, (err, list) => {
-    if (err) throw err;
+    if (err) return callback(err);
     // list = list.toString().split(",");
 
     list.forEach(filename => {
