@@ -6,4 +6,4 @@ var path = require("path");
 var file = process.argv[2];
 var ext = process.argv[3];
 
-mymodule();
+mymodule(file, ext);
