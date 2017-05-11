@@ -5,8 +5,9 @@ var file = process.argv[2];
 var ext = process.argv[3];
 
 module.exports = function (files, exts, callback){
-  console.log(files);
-  console.log(exts);
+  // console.log(files);
+  // console.log(exts);
+  callback([files, exts]);
 };
 
 // module.exports = fs.readdir(file, (err, list) => {
