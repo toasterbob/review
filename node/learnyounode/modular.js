@@ -18,10 +18,11 @@ var ext = process.argv[3];
 //          callback(null, data)
 //        })
 //      }
-
-mymodule(file, ext, (err, data) => {
-    // if(err) throw err;
+function callback(err, data) {
+    if(err) throw err;
     data.forEach(line => {
       console.log(line);
     });
-});
+  }
+callback([file, ext]);
+// mymodule(file, ext, callback);
