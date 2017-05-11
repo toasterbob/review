@@ -6,7 +6,7 @@ var ext = process.argv[3];
 
 module.exports = function (file, ext){
   console.log(file);
-  console.log(ext);
+  console.log(ext); 
 };
 
 // module.exports = fs.readdir(file, (err, list) => {
