@@ -6,10 +6,12 @@ var ext = process.argv[3];
 
 fs.readdir(file, (err, list) => {
   if (err) throw err;
-  list = list.toString();
+  list = list.toString().split(",");
   list.forEach(filename => {
+    // console.log(`${filename} yy`);
+    // console.log(`.${ext}`)
     if(path.extname(filename) === `.${ext}`){
-      console.log(filename);
+      console.log(`${filename}`);
     }
   });
 
