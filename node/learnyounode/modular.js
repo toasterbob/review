@@ -1,8 +1,5 @@
 var mymodule = require('./mymodule.js');
 
-var fs = require('fs');
-var path = require("path");
-
 var file = process.argv[2];
 var ext = process.argv[3];
 
@@ -20,9 +17,7 @@ var ext = process.argv[3];
 //      }
 function callback(err, data) {
     if(err) throw err;
-    data.forEach(line => {
-      console.log(line);
-    });
+    console.log(data);
   }
-callback([file, ext]);
-// mymodule(file, ext, callback);
+
+mymodule(file, ext, callback);
