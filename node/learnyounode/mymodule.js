@@ -4,9 +4,9 @@ var path = require("path");
 var file = process.argv[2];
 var ext = process.argv[3];
 
-module.exports = function (file, ext){
-  console.log(file);
-  console.log(ext); 
+module.exports = function (files, exts){
+  console.log(files);
+  console.log(exts); 
 };
 
 // module.exports = fs.readdir(file, (err, list) => {
