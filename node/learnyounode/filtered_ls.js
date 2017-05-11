@@ -1,5 +1,5 @@
 var fs = require('fs');
-var file = process.argv;
+var file = process.argv[2];
 
 fs.readdir(file, (err, list) => {
   if (err) throw err;
