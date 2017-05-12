@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 import BenchMap from '../bench_map/bench_map';
+import ReviewList from '../review_list/review_list'
 
 class BenchShow extends React.Component {
   constructor(props) {
@@ -63,20 +64,7 @@ class BenchShow extends React.Component {
     );
   }
 
-  reviewList(reviews = []) {
-    return (
-      reviews.map((review) => {
-        return(
-          <div key={review.id}>
-            <ul className="review-list">
-              <li>Rating: { review.rating }</li>
-              <li>{ review.body }</li>
-            </ul>
-          </div>
-        );
-      })
-    );
-  }
+
 
   toReviewForm() {
     debugger;
@@ -128,7 +116,9 @@ class BenchShow extends React.Component {
             <br/>
             <div className="reviews">
               <h3>Reviews</h3>
-              {this.reviewList(bench.reviews)}
+
+              {typeof bench.reviews !== "undefined" && <ReviewList reviews = {bench.reviews}/>}
+
             </div>
           </div>
           { this.reviewSection() }
