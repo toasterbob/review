@@ -14,7 +14,7 @@ module.exports = function (files, exts, callback){
       // console.log(`.${ext}`)
       if(path.extname(filename) === `.${ext}`){
         arr.push(filename);
-      }
+      } 
     });
     return callback(null, arr);
   });
