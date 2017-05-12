@@ -4,7 +4,7 @@ def toys(arr)
     while arr.length > 0
         val = arr.shift
         count += 1
-        while arr[0] && arr[0] >= val && arr[0] <= val + 4
+        while arr[0] && arr[0] <= val + 4
            arr.shift
         end
     end
