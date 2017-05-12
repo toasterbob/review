@@ -19,7 +19,9 @@ function callback(err, data) {
     if(err){
       console.log(err);
     } else {
-      console.log(data);
+      data.forEach(datum => {
+        console.log(datum);
+      });
     }
   }
 

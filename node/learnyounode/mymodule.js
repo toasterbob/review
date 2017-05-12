@@ -8,16 +8,17 @@ module.exports = function (files, exts, callback){
   fs.readdir(file, (err, list) => {
     if (err) return callback(err);
     // list = list.toString().split(",");
-
+    let arr = [];
     list.forEach(filename => {
       // console.log(`${filename} yy`);
       // console.log(`.${ext}`)
       if(path.extname(filename) === `.${ext}`){
-        return callback(null, filename);
+        arr.push(filename);
       }
     });
-
+    return callback(null, arr);
   });
+
 };
 
 // module.exports = fs.readdir(file, (err, list) => {
