@@ -18,3 +18,5 @@ a = ("a".."z").to_a + ("A".."Z").to_a
 require 'date'
 Date.leap?(2000) #true
 Date.leap?(1900) #false
+
+.map(&:to_i)
