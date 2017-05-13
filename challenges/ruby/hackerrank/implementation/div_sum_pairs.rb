@@ -20,4 +20,14 @@ def div_sum_pairs(n, k, arr)
     total
 end
 
+def div_sum_pairs2(n, k, arr) #more concise loops
+    total = 0
+    (0...(n - 1)).each do |i|
+        ((i + 1)...n).each do |j|
+            total += 1 if ((arr[i] + arr[j]) % k) == 0
+        end
+    end
+    total
+end
+
 puts div_sum_pairs(n, k ,a)
