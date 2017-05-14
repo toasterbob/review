@@ -16,4 +16,4 @@ def trip(hike)
     valleys
 end
 
-puts trip(hike_str)
+puts trip(hike_str) 
