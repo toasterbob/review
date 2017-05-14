@@ -4,7 +4,6 @@ n = gets.strip.to_i
 hike_str = gets.strip
 
 def trip(hike)
-    below_sea_level = false
     altitude = 0
     valleys = 0
 
