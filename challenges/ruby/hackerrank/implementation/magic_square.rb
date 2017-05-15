@@ -23,4 +23,4 @@ def magic_square(arr)
     return (values.min - values.max).abs
 end
 
-puts magic_square(s)
+puts magic_square(s) 
