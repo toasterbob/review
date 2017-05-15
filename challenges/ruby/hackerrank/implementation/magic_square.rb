@@ -22,8 +22,6 @@ def magic_square(arr)
         dif2 = 0
 
         (0..7).each do |i|
-
-            #p [loop1[i], compare[i], loop2[i]]
             dif1 += (loop1[i] - compare[i]).abs
             dif2 += (loop2[i] - compare[i]).abs
         end
@@ -31,6 +29,7 @@ def magic_square(arr)
         loop1 = loop1.rotate(2)
         loop2 = loop2.rotate(2)
     end
+    
     cost + combos.min
 end
 
