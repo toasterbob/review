@@ -10,10 +10,13 @@ def ab_dif(arr)
     prev_count = 0
     best = 0
 
+    p arr.uniq
+
     arr.uniq.each do |num|
         current = arr.count(num)
-        if (prev) && (prev - current).abs == 1
-            p [current, prev_count]
+
+        if (prev) && (prev - num).abs == 1
+
             best = current + prev_count if current + prev_count > best
         end
         prev = num
