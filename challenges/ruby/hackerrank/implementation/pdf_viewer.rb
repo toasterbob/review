@@ -15,3 +15,9 @@ def highlighter(abc, word)
 end
 
 puts highlighter(h, word)
+
+# word.each_byte do |b|
+#     if h[b-97] > max
+#       max = h[b-97]
+#     end
+# end
