@@ -9,22 +9,33 @@ alice = alice.split(' ').map(&:to_i)
 # your code goes here
 
 def ranking(scores, alice)
-    prev = nil
+    alice.reverse!
+    prev = scores[0]
     place = 0
-    return 1 if alice >= scores[0]
+    results = []
+    i = 0
+
+    while alice[i] >= scores[0]
+        results << 1
+        i += 1
+    end
 
     scores.each do |score|
-        place += 1 unless (prev && prev == score)
-        return place if prev && (alice < prev && alice >= score)
+        break if i > alice.length
+        place += 1 unless prev == score
+        if alice[i] < prev && alice[i] >= score
+            results << place + 1
+            i += 1
+        end
         prev = score
     end
 
-    return place + 1
+    results << (place + 1) if i < alice.length
+    results.reverse
 end
 
-alice.each do |level|
-    puts ranking(scores, level)
-end
+
+puts ranking(scores, alice)
 
 # 100
 # 295 294 291 287 287 285 285 284 283 279 277 274 274 271 270 268 268 268 264 260 259 258 257 255 252 250 244 241 240 237 236 236 231 227 227 227 226 225 224 223 216 212 200 197 196 194 193 189 188 187 183 182 178 177 173 171 169 165 143 140 137 135 133 130 130 130 128 127 122 120 116 114 113 109 106 103 99 92 85 81 69 68 63 63 63 61 57 51 47 46 38 30 28 25 22 15 14 12 6 4
