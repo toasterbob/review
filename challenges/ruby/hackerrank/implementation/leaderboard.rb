@@ -25,17 +25,12 @@ def ranking(scores, alice)
 
         place += 1 unless prev == score
 
-        if alice[i] < prev && alice[i] >= score
+        while i < alice.length && (alice[i] < prev && alice[i] >= score)
             results << place
             i += 1
         end
 
         prev = score
-    end
-
-    while i < alice.length
-        results << (place + 1)
-        i += 1
     end
 
     results.reverse
