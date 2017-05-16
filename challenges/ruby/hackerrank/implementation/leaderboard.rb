@@ -11,7 +11,7 @@ alice = alice.split(' ').map(&:to_i)
 def ranking(scores, alice)
     prev = nil
     place = 0
-    return 1 if alice > scores[0]
+    return 1 if alice >= scores[0]
 
     scores.each do |score|
         place += 1 unless (prev && prev == score)
