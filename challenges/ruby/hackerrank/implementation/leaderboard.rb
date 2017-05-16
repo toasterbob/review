@@ -33,6 +33,11 @@ def ranking(scores, alice)
         prev = score
     end
 
+    while i < alice.length
+        results << (place + 1)
+        i += 1
+    end
+
     results.reverse
 end
 
