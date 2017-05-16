@@ -11,7 +11,7 @@ alice = alice.split(' ').map(&:to_i)
 def ranking(scores, alice)
     alice.reverse!
     prev = scores[0]
-    place = 0
+    place = 1
     results = []
     i = 0
 
@@ -22,15 +22,22 @@ def ranking(scores, alice)
 
     scores.each do |score|
         break if i > alice.length
+
         place += 1 unless prev == score
+
         if alice[i] < prev && alice[i] >= score
-            results << place + 1
+            results << place
             i += 1
         end
+
         prev = score
     end
 
-    results << (place + 1) if i < alice.length
+    while i < alice.length
+        results << (place + 1)
+        i += 1
+    end
+
     results.reverse
 end
 
