@@ -4,9 +4,13 @@ def permutation(arr, k)
     return arr.join(" ") if arr == sorted
     i = 0
     j = 0
+    hash = Hash.new {|h, v| h[v] = []}
+    arr.each_with_index { |el, i| hash[el].push(i) }
+
     while j < k do
        biggest = sorted.shift
-       idx2 = arr[i..-1].index(biggest) + i
+       idx2 = hash[biggest].shift
+       #idx2 = arr[i..-1].index(biggest) + i
        if idx2 == 0
            i += 0
        else
