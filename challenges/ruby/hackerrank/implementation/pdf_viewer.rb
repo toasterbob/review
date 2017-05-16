@@ -21,3 +21,7 @@ puts highlighter(h, word)
 #       max = h[b-97]
 #     end
 # end
+
+# heights = gets.strip.split.map(&:to_i)
+# word = gets.strip.chars.map {|x| heights[x.ord - 'a'.ord]}
+# puts word.max * word.length
