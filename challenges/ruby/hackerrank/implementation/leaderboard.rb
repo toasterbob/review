@@ -9,18 +9,18 @@ alice = alice.split(' ').map(&:to_i)
 # your code goes here
 
 def ranking(scores, alice)
-    alice.reverse!
+    alice.reverse! #highest first
     prev = scores[0]
     place = 1
     results = []
     i = 0
 
-    while alice[i] && alice[i] >= scores[0]
+    while alice[i] && alice[i] >= scores[0] #get all first place scores
         results << 1
         i += 1
     end
 
-    scores.each do |score|
+    scores.each do |score| #get all the scores in between
         break if i > alice.length
 
         place += 1 unless prev == score
@@ -33,7 +33,7 @@ def ranking(scores, alice)
         prev = score
     end
 
-    while i < alice.length
+    while i < alice.length #get all last place scores
         results << (place + 1)
         i += 1
     end
@@ -43,6 +43,7 @@ end
 
 
 puts ranking(scores, alice)
+
 
 
 # 100
