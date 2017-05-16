@@ -1,7 +1,7 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 def permutation(arr, k)
     sorted = arr.sort.reverse
-    return arr if arr == sorted
+    return arr.join(" ") if arr == sorted
     i = 0
     j = 0
     while j < k do
