@@ -26,7 +26,7 @@ puts analyze(rocks)
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 def analyze(arr)
     set = arr[0].split("").uniq
-    p set.select{ |c| arr.all?{|s| s.include?(c)}}
+    set.select{ |c| arr.all?{|s| s.include?(c)}}.count
 end
 
 
