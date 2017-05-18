@@ -69,3 +69,20 @@ default_hash = Hash.new(1)
 #default_hash.default = 1
 
 hackerrank = {"simmy" => 100, "vivmbbs" => 200}
+
+def iter_hash(hash)
+    hash.each do |key, value|
+        puts key
+        puts value
+    end
+end
+
+#For destructive selection and deletion, we can use keep_if and delete_if as seen in Array-Selection
+#For non-destructive selection or rejection, we can use select, reject, and drop_while similar to Array-
+
+# Enter your code here.
+hackerrank.store(543121, 100) #A key-value pair [543121, 100] to the hackerrank object using store
+
+hackerrank.keep_if{ |key, value| key.is_a?(Integer)} #Retain all key-value pairs where keys are Integers
+
+hackerrank.delete_if{ |key, value| key % 2 == 0 } #Delete all key-value pairs where keys are even-valued.
