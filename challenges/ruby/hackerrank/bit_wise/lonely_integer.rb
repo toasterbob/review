@@ -11,3 +11,11 @@ end
 a = gets.strip.to_i
 b = gets.strip.split(" ").map! {|i| i.to_i}
 print lonelyinteger(b)
+
+def  lonelyinteger(arr) #using bitwise
+    result = 0
+    arr.each do |num|
+        result = result ^ num #all numbers cancel each other out 
+    end
+    result
+end
