@@ -18,3 +18,11 @@ n.times do
     num = gets.strip.to_i
     puts flip(num)
 end
+
+
+# solution 2
+gets
+
+while e = gets
+    puts 0xffffffff ^ e.to_i
+end
