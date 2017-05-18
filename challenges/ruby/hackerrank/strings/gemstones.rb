@@ -20,3 +20,21 @@ n.times do
 end
 
 puts analyze(rocks)
+
+#version 2
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def analyze(arr)
+    set = arr[0].split("").uniq
+    p set.select{ |c| arr.all?{|s| s.include?(c)}}
+end
+
+
+n = gets.strip.to_i
+rocks = []
+
+n.times do
+    rocks << gets.strip
+end
+
+puts analyze(rocks)
