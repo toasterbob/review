@@ -16,20 +16,27 @@ def skip_animals(animals, skip)
     result
 end
 ##########################################
-def thirteen(ch)
+def thirteen(ch)  #using next
     13.times do
         ch = ch.next
     end
     ch[-1]
 end
 
-def rot13(secret_messages)
+def thirteen2(ch) #using ord
+    if ch.upcase == ch
+        ch = ch.ord + 13
+        ch = ch > "Z".ord ? ch - 26 : ch
+    else
+        ch = ch.ord + 13
+        ch = ch > "z".ord ? ch - 26 : ch
+    end
+    ch.chr
+end
 
+def rot13(secret_messages)
     abc = ("a".."z").to_a
     secret_messages.map! do |message|
-
-        message.split("").map { |ch|   abc.include?(ch.downcase) ? thirteen(ch) : ch}.join("")
-
+        message.split("").map { |ch|   abc.include?(ch.downcase) ? thirteen2(ch) : ch}.join("")
     end
-    secret_messages
 end
