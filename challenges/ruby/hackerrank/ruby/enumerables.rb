@@ -41,3 +41,9 @@ def rot13(secret_messages)
     end
 end
 ###########################################
+
+def sum_terms(n)
+    (0..n).inject {|product , n| product + (n * n + 1)};
+end
+
+#************************************************************
