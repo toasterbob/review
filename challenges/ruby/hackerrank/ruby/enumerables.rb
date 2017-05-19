@@ -72,3 +72,8 @@ def func_find(hash)
     hash.find { |key, value| (key.is_a?(Integer) && value.is_a?(Integer) && value < 20) || (key.is_a?(String) && value.is_a?(String) && value[0] == "a") }
 end
 ###########################################################################
+def group_by_marks(marks, pass_marks)
+    hash = Hash.new
+    hash["Passed"], hash["Failed"] = marks.group_by { |key, value| value >= pass_marks}
+
+end
