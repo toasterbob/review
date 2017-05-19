@@ -1,5 +1,6 @@
 require 'csv'
 require 'sqlite3'
+require 'date'
 
 # Reading the CSV file
 companies = CSV.read("TechCrunchcontinentalUSA.csv")
@@ -11,14 +12,22 @@ company_hash = Hash.new(false)
 
 companies.each do |arr|
   if arr[3] == "web"
+    if company_hash[arr[1]]
+      if Date.parse(company_hash[arr[1]][fundedDate]) < Date.parse(arr[6])
+        company_hash[arr[1]] = {"permalink" => arr[0], "numEmps" => arr[2], "category" => arr[3], "city" => arr[4],
+                                "state" => arr[5], "fundedDate" => arr[6], "raisedAmt" => arr[7],
+                                "raisedCurrency" => arr[8], "round" => arr[9]}
+      elsif (Date.parse(company_hash[arr][fundedDate]) == Date.parse(arr[6])) && ((company_hash[arr[1]][raisedAmt]).to_i < (arr[7]).to_i)
+        company_hash[arr[1]] = {"permalink" => arr[0], "numEmps" => arr[2], "category" => arr[3], "city" => arr[4],
+                                "state" => arr[5], "fundedDate" => arr[6], "raisedAmt" => arr[7],
+                                "raisedCurrency" => arr[8], "round" => arr[9]}
+      end
+    else
       company_hash[arr[1]] = {"permalink" => arr[0], "numEmps" => arr[2], "category" => arr[3], "city" => arr[4],
                               "state" => arr[5], "fundedDate" => arr[6], "raisedAmt" => arr[7],
                               "raisedCurrency" => arr[8], "round" => arr[9]}
+    end
   end
-
-
-
-
 
 end
 puts company_hash.keys.length
