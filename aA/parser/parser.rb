@@ -10,15 +10,18 @@ p companies[1]
 company_hash = Hash.new(false)
 
 companies.each do |arr|
-  if company_hash[arr[1]]
-      company_hash[arr[1]] = {permalink => arr[0], numEmps => arr[2], category => arr[3], city => arr[4],
-                              state => arr[5], fundedDate => arr[6], raisedAmt => arr[7],
-                              raisedCurrency => arr[8], round => arr[9]}
-      
+  if arr[3] == "web"
+      company_hash[arr[1]] = {"permalink" => arr[0], "numEmps" => arr[2], "category" => arr[3], "city" => arr[4],
+                              "state" => arr[5], "fundedDate" => arr[6], "raisedAmt" => arr[7],
+                              "raisedCurrency" => arr[8], "round" => arr[9]}
   end
 
 
+
+
+
 end
+puts company_hash.keys.length
 # YOUR CODE GOES HERE
 
 begin
