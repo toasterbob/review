@@ -4,8 +4,7 @@ require 'date'
 
 # Reading the CSV file
 companies = CSV.read("TechCrunchcontinentalUSA.csv")
-p companies[0]
-p companies[1]
+
 # ["permalink", "company", "numEmps", "category", "city", "state", "fundedDate", "raisedAmt", "raisedCurrency", "round"]
 # ["lifelock", "LifeLock", nil, "web", "Tempe", "AZ", "1-May-07", "6850000", "USD", "b"]
 company_hash = Hash.new(false)
