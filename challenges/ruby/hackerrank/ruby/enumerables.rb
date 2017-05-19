@@ -73,7 +73,5 @@ def func_find(hash)
 end
 ###########################################################################
 def group_by_marks(marks, pass_marks)
-    hash = Hash.new
-    hash["Passed"], hash["Failed"] = marks.group_by { |key, value| value >= pass_marks}
-
+    marks.group_by{|key, value| value < pass_marks ? "Failed" : "Passed" }
 end
