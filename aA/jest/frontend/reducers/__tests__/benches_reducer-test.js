@@ -29,7 +29,7 @@ const bench2 = { id: 2, description: "great!", lat: 5.6, lng: 7.8 };
 describe('BenchesReducer', () => {
 
   test('should initialize with an empty object as the default state', () => {
-    /* your code here */
+    expect(BenchesReducer(undefined, {})).toEqual({});
   });
 
   describe('handling the RECEIVE_BENCHES action', () => {
