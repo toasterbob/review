@@ -34,3 +34,21 @@ def count_multibyte_char(str)
     end
     count
 end
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def process_text(arr)
+   arr.map { |str| str.strip }.join(" ")
+end
+
+# Enter your code here
+
+def strike(word)
+    "<strike>#{word}</strike>"
+end
+
+def mask_article(str, bad_words)
+    bad_words.each do |word|
+        str.gsub!(word, strike(word))
+    end
+    str
+end
