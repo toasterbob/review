@@ -10,7 +10,7 @@ puts power_array.(3, 5)     #[1, 8, 27, 64, 125]
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
 $pal_p = [2, 3, 5, 7, 11]
-$count = 12
+$last
 
 n = gets.strip.to_i
 require 'prime'
@@ -23,6 +23,20 @@ def pal_primes(n)
       i += 1
     end
     $pal_p
+
+end
+
+p pal_primes(n)
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+n = gets.strip.to_i
+require 'prime'
+
+def pal_primes(n)
+
+    arr = Prime.each(1500000).to_a.select {|i| i.to_s == i.to_s.reverse}
+    arr.take(n)
 
 end
 
