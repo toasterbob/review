@@ -39,7 +39,8 @@ describe('review form container', () => {
     });
 
     test('updates the rating field when it changes', () => {
-      /* your code here */
+      reviewRating.simulate('change', {target: {value: 2}});
+      expect(reviewRating.props().value).toEqual(2);
     });
   });
 
