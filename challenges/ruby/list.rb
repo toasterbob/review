@@ -20,3 +20,8 @@ Date.leap?(2000) #true
 Date.leap?(1900) #false
 
 .map(&:to_i)
+
+str = "With ♥!"
+print("My String's encoding: ", str.encoding.name)
+print("\nMy String's size: ", str.size)
+print("\nMy String's bytesize: ", str.bytesize)
