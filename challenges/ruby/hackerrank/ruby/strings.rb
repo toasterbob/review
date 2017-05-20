@@ -28,8 +28,8 @@ end
 # Your code here
 def count_multibyte_char(str)
     count = 0
-    str.each_byte do |byte|
-        count += 1 if (byte.to_s.length) > 1
+    str.each_char do |char|
+        count += 1 if char.each_byte.to_a.length > 1
     end
     count
 end
