@@ -35,8 +35,8 @@ require 'prime'
 
 def pal_primes(n)
 
-    arr = Prime.each(1500000).to_a.select {|i| i.to_s == i.to_s.reverse}
-    arr.take(n)
+    Prime.lazy.select {|i| i.to_s == i.to_s.reverse}.take(n).to_a
+
 
 end
 
