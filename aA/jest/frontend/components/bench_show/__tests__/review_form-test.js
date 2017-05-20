@@ -27,11 +27,11 @@ describe('review form container', () => {
     });
 
     test('correctly maps dispatch to props', () => {
-      /* your code here */
+      expect(reviewFormWrapper.props().createReview).toBeDefined();
     });
 
     test('pre-fills rating field to 5', () => {
-      /* your code here */
+      expect(reviewRating.props().value).toEqual(5);
     });
 
     test('pre-fills comment field with empty string', () => {
