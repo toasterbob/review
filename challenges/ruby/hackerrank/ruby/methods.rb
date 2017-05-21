@@ -80,3 +80,12 @@ factorial do
     puts result
 end
 #############################################
+def factorial
+    yield
+end
+
+n = gets.to_i
+factorial do
+    puts 1.upto(n).inject(&:*)
+end
+#***********************************************
