@@ -40,3 +40,8 @@ def convert_temp(temp, input_scale: "celsius", output_scale: "celsius")
     temp
 end
 #############################################################
+# Your code here
+def full_name(*splat_names)
+    splat_names.join(" ")
+end
+###############################################################
