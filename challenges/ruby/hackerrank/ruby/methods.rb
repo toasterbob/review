@@ -162,3 +162,15 @@ my_lambda = -> { puts "This message remembers message :: #{message}" }
 lambda_message_printer(my_lambda)
 
 ######################################################################################
+multiply_function = -> (number) do
+   -> (another_number) do
+       number * another_number
+   end
+end
+
+doubler = multiply_function.(2)
+tripler = multiply_function.(3)
+
+puts doubler.(4)
+puts tripler.(4)
+############################################################################
