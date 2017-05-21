@@ -174,3 +174,15 @@ tripler = multiply_function.(3)
 puts doubler.(4)
 puts tripler.(4)
 ############################################################################
+combination = -> (number1) do
+    -> (number2) do
+        arr = 1.upto(number1).to_a
+        arr.combination(number2).count
+    end
+end
+
+n = gets.to_i
+r = gets.to_i
+nCr = combination.(n)
+puts nCr.(r)
+############################################################################
