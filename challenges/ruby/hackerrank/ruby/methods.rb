@@ -45,3 +45,16 @@ def full_name(*splat_names)
     splat_names.join(" ")
 end
 ###############################################################
+def call_block
+    puts "Start of method."
+    yield
+    puts "End of method."
+end
+call_block do
+    puts "I am inside call_block method."
+end
+
+
+# Start of method.
+# I am inside call_block method.
+# End of method.
