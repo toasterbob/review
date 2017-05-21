@@ -64,3 +64,19 @@ def calculate(a,b)
 end
 
 puts calculate(15, 10) {|a, b| a - b}   # 5
+##############################################
+def factorial
+    yield
+end
+
+n = gets.to_i
+factorial do
+    result = n
+    i = n - 1
+    while i > 1
+        result *= i
+        i -= 1
+    end
+    puts result
+end
+#############################################
