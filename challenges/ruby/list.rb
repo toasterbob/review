@@ -31,3 +31,11 @@ print("\nMy String's bytesize: ", str.bytesize)
 # each_char iterates the characters and is more efficient than [] operator or character indexing;
 # each_codepoint iterates over the ordinal values of characters in the string;
 # each_line iterates the lines.
+
+# Write a lambda which takes two integers and adds them
+adder       = -> (x, y) { x + y }
+#adder       = lambda (x, y) { x + y }
+puts adder.(1, 2)
+puts adder.call(1,2)
+
+#############################################################
