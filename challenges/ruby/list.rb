@@ -39,3 +39,14 @@ puts adder.(1, 2)
 puts adder.call(1,2)
 
 #############################################################
+#Closure
+def plus_1(y)
+   x = 100
+   y.call       #remembers the value of x = 1
+end
+
+x = 1
+y = -> { x += 1 }
+puts plus_1(y)  #2
+puts plus_1(y)  #3
+#################################################################
