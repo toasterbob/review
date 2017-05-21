@@ -17,3 +17,10 @@ def take(arr, n = 1)
 end
 
 ##########################
+def foo(str: "foo", num: 424242, **options)
+  [str, num, options]
+end
+
+foo #=> ['foo', 424242, {}]
+foo(check: true) # => ['foo', 424242, {check: true}]
+#################################################
