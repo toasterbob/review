@@ -58,3 +58,9 @@ end
 # Start of method.
 # I am inside call_block method.
 # End of method.
+
+def calculate(a,b)
+    yield(a, b)
+end
+
+puts calculate(15, 10) {|a, b| a - b}   # 5
