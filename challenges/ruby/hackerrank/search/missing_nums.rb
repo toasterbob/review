@@ -33,3 +33,15 @@ gets
 hash_b = Hash.new(0)
 gets.strip.split(" ").each{|num| hash_b[num] += 1}
 missing(hash_a, hash_b)
+
+
+# refactored
+
+gets
+hash_a = Hash.new(0)
+gets.strip.split(" ").each{|num| hash_a[num] += 1}
+gets
+hash_b = Hash.new(0)
+gets.strip.split(" ").each{|num| hash_b[num] += 1}
+
+puts hash_b.keys.sort.select{|num|hash_b[num] > hash_a[num]} * ' '
