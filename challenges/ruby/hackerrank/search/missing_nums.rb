@@ -1,2 +1,15 @@
-3670 3674 3677 3684 3685 3685 3695 3714 3720 
-3670 3674 3677 3684 3685 3695 3714 3720
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+gets
+list_a = gets.strip.split(" ").map(&:to_i)
+gets
+list_b = gets.strip.split(" ").map(&:to_i)
+
+result = []
+
+list_b.sort.uniq.each do |num|
+
+    if (list_b.count(num) - list_a.count(num)) != 0
+        print num
+        print " "
+    end
+end
