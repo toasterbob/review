@@ -10,7 +10,7 @@ def palindrome(str)
         j -= 1
     end
 
-    return i if str[i + 1] == str[j] && str[i + 2] == str[j - 1]
+    return i if str[i + 1] == str[j] && str[i + 2] == str[j - 1] # check two spots just to make sure input doesn't false match
     return j if str[i] == str[j - 1] && str[i + 1] == str[j - 2]
 end
 
