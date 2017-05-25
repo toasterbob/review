@@ -17,7 +17,7 @@ end
 for a0 in (0..s-1)
     first,last,d = gets.strip.split(' ')
     first = first.to_i
-    last = last.to_i 
+    last = last.to_i
     count = 0
 
     first.upto(last) do |i|
@@ -42,8 +42,8 @@ puts "#{health_arr.min} #{health_arr.max}"
 #!/bin/ruby
 
 class AhoCorasick
-  def initialize(*args)
-    terms = terms_for(args)
+    def initialize(args, values)
+    terms = args
     @root = TreeNode.new
     unsafe_insert(terms)
     create_suffix_links
@@ -76,7 +76,7 @@ class AhoCorasick
   end
 
   def unsafe_insert(terms)
-    terms.each do |t|
+    terms.each_with_index do |t, i|
       t.each_char.inject(@root) {|node, char| node.child_for(char.to_sym) }.add_match(t)
     end
   end
@@ -97,6 +97,7 @@ class AhoCorasick
       @parent = parent
       @suffix = nil
       @matches = []
+      @values = []
       @children = {}
     end
 
@@ -110,6 +111,10 @@ class AhoCorasick
 
     def add_match(str)
       @matches << str
+    end
+
+    def add_value(num)
+      @values << num
     end
 
     def child_for(char)
@@ -136,6 +141,7 @@ class AhoCorasick
 end
 
 
+
 n = gets.strip.to_i
 genes = gets.strip
 genes = genes.split(' ')
@@ -152,7 +158,7 @@ for a0 in (0..s-1)
     count = 0
 
 
-    c = AhoCorasick.new(genes[first..last])
+    c = AhoCorasick.new(genes[first..last], health[first..last])
     matched = c.match(d)
     value = Hash.new(0)
 

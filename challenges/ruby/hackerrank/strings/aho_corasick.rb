@@ -33,7 +33,7 @@ class AhoCorasick
   end
 
   def unsafe_insert(terms)
-    terms.each do |t|
+    terms.each_with_index do |t, i|
       t.each_char.inject(@root) {|node, char| node.child_for(char.to_sym) }.add_match(t)
     end
   end
