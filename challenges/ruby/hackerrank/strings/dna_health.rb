@@ -152,8 +152,9 @@ for a0 in (0..s-1)
     count = 0
 
 
-     c = AhoCorasick.new(genes[first..last])
+    c = AhoCorasick.new(genes[first..last])
     p matched = c.match(d)
+
     matched.uniq.each do |gene|
 
     end
