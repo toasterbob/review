@@ -36,3 +36,6 @@ for a0 in (0..s-1)
 end
 
 puts "#{health_arr.min} #{health_arr.max}"
+
+
+##################################################
