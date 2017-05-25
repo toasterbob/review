@@ -1,3 +1,5 @@
+#!/bin/ruby
+
 n = gets.strip.to_i
 genes = gets.strip
 genes = genes.split(' ')
@@ -5,6 +7,12 @@ health = gets.strip
 health = health.split(' ').map(&:to_i)
 s = gets.strip.to_i
 health_arr = []
+
+gene_hash = Hash.new
+
+genes.each_with_index do |gene, i|
+    gene_hash[gene] = health[i]
+end
 
 for a0 in (0..s-1)
     first,last,d = gets.strip.split(' ')
