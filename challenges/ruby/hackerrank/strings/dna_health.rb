@@ -17,7 +17,7 @@ end
 for a0 in (0..s-1)
     first,last,d = gets.strip.split(' ')
     first = first.to_i
-    last = last.to_i
+    last = last.to_i 
     count = 0
 
     first.upto(last) do |i|
