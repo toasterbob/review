@@ -45,17 +45,19 @@ class AhoCorasick
     def initialize(args, values)
     terms = args
     @root = TreeNode.new
-    unsafe_insert(terms)
+    unsafe_insert(terms, values)
     create_suffix_links
   end
 
   def match(string)
-    matches = []
+    matches = 0
     node = string.each_char.inject(@root) do |node, char|
-      matches += node.matches if node
+      #matches += node.matches if node
+        matches += node.values.reduce(0, :+) if node
       (node && node.find(char.to_sym)) || @root.find(char.to_sym)
     end
-    matches += node.matches if node
+    #matches += node.matches if node
+    matches += node.values.reduce(0, :+) if node
     return matches
   end
 
@@ -75,9 +77,9 @@ class AhoCorasick
     end
   end
 
-  def unsafe_insert(terms)
+    def unsafe_insert(terms, values)
     terms.each_with_index do |t, i|
-      t.each_char.inject(@root) {|node, char| node.child_for(char.to_sym) }.add_match(t)
+        t.each_char.inject(@root) {|node, char| node.child_for(char.to_sym) }.add_value(values[i])
     end
   end
 
@@ -101,7 +103,7 @@ class AhoCorasick
       @children = {}
     end
 
-    attr_reader :matches, :children, :parent
+      attr_reader :matches, :children, :parent, :values
     attr_accessor :suffix
 
 
@@ -159,18 +161,8 @@ for a0 in (0..s-1)
 
 
     c = AhoCorasick.new(genes[first..last], health[first..last])
-    matched = c.match(d)
-    value = Hash.new(0)
+    count = c.match(d)
 
-    first.upto(last) do |i|
-        if matched.include?(genes[i])
-         value[genes[i]] += health[i]
-        end
-    end
-
-    matched.uniq.each do |gene|
-        count += value[gene]/genes[first..last].count(gene) *  matched.count(gene)
-    end
 
 
     low = count if low.nil?
