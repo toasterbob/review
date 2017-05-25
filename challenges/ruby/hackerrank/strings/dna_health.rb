@@ -153,10 +153,16 @@ for a0 in (0..s-1)
 
 
     c = AhoCorasick.new(genes[first..last])
-    p matched = c.match(d)
+    matched = c.match(d)
+    value = Hash.new(0)
+
+    first.upto(last) do |i|
+        next unless matched.include?(genes[i])
+        value[genes[i]] += health[i]
+    end
 
     matched.uniq.each do |gene|
-
+        count += value[gene]/genes[first..last].count(gene) *  matched.count(gene)
     end
 
 
