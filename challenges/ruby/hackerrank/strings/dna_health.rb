@@ -157,8 +157,9 @@ for a0 in (0..s-1)
     value = Hash.new(0)
 
     first.upto(last) do |i|
-        next unless matched.include?(genes[i])
-        value[genes[i]] += health[i]
+        if matched.include?(genes[i])
+         value[genes[i]] += health[i]
+        end
     end
 
     matched.uniq.each do |gene|
