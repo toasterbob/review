@@ -1,72 +1,22 @@
 #!/bin/ruby
 def decent_num(n)
-    num = ""
-    x = n
-    fives = 0
-    return "5" * n if n % 15 == 0
+    return -1 if n < 3 || n == 4 || n == 7
 
-    while x >= 29
-        fives += 5
-        x -= 15
-    end
+    threes = n / 3
+    x = n % 3
 
-    while x >= 3 && x % 5 != 0
-        fives += 1
-        x -= 3
-    end
-
-    num += "5" * (fives * 3)
-
-    threes = x/5
-    while threes > 3
+    case x
+    when 0
+        return "5" * n
+    when 1
         threes -= 3
-        num += "5" * 15
-        x -= 15
+    when 2
+        threes -= 1
     end
 
-    num += ("3" * (threes * 5))
-    x -= (threes * 5)
+    fives = (n - (threes * 3))/5
 
-    x == 0 ? num.to_i : -1
-end
-
-t = gets.strip.to_i
-for a0 in (0..t-1)
-    n = gets.strip.to_i
-    puts decent_num(n)
-end
-###########################
-#!/bin/ruby
-def decent_num(n)
-    num = ""
-    return "5" * n if n % 15 == 0
-    fives = 0
-    x = n
-
-    if n > 15
-        fifteen = (n / 15) - 1
-        x = (n % 15) + 15
-        fives = fifteen * 3
-    end
-
-    while x >= 3 && x % 5 != 0
-        fives += 1
-        x -= 3
-    end
-
-    num += "5" * (fives * 3)
-
-    threes = x/5
-    while threes > 3
-        threes -= 3
-        num += "5" * 15
-        x -= 15
-    end
-
-    num += ("3" * (threes * 5))
-    x -= (threes * 5)
-
-    x == 0 ? num.to_i : -1
+    ("5" * (threes * 3)) + ("3" * (fives * 5))
 end
 
 t = gets.strip.to_i
