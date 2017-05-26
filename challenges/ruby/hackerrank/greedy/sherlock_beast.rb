@@ -4,6 +4,12 @@ def decent_num(n)
     x = n
     fives = 0
     return "5" * n if n % 15 == 0
+
+    while x >= 29
+        fives += 5
+        x -= 15
+    end
+
     while x >= 3 && x % 5 != 0
         fives += 1
         x -= 3
@@ -12,6 +18,12 @@ def decent_num(n)
     num += "5" * (fives * 3)
 
     threes = x/5
+    while threes > 3
+        threes -= 3
+        num += "5" * 15
+        x -= 15
+    end
+
     num += ("3" * (threes * 5))
     x -= (threes * 5)
 
