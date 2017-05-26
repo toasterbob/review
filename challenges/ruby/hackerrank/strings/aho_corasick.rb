@@ -54,6 +54,7 @@ class AhoCorasick
       @parent = parent
       @suffix = nil
       @matches = []
+      @values = []
       @children = {}
     end
 
@@ -67,6 +68,10 @@ class AhoCorasick
 
     def add_match(str)
       @matches << str
+    end
+
+    def add_value(num)
+      @values << num
     end
 
     def child_for(char)
