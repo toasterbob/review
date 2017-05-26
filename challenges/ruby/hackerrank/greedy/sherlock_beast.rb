@@ -1,13 +1,21 @@
 #!/bin/ruby
 def decent_num(n)
     num = ""
-    fives = n/3
-    num += "5" * (fives * 3) unless n % 5 == 0
-    n -= (fives * 3) unless n % 5 == 0
-    threes = n/5
+    x = n
+    fives = 0
+    return "5" * n if n % 15 == 0
+    while x >= 3 && x % 5 != 0
+        fives += 1
+        x -= 3
+    end
+
+    num += "5" * (fives * 3)
+
+    threes = x/5
     num += ("3" * (threes * 5))
-    n -= (threes * 5)
-    n == 0 ? num.to_i : -1
+    x -= (threes * 5)
+
+    x == 0 ? num.to_i : -1
 end
 
 t = gets.strip.to_i
