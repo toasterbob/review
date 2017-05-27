@@ -1,6 +1,6 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 def common_sub(str1, str2)
-    str1.split("").each do |char|
+    str1.split("").uniq.each do |char|
         return "YES" if str2.include?(char)
     end
     "NO"
