@@ -68,8 +68,8 @@ def biggest_palindrome(k, num)
 end
 
 
-n,k = gets.strip.split(' ')
+n,k = "6 3".split(' ')
 n = n.to_i
 k = k.to_i
-number = gets.strip
+number = "092282"
 puts biggest_palindrome(k, number)
