@@ -19,8 +19,9 @@ def biggest_palindrome(k, num)
     j = num.length - 1
 
     while i < j
-
+        p [num, 1]
         while k - dif >= 2
+            p [num, 1]
             if num[i] != "9"
                 num[i] = "9"
                 k -= 1
@@ -34,6 +35,7 @@ def biggest_palindrome(k, num)
         end
 
         while k - dif == 1
+            p [num, 2]
             dif -= 1 if num[i] != "9" && num[j] != "9"
             if num[i] != num[j]
                 if num[i] != "9"
@@ -50,13 +52,13 @@ def biggest_palindrome(k, num)
         end
 
         if k == dif
-
+            p [num, 3]
             if num[i] != num[j]
                 max_n = [num[i].to_i, num[j].to_i].max
                 num[i], num[j] = max_n.to_s, max_n.to_s
             end
             i += 1
-            j += 1
+            j -= 1
 
             k -= 1
             dif -= 1
