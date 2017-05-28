@@ -5,7 +5,7 @@ def biggest_palindrome(k, num)
         i = 0
         j = num.length - 1
         while i < j
-
+            num[i].to_i
             i += 1
             j -= 1
         end
