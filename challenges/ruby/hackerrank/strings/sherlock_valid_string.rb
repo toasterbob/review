@@ -37,6 +37,7 @@ def isValid(s)
        hash[char] -= 1
        hash.delete(char) if hash[char] == 0
        return "YES" if hash.values.uniq.length == 1
+        hash[char] == 0 unless hash[char]
        hash[char] += 1
     end
     return "NO"
