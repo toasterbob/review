@@ -14,17 +14,57 @@ end
 def biggest_palindrome(k, num)
     dif = checker(num)
     return -1 if dif > k
-    answers = []
-    k.times do
-        i = 0
-        j = num.length - 1
-        while i < j
-            num[i].to_i
+
+    i = 0
+    j = num.length - 1
+
+    while i < j
+
+        while k - dif >= 2
+            if num[i] != "9"
+                num[i] = "9"
+                k -= 1
+            end
+            if num[j] != "9"
+                num[j] = "9"
+                k -= 1
+            end
             i += 1
             j -= 1
         end
+
+        while k - dif == 1
+            dif -= 1 if num[i] != "9" && num[j] != "9"
+            if num[i] != num[j]
+                if num[i] != "9"
+                    num[i] = "9"
+                    k -= 1
+                end
+                if num[j] != "9"
+                    num[j] = "9"
+                    k -= 1
+                end
+                i += 1
+                j -= 1
+            end
+        end
+
+        if k == dif
+
+            if num[i] != num[j]
+                max_n = [num[i].to_i, num[j].to_i].max
+                num[i], num[j] = max_n.to_s, max_n.to_s
+            end
+            i += 1
+            j += 1
+
+            k -= 1
+            dif -= 1
+        end
+
     end
-    answers.length == 0 ? -1 : answers.max
+    num[i] == 9 if k > 0 && num.length % 2 == 1
+    num.to_i
 end
 
 
