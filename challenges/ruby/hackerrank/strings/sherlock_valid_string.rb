@@ -6,13 +6,16 @@ def isValid(s)
         hash[char] += 1
     end
     arr = hash.values.uniq
-    return "YES" if arr.length < 2
-    return "NO" if arr.length > 2
-    if arr.length == 2
-        min = [arr.count(arr[0]), arr.count(arr[1])].min
-        return "NO" if min != 1
 
-        max = [arr.count(arr[0]), arr.count(arr[1])].max
+    return "YES" if arr.length < 2
+    return "NO" if arr.length > 2 #no if there is more than 2 unique values
+    if arr.length == 2
+        min_count = arr.min
+        return "YES" if min_count == 1 && hash.values.count(1) == 1 #single value of 1 in array
+        return "NO" if hash.values.count(arr[0]) > 1 && hash.values.count(arr[1]) > 1
+        keys = hash.keys
+        min, max = keys.sort
+
     end
 end
 
