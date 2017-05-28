@@ -13,3 +13,15 @@ n.times do
     str2 = gets.strip
     puts common_sub(str1, str2)
 end
+
+########################################
+def union(str1, str2)
+  (str1 & str2).length > 0 ? "YES" : "NO"
+end
+
+t = gets.strip.to_i
+t.times do
+    str1  = gets.strip.split("")
+    str2 = gets.strip.split("")
+    puts union(str1, str2)
+end
