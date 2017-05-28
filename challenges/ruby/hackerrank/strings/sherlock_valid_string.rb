@@ -22,3 +22,26 @@ end
 s = gets.strip
 result = isValid(s)
 puts result;
+
+####################################################################
+#!/bin/ruby
+
+def isValid(s)
+    hash = Hash.new(0)
+    s.split("").each do |char|
+        hash[char] += 1
+    end
+    return "YES" if hash.values.uniq.length == 1
+
+    s.split("").uniq.each do |char|
+       hash[char] -= 1
+       hash.delete(char) if hash[char] == 0
+       return "YES" if hash.values.uniq.length == 1
+       hash[char] += 1
+    end
+    return "NO"
+end
+
+s = gets.strip
+result = isValid(s)
+puts result;
