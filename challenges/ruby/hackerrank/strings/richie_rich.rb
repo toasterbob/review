@@ -17,4 +17,4 @@ end
 n,k = gets.strip.split(' ')
 n = n.to_i
 k = k.to_i
-number = gets.strip
+number = gets.strip 
