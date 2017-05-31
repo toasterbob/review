@@ -18,3 +18,23 @@ k = k.to_i
 c = gets.strip
 c = c.split(' ').map(&:to_i)
 puts cloud_jumper(c, k)
+###################################
+
+#refactored 
+def cloud_jumper(arr, distance)
+    energy = 100
+    cloud = 0
+    loop do
+        cloud = (cloud + distance) % arr.length
+        energy -= arr[cloud] * 2 + 1
+        break if cloud == 0
+    end
+    energy
+end
+
+n,k = gets.strip.split(' ')
+n = n.to_i
+k = k.to_i
+c = gets.strip
+c = c.split(' ').map(&:to_i)
+puts cloud_jumper(c, k)
