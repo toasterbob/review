@@ -14,7 +14,7 @@ def no_answer(str)
 end
 
 def greater(str)
-    return "no answer" unless no_answer(str)
+    return "no answer" unless no_answer(str) #not sure if this is better than letting solution run its course
     i = str.length - 2
 
     while i >= 0 #go from the back and switch bigger with smaller
