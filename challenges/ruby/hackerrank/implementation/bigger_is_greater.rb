@@ -1,6 +1,20 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-def greater(str)
+def no_answer(str)
+    arr = str[1..-1].split("")
+    valid = false
+    i = 1
+    while i < str.length
+        if !(str[i] <= str[i - 1])
+            valid = true
+            i = str.length
+        end
+        i += 1
+    end
+    valid
+end
 
+def greater(str)
+    return "no answer" unless no_answer(str)
 end
 
 
