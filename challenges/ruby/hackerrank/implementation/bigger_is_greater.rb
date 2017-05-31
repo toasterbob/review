@@ -15,9 +15,26 @@ end
 
 def greater(str)
     return "no answer" unless no_answer(str)
-    arr = str.split("").permutation.uniq.map {|arr| arr.join("") }.sort
-    pos = arr.index(str) + 1
-    arr[pos]
+    i = str.length - 1
+    while i >= 0 #go from the back and switch bigger with smaller
+        char1 = str[i]
+        j = i - 1
+        while j >= 0
+            char2 = str[j]
+            if char2 < char1
+               str[i], str[j] = str[j], str[i] #swap
+                k = j
+                i = -1 #break loop
+                j = -1 #break loop
+            end
+            j -= 1
+        end
+        i -= 1
+    end
+
+    str[0..k] + str[k + 1..-1].split("").sort.join("")
+
+
 end
 
 
