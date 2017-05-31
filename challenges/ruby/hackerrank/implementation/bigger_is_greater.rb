@@ -15,27 +15,24 @@ end
 
 def greater(str)
     return "no answer" unless no_answer(str)
-    i = str.length - 1
+    i = str.length - 2
+    #p [i]
     while i >= 0 #go from the back and switch bigger with smaller
 
-        j = i - 1
-        char1 = str[j]
-        k = j + 1
-        while k < str.length
-            char2 = str[k]
-            if char2 < char1
-               str[j], str[k] = str[k], str[j] #swap
-                i = -1 #break loop
-                k = str.length #break loop
-            end
-            k += 1
+        char1 = str[i]
+        #p [char1]
+        remaining = str[i + 1..-1]
+        #p remaining
+        remaining.split("").sort.uniq.each do |char2|
+           #p [char1, char2]
+           if  char2 > char1
+               j = -(remaining.reverse.index(char2) + 1) #find the instance of that char closest to the end of arr
+               str[j], str[i] = str[i], str[j] #swap
+               return str[0..i] + str[i + 1..-1].split("").sort.join("")
+           end
         end
         i -= 1
     end
-
-    str[0..j] + str[j + 1..-1].split("").sort.join("") + " "
-
-
 end
 
 
@@ -46,6 +43,3 @@ n.times do
     puts greater(str)
 
 end
-#yricnue - original
-#yriecnu - mine
-#yricuen - correct
