@@ -32,7 +32,7 @@ def greater(str)
         i -= 1
     end
 
-    str[0..k] + str[k + 1..-1].split("").sort.join("")
+    str[0..k] + str[k + 1..-1].split("").sort.join("") + " "
 
 
 end
@@ -45,3 +45,6 @@ n.times do
     puts greater(str)
 
 end
+#yricnue - original
+#yriecnu - mine
+#yricuen - correct
