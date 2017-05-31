@@ -15,6 +15,9 @@ end
 
 def greater(str)
     return "no answer" unless no_answer(str)
+    arr = str.split("").permutation.uniq.map {|arr| arr.join("") }.sort
+    pos = arr.index(str) + 1
+    arr[pos]
 end
 
 
