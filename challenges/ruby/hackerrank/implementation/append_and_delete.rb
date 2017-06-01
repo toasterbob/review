@@ -11,7 +11,11 @@ while i < t.length
     if s[i] != t[i]
         add = s.length - i
         left = t.length - i
-        puts (k - (add + left)) >= 0 &&  (k - (add + left)) % 2 == 0 ?  "Yes" : "No"
+        if i == 0
+            puts (add + left) <= k ? "Yes" : "No"
+        else
+            puts (k - (add + left)) >= 0 &&  (k - (add + left)) % 2 == 0 ?  "Yes" : "No"
+        end
         flag = true
         i = t.length
     end
@@ -19,8 +23,8 @@ while i < t.length
 end
 
 if s == t
-    puts "Yes" if s == t
+    puts "Yes"
     flag = true
 end
 
-puts (k - (s.length - t.length)) % 2 == 0 ? "Yes" : "No" unless flag 
+puts (k - (s.length - t.length)) >= 0 ? "Yes" : "No" unless flag 
