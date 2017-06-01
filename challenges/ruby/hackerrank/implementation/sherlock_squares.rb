@@ -6,7 +6,7 @@ def squares(x, y)
     count += 1 if y.floor == y
     count += 1 if x.ceil != x.floor
 
-    count += (x.ceil...y.ceil).to_a.count - 1
+    count += (y.ceil - x.ceil - 1)
     count
 end
 
