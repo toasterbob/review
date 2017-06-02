@@ -64,7 +64,39 @@ for(let i = 0; i < 5; i++){
 } // prints 0, 1, 2, 3, 4
 
 
+for(var i = 0; i < 5; i++){
+  setTimeout(function(){
+    console.log(i);
+  }, 0);
+
+}
+// calling the function with a closure
+for(let i = 0; i < 5; i++){
+  // closure because it makes use of inner variables
+  (function(correctNumber){
+    setTimeout(function(){
+      console.log(i);
+    }, 0);
+
+  })(i);
+
+}
 
 
+const a = function outer(){
+  var elie = "ME!"
+  var tim = "NOT ME!"
+  return function inner(){
+    console.log(`This is ${elie}`)
+  }
 
-//
+}
+
+
+function add(a=12, b=10){
+  return a + b
+}
+
+add() //22
+add(2) //12
+add(undefined, 2)// 14
