@@ -6,7 +6,7 @@ def cuts(arr)
     while arr.length > 1
         cut = arr.min
         arr = arr.map { |el| el - cut }.select { |el| el > 0}
-        result << arr.length
+        result << arr.length if arr.length > 0
     end
     result
 end
