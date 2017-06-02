@@ -171,10 +171,48 @@ var obj = {
 };
 obj.sayHi()
 
+// destructuring - unpacking data from objects
 
+var instructor = {
+  first: "Elie",
+  last: "Schoppik",
+  numSiblings: 3
+}
+var first = instructor.first;
+var last = instructor.last;
+var numSiblings = instructor.numSiblings;
 
+var {first, last, numSiblings} = instructor
 
+var instructor = {
+  fact: {
+    moreFacts: {
+      homeTown: "west orgnage",
+      state: "NJ"
+    }
+  }
+}
 
+var {state} = instructor.fact.moreFactsvar
+var {state:taco} = instructor.fact.moreFacts
 
+var numbers = [1, 2, 3, 4, 5]
+var [one, two , three, four, five] = numbers;
 
-//
+var obj = {first: 'Elie', last: 'Schoppik'}
+
+function returnFullName({first, last}){
+  return `${first} ${last}`
+}
+returnFullName(obj)
+
+// object shorthand notation first: first can just be first
+var student = "Mark"
+var obj = {
+  student //instead of student: student 
+}
+obj.student //"Mark"
+
+var first = "Elie"
+var obj = {}
+obj[first] = "that is me"
