@@ -100,3 +100,81 @@ function add(a=12, b=10){
 add() //22
 add(2) //12
 add(undefined, 2)// 14
+
+
+// arrow functions - get rid of the function key word
+var add = function(a,b){
+  return a + b
+}
+// fat arrow
+var add = (a, b) => {
+  return a + b
+}
+
+var add = (a,b) => a + b // no curly braces
+
+var add = (a, b) => (
+  a + b
+);
+
+var arr = [1, 2, 3, 4, 5];
+arr.map(val => val * 2).filter(val => val > 5); // [6, 8, 10]
+
+// any time a function is run arguments, and this are invoked
+// when you use arrows you do not get an arguments keyword
+//  ...rest - use this instead
+// arrow functions do not get their own keyword this , always the immediate
+// parent to where it is found
+
+var obj = {
+  firstName: "Elie",
+  info: () => {
+    return this; // parent this
+  }
+};
+
+var obj = {
+  firstName: "Elie",
+  sayHi: function(){
+    console.log("the keyword before setTimeout is", this)
+    setTimeout(function(){
+      console.log("the keyword inside setTimeout is", this)
+      console.log(`Hi, my name is ${this.firstName}`) // Hi, my name is undefined
+    }, 1000)
+  }
+};
+
+obj.sayHi()
+//the keyword before setTimeout is Object {firstName: "Elie", sayHi: function}
+//the keyword inside setTimeout is Window {stop: function, open: function, alert: function, confirm: function, prompt: function…}
+// Hi, my name is undefined
+
+var obj = {
+  firstName: "Elie",
+  sayHi: function(){
+    console.log("the keyword before setTimeout is", this)
+    setTimeout(() => { // arrow takes parent's this
+      console.log("the keyword inside setTimeout is", this)
+      console.log(`Hi, my name is ${this.firstName}`) // Hi, my name is undefined
+    }, 1000)
+  }
+};
+obj.sayHi()
+
+var obj = {
+  firstName: "Elie",
+  sayHi: function(){
+    setTimeout(function(){ // arrow takes parent's this
+      console.log(`Hi, my name is ${this.firstName}`) // Hi, my name is undefined
+    }.bind(this), 1000)
+  }
+};
+obj.sayHi()
+
+
+
+
+
+
+
+//
