@@ -11,8 +11,12 @@ y2 = y2.to_i
 
 if y1 > y2
     puts 10000
+elsif y1 < y2
+    puts 0
 elsif m1 > m2
     puts (m1 - m2) * 500
+elsif m1 < m2
+    puts 0
 elsif d1 > d2
     puts (d1 - d2) * 15
 else
