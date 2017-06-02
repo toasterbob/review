@@ -196,8 +196,8 @@ var instructor = {
 var {state} = instructor.fact.moreFactsvar
 var {state:taco} = instructor.fact.moreFacts
 
-var numbers = [1, 2, 3, 4, 5]
-var [one, two , three, four, five] = numbers;
+var numbers2 = [1, 2, 3, 4, 5]
+var [one, two , three, four, five] = numbers2;
 
 var obj = {first: 'Elie', last: 'Schoppik'}
 
@@ -209,7 +209,7 @@ returnFullName(obj)
 // object shorthand notation first: first can just be first
 var student = "Mark"
 var obj = {
-  student //instead of student: student 
+  student //instead of student: student
 }
 obj.student //"Mark"
 
