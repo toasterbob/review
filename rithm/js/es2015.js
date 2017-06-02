@@ -24,7 +24,7 @@ numbers;
 
 // can't redeclare the same variable with let twice
 // but you can with var
-// let is block scoped
+// let is block scoped - if for while switch do throw catch finally else else if
 
 // ++ is called a postfix or prefix operator
 number = 0;
@@ -34,3 +34,37 @@ number;
 //1
 ++number;
 //2
+
+var instructor = "Elie";
+
+if(instructor === "Elie"){
+  let fact = true;
+}
+fact; // reference error  - not undefined
+
+for(var i = 0; i < 5; i++){
+  setTimeout(function(){
+    console.log(i);
+  }, 1000);
+
+} // prints 5, 5 times
+
+for(var i = 0; i < 5; i++){
+  setTimeout(function(){
+    console.log(i);
+  }, 0);
+
+} // prints 5, 5 times
+
+for(let i = 0; i < 5; i++){
+  setTimeout(function(){
+    console.log(i);
+  }, 0);
+
+} // prints 0, 1, 2, 3, 4
+
+
+
+
+
+//
