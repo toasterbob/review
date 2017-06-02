@@ -19,3 +19,18 @@ numbers.push(100);
 
 numbers;
 //(5) [1, 2, 3, 4, 100]
+
+// primatives = numbers, undefined, null, booleans, symbol, string
+
+// can't redeclare the same variable with let twice
+// but you can with var
+// let is block scoped
+
+// ++ is called a postfix or prefix operator
+number = 0;
+number++;
+//0
+number;
+//1
+++number;
+//2
