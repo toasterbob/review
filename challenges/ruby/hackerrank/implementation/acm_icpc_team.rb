@@ -12,11 +12,12 @@ best = Hash.new(0)
 
 0.upto(topic.length - 2) do |i|
     compare = i + 1
+    a = topic[i].to_i(2)
     compare.upto(topic.length - 1) do |j|
-        count = 0
-        topic[i].split("").each_with_index { |el, i| count += 1 if el == "1" || topic[j][i] == "1" }
+        b = topic[j].to_i(2)
+        count = (a | b).to_s(2).count("1")
         top = count if count > top
-        best[count] += 1
+        best[count] +=1
     end
 end
 puts top
