@@ -1,14 +1,16 @@
 #!/bin/ruby
 def go(direction, pos, obs, board)
     count = 0
+
     pos[0] += direction[0]
     pos[1] += direction[1]
+
 
     condition1 = pos[0] > board || pos[1] > board
     condition2 = pos[0] < 0 || pos[1] < 0
 
-    while !(obs.include?(pos) || pos[0] > board || pos[1] > board || pos[0] < 0 || pos[1] < 0)
-        p pos
+    while !(obs.include?(pos) || pos[0] > board || pos[1] > board || pos[0] < 1 || pos[1] < 1)
+
         count += 1
         pos[0] += direction[0]
         pos[1] += direction[1]
@@ -23,7 +25,7 @@ def queen(board, pos, obs)
     directions = [[1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, -1], [-1, 1], [1, -1]]
 
     directions.each do |direction|
-        count += go(direction, pos, obs, board)
+        count += go(direction, pos.clone, obs, board)
     end
 
     count
