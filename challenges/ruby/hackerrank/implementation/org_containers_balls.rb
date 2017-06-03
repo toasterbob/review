@@ -12,11 +12,12 @@ for a0 in (0..q-1)
     bowls = Hash.new(0)
 
     b.each_with_index do |arr, i|
-        bowls[i] = arr.count
+        bowls[i] = arr.reduce(0, :+)
         arr.each_with_index do |el, j|
             counts[j] += el
         end
     end
+
     puts counts.values.sort == bowls.values.sort ? "Possible" : "Impossible"
 
 end
