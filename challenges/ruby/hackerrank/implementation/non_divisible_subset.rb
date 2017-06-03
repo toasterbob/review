@@ -7,11 +7,12 @@ arr.delete(k)
 arr.map { |el| hash[el % k] +=1 }
 count = 0
 
-arr.uniq.each do |i|
+
+hash.keys.each do |i|
     j = k - i
-    arr.count(j) <= arr.count(i) ? count += arr.count(i) : count += arr.count(j)
-    arr.delete(j)
-    arr.delete(i)
+    hash[i] <= hash[j] ? count += hash[j] : count += hash[i]
+    hash.delete(j)
+    hash.delete(i)
 end
 
 puts count
