@@ -20,10 +20,6 @@ def go(direction, pos, obs, board)
     count
 end
 
-def go2(direction, pos, obs, board)
-    count = 0
-
-end
 
 def queen(board, pos, obs)
     count = 0
