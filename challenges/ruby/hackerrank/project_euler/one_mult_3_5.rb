@@ -48,6 +48,7 @@ for a0 in (0..t-1)
     puts three_five(n)
 end
 #########################################################
+#O(1) time 
 def three_five(n)
     n -= 1
     result = 0
