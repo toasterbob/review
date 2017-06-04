@@ -3,16 +3,16 @@
 def bread(n, arr)
     bread = 0
 
-    0.upto(n - 1) do |i|
+    0.upto(n - 2) do |i|
         j = i + 1
-        if arr[i] % 2 == 1 && i != (n - 1)
+        if arr[i].odd?
             arr[i] += 1
             arr[j] += 1
             bread += 2
         end
     end
 
-    arr[-1] % 2 == 1 ? "NO" : bread
+    arr[-1].odd? ? "NO" : bread
 end
 
 n = gets.strip.to_i
