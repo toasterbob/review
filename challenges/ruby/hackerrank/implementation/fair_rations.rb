@@ -2,7 +2,7 @@
 
 def bread(n, arr)
     bread = 0
-
+    # for "NO" - could sum arr and return no if odd
     0.upto(n - 2) do |i|
         j = i + 1
         if arr[i].odd?
