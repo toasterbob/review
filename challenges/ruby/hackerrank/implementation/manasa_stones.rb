@@ -26,14 +26,14 @@ end
 
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 def stones(len, dif1, dif2)
-    result = [dif1 * (len - 1)]
+    result = [[dif1, dif2].min * (len - 1)]
     difference = (dif2 - dif1).abs
 
     (len - 1).times do
         result << result[-1] + difference
     end
 
-    puts result.join(" ")
+    puts result.uniq.join(" ")
 end
 
 n = gets.strip.to_i
