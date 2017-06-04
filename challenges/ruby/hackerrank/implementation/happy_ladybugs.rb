@@ -26,8 +26,7 @@ end
 def happy(b)
     happy = ""
     sad = ""
-    b.split("").uniq.each { |el|  b.count(el) > 1 ? happy += (el * b.count(el)) : sad += el }
-    sad.delete!("_")
+    b.delete("_").split("").uniq.each { |el|  b.count(el) > 1 ? happy += (el * b.count(el)) : sad += el }
 
     return "YES" if b.count("_") == 0 && happy == b
 
