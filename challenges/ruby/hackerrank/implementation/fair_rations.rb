@@ -1,7 +1,6 @@
 #!/bin/ruby
 
 def bread(n, arr)
-    return "NO" if n == 2 && (arr[0] - arr[1]).abs == 1
     bread = 0
 
     0.upto(n - 1) do |i|
@@ -12,6 +11,7 @@ def bread(n, arr)
             bread += 2
         end
     end
+
     arr[-1] % 2 == 1 ? "NO" : bread
 end
 
