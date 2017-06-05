@@ -50,6 +50,8 @@ var nothing = 0;
 
 //Difference between == and ===
 //== allows for type coercion of the values, while === does not.
+//in fact, === is sometimes referred to as the "strict" equality operator,
+//while == is sometimes referred to as the "loose" equality operator
 
 // 1.
 5 + "hi"; // "5hi"
@@ -67,3 +69,73 @@ if (null) {
 // 4.
 +"304"; // 304
 "" + 2; // "2"
+
+5 == "5"; // true
+5 === "5"; // false
+"true" === true; // false
+"true" == true; // false
+true == 1; // true
+true === 1; // false
+undefined === null; // false
+undefined == null; // true
+
+/*
+In JavaScript there are 6 falsey values:
+
+0
+""
+null
+undefined
+false
+NaN (short for not a number)
+*/
+
+!!false //false
+!!-1 //true
+!!-0 //false
+!![] //true
+!!{} // true
+!!"" //false
+!!null //false
+
+
+//switch
+
+var feeling = prompt("How are you feeling today?").toLowerCase();
+// what do you think the .toLowerCase does at the end?
+
+switch(feeling){
+    case "happy":
+        console.log("Awesome, I'm feeling happy too!");
+        break;
+    case "sad":
+        console.log("That's too bad, I hope you feel better soon.");
+        break;
+    case "hungry":
+        console.log("Me too, let's go eat some pizza!");
+        break;
+    default:
+        console.log("I see. Thanks for sharing!");
+}
+
+5 % 3 === 2 // true (the remainder when five is divided by 3 is 2)
+
+var num = prompt("Please enter a whole number");
+if ( num % 2 === 0 ) {
+    console.log("the num variable is even!")
+} else if ( num % 2 === 1) {
+    console.log("the num variable is odd!")
+} else {
+    console.log("Hey! I asked for a whole number!");
+}
+
+
+var num = Math.random();
+
+if (num > .5){
+  console.log("Over 0.5 ", num)
+} else {
+  console.log("Under 0.5 ", num)
+}
+
+// falsey - 0, "", false, null, undefined and NaN.
