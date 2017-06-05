@@ -49,14 +49,58 @@ secondDiv.classList; // [another_class"]
 // and pop methods we've seen when dealing with arrays. This is because the
 // classList isn't actually an array and doesn't have push or pop methods on it.
 
+// Traversing the DOM
 
+// Another very common operation when working with the DOM is trying to
+// find elements inside of other elements. When we travel through the DOM
+// in search of something, we are doing what is called DOM traversal. Here
+// are a few common methods we can use for finding elements and/or text
+// nodes in relation to an element that we have already found.
 
+var container = document.getElementById("container");
+container.childNodes; // // this contains all of the nodes (including text nodes) that are children
+container.childNodes.length; // 11
+container.children; // this contains all of the elements that are children of the element we have selected
+container.children.length; // 5
 
+var link = document.querySelector("a");
+link.parentElement; // <body id="container">...</body>
+link.previousElementSibling; // <div class="hello">Hello Everyone!</div>
+link.previousSibling; // text node
+link.nextSibling; // text node
+link.nextElementSibling; // <button>​Click me!​</button>​
 
+// Creating elements
 
+// To create elements we use the .createElement function on the document
+// object and pass in a string with the name of the element that we would
+// like to create. This will just return a new HTML element without any
+// text/attributes or placement on the page!
+var newDiv = document.createElement("div");
 
+// So now that we created this element, how do we place it on the page?
+//Appending elements
+var button = document.createElement("button");
+button.innerText = "I am a button created with JavaScript!";
 
+var container = document.getElementById("container");
+container.appendChild(button);
 
+// And now that we created an element, how do we remove one?
 
+var linkToBeRemoved = document.querySelector("a");
+var container = document.getElementById("container");
+container.removeChild(linkToBeRemoved); //removed link
 
+//Changing multiple elements
+// So what would happen if we wanted to change all of our divs to have a
+// background color of red? Unfortunately, we can not do that without a loop:
+
+var divs = document.querySelectorAll("div");
+divs.style.backgroundColor = "red"; // this will not work, try to understand the error you receive!
+
+// we have to use a loop for each one instead.
+for(var i = 0; i < divs.length; i++){
+    divs[i].style.backgroundColor = "red"; // this will work!
+}
 //

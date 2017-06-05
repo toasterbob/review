@@ -23,6 +23,27 @@
 
       var secondDiv = document.getElementsByTagName("div")[1];
       secondDiv.innerText = "Just changed Again!";
+
+      var button = document.createElement("button");
+      button.innerText = "I am a button created with JavaScript!";
+      var container = document.getElementById("container");
+      container.appendChild(button);
+
+      var container = document.getElementById("container");
+      console.log(container.childNodes); // // this contains all of the nodes (including text nodes) that are children
+      container.childNodes.length; // 11
+      console.log(container.children); // this contains all of the elements that are children of the element we have selected
+      container.children.length; // 5
+
+      var linkToBeRemoved = document.querySelector("a");
+      var container = document.getElementById("container");
+      container.removeChild(linkToBeRemoved); //removed link
+
+      var divs = document.querySelectorAll("div");
+      // we have to use a loop for each one instead.
+      for(var i = 0; i < divs.length; i++){
+          divs[i].style.backgroundColor = "yellow"; // this will work!
+      }
     </script>
 </body>
 </html>
