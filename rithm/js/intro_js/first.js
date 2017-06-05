@@ -46,3 +46,24 @@ var nothing = 0;
 
 !!greeting; // true
 !!nothing; // false
+
+
+//Difference between == and ===
+//== allows for type coercion of the values, while === does not.
+
+// 1.
+5 + "hi"; // "5hi"
+
+// 2.
+if ("foo") {
+  console.log("this will show up!");
+}
+
+// 3.
+if (null) {
+  console.log("this won't show up!");
+}
+
+// 4.
++"304"; // 304
+"" + 2; // "2"
