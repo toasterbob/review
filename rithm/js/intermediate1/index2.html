@@ -40,10 +40,10 @@
 
       // 5 - Give the section with an id of container the text "Hello!".
       var cont = document.getElementById("container");
-      cont.innerText = "Hello!";
+      // cont.innerText = "Hello!";
 
       // 6 - Add the class main to the div with a class of footer.
-      var m = document.getElementsByClassName("footer");
+      var m = document.querySelector(".footer");
       m.classList.add("main");
 
       //theirs
@@ -58,20 +58,25 @@
       m.classList.remove("main");
 
       //theirs
-      var footer = document.querySelector(".footer");
-      footer.classList.remove("main");
+      // var footer = document.querySelector(".footer");
+      // footer.classList.remove("main");
 
       // 8 - Create a new li element.
       var newLi = document.createElement("li");
 
       // 9 - Give the li the text "four".
-      newLi.innerText("four");
+      newLi.innerText ="four";
 
       // 10 - Append the li to the ul element.
       var theUl = document.querySelector("ul");
       theUl.appendChild(newLi);
 
-      
+      // 11 - Loop over all of the lis inside the ol tag and give them a background color of "green".
+      var lis = document.querySelectorAll("ol li");
+      for(let i = 0; i < lis.length; i++){
+        lis[i].style.backgroundColor = "green";
+      }
+
     </script>
 </body>
 </html>
