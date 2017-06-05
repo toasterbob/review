@@ -9,7 +9,7 @@ def pairs(str)
     hash = hash.keep_if { |k, v| v.length > 1}
     p hash
     #result.empty? ? 0 : result.reduce(1, :*)
-end
+end 
 
 n = gets.strip.to_i
 
