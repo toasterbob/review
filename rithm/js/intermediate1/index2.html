@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+    <script>
+      // 1 - Select the section with an id of container without using querySelector.
+      document.getElementById("container");
+
+      // 2 - Select the section with an id of container using querySelector.
+      document.querySelector("#container")
+
+      // 3 - Select all of the list items with a class of "second".
+      document.getElementsByClassName("second");
+
+      // OR
+
+      document.querySelectorAll(".second")
+
+      // 4 - Select a list item with a class of third, but only the list item inside of the ol tag.
+    </script>
+</body>
+</html>
