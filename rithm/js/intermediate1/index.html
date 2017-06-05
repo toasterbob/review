@@ -15,7 +15,14 @@
     <a href="#">This link goes nowhere!</a>
     <button>Click me!</button>
     <script>
-        // you can put your JavaScript in here, or include an external file.
+      var firstDiv = document.getElementsByTagName("div")[0];
+      firstDiv.innerHTML = "<b>Just changed!</b>";
+      firstDiv.style.color = "red";
+      // firstDiv.style.backgroundColor = "teal";
+      firstDiv.style["background-color"] = "purple"; // this works too
+
+      var secondDiv = document.getElementsByTagName("div")[1];
+      secondDiv.innerText = "Just changed Again!";
     </script>
 </body>
 </html>
