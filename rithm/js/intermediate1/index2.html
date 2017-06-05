@@ -43,6 +43,34 @@
       cont.innerText = "Hello!";
 
       // 6 - Add the class main to the div with a class of footer.
+      var m = document.getElementsByClassName("footer");
+      m.classList.add("main");
+
+      //theirs
+      // var footer = document.querySelector(".footer");
+      // footer.classList.add("main");
+      //
+      // // OR
+      //
+      // footer.className += "main";
+
+      // 7 - Remove the class main on the div with a class of footer.
+      m.classList.remove("main");
+
+      //theirs
+      var footer = document.querySelector(".footer");
+      footer.classList.remove("main");
+
+      // 8 - Create a new li element.
+      var newLi = document.createElement("li");
+
+      // 9 - Give the li the text "four".
+      newLi.innerText("four");
+
+      // 10 - Append the li to the ul element.
+      var theUl = document.querySelector("ul");
+      theUl.appendChild(newLi);
+
       
     </script>
 </body>
