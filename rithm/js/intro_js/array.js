@@ -78,3 +78,90 @@ arr3; // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 var arr = [1,2,3,4];
 var copy = arr.slice();
 copy; // [1,2,3,4];
+
+// The subarray you get will consist of all the values starting from
+// the starting index and going up to (but not including) the ending index
+var arr = [7, 6, 5, 4, 3, 2];
+arr.slice(1, 2); // [6]
+arr.slice(1, 1); // []
+arr.slice(2, 5); // [5, 4, 3]
+arr.slice(2, 1); // []
+
+//concat joins two arrays together.
+var arr1 = [1,2,3];
+var arr2 = [4,5,6];
+var combined = arr1.concat(arr2);
+combined; // [1,2,3,4,5,6]
+// you can pass in multiple arrays
+var arr1 = ["a","b","c"];
+var arr2 = ["d","e","f"];
+var arr3 = ["g","h","i"];
+var combined = arr1.concat(arr2,arr3);
+combined; // ["a","b","c","d","e","f","g","h","i"];
+//Any comma-separated list of values can be concatenated with the original array:
+var openingWords = ["It","was","a"];
+var moreOpeningWords = openingWords.concat("dark","and","stormy","night");
+moreOpeningWords; // ["It", "was", "a", "dark", "and", "stormy", "night"]
+
+// join - the argument is frequently referred to as a delimiter.
+var arr = ["Hello", "World"];
+arr.join(" "); // "Hello World"
+
+var arr2 = ["I", "have", "a", "big", "announcement"];
+arr2.join("! ") + "!"; // "I! have! a! big! announcement!"
+
+// indexOf finds the first index of the element passed in (starting from
+//   the left). If the element is not found, it returns -1.
+
+var arr = [1,2,3,4,5,4,4];
+arr.indexOf(2); // 1
+arr.indexOf(3); // 2
+arr.indexOf(1); // 0
+arr.indexOf(4); // 3 - indexOf stops once it finds the first 4.
+arr.indexOf(10); // -1
+
+var moviesIKnow = [
+    "Wayne's World",
+    "The Matrix",
+    "Anchorman",
+    "Bridesmaids"
+];
+
+var yourFavoriteMovie = prompt("What's your favorite movie?");
+if (moviesIKnow.indexOf(yourFavoriteMovie) > -1) {
+    alert("Oh, cool, I've heard of " + yourFavoriteMovie + "!");
+} else {
+    alert("I haven't heard of " + yourFavoriteMovie + ". I'll check it out.");
+}
+
+// lastIndexOf works just like indexOf, but starts searching from the end
+// of the array rather than the beginning.
+
+var arr = [1,2,3,4,5,4,4];
+arr.indexOf(4); // 3
+arr.lastIndexOf(4); // 6 - this one is different now as it starts from the end!
+arr.lastIndexOf(10); // -1 - still returns -1 if the value is not found in the array
+
+//Reference vs Value
+var instructor = "Elie";
+var anotherInstructor = instructor;
+anotherInstructor // "Elie";
+
+// Let's assign a new value to anotherInstructor:
+anotherInstructor = "Matt";
+
+instructor; // "Elie"
+anotherInstructor; // "Matt"
+
+var instructors = ["Elie", "Matt"];
+var instructorCopy = instructors;
+instructorCopy.push("Tim");
+
+instructorCopy; // ["Elie", "Matt", "Tim"]
+instructors; // ["Elie", "Matt", "Tim"]
+
+// This is because the instructorCopy did not create a new array, it just
+// created a reference (or pointer) to the instructors array. In other
+// words, unlike with our previous example, setting instructorCopy equal
+// to instructors doesn't creat a copy of the instructors array in JavaScript.
+// Instead, both variable names refer to the exact same array!
