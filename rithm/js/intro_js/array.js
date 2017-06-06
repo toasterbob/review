@@ -165,3 +165,16 @@ instructors; // ["Elie", "Matt", "Tim"]
 // words, unlike with our previous example, setting instructorCopy equal
 // to instructors doesn't creat a copy of the instructors array in JavaScript.
 // Instead, both variable names refer to the exact same array!
+function f(a,b,c) {
+   a = 3;
+   b.push("foo");
+   c.first = false;
+}
+
+var x = 4;
+var y = ["eeny", "miny", "mo"];
+var z = {first: true};
+f(x,y,z);
+x; //4
+y; //["eeny", "miny", "mo", "foo"]
+z; //{first: false}
