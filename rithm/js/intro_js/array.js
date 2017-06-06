@@ -67,3 +67,14 @@ arr2; //["alpha", "beta", "gamma", "delta"]
 var arr3 = [10,-10,-5,-3,2,1];
 arr3.splice(0, 4, 10, 9, 8, 7, 6, 5, 4, 3); //[10, -10, -5, -3]
 arr3; // [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+//Array Methods
+
+//length returns how many elements are in the array. This is a property, NOT a function
+
+//slice makes a copy of an array. We can use it to copy the entire array,
+// or create a copy of a subarray. If we just invoke slice() with no arguments, we'll create a copy:
+
+var arr = [1,2,3,4];
+var copy = arr.slice();
+copy; // [1,2,3,4];
