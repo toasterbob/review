@@ -27,21 +27,16 @@ puts almost_sorted(arr)
 
 ################################################################
 #refactor
-# Enter your code here. Read input from STDIN. Print output to STDOUT
 def almost_sorted(arr)
     sorted = arr.sort
     return "yes" if arr == sorted
 
-    i = 0
-    until arr[i] != sorted[i] do
-        i += 1
-    end
+    i, j = 0, -1
 
-    j = -1
-    until arr[j] != sorted[j] do
-        j -= 1
-    end
-    j += arr.length
+    i += 1 until arr[i] != sorted[i] #start at the beginning
+    j -= 1 until arr[j] != sorted[j] #start at the end
+
+    j += arr.length #remember j was negative - so we subtract it from arr.length to get index
 
     compare = arr[0..i - 1] + arr[i..j].reverse + arr[j + 1..-1]
     arr[i], arr[j] = arr[j], arr[i]
