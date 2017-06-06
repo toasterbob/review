@@ -6,23 +6,27 @@ def almost_sorted(arr)
     arr.each_with_index do |el, i|
         incorrect << i if el != sorted[i]
     end
+    #p incorrect
 
     if incorrect.length == 0
         "yes"
     elsif incorrect.length == 2
         a, b = incorrect
         arr[a], arr[b] = arr[b], arr[a]
-        arr == sorted ? "yes\nswap #{a} #{b}" : "no"
+        #p [arr == sorted]
+        arr == sorted ? "yes\nswap #{a + 1} #{b + 1}" : "no"
     else
         x, y = incorrect.min, incorrect.max
         if (x..y).to_a == incorrect
             compare = arr[0..x - 1] + arr[x..y].reverse + arr[y + 1..-1]
-            sorted == compare ? "yes\nreverse #{x} #{y}" : "no"
+            sorted == compare ? "yes\nreverse #{x + 1} #{y + 1}" : "no"
+        else
+            "no"
         end
     end
-    "no"
+
 end
 
 gets
 arr = gets.strip.split(" ").map(&:to_i)
-puts almost_sorted(arr)
+puts almost_sorted(arr) 
