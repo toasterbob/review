@@ -1,15 +1,14 @@
 #!/bin/ruby
 def abs_perm(n, k)
-    nums = 1.upto(n).to_a
+    hash = Hash.new(false)
+    1.upto(n).to_a.map { |el| hash[el] = true }
 
     result = []
-    nums.each do |num|
-        find1 = (num - k).abs
-        find2 = num + k
-        if nums.include?(find1)
+    hash.keys.each do |num|
+        find1 = num > k ? num - k : num + k
+
+        if hash[find1]
             result << find1
-        elsif nums.include?(find2)
-            result << find2
         else
             return -1
         end
