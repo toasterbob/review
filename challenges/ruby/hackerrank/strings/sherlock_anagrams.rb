@@ -10,7 +10,7 @@ def pairs(str)
         end
     end
 
-    hash = hash.keep_if { |k, v| v > 1}
+    #hash = hash.keep_if { |k, v| v > 1}
     total = 0
 
     hash.values.each do |val|
