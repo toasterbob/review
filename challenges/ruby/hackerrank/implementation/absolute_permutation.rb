@@ -5,10 +5,15 @@ def abs_perm(n, k)
 
     result = []
     hash.keys.each do |num|
-        find1 = num > k ? num - k : num + k
+        find = num - k
+        find2 = num + k
 
-        if hash[find1]
-            result << find1
+        if hash[find]
+            result << find
+            hash[find] = false
+        elsif hash[find2]
+            result << find2
+            hash[find2] = false
         else
             return -1
         end
