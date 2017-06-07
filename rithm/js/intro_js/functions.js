@@ -91,9 +91,15 @@ function displayEvenNumbers(numbers) {
 }
 displayEvenNumbers(numbers);
 
+function returnFirstHalf(numbers) {
+  return numbers.slice(0, numbers.length/2);
+}
+returnFirstHalf(numbers); // [1, 2, 3, 4, 5]
 
-
-
+function returnSecondHalf(numbers) {
+  return numbers.slice(numbers.length/2, numbers.length);
+}
+returnSecondHalf(numbers); // [6, 7, 8, 9, 10]
 
 
 
