@@ -324,3 +324,4 @@ people.indexOf("Foo"); //-1
 var people = ["Greg", "Mary", "Devon", "James"];
 people.splice(2, 1, "Elizabeth", "Artie");
 people; // ["Greg", "Mary", "Elizabeth", "Artie", "James"]
+var withBob = people.concat("Bob"); //["Greg", "Mary", "Elizabeth", "Artie", "James", "Bob"]
