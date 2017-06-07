@@ -257,3 +257,46 @@ for(var i = 0; i<5; i++){
     }
     console.log(i);
 }
+
+// However, unlike with arrays, you can't reassign the value of a character
+// in a string. If you try, JavaScript will simply ignore you: (but it works in Ruby)
+
+var name = "Matt";
+name[0] = "m";
+name; // "Matt", not "matt"!
+
+// We say that arrays in JavaScript are mutable, since you can change any
+// element inside of them via a simple reassignment. However, strings are
+// immutable, as you cannot change the characters within them in the same
+// way that you do with arrays. In fact, any operation which changes
+// characters in a string actually produces a new string, rather than
+// mutating the original string.
+
+var arr = [];
+var v2 = arr.push(2);
+arr; // [2]
+v2; // 1 - the length of the array is returned from push - in ruby you get the array
+
+
+//ImmutableArray type
+var arr = new ImmutableArray([1, 2, 3, 4]);
+var v2 = arr.push(5);
+
+arr.toArray(); // [1, 2, 3, 4]
+v2.toArray();  // [1, 2, 3, 4, 5]
+
+//ImmutableMap
+
+var person = new ImmutableMap({name: "Chris", age: 32});
+var olderPerson = person.set("age", 33);
+
+person.toObject(); // {name: "Chris", age: 32}
+olderPerson.toObject(); // {name: "Chris", age: 33}var person = new ImmutableMap({name: "Chris", age: 32});
+var olderPerson = person.set("age", 33);
+
+person.toObject(); // {name: "Chris", age: 32}
+olderPerson.toObject(); // {name: "Chris", age: 33}
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//Exercises
+var people = ["Greg", "Mary", "Devon", "James"];
