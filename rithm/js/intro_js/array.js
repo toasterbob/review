@@ -318,6 +318,8 @@ for(let i = 0; i < people.length; i++){
 }
 
 var copy = people.slice(2,4);
+// var copy = people.slice(2); //same 
+
 people.indexOf("Mary");
 people.indexOf("Foo"); //-1
 
