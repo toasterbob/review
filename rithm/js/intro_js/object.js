@@ -161,11 +161,19 @@ programming.difficulty = 7;
 delete programming.jokes;
 programming; {languages: Array(4), isChallenging: true, isRewarding: true, difficulty: 7}
 
+programming.isFun = true;
 
+for(let i = 0; i < programming.languages.length; i++){
+  console.log(programming.languages[i])
+}
 
+for (key in programming){
+  console.log(key);
+}
 
-
-
+for (key in programming){
+  console.log(programming[key]);
+}
 
 
 
