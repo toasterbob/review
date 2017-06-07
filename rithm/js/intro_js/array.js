@@ -178,3 +178,16 @@ f(x,y,z);
 x; //4
 y; //["eeny", "miny", "mo", "foo"]
 z; //{first: false}
+
+
+
+// //////////////////////////////////////////////////////////////////////
+//Exericses part 1
+var arr = [];
+arr.push("Mark");
+arr.push("Noizumi");
+arr.unshift("green");
+arr; //["green", "Mark", "Noizumi"]
+arr.shift(); //green
+var arr2 = [];
+arr2.push(25);
