@@ -4,3 +4,13 @@ var firstObj = {
     lastName: "Garcia",
     isInstructor: true
 };
+// dot notation:
+firstObj.firstName;       // returns "Tim"
+firstObj.lastName;        // returns "Garcia"
+firstObj.isInstructor;    // returns true
+firstObj.keyDoesntExist;  // returns undefined
+//bracket notation:
+firstObj["firstName"];       // returns "Tim"
+firstObj["lastName"];        // returns "Garcia"
+firstObj["isInstructor"];    // returns true
+firstObj["keyDoesntExist"];  // returns undefined
