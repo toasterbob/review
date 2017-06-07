@@ -67,11 +67,29 @@ function randomFood(favoriteFoods) {
 // Math.floor to round down.
 function randomFood(favoriteFoods) {
   let rand = Math.floor(Math.random() * favoriteFoods.length);
-  return favoriteFoods[rand];
+  return favoriteFoods[rand]; //doesn't see to be as random as above
 }
 randomFood(favoriteFoods);
 
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
+function displayOddNumbers(numbers) {
+  for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] % 2 === 1){
+      console.log(numbers[i]);
+    }
+  }
+}
+displayOddNumbers(numbers);
+
+function displayEvenNumbers(numbers) {
+  for(let i = 0; i < numbers.length; i++){
+    if(numbers[i] % 2 === 0){
+      console.log(numbers[i]);
+    }
+  }
+}
+displayEvenNumbers(numbers);
 
 
 
