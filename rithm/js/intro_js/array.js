@@ -300,3 +300,27 @@ olderPerson.toObject(); // {name: "Chris", age: 33}
 ////////////////////////////////////////////////////////////////////////////////////////////
 //Exercises
 var people = ["Greg", "Mary", "Devon", "James"];
+
+for(let i = 0; i < people.length; i++){
+  console.log(people[i]);
+}
+
+people.shift();
+people.pop();
+people.unshift("Matt");
+people.push("Mark");
+
+for(let i = 0; i < people.length; i++){
+  console.log(people[i]);
+  if (people[i] === "Mary"){
+    break
+  }
+}
+
+var copy = people.slice(2,4);
+people.indexOf("Mary");
+people.indexOf("Foo"); //-1
+
+var people = ["Greg", "Mary", "Devon", "James"];
+people.splice(2, 1, "Elizabeth", "Artie");
+people; // ["Greg", "Mary", "Elizabeth", "Artie", "James"]
