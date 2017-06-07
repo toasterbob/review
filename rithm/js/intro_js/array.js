@@ -191,3 +191,69 @@ arr; //["green", "Mark", "Noizumi"]
 arr.shift(); //green
 var arr2 = [];
 arr2.push(25);
+arr2.push("JavaScript");
+arr2; //[25, "JavaScript"]
+arr2.indexOf(42); // -1
+
+var combinedArray = arr.concat(arr2);
+combinedArray; //["Mark", "Noizumi", 25, "JavaScript"]
+
+//Exercises part 2
+var arr = ["JavaScript", "Python", "Ruby", "Java"];
+arr.slice(1, 3); //["Python", "Ruby"]
+
+arr.concat(["Haskell", "Clojure"]); ////["JavaScript", "Python", "Ruby", "Java", "Haskell", "Clojure"]
+arr.join(" "); //"JavaScript Python Ruby Java"
+
+
+// Array Iteration
+var decimals = [1.1, 1.6, 2.8, 0.4, 3.5, 1.6];
+var i = 0;
+
+while(i < decimals.length) {
+    decimals[i] = Math.round(decimals[i]);
+    i++;
+}
+// The main difference between a while loop and a do...while loop is
+// that the code inside of a do...while loop is guaranteed to execute at least once.
+var i = 0;
+do {
+    console.log(i);
+    i++;
+} while(i < 5)
+
+//##############
+var i = 0;
+while(i < 0) {
+    console.log(i);
+    i++;
+}
+// nothing is logged, since 0 < 0 is false
+
+var j = 0;
+do {
+    console.log(j);
+    j++;
+} while(j < 0)
+// 0 gets logged, since the code inside the block runs once
+// before the while condition is checked
+
+//break
+for(var i = 0; i<5; i++){
+    if(Math.random() > 0.5){
+        console.log("Breaking out of the loop when i is " + i);
+        break;
+    }
+    else {
+        console.log(i);
+    }
+}
+//continue
+
+for(var i = 0; i<5; i++){
+    if(Math.random() > 0.5){
+        console.log("Skipping the console.log when i is " + i);
+        continue;
+    }
+    console.log(i);
+}
