@@ -30,3 +30,25 @@ end
 cnt = gets.to_i
 ar = gets.strip.split(" ").map! {|i| i.to_i}
 insertionSort2(ar)
+
+#refactor
+#!/usr/bin/ruby
+def  insertionSort(arr)
+    1.upto(arr.length - 1) do |i|
+       if arr[i] < arr[i - 1]
+           j = i - 1
+           while j >= 0
+              if arr[j] > arr[i] && j != 0
+                  j -= 1
+              else
+                  arr[j + 1], arr[i] = arr[i], arr[j + 1] #swap
+                  break
+              end
+           end
+       end
+       puts arr.join(" ")
+    end
+end
+cnt = gets.to_i
+ar = gets.strip.split(" ").map! {|i| i.to_i}
+insertionSort(ar)
