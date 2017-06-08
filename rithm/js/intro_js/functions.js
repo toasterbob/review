@@ -107,6 +107,47 @@ returnSecondHalf(numbers); // [6, 7, 8, 9, 10]
 //In JavaScript (before ES2015\), there are only 2 kinds of scope:
 //global scope and function scope.
 // In ES2015 we have block scope with let
+var globalVariable = "I live in the global scope";
+
+function makeNewScope(){
+    var functionScopeVariable = "I live in the scope of the makeNewScope function";
+}
+
+globalVariable; // "I live in the global scope";
+makeNewScope(); // maybe this will define the functionScopeVariable...
+
+functionScopeVariable; // This gives us an error! To be specific, a
+//ReferenceError because the functionScopeVariable is not defined.
+
+// Since this variable declaration is in the global scope, it will
+// be a global variable with or without the var keyword.  It is a best
+// practice to always use the var keyword though.
+globalVariable = "I live in the global scope";
+
+function makeNewScope(){
+    // You do not want to do this in practice.  You should
+    // always defined your variables with the var keyword.
+    functionScopeVariable = "What happens now?";
+}
+
+globalVariable; // "I live in the global scope"
+makeNewScope(); // now this will define the functionScopeVariable!
+
+// The value of the variable will be "What happens now?"
+functionScopeVariable;
+
+
+// If we omit the var keyword inside of a function, we actually declare
+// that variable in the global scope. While this may seem like the way to
+// go, this is not best practice. If we need to change some variable in a
+// function, we should at least declare it in the global scope and assign
+// it in a function so that our code is more readable.
+
+
+
+
+
+
 
 
 
