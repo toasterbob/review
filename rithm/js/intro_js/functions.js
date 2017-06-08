@@ -196,8 +196,20 @@ var elie = createStudent("Elie", "Schoppik");
 var students = [tim, matt, elie];
 students[0]; // {firstName: "Tim", lastName: "Garcia"}
 
-
-
+function findStudentByFirstName(name){
+  for(let i = 0; i < students.length; i++){
+    if(students[i].firstName.toLowerCase() === name.toLowerCase()){
+      return true;
+    }
+  }
+  return false;
+}
+findStudentByFirstName('elie'); // true
+findStudentByFirstName('Elie'); // true
+findStudentByFirstName('Janey'); // false
+findStudentByFirstName('Janey'); // false
+findStudentByFirstName('TIM'); // true
+findStudentByFirstName('MMMaaaTTTtttTTT'); // false
 
 
 
