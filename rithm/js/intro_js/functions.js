@@ -224,7 +224,7 @@ function extractEveryThird(arr){
   var result = [];
   for(var i = 0; i < arr.length; i++){
     if((i + 1) % 3 === 0){
-      result.push(i);
+      result.push(arr[i]);
     }
   }
   return result;
@@ -233,6 +233,8 @@ extractEveryThird([1,2,3]); // [3]
 extractEveryThird([1,2,3,4,5,6]); // [3,6]
 extractEveryThird(["a","b","c","d"]); // ["c"]
 extractEveryThird(["first value", "second value", "third value"]); // ["third value"]
+
+
 
 
 
