@@ -33,6 +33,7 @@ insertionSort2(ar)
 
 #refactor
 #!/usr/bin/ruby
+#!/usr/bin/ruby
 def  insertionSort(arr)
     1.upto(arr.length - 1) do |i|
        if arr[i] < arr[i - 1]
@@ -41,7 +42,9 @@ def  insertionSort(arr)
               if arr[j] > arr[i] && j != 0
                   j -= 1
               else
-                  arr[j + 1], arr[i] = arr[i], arr[j + 1] #swap
+                  insert = arr.slice!(i)
+                  arr = arr[0..j] + [insert] + arr[j+1..-1]
+                  #arr[j + 1], arr[i] = arr[i], arr[j + 1] #swap
                   break
               end
            end
