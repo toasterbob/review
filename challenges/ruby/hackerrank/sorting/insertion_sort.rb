@@ -27,22 +27,22 @@ insertionSort( ar )
 #redo
 
 def  insertionSort(arr)
-    insert = arr.last
-    i = arr.length - 1
-    while i >= 0
-        if arr[i - 1] > insert && i != 0
-            arr[i] = arr[i - 1]
-            puts arr.join(" ")
-        else
-            arr[i] = insert
-            break
-        end
-        i -= 1
+    1.upto(arr.length - 1) do |i|
+       if arr[i] < arr[i - 1]
+           j = 0
+           while j < i
+              if arr[j] < arr[i]
+                  j += 1
+              else
+                  insert = arr.slice!(i)
+                  arr = arr[0...j] + [insert] + arr[j..-1]
+                  break
+              end
+           end
+       end
+       puts arr.join(" ")
     end
-    puts arr.join(" ")
 end
-
-count = gets.to_i
-ar = gets.strip.split.map {|i| i.to_i}
-
-insertionSort( ar )
+cnt = gets.to_i
+ar = gets.strip.split(" ").map! {|i| i.to_i}
+insertionSort(ar)
