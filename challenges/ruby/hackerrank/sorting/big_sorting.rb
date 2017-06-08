@@ -11,11 +11,10 @@ def quicksort(arr)
         else
             more << el
         end
-        p [less, more]
-        quicksort(less) + [compare] + quicksort(more)
+
     end
 
-
+    quicksort(less) + [compare] + quicksort(more)
 end
 
 n = gets.strip.to_i
