@@ -234,7 +234,7 @@ extractEveryThird([1,2,3,4,5,6]); // [3,6]
 extractEveryThird(["a","b","c","d"]); // ["c"]
 extractEveryThird(["first value", "second value", "third value"]); // ["third value"]
 
-//refactor 
+//refactor
 function extractEveryThird(arr){
     var newArr = [];
     for(var i = 2; i < arr.length; i += 3){
@@ -257,6 +257,7 @@ function countEvensAndOdds(arr){
 }
 countEvensAndOdds([1,2,3,4]); //{odd: 2, even: 2}
 countEvensAndOdds([1,2,3,4,5,6,7]); // {odd: 3, even: 4}
+
 
 var myVar = "Hello from global";
 
@@ -282,6 +283,7 @@ function trickyScopePractice() {
 }
 trickyScopePractice();
 console.log(tricky); //"Hello from function scope"
+
 
 
 
