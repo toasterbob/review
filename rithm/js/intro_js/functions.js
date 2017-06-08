@@ -102,7 +102,11 @@ function returnSecondHalf(numbers) {
 }
 returnSecondHalf(numbers); // [6, 7, 8, 9, 10]
 
+////////Function Parameters and Scope
 
+//In JavaScript (before ES2015\), there are only 2 kinds of scope:
+//global scope and function scope.
+// In ES2015 we have block scope with let
 
 
 
