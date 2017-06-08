@@ -143,6 +143,60 @@ functionScopeVariable;
 // function, we should at least declare it in the global scope and assign
 // it in a function so that our code is more readable.
 
+function add (x, y){
+  return x + y;
+}
+
+function subtract (x, y){
+  return x - y;
+}
+
+function multiply (x, y){
+  return x * y;
+}
+
+function divide (x, y){
+  return x / y;
+}
+add(2,2); // 4
+subtract(2,2); // 0
+multiply(2,2); // 4
+divide(2,2); // 1
+
+function sayHello(name){
+  if(name === "Mark"){
+    return "Hello Boss";
+  } else {
+    return `Hello ${name}`;
+  }
+}
+sayHello("BB8"); //"Hello BB8"
+sayHello("Mark"); //"Hello Boss"
+
+function average(arr){
+  total = arr.reduce(function (accum, el){
+    return accum + el
+  }, 0)
+  return total/arr.length
+}
+average([1,2,3,4,5]); // 3
+average([1,2,3,4,5,6]); // 3.5
+average([10,20]); // 15
+
+function createStudent(first, last){
+  return {firstName: first, lastName: last};
+}
+createStudent("Elie", "Schoppik"); //{firstName: "Elie", lastName: "Schoppik"}
+createStudent("Tim", "Garcia"); //{firstName: "Tim", lastName: "Garcia"}
+
+var tim = createStudent("Tim", "Garcia");
+var matt = createStudent("Matt", "Lane");
+var elie = createStudent("Elie", "Schoppik");
+
+var students = [tim, matt, elie];
+students[0]; // {firstName: "Tim", lastName: "Garcia"}
+
+
 
 
 
