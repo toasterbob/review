@@ -45,4 +45,4 @@ def  insertionSort(arr)
 end
 cnt = gets.to_i
 ar = gets.strip.split(" ").map! {|i| i.to_i}
-insertionSort(ar)
+insertionSort(ar)   
