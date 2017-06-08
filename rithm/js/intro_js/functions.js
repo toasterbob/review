@@ -98,6 +98,7 @@ returnFirstHalf(numbers); // [1, 2, 3, 4, 5]
 
 function returnSecondHalf(numbers) {
   return numbers.slice(numbers.length/2, numbers.length);
+  // return numbers.slice(numbers.length/2);
 }
 returnSecondHalf(numbers); // [6, 7, 8, 9, 10]
 
