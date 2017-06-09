@@ -142,7 +142,17 @@ for(var i = 0; i < 5; i++){
     }
 }
 
+//Debugging Exercises
+//What does the throw keyword do?
+throw "The throw keyword throws this error"; //Uncaught The throw keyword throws this error
 
-
+//What does the finally keyword do?
+try {
+  throw "Purposeful error";
+} catch(e) {
+  console.log(e);
+}finally {
+  console.log("This runs even though there is an error!")
+}
 
 //
