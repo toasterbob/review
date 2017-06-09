@@ -339,9 +339,19 @@ var result = (function(){
 
 console.log(result);
 
+// Note: the parenthesis around the function declaration are not optional!
+// If you don't include them, you'll get a SyntaxError
 
-
-
+//One common use case for immediately invoked function expressions is
+//to return an object. For example, you may have an object that has information about a person:
+var personObject = (function() {
+    return {
+        name: "Tim",
+        age: 32,
+        occupation: "developer",
+        hobbies: "sailing"
+    };
+})();
 
 
 
