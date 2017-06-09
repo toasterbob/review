@@ -148,9 +148,19 @@ sayHi() // Hi!
 function sayHi(){
     return 'Hi!';
 }
+//function declarations are hoisted
 
+//8
+sayHi() // error sayHi(undefined) not a function
 
+var sayHi = function(){
+    return 'Hi!';
+}
+//hoists the variable but the variable isn't declared as a function
 
+// TypeError: sayHi is not a function. Since we are using the var
+//keyword, the declaration of the variable get's hoisted, but not its
+//definition
 
 
 
