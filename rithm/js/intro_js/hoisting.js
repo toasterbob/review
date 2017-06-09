@@ -40,8 +40,30 @@ sayHi("Matt"); // Throws an error!
 var sayHi = function(name){
     return "Hello " + name;
 };
+//essentially this happens:
 
+var sayHi;
+sayHi("Matt"); // Throws an error because undefined is not a function (we are using the type of undefined and trying to invoke it - that's why we get a TypeError)
 
+sayHi = function(name){
+    return "Hello " + name;
+}
+
+//////////////////////////////////////////////////////////////
+//what will be returned?
+var myName = "Tim";
+
+function returnMyName() {
+    console.log(myName);
+    var myName = "Matt";
+}
+
+returnMyName(); //undefined - myName is hoisted in the function
+// What is actually happening is that the myName variable from the 
+// returnMyName function is getting logged. It is hoisted to the top of
+// the function and created as soon as the function executes. Since
+// nothing has been assigned to myName until later in the program, myName
+// starts out undefined
 
 
 
