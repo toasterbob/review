@@ -54,9 +54,39 @@ function callMe(){
 callMe(); // maximum call stack size exceeded. We will talk more about
 // the call stack and recursion in a later section.
 
+//Catching and Throwing Errors in JavaScript
 
+//try / catch statement.
+// We place code inside of the try block (a block is defined as code inside
+// of a {}) and if an error is thrown, the code moves to the catch block.
+// After the catch block, code continues to execute.
 
+try {
+    thisDoesNotExist;
+} catch(e) {
+    console.log("The error is ", e);
+}
+//The error is  ReferenceError: thisDoesNotExist is not defined at <anonymous>:2:5
 
+// sometimes want to throw an error
+// To return an error and stop code execution, we use the throw keyword
+// followed by an error object. Optionally, we can add a message string to
+// the error to give more details about what went wrong.
+throw ReferenceError("That variable does not exist!");
+
+throw "This will also be an error"; //Uncaught This will also be an error
+
+try {
+  if(Math.random() >= .5){
+    throw "Let's make an error!";
+  }
+  console.log("Whew... we made it.");
+  console.log("We can only get her if the random number is less than .5");
+} catch(e) {
+  console.log(`The error is ${e}`);
+  console.log("We can only get here if an error is thrown.")
+}
+console.log("Moving on...");
 
 
 
