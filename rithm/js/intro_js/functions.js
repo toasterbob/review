@@ -377,8 +377,10 @@ personObject.setName("Mary"); //
 personObject.getName(); // "Mary"
 person; // ReferenceError: person is not defined
 
-//Exercises 
-
+//Exercises
+(function displayFullName(firstName, lastName){
+  return `${firstName} ${lastName}`;
+})("Mark", "Noizumi");
 
 
 
