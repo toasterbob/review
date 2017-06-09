@@ -155,4 +155,37 @@ try {
   console.log("This runs even though there is an error!")
 }
 
+//What is the difference between a TypeError and ReferenceError?
+// TypeErrors occur when JavaScript is unable to perform a certain operation
+// on a data type (invoking something that is not a function, accessing
+// properties on something that is not an object). ReferenceErrors occur
+// when JavaScript does not have a reference to the variable in memory
+// (accessing a variable that is not defined or not in the current or
+// outer scope)
+
+//How do you create a snippet in the Chrome dev toos?
+//Go into the sources tab.  Click new snippet.  Write it.  Save it.  Run it.
+
+//In the Chrome dev tools, on the right hand side of the sources tab,
+// there is a "pause" button which allows you to "pause on caught exceptions."
+// What is an exception?
+// An exception is an error that occurs in your program. Caught
+//exceptions are errors that are evaluated in a try/catch block
+
+//How do we "catch" errors in JavaScript? Give an example with code
+//for what that might look like.
+//use try/catch block
+try {
+  undefined();
+} catch(e) {
+  console.log("Here is your error: ", e);
+}
+
+//Explain what type of error will be thrown, why the error is occuring, and how to fix it:
+// #1
+person; //Reference error
+var person //fixes it 
+
+
+
 //
