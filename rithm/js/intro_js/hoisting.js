@@ -16,11 +16,30 @@ var instructor;
 instructor; // this will NOT throw an error!
 instructor = "Elie";
 
+function displayInstructor(){
+    return instructor; //undefined - but not an error
+    var instructor = "Elie";
+}
+
+//Hoisting In Function Declarations vs Function Expressions
+
+// Function declarations are fully defined before the code is run. So in
+// the following example, we can call the sayHi function above the lines
+// that define the sayHi function:
+
+sayHi("Matt"); // "Hello Matt"
+
+function sayHi(name){
+    return "Hello " + name;
+}
 
 
+//However, function expressions act differently.
+sayHi("Matt"); // Throws an error!
 
-
-
+var sayHi = function(name){
+    return "Hello " + name;
+};
 
 
 
