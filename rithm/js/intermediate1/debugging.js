@@ -184,8 +184,25 @@ try {
 //Explain what type of error will be thrown, why the error is occuring, and how to fix it:
 // #1
 person; //Reference error
-var person //fixes it 
+var person //fixes it
 
+//#2
+var data = {};
+data.displayInfo(); //Type error - displayInfo is undefined
+
+
+//#3
+var data = {};
+data.displayInfo.foo = "bar"; //Type error.  can't set property foo on undefined
+//TypeError: Cannot set property 'foo' of undefined
+
+//#4
+function data(){
+    var thing = "foo";
+}
+data();
+thing; //reference error
+//ReferenceError: thing is not defined
 
 
 //
