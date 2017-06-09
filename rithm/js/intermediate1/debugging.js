@@ -117,7 +117,30 @@ try {
    console.log("No matter what we will see this statement");
 }
 
+//sources tab
+//command return - runs program
+//command \ - steps through it
+//highlight a line or insert "debugger"
+var instructor = "Elie";
 
+if(instructor === "Elie"){
+    console.log("Yes!");
+}
+
+function information(){
+    var first = 1;
+    var second = 2;
+    var third = 3;
+}
+
+information();
+
+for(var i = 0; i < 5; i++){
+    debugger
+    if(i % 2 === 0){
+        console.log("i is even");
+    }
+}
 
 
 
