@@ -382,8 +382,27 @@ person; // ReferenceError: person is not defined
   return `${firstName} ${lastName}`;
 })("Mark", "Noizumi");
 
-
-
+function createCalculator(){
+  return {
+    add: function(x, y){
+      return x + y;
+    },
+    subtract: function(x, y){
+      return x - y;
+    },
+    multiply: function(x, y){
+      return x * y;
+    },
+    divide: function(x, y){
+      return x / y;
+    }
+  }
+};
+var calc = createCalculator();
+calc.add(20,20); // 40
+calc.subtract(2,2); // 0
+calc.multiply(2,2); // 4
+calc.divide(12,2); // 6
 
 
 
