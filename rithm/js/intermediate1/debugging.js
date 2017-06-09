@@ -88,8 +88,34 @@ try {
 }
 console.log("Moving on...");
 
+// In our try/catch statements, we can add one more special keyword called
+// finally. Inside of the finally block, code will execute regardless of an
+// error being thrown.
 
+try {
+  if(Math.random() >= .5){
+    undefined(); //Uncaught TypeError: undefined is not a function(…)
+  }
+  console.log("Whew...we made it!")
+} catch(e){
+  console.log(`We didn't make it. The error is ${e}`);
+} finally {
+  console.log("No matter what, we will see this statement. And we're gonna make it!");
+}
 
+try {
+    // let's randomly try to throw an error
+    if(Math.random() >= .5){
+        // The following code will throw:
+        // Uncaught TypeError: undefined is not a function(…)
+        undefined();
+    }
+    console.log("Whew, we made it");
+} catch(e){
+   console.log("We didn't make it. The error message is", e.message);
+} finally {
+   console.log("No matter what we will see this statement");
+}
 
 
 
