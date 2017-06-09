@@ -126,13 +126,32 @@ firstName = 'Elie'
 // since variables that do not use the var keyword are NOT hoisted,
 //this will return a ReferenceError - firstName is not defined.
 
+//5
+function sayHi(){
+    return 'Hi ' + firstName;
+    var firstName = 'Elie'
+}
+
+sayHi(); // Hi undefined
+
+//6
+function sayHi(){
+    return 'Hi ' + firstName;
+    firstName = 'Elie'
+}
+
+sayHi(); // ReferenceError
+
+//7
+sayHi() // Hi!
+
+function sayHi(){
+    return 'Hi!';
+}
 
 
 
 
 
 
-
-
-
-// 
+//
