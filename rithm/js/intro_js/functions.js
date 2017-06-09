@@ -352,11 +352,30 @@ var personObject = (function() {
         hobbies: "sailing"
     };
 })();
+// After the code is executed, the personObject is equal to the object
+// that was returned from the anonymous function. We can now use the object
+personObject.name; // returns "Tim"
+personObject.age; // returns 32
+personObject.occupation; // returns "developer"
+personObject.hobbies; // returns "sailing"
 
-
-
-
-
+var personObject = (function invokeRightAway(){
+  var person = "Mark"; // closure
+  return {
+    getName: function(){
+      return person;
+    },
+    setName: function(newName){
+      person = newName;
+    }
+  };
+})();
+// Now the personObject we get back won't have data for each key, but
+//  a function that we can execute whenever we like:
+personObject.getName(); // "Mark"
+personObject.setName("Mary"); //
+personObject.getName(); // "Mary"
+person; // ReferenceError: person is not defined
 
 
 
