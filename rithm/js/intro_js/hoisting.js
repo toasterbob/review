@@ -6,5 +6,28 @@
 // declaration is moved to the top of the function or global code.
 
 instructor; // this will NOT throw an error!
-console.log(instructor);
+console.log(instructor); //undefined
 var instructor = "Elie";
+// What is happening under the hood is that all the variables you declare
+// in your code are created in memory before your code gets run. Therefore
+// in the following example, instructor will be created in memory and will
+// be undefined until the assignment statement.
+var instructor;
+instructor; // this will NOT throw an error!
+instructor = "Elie";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
