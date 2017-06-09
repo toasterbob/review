@@ -95,4 +95,44 @@ var y; // Declare y
 console.log(x + " " + y);  //y is undefined
 y = 2; // Initialize y
 
-//Exercises 
+//Exercises
+//1
+var firstName = 'Elie';
+
+function displayFirstName(){
+    var firstName = 'Tim';
+    return firstName;
+}
+
+displayFirstName(); Tim
+
+//2
+function displayFirstName(){
+    var firstName = 'Tim';
+    return firstName;
+}
+
+displayFirstName();
+
+console.log(firstName) // ReferenceError
+
+//3
+console.log(firstName) // undefined
+var firstName = "Elie"
+
+//4
+console.log(firstName) // Reference error
+firstName = 'Elie'
+// since variables that do not use the var keyword are NOT hoisted,
+//this will return a ReferenceError - firstName is not defined.
+
+
+
+
+
+
+
+
+
+
+// 
