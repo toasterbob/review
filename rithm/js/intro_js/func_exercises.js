@@ -20,7 +20,7 @@ console.log(printDay(4)); // "Wednesday"
 console.log(printDay(41)); // undefined
 
 function lastElement(arr){
-  if (arr.length === 0) return undefined; //not necessary 
+  if (arr.length === 0) return undefined; //not necessary
   return arr[arr.length - 1];
 }
 console.log(lastElement([1,2,3,4])); // 4
@@ -54,5 +54,31 @@ console.log(singleLetterCount('Rithm School','z')); // 0
 
 //Part II
 
+function multipleLetterCount(str){
+  let counts = {};
+  for(let i = 0; i < str.length; i++){
+    if(counts[str[i]]){
+      counts[str[i]]++;
+    } else {
+      counts[str[i]] = 1;
+    }
+  }
+  return counts;
+}
+multipleLetterCount("hello"); // {h:1, e: 1, l: 2, o:1}
+multipleLetterCount("person"); // {p:1, e: 1, r: 1, s:1, o:1, n:1}
+
+//answer version
+function multipleLetterCount(str){
+  var finalObj = {};
+  for(var i =0; i< str.length; i++){
+    if (!(str[i] in finalObj)){
+      finalObj[str[i]] = 1;
+    } else {
+      finalObj[str[i]]++;
+    }
+  }
+  return finalObj;
+}
 
 //Part III
