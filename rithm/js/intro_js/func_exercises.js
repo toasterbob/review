@@ -20,7 +20,7 @@ console.log(printDay(4)); // "Wednesday"
 console.log(printDay(41)); // undefined
 
 function lastElement(arr){
-  if (arr.length === 0) return undefined;
+  if (arr.length === 0) return undefined; //not necessary 
   return arr[arr.length - 1];
 }
 console.log(lastElement([1,2,3,4])); // 4
