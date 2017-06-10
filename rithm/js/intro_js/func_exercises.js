@@ -81,4 +81,27 @@ function multipleLetterCount(str){
   return finalObj;
 }
 
+function arrayManipulation(arr, c1, c2, val){
+  if(c1 === "add"){
+    if(c2 === "end"){
+      arr.push(val);
+    } else {
+      arr.unshift(val);
+    }
+
+  } else if (c1 === "remove"){
+      if(c2 === "beginning"){
+        return arr.shift();
+      } else if(c2 === "end"){
+        return arr.pop();
+      }
+  }
+  return arr
+}
+console.log(arrayManipulation([1,2,3], "remove", "end")); // 3
+console.log(arrayManipulation([1,2,3], "remove", "beginning")); // 1
+console.log(arrayManipulation([1,2,3], "add", "beginning", 20)); // [20,1,2,3]
+console.log(arrayManipulation([1,2,3], "add", "end", 30)); // [1,2,3,30]
+
+
 //Part III
