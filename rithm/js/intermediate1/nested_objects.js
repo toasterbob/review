@@ -63,9 +63,30 @@ instructorData.additionalData.moreDetails.favoriteBasketballTeam; // "New York K
 instructorData.additionalData.moreDetails.hometown.state; // "NJ"
 instructorData.additionalData.moreDetails.citiesLivedIn[1]; // "Providence"
 
+var instructorData = {
+    name: "Mark",
+    additionalData: {
+        instructor: true,
+        favoriteHobbies: ["snowbaording", "travel", "photography"],
+        moreDetails: {
+            favoriteBasketballTeam: "Warriors",
+            numberOfSiblings: 2,
+            isYoungest: false,
+            hometown: {
+                city: "Indio",
+                state: "CA",
+            },
+            citiesLivedIn: ["Toledo", "Tokyo", "Indio", "San Diego", "Moon Lake", "New York"]
+        }
+    }
+}
 
-
-
+instructorData.name; // "Elie"
+instructorData.additionalData.instructor; // true
+instructorData.additionalData.favoriteHobbies[2]; // "Coding"
+instructorData.additionalData.moreDetails.favoriteBasketballTeam; // "New York Knicks"
+instructorData.additionalData.moreDetails.hometown.state; // "NJ"
+instructorData.additionalData.moreDetails.citiesLivedIn[1]; // "Providence"
 
 
 
