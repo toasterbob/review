@@ -120,3 +120,19 @@ console.log(isPalindrome('robert')); // false
 
 
 //Part III
+function rockPaperScissor(){
+  let choices = ["rock", "paper", "scissors"];
+  let num = Math.floor(Math.random() * 3);
+  let computer = choices[num];
+  let player = prompt("Rock, paper or scissors?").toLowerCase();
+  if(computer === player){
+    return `Tie computer:${computer} player:${player}`
+  }
+  let cond1 = computer === "rock" && player === "paper";
+  let cond2 = computer === "paper" && player === "scissors"
+  let cond3 = computer === "scissors" && player === "rock"
+  if(cond1 || cond2 || cond3){
+    return `You win! computer:${computer} player:${player}`
+  }
+  return `You lose! computer:${computer} player:${player}`
+}
