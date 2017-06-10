@@ -124,15 +124,46 @@ function rockPaperScissor(){
   let choices = ["rock", "paper", "scissors"];
   let num = Math.floor(Math.random() * 3);
   let computer = choices[num];
+
   let player = prompt("Rock, paper or scissors?").toLowerCase();
-  if(computer === player){
-    return `Tie! computer:${computer} <=> player:${player}`;
-  }
+
   let cond1 = computer === "rock" && player === "paper";
   let cond2 = computer === "paper" && player === "scissors";
   let cond3 = computer === "scissors" && player === "rock";
-  if(cond1 || cond2 || cond3){
+
+  if(computer === player){
+    return `Tie! computer:${computer} <=> player:${player}`;
+  } else if(cond1 || cond2 || cond3){
     return `You win! computer:${computer} <=> player:${player}`;
   }
   return `You lose! computer:${computer} <=> player:${player}`;
+}
+
+
+//their version
+function RPS(){
+
+  function determineComputer(num){
+    if(num <= .33) return "rock";
+    else if(num <= .66) return "paper";
+    return "scissor";
+  }
+
+  var userChoice = prompt("Choose rock / paper or scissor").toLowerCase();
+  var computerChoice = determineComputer(Math.random());
+
+
+  var answers = ["rock", "paper", "scissor"];
+
+  if(!userChoice || answers.indexOf(userChoice) === -1){
+    return "Please select a valid option";
+  }
+
+  if(userChoice === computerChoice) return "Tie!";
+
+  if(userChoice === "rock" && computerChoice === "paper") return "You lose, computer picked " +  computerChoice;
+  if(userChoice === "paper" && computerChoice === "scissor") return "You lose, computer picked " +  computerChoice;
+  if(userChoice === "scissor" && computerChoice === "rock") return "You lose, computer picked " +  computerChoice;
+
+  return "You win! Computer picked " +  computerChoice;
 }
