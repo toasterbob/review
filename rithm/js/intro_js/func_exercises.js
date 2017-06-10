@@ -103,5 +103,14 @@ console.log(arrayManipulation([1,2,3], "remove", "beginning")); // 1
 console.log(arrayManipulation([1,2,3], "add", "beginning", 20)); // [20,1,2,3]
 console.log(arrayManipulation([1,2,3], "add", "end", 30)); // [1,2,3,30]
 
+function isPalindrome(){
+
+}
+
+console.log(isPalindrome('testing')); // false
+console.log(isPalindrome('tacocat')); // true
+console.log(isPalindrome('hannah')); // true
+console.log(isPalindrome('robert')); // false
+
 
 //Part III
