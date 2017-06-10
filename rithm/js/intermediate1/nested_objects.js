@@ -261,4 +261,45 @@ removeDetail('favoriteBasketballTeam');
 }
 */
 
+//Nested Objects Exercises
+
+var nestedData = {
+  innerData: {
+    order: ["first", "second", "third"],
+    snacks: ["chips", "fruit", "crackers"],
+    numberData: {
+        primeNumbers: [2,3,5,7,11],
+        fibonnaci: [1,1,2,3,5,8,13]
+    },
+    addSnack: function(snack){
+        this.snacks.push(snack);
+        return this;
+    }
+  }
+};
+
+//Using a for loop, console.log all of the numbers in the primeNumbers array.
+var prime = nestedData.innerData.numberData.primeNumbers;
+for(let i = 0; i < prime.length; i++){
+  console.log(prime[i]);
+}
+//Using a for loop, console.log all of the even Fibonnaci numbers.
+var fib = nestedData.innerData.numberData.fibonnaci;
+for(let i = 0; i < fib.length; i++){
+  console.log(fib[i]);
+}
+//Console.log the value "second" inside the order array.
+console.log(nestedData.innerData.order[1]);
+
+
+
+
+
+
+
+
+
+
+
+
 //
