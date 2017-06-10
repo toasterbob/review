@@ -27,6 +27,7 @@ var instructorData = {
     favoriteHobbies: ["Sailing", "Hiking", "Coding"]
 };
 instructorData.favoriteHobbies[0]; // returns "Sailing"
+//How would you add another hobby to the favoriteHobbies array inside of the object?
 instructorData.favoriteHobbies.push("snowboarding");
 instructorData.favoriteHobbies //["Sailing", "Hiking", "Coding", "snowboarding"]
 
@@ -36,7 +37,31 @@ for(keys in instructorData){
 // VM1655:2 name
 // VM1655:2 favoriteHobbies
 
+//Complex Objects
+var instructorData = {
+    name: "Elie",
+    additionalData: {
+        instructor: true,
+        favoriteHobbies: ["Playing Cello", "Tennis", "Coding"],
+        moreDetails: {
+            favoriteBasketballTeam: "New York Knicks",
+            numberOfSiblings: 3,
+            isYoungest: true,
+            hometown: {
+                city: "West Orange",
+                state: "NJ",
+            },
+            citiesLivedIn: ["Seattle", "Providence", "New York"]
+        }
+    }
+};
 
+instructorData.name; // "Elie"
+instructorData.additionalData.instructor; // true
+instructorData.additionalData.favoriteHobbies[2]; // "Coding"
+instructorData.additionalData.moreDetails.favoriteBasketballTeam; // "New York Knicks"
+instructorData.additionalData.moreDetails.hometown.state; // "NJ"
+instructorData.additionalData.moreDetails.citiesLivedIn[1]; // "Providence"
 
 
 
