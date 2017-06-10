@@ -103,8 +103,14 @@ console.log(arrayManipulation([1,2,3], "remove", "beginning")); // 1
 console.log(arrayManipulation([1,2,3], "add", "beginning", 20)); // [20,1,2,3]
 console.log(arrayManipulation([1,2,3], "add", "end", 30)); // [1,2,3,30]
 
-function isPalindrome(){
-
+function isPalindrome(str){
+  str = str.replace(/\s+/g, '').toLowerCase();
+  str2 = ""
+  for(let i = str.length - 1; i >= 0; i--){
+    str2 += str[i].toLowerCase();
+  }
+  //return str.toLowerCase().split('').reverse().join('') === str.toLowerCase();
+  return str === str2
 }
 
 console.log(isPalindrome('testing')); // false
