@@ -151,13 +151,114 @@ var instructorData = {
 
 //Exercises
 function displayCities(){
-  let cities = instructorData.additionalData.citiesLivedIn
+  let cities = instructorData.additionalData.moreDetails.citiesLivedIn
   for(let i = 0; i < cities.length; i++){
     console.log(cities[i]);
   }
 }
 displayCities();
+// "Seattle"
+// "Providence"
+// "New York"
+
+function displayHometownData(){
+  let home = instructorData.additionalData.moreDetails.hometown;
+  for(var key in home){
+    console.log(home[key]);
+  }
+}
+displayHometownData();
 
 
+// Let's write a function called addDetail that accepts two parameters, a
+// key and a value and adds the key and value to the moreDetails object and
+// returns the moreDetails object
+function addDetail(key, value){
+  instructorData.additionalData.moreDetails[key] = value;
+  return instructorData.additionalData.moreDetails;
+}
+
+//theirs
+function addDetail(key,value){
+    var detailsObject = instructorData.additionalData.moreDetails;
+    detailsObject[key] = value;
+    return detailsObject;
+}
+
+
+addDetail("isHilarious", true);
+/*
+{
+    favoriteBasketballTeam: "New York Knicks",
+    numberOfSiblings: 3,
+    isYoungest: true,
+    hometown: {
+        city: "West Orange",
+        state: "NJ",
+    },
+    citiesLivedIn: ["Seattle", "Providence", "New York"],
+    isHilarious: true
+}
+*/
+addDetail("previousApartments", ["Mission", "North Beach", "Nob Hill"]);
+/*
+{
+    favoriteBasketballTeam: "New York Knicks",
+    numberOfSiblings: 3,
+    isYoungest: true,
+    hometown: {
+        city: "West Orange",
+        state: "NJ",
+    },
+    citiesLivedIn: ["Seattle", "Providence", "New York"],
+    isHilarious: true
+    previousApartments: ["Mission", "North Beach", "Nob Hill"]
+}
+*/
+
+//Finally, let's write a function called removeDetail that removes a
+//key in the moreDetails object and returns the moreDetails object (the
+//new keys added above are not included in these examples).
+function removeDetail(key){
+  delete instructorData.additionalData.moreDetails[key];
+  return instructorData.additionalData.moreDetails;
+}
+
+//theirs
+function removeDetail(key){
+    var detailsObject = instructorData.additionalData.moreDetails;
+    var valueToBeRemoved = detailsObject[key];
+    delete detailsObject[key];
+    return detailsObject;
+}
+
+
+removeDetail('citiesLivedIn');
+/*
+{
+    favoriteBasketballTeam: "New York Knicks",
+    numberOfSiblings: 3,
+    isYoungest: true,
+    hometown: {
+        city: "West Orange",
+        state: "NJ",
+    }
+}
+*/
+removeDetail('hometown');
+/*
+{
+    favoriteBasketballTeam: "New York Knicks",
+    numberOfSiblings: 3,
+    isYoungest: true
+}
+*/
+removeDetail('favoriteBasketballTeam');
+/*
+{
+    numberOfSiblings: 3,
+    isYoungest: true
+}
+*/
 
 //
