@@ -205,4 +205,68 @@ thing; //reference error
 //ReferenceError: thing is not defined
 
 
+//PART II
+//#1
+for(var i=0; i > 5; i++){
+    console.log(i);
+}
+
+for(var i=0; i < 5; i++){ //fixed <
+    console.log(i);
+}
+
+//#2
+function addIfEven(num){
+    if(num % 2 = 0){ // ReferenceError: Invalid left-hand side in assignment
+        return num + 5;
+    }
+    return num;
+}
+function addIfEven(num){
+    if(num % 2 === 0){ //fixed ===
+        return num + 5;
+    }
+    return num;
+}
+
+//#3
+function loopToFive(){
+    for(var i=0, i < 5, i++){ //SyntaxError: Unexpected token <
+        console.log(i);
+    }
+}
+
+function loopToFive(){
+    for(var i=0; i < 5; i++){ //fix - changed , to ;
+        console.log(i);
+    }
+}
+
+//#4
+function displayEvenNumbers(){
+    var numbers = [1,2,3,4,5,6,7,8];
+    var evenNumbers = [];
+    for(var i=0; i<numbers.length-1; i++;){
+        if(numbers % 2 = 0); {
+            evenNumbers.push(i);
+        }
+        return evenNumbers;
+    }
+}
+displayEvenNumbers(); // should return [2,4,6,8]
+
+// HINT - eight things need to be changed here for this to work!
+// Start by fixing the syntax errors and then run the function to see what your output is.
+
+function displayEvenNumbers(){
+    var numbers = [1,2,3,4,5,6,7,8];
+    var evenNumbers = [];
+    for(var i = 0; i < numbers.length; i++){
+        if(numbers[i] % 2 === 0) {
+            evenNumbers.push(numbers[i]);
+        }
+    }
+    return evenNumbers;
+}
+displayEvenNumbers(); // should return [2,4,6,8]
 //
