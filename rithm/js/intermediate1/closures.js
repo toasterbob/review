@@ -189,10 +189,23 @@ add(1,-2,3,-4); // -2
 add(); // 0
 
 // Exercises
+// What is a closure?
+// Closure accesses variables from an outer function that has already returned
+// in an inner function
 
+// List two reasons why closures are useful
+// creating private variables
+// //variable cannot be accessed directly or overwritten
 
+// What is a module?
+// special type of closure that has a series of functions and variables
+// encapsulated code, IIFE
 
+//What is the arguments array-like object?
+// can access individual arguments like an array (but not quite)
 
+// Why do we call arguments an array-like-object?
+// can't push to it 
 
 
 
