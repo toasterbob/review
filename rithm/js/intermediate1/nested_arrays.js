@@ -97,3 +97,17 @@ function countVowels(input){
 var nestedArr = ['Elie', ['Matt', ['Tim']],['Colt',['Whisky',['Janey'], 'Tom']], 'Lorien'];
 countVowels(nestedArr);
 //
+
+//Nested Arrays Exercises
+
+function rotate(arr, num){
+  num = num % arr.length;
+  for(let i = 0; i < num; i++){
+    let val = arr.pop();
+    arr.unshift(val);
+  }
+  return arr;
+}
+console.log(rotate([1,2,3], 1)); // [3,1,2]
+console.log(rotate([1,2,3], 2)); // [2,3,1]
+console.log(rotate([1,2,3], 3)); // [1,2,3]
