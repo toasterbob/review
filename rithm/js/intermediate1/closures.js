@@ -46,6 +46,86 @@ function defineAge(){
 var ageOnce = defineAge();
 ageOnce(); // 29
 ageOnce(); // 30
+// Our age variable is now protected and no one can gain access to it!
+// In cases like this, we say that growUp (the inner function) has
+// closure over the scope of defineAge.
+
+function createInstructors(){
+    var instructors = ["Elie", "Matt", "Tim"];
+    return {
+        showInstructors: function displayAllInstructors(){
+            return instructors;
+        },
+        addInstructor: function addNewInstructor(instructor){
+            instructors.push(instructor)
+            return instructors;
+        }
+    }
+}
+var firstClass = createInstructors();
+firstClass.addInstructor("Jennifer");
+firstClass.showInstructors(); // ["Elie", "Matt", "Tim", "Jennifer"]
+
+var secondClass = createInstructors();
+secondClass.addInstructor("Ashley"); // ["Elie", "Matt", "Tim", "Ashley"]
+
+// on one line
+
+var instructors = createInstructors().showInstructors();
+instructors; //["Elie", "Matt", "Tim"]
+
+//IIFE - Immediately Invoked Functional Expressions
+
+var instructorModule = (function createInstructors(){
+    var instructors = ["Elie", "Matt", "Tim"];
+    return {
+        showInstructors: function displayAllInstructors(){
+            return instructors;
+        },
+        addInstructor: function addNewInstructor(instructor){
+            instructors.push(instructor)
+            return instructors;
+        }
+    }
+})();
+
+//changed to anonymous functions - I guess they have names for the next example
+var instructorModule = (function createInstructors(){
+    var instructors = ["Elie", "Matt", "Tim"];
+    return {
+        showInstructors: function (){
+            return instructors;
+        },
+        addInstructor: function (instructor){
+            instructors.push(instructor)
+            return instructors;
+        }
+    }
+})();
+
+//we have just created a small module
+// which is a piece of code that is encapsulated and can be reused quite easily
+
+// The pattern we just used to write our code is famously called the
+// module pattern! It's a great way to wrap everything in an IIFE
+// that contains private data that can not be accessed globally.
+
+//We can even refactor this more so that our logic is not in the return statement
+var instructorModuleRefactored = (function createInstructors(){
+    var instructors = ["Elie", "Matt", "Tim"];
+    function displayAllInstructors(){
+        return instructors;
+    }
+    function addNewInstructor(instructor){
+        instructors.push(instructor);
+        return instructors;
+    }
+    return {
+        showInstructors: displayAllInstructors,
+        addInstructor: addNewInstructor
+    }
+})();
+
 
 
 
