@@ -316,8 +316,11 @@ var nestedObject = {
         }
       }
     },
-    addCountry: function(){
-
+    addCountry: function(country, capital, population){
+      this.continents.europe.countries[country] = {
+          capital: capital,
+          population: population
+      }
     },
     languages: {
       spanish: {
@@ -333,9 +336,11 @@ var nestedObject = {
   }
 }
 nestedObject.addSpeaker("Mark");
-nestedObject.speakers
+nestedObject.speakers;
 
 nestedObject.data.addLanguage("Japanese", "konichi wa");
-nestedObject.data.languages
+nestedObject.data.languages;
 
+nestedObject.data.addCountry("France", "Paris", 66810000);
+nestedObject.data.continents.europe.countries;
 //
