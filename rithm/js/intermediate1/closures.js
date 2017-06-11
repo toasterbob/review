@@ -32,9 +32,20 @@ laterAdd(1); // 11
 //defined in the outer function which already returned?
 // The answer is through closure.
 
-// Closures in the wild
+// Closures in the wild - private variables
+// One of the more common ones is to create a "private variable," or a
+// variable that can not be accessed directly (and overwritten).
 
+function defineAge(){
+    var age = 28;
+    return function growUp(){
+        return ++age;
+    };
+}
 
+var ageOnce = defineAge();
+ageOnce(); // 29
+ageOnce(); // 30
 
 
 
