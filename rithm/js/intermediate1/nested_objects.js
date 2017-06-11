@@ -316,6 +316,9 @@ var nestedObject = {
         }
       }
     },
+    addCountry: function(){
+
+    },
     languages: {
       spanish: {
           hello: "Hola"
@@ -323,10 +326,16 @@ var nestedObject = {
       french: {
           hello: "Bonjour"
       }
+    },
+    addLanguage: function(language, hello){
+      this.languages[language] = {hello: hello}
     }
   }
 }
+nestedObject.addSpeaker("Mark");
+nestedObject.speakers
 
-
+nestedObject.data.addLanguage("Japanese", "konichi wa");
+nestedObject.data.languages
 
 //
