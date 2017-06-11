@@ -111,3 +111,60 @@ function rotate(arr, num){
 console.log(rotate([1,2,3], 1)); // [3,1,2]
 console.log(rotate([1,2,3], 2)); // [2,3,1]
 console.log(rotate([1,2,3], 3)); // [1,2,3]
+
+//////////
+function makeXOGrid(x, y){
+  let result = [];
+  let count = 0;
+  for(let i = 0; i < x; i++){
+     let row = [];
+     for(let j = 0; j < y; j++){
+       if(count % 2 === 0){
+         row.push("X");
+         count++;
+       } else {
+         row.push("O");
+         count++;
+       }
+     }
+     result.push(row);
+  }
+  return result;
+}
+console.log(makeXOGrid(1,4));
+
+/*/
+[["X","O","X","O"]]
+/*/
+
+console.log(makeXOGrid(3,2));
+
+/*/
+[["X","O"],["X","O"],["X","O"]]
+/*/
+
+console.log(makeXOGrid(3,3));
+/*/
+[["X","O","X"],["O","X","O"],["X","O","X"]]
+/*/
+
+
+///theirs
+function makeXOGrid(rows,amount){
+    var finalArr = []
+    var startWithX = true
+    for(var i=0; i<rows; i++){
+        var newRow = []
+        for(var j=0; j<amount; j++){
+            if(startWithX){
+                newRow.push("X")
+            }
+            else {
+                newRow.push("O")
+            }
+            startWithX = !startWithX
+        }
+        finalArr.push(newRow)
+    }
+    return finalArr;
+}
