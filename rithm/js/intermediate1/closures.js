@@ -205,8 +205,26 @@ add(); // 0
 // can access individual arguments like an array (but not quite)
 
 // Why do we call arguments an array-like-object?
-// can't push to it 
+// can't push to it
 
+function createCounter(){
+  var count = 0;
+  return function(){
+    return ++count;
+  }
+}
 
+var firstCounter = createCounter();
+
+firstCounter(); // 1
+firstCounter(); // 2
+firstCounter(); // 3
+firstCounter(); // 4
+
+var secondCounter = createCounter();
+
+secondCounter(); // 1
+secondCounter(); // 2
+secondCounter(); // 3
 
 //
