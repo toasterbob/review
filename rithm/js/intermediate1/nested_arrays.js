@@ -71,14 +71,12 @@ var arr = []
 Array.isArray(arr) // true
 Array.isArray('Hello') // false
 //bonus
-
+// I solved it recursively
 function countVowels(input){
   let count = 0;
 
   function counter(str){
-    console.log(str);
     for(let i = 0; i < str.length; i++){
-      console.log(str[i]);
       let c = str[i].toLowerCase();
       if(c === "a" || c === "e" || c === "i" || c === "o" || c === "u"){
         count++;
