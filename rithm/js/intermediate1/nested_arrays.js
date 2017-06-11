@@ -52,7 +52,19 @@ function printEvens(){
 
 printEvens();
 
-
+var nestedArr = [[[1,2],[3,4]],[[5,6]]];
+function sumTotal(){
+  let sum = 0;
+  for(let i = 0; i < nestedArr.length; i++){
+    for(let j = 0; j < nestedArr[i].length; j++){
+      for(let k = 0; k < nestedArr[i][j].length; k++){
+        sum += nestedArr[i][j][k]
+      }
+    }
+  }
+  return sum;
+}
+sumTotal(); // 21
 
 
 
