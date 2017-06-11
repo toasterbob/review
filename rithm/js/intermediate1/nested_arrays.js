@@ -67,5 +67,35 @@ function sumTotal(){
 sumTotal(); // 21
 
 
+var arr = []
+Array.isArray(arr) // true
+Array.isArray('Hello') // false
+//bonus
 
+function countVowels(input){
+  let count = 0;
+
+  function counter(str){
+    console.log(str);
+    for(let i = 0; i < str.length; i++){
+      console.log(str[i]);
+      let c = str[i].toLowerCase();
+      if(c === "a" || c === "e" || c === "i" || c === "o" || c === "u"){
+        count++;
+      }
+    }
+  }
+
+  for(let i = 0; i < input.length; i++){
+    if(Array.isArray(input[i])){
+      count += countVowels(input[i]);
+    } else {
+      counter(input[i]);
+    }
+  }
+
+  return count;
+}
+var nestedArr = ['Elie', ['Matt', ['Tim']],['Colt',['Whisky',['Janey'], 'Tom']], 'Lorien'];
+countVowels(nestedArr);
 //
