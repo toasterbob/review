@@ -291,14 +291,36 @@ for(let i = 0; i < fib.length; i++){
 //Console.log the value "second" inside the order array.
 console.log(nestedData.innerData.order[1]);
 
+//Invoke the addSnack function and add the snack "chocolate".
+nestedData.innerData.addSnack("chocolate");
 
+// Inside of the addSnack function there is a special keyword called this.
+// What does the word this refer to inside the addSnack function?
+this = nestedData.innerData
 
-
-
-
-
-
-
+var nestedObject = {
+  speakers: [{name:"Elie"},{name:"Tim"},{name:"Matt"}],
+  data: {
+    continents: {
+      europe: {
+        countries: {
+          switzerland: {
+            capital: "Bern",
+            population: 8000000
+          }
+        }
+      }
+    },
+    languages: {
+      spanish: {
+          hello: "Hola"
+      },
+      french: {
+          hello: "Bonjour"
+      }
+    }
+  }
+}
 
 
 
