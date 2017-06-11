@@ -126,10 +126,19 @@ var instructorModuleRefactored = (function createInstructors(){
     }
 })();
 
+function counter(){
+  var count = 0;
+  return function(){
+    return ++count;
+  }
+}
+var c = counter();
+c(); //1
+c(); //2
 
-
-
-
+var c2 = counter();
+c2(); //1
+c2(); //2
 
 
 
