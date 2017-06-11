@@ -25,12 +25,64 @@ sendMessage("Do you like JavaScript?", confirm); // true or false is returned
 
 //Anonymous Functions As Parameters
 
+sendMessage("Hello World", function(message){
+    // message refers to the string "Hello World"
+    console.log(message + " from a callback function!");
+});  // Hello World from a callback function!
 
+//The previous example is equivalent to doing the following:
 
+var myFunction = function(message){
+    // message refers to the string "Hello World"
+    console.log(message + " from a callback function!");
+};
 
+sendMessage("Hello World", myFunction);
 
+// In our previous examples we would have had to do a lot of work to get
+// the same code. Higher order functions allow us to avoid writing seperate functions like this
 
+function sendMessageWithConsoleLog(message){
+    return console.log(message);
+}
 
+function sendMessageWithAlert(message){
+    return alert(message);
+}
+
+function promptWithMessage(message){
+    return prompt(message);
+}
+
+function confirmWithMessage(message){
+    return confirm(message);
+}
+
+function sendMessageWithFromCallback(message){
+    return console.log(message + " from a callback function!");
+}
+
+// /////////////////////////// /////////////////////////// /////////////////////////
+
+//We call a function that is passed as an argument to a higher order function a callback
+// In our sendMessage example, sendMessage is the higher order function and fn is the callback function.
+
+function add(a,b){
+    return a+b;
+}
+
+function subtract(a,b){
+    return a-b;
+}
+
+function math(a,b,callback){
+    return callback(a,b);
+}
+
+math(1,4,add); // returns 5
+math(5,5,subtract); // returns 0
+
+//practice
 
 
 
