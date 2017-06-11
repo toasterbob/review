@@ -84,6 +84,34 @@ math(5,5,subtract); // returns 0
 
 //practice
 
+function each(arr, func){
+  for(let i = 0; i < arr.length; i++){
+    func(arr[i]);
+  }
+}
+each([1,2,3,4], function(val){
+    console.log(val);
+});
+
+// Here is what should be output if you wrote the function correctly
+
+// 1
+// 2
+// 3
+// 4
+
+each([1,2,3,4], function(val){
+    console.log(val*2);
+});
+
+// Here is what should be output if you wrote the function correctly
+
+// 2
+// 4
+// 6
+// 8
+
+//Exercises
 
 
 
