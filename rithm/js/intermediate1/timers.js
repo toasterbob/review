@@ -54,7 +54,47 @@ setTimeout(function(){
 
 ////////////////////////////////////////////////////////////////////////
 
-//Asynchronous code
+// Asynchronous code
+
+// Another reason why callbacks are such a powerful tool is that they
+// enable us to manage asynchronous code, or code that will be executed at
+// a later point in time.
+
+// JavaScript: it is single threaded.
+// What this means is that only one process will happen at a time.
+// This is unlike other languages where you can create your own threads,
+// a process called multi-threading
+
+// However, we can write asynchronous code, which may give the impression
+// that multiple things are happening at once, even though this is not the case.
+
+
+// call stack - where function calls are put (each one is called a
+// "stack frame"). The call stack (sometimes simply referred to as the
+// stack) is a LIFO (last-in-first-out) data structure.
+
+//i f there is a function on the stack and it is under another function,
+// it can never execute until the function on top has come off the stack
+
+// event queue - When an asynchronous event occurs, it gets put into what
+// is called the "event queue" (also known as the queue). It is then moved
+// to the stack when the stack is clear (i.e. when there are no functions on the stack).
+
+//heap - where objects are stored. The heap is an unstructured/unorganized region of memory.
+
+//"Event Loop"
+// JavaScript internally has something called the "Event Loop", which
+// checks the queue and sees if there are any processes to execute.
+
+//Let's examine the event loop in action:
+console.log("first");
+setTimeout(function(){
+    console.log("second");
+},0);
+console.log("third"); //"first", "third", "second."
+
+// Exercises
+
 
 
 
