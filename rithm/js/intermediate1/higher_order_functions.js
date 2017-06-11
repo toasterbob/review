@@ -112,6 +112,42 @@ each([1,2,3,4], function(val){
 // 8
 
 //Exercises
+function map(arr, fn){
+  let result = [];
+  for(let i = 0; i < arr.length; i++){
+    result.push(fn(arr[i]));
+  }
+  return result;
+}
+
+map([1,2,3,4], function(val){
+    return val * 2;
+}); // [2,4,6,8]
+
+/////////////////////////////////////////////////////////////////////////////////
+
+function reject(arr, fn){
+  let result = [];
+  for(let i = 0; i < arr.length; i++){
+    if(!fn(arr[i])){
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+reject([1,2,3,4], function(val){
+    return val > 2;
+}); // [1,2]
+
+reject([2,3,4,5], function(val){
+    return val % 2 === 0;
+}); // [3,5]
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 
