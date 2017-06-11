@@ -286,7 +286,9 @@ for(let i = 0; i < prime.length; i++){
 //Using a for loop, console.log all of the even Fibonnaci numbers.
 var fib = nestedData.innerData.numberData.fibonnaci;
 for(let i = 0; i < fib.length; i++){
-  console.log(fib[i]);
+  if(fib[i] % 2 === 0){
+    console.log(fib[i]);
+  }
 }
 //Console.log the value "second" inside the order array.
 console.log(nestedData.innerData.order[1]);
@@ -300,6 +302,9 @@ this = nestedData.innerData
 
 var nestedObject = {
   speakers: [{name:"Elie"},{name:"Tim"},{name:"Matt"}],
+  addSpeaker: function(name){
+    this.speakers.push({name: name});
+  },
   data: {
     continents: {
       europe: {
