@@ -140,6 +140,60 @@ var c2 = counter();
 c2(); //1
 c2(); //2
 
+// The arguments array
+
+// we get access to a special keyword called arguments which looks like an
+// array (it is not EXACTLY an array)
+
+function logAll(){
+    console.log(arguments);
+}
+
+logAll(2,2); // [2,2]
+logAll(10,5,4); // [10,5,4]
+logAll(1); // [1]
+
+function displayFirstArgument(){
+    return arguments[0];
+}
+
+displayFirstArgument(10,20); // [10]
+displayFirstArgument(true); // [true]
+displayFirstArgument(); // []
+
+// So what do we mean when we say not "exactly" an array?
+function tryPushOnArguments(){
+    arguments.push("another one");
+    return arguments;
+}
+
+tryPushOnArguments(); // Uncaught TypeError: arguments.push is not a function
+
+// the arguments keyword looks like an array and even has a length
+// property, it is actually not an array. It is a special kind of object.
+
+// Manipulating this arguments array-like object can be useful, for
+// instance, when you don't know how many arguments someone will pass in
+// to your function
+
+function add() {
+    var total = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+    }
+    return total;
+}
+
+add(1,2,3); // 6
+add(1,-2,3,-4); // -2
+add(); // 0
+
+// Exercises
+
+
+
+
+
 
 
 //
