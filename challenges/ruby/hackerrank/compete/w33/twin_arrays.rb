@@ -33,16 +33,20 @@ def twinArrays(arr1, arr2)
     arr1.each_with_index do |el, i|
         h1[el] = i
         if el < min1
-           sec1 = min1 if (sec1.nil? || min1 < sec1) && i != 0
+           sec1 = min1 if sec1.nil? || min1 < sec1
            min1 = el
+        else
+            sec1 = el if (sec1.nil? || el < sec1)  && i != 0
         end
     end
 
     arr2.each_with_index do |el, i|
         h2[el] = i
         if el < min2
-            sec2 = min2 if (sec2.nil? || min2 < sec2) && i != 0
+            sec2 = min2 if sec2.nil? || min2 < sec2
             min2 = el
+        else
+            sec2 = el if (sec2.nil? || el < sec2)  && i != 0
         end
     end
 
