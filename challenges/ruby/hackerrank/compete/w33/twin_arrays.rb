@@ -20,6 +20,8 @@ puts twinArrays(ar1, ar2)
 
 #refactor
 
+#!/bin/ruby
+
 def twinArrays(arr1, arr2)
     min1 = arr1[0]
     sec1 = nil
@@ -30,12 +32,18 @@ def twinArrays(arr1, arr2)
     h2 = Hash.new
     arr1.each_with_index do |el, i|
         h1[el] = i
-        min1 = el if el < min1
+        if el < min1
+           sec1 = min1 if (sec1.nil? || min1 < sec1) && i != 0
+           min1 = el
+        end
     end
 
     arr2.each_with_index do |el, i|
         h2[el] = i
-        min2 = el if el < min2
+        if el < min2
+            sec2 = min2 if (sec2.nil? || min2 < sec2) && i != 0
+            min2 = el
+        end
     end
 
     return min1 + min2 if h1[min1] != h2[min2]
