@@ -1,5 +1,5 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-def  insertionSort(arr)
+def insertionSort(arr)
     count = 0;
     1.upto(arr.length - 1) do |i|
        if arr[i] < arr[i - 1]
@@ -20,26 +20,25 @@ def  insertionSort(arr)
     count
 end
 
-def inplace_quicksort(arr, start, finish, count)
-    return arr if finish - start < 1
-    pivot = arr[finish]
-    partition = start
-    start.upto(finish) do |i|
+$count = 0
+
+def inplace_quicksort(arr)
+    return arr if arr.length <= 1
+    pivot = arr[arr.length - 1]
+    partition = 0
+    0.upto(arr.length - 1) do |i|
         if arr[i] <= pivot
-            count += 1
             arr[i], arr[partition] = arr[partition], arr[i] if i > partition
-            partition += 1 unless i == finish
+            partition += 1 unless i == arr.length - 1
+            $count += 1
         end
     end
-    #puts arr.join(" ")
-    arr = (inplace_quicksort(arr, start, partition - 1, count))
-    arr = (inplace_quicksort(arr, partition + 1, finish, count))
-    p count
-    arr
+    inplace_quicksort(arr[0...partition]) + [arr[partition]] + inplace_quicksort(arr[partition + 1..-1])
 end
 
 
 gets
 arr = gets.strip.split(" ").map(&:to_i)
-p insertionSort(arr)
-p inplace_quicksort(arr, 0, arr.length - 1, 0)
+x = insertionSort(arr.dup)
+inplace_quicksort(arr.dup)
+p x - $count
