@@ -12,7 +12,7 @@ puts result.join(" ")
 gets
 arr = gets.strip.split(" ").map(&:to_i)
 arr2 = Array.new(100, 0)
-arr.each {|el| arr2[el] += 1}
+arr.each { |el| arr2[el] += 1 }
 result = []
-arr2.each_with_index {|el, i| el.times{result << i}}
+arr2.each_with_index { |el, i| el.times { result << i } }
 puts result.join(" ")
