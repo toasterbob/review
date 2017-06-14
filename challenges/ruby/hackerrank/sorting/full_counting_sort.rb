@@ -9,6 +9,15 @@ n.times do |i|
     hash[num] << el[1]
 end
 min, max = [hash.keys.min, hash.keys.max]
+result = []
 min.upto(max) do |i|
 
+end
+
+def recursive_sum(num)
+  total = 0
+  1.upto(num) do |i|
+    total += i
+  end
+  total
 end
