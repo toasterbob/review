@@ -17,8 +17,10 @@ for a0 in (0..k-1)
 end
 
 transform.keys.each do |key|
-  transform[key] = transform[key].uniq.sort
+    transform[key] = transform[key].uniq.sort
+    transform[key].delete(key)
 end
+
 
 arr = gets.strip.split(' ').map(&:to_i)
 p transform
