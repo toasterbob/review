@@ -7,3 +7,13 @@ end
 gets
 arr = gets.strip.split(" ").map(&:to_i)
 puts counter(arr)
+
+#########################################
+
+gets
+array = gets.split(' ').map{ |a| a.to_i }
+counts = Array.new(100, 0)
+array.each do |v|
+    counts[v] += 1
+end
+puts counts.join(' ')
