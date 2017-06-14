@@ -6,5 +6,13 @@ pairs = [arr[0], arr[1]]
 min = (arr[1] - arr[0]).abs
 
 1.upto(arr.length - 2) do |i|
-    if arr[i + 1] =
+    val = arr[i + 1] - arr[i]
+    if val < min
+       pairs =  [arr[i], arr[i + 1]]
+       min = val
+    elsif min == val
+        pairs << arr[i] << arr[i + 1]
+    end
 end
+
+puts pairs.join(" ")
