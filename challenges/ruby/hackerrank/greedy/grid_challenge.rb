@@ -1,10 +1,10 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
 def lexicographically(arr)
     0.upto(arr.length - 1) do |i|
         sub = []
         0.upto(arr.length - 1) do |j|
-            sub << arr[i][j]
+            sub << arr[j][i]
         end
+
         return "NO" if sub != sub.sort
     end
     "YES"
