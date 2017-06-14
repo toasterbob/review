@@ -11,8 +11,9 @@ end
 min, max = [hash.keys.min, hash.keys.max]
 result = []
 min.upto(max) do |i|
-
+    result += hash[i]
 end
+puts result.join(" ")
 
 def recursive_sum(num)
   total = 0
