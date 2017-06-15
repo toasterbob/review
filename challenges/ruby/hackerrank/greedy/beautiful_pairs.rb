@@ -12,9 +12,11 @@ arr2.each { |el| hash2[el] += 1 }
 
 hash1.keys.each do |key|
     pairs += [hash1[key], hash2[key]].min if hash1[key] > 0 && hash2[key] > 0
-    p [hash1[key], hash2[key]] if hash1[key] != hash2[key]
 end
 
-#p hash1, hash2
-pairs += 1 if pairs < n
+if pairs < n
+    pairs += 1
+elsif pairs == n
+    pairs -= 1
+end
 puts pairs
