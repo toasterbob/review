@@ -1,7 +1,7 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 n = gets.strip.to_i
-arr1 = gets.strip.split(" ").map(&:to_i)
-arr2 = gets.strip.split(" ").map(&:to_i)
+arr1 = gets.strip.split(" ").map(&:to_i).sort
+arr2 = gets.strip.split(" ").map(&:to_i).sort
 
 hash1 = Hash.new(0)
 hash2 = Hash.new(0)
@@ -12,7 +12,9 @@ arr2.each { |el| hash2[el] += 1 }
 
 hash1.keys.each do |key|
     pairs += [hash1[key], hash2[key]].min if hash1[key] > 0 && hash2[key] > 0
+    p [hash1[key], hash2[key]] if hash1[key] != hash2[key]
 end
 
+#p hash1, hash2
 pairs += 1 if pairs < n
 puts pairs
