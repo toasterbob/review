@@ -51,3 +51,32 @@ for a0 in (0..t-1)
     n = gets.strip.to_i
     puts decent_num(n)
 end
+
+
+###############################
+#theirs 
+def comb n
+    if n > 0 && n % 3 == 0
+        return '5' * n
+    end
+
+	if n < 15 && n % 5 == 0
+            return '3' * n
+    end
+
+    t = (3 - (n % 3))
+    f = (n - (t*5)) / 3
+
+    if f > 0 && f == f.floor
+        return ('5' * f * 3) + ('3' * t * 5)
+    else
+        return '-1'
+    end
+end
+
+ncases = gets.to_i
+
+ncases.times {
+    n = gets.to_i
+    puts comb(n)
+}
