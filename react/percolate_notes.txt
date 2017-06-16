@@ -1,0 +1,18 @@
+
+this.setstate()
+
+jason gonzalez - react + d3 alivecor -self-taught
+kardia pro
+ekgs with a smart phone
+
+dashboard for data
+grids all rendered in d3
+react/redux/react router
+
+whats hard about react + d3
+d3 dom traversal vs virtual dom
+d3 rendering opts out of the react lifecycle
+
+only use d3 to handle complex operations it's good at
+
+jason.gonzales23@gmail.com
