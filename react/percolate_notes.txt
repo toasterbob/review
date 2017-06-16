@@ -23,6 +23,12 @@ FLEXPORT
 100 flux stores
 1500 React components
 
+flow or typescript in react
+
+prop types with Flow
+
+Desmond Brand
+
 
 
 
