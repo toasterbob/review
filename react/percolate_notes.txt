@@ -16,3 +16,23 @@ d3 rendering opts out of the react lifecycle
 only use d3 to handle complex operations it's good at
 
 jason.gonzales23@gmail.com
+
+
+FLEXPORT
+40 engineers
+100 flux stores
+1500 React components
+
+
+
+
+
+
+
+
+
+
+
+
+
+/
