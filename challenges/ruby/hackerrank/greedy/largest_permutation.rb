@@ -6,11 +6,20 @@ def permutation(arr, k)
     j = 0
     hash = Hash.new {|h, v| h[v] = []}
     arr.each_with_index { |el, i| hash[el].push(i) }
-
+    #p hash[sorted[0]][0]
+    #p sorted[0]
     while j < k do
        biggest = sorted.shift
+       #p biggest
        idx2 = hash[biggest].shift
+       until hash[biggest][0].nil? || hash[biggest][0] >= i
+           idx2 = hash[biggest][0]
+           p idx2
+           hash[biggest].shift
+           p hash[biggest]
+       end
        #idx2 = arr[i..-1].index(biggest) + i
+       #p idx2
        if idx2 == 0
            i += 0
        else
