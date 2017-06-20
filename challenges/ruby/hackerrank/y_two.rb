@@ -1,5 +1,5 @@
 def sort_businesses_by_rating(businesses)
-    
+
     hash = Hash.new {|h,k| h[k] = []}
 
     businesses.each do |h|
