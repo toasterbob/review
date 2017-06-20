@@ -7,13 +7,13 @@ def permutation(arr, k)
     hash = Hash.new
     arr.each_with_index { |el, i| hash[el] = i }
 
-    while j < k do
+    while j < k && i < arr.length
        biggest = sorted.shift
 
        idx2 = hash[biggest]
 
-       if idx2 == 0
-           i += 0
+       if idx2 == i
+           i += 1
        else
            hold = arr[i]
            arr[i], arr[idx2] = arr[idx2], arr[i] #swap
