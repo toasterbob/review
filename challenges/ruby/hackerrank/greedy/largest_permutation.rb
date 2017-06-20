@@ -4,26 +4,20 @@ def permutation(arr, k)
     return arr.join(" ") if arr == sorted
     i = 0
     j = 0
-    hash = Hash.new {|h, v| h[v] = []}
-    arr.each_with_index { |el, i| hash[el].push(i) }
-    #p hash[sorted[0]][0]
-    #p sorted[0]
+    hash = Hash.new
+    arr.each_with_index { |el, i| hash[el] = i }
+
     while j < k do
        biggest = sorted.shift
-       #p biggest
-       idx2 = hash[biggest].shift
-       until hash[biggest][0].nil? || hash[biggest][0] >= i
-           idx2 = hash[biggest][0]
-           p idx2
-           hash[biggest].shift
-           p hash[biggest]
-       end
-       #idx2 = arr[i..-1].index(biggest) + i
-       #p idx2
+
+       idx2 = hash[biggest]
+
        if idx2 == 0
            i += 0
        else
+           hold = arr[i]
            arr[i], arr[idx2] = arr[idx2], arr[i] #swap
+           hash[biggest], hash[hold] = i ,idx2
            j += 1
            i += 1
        end
