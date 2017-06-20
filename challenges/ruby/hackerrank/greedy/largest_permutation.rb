@@ -17,7 +17,7 @@ def permutation(arr, k)
        else
            hold = arr[i]
            arr[i], arr[idx2] = arr[idx2], arr[i] #swap
-           hash[biggest], hash[hold] = i ,idx2
+           hash[biggest], hash[hold] = i ,idx2 #swap
            j += 1
            i += 1
        end
