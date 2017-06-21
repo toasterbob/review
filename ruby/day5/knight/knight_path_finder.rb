@@ -4,14 +4,34 @@ class KnightPathFinder
 
   def initialize(start)
     @start = start
+    @visited_positions = [start]
   end
 
+  def valid_moves(pos)
+    valid_moves = []
+    x, y = pos
+    moves = [[2,1], [-2,1], [2,-1], [-2,-1], [1, 2], [-1, 2], [1, -2], [-1, -2]]
+    moves.each do |move|
+      x2 = x + move[0]
+      y2 = y + move[1]
+      valid = x2 >= 0 && x2 <= 7 && y2 >= 0 && y2 <= 7
+      valid_moves << [x2, y2] if valid
+    end
+    valid_moves
+  end
 
+  def build_move_tree()
+
+  end
+
+  def find_path()
+
+  end
 
 end
 
 
 if __FILE__ == $PROGRAM_NAME
   kpf = KnightPathFinder.new([0, 0])
-  p kpf
+  p kpf.valid_moves([2,2])
 end
