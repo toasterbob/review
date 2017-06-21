@@ -21,4 +21,11 @@ end
 # 7 - Second
 #
 # If one mods by 7, then either 0 or 1 will result in a win for the Second
-# player. Everything else is the First player, with optimal game play.  
+# player. Everything else is the First player, with optimal game play.
+#######################
+t = gets.to_i
+t.times do
+    n = gets.to_i
+    puts (n % 7 <= 1) ? "Second" : "First"
+end
+#########################
