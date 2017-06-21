@@ -10,3 +10,4 @@ n.times do
    x = gets.strip_to_i
    puts stone_game(x)
 end
+ 
