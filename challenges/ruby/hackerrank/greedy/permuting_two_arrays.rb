@@ -2,9 +2,11 @@
 def two_arrays(arr1, arr2, k)
    arr1.sort!
    arr2 = arr2.sort.reverse
+
    0.upto(arr1.length - 1) do |i|
       return "NO" unless arr1[i] + arr2[i] >= k
    end
+   
    "YES"
 end
 
