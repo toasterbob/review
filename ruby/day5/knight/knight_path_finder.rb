@@ -1,10 +1,12 @@
-
+require_relative  'poly_tree_node'
 
 class KnightPathFinder
 
   def initialize(start)
     @start = start
     @visited_positions = [start]
+
+    build_move_tree
   end
 
   def valid_moves(pos)
@@ -28,12 +30,11 @@ class KnightPathFinder
     valid.each do |position|
       @visited_positions << [position]
     end
-    p @visited_positions
     valid
   end
 
   def build_move_tree()
-
+    
   end
 
   def find_path()
