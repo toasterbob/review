@@ -10,3 +10,15 @@ n.times do
    x = gets.strip.to_i
    puts stone_game(x)
 end
+
+# Winning
+# 1 - Second
+# 2 - First
+# 3 - First
+# 4 - First
+# 5 - First
+# 6 - First
+# 7 - Second
+#
+# If one mods by 7, then either 0 or 1 will result in a win for the Second
+# player. Everything else is the First player, with optimal game play.  
