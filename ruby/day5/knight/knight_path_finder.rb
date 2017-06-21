@@ -20,6 +20,18 @@ class KnightPathFinder
     valid_moves
   end
 
+  def new_move_positions(pos)
+    valid = valid_moves(pos)
+    @visited_positions.each do |position|
+      valid.delete(position)
+    end
+    valid.each do |position|
+      @visited_positions << [position]
+    end
+    p @visited_positions
+    valid
+  end
+
   def build_move_tree()
 
   end
@@ -33,5 +45,5 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   kpf = KnightPathFinder.new([0, 0])
-  p kpf.valid_moves([2,2])
+  p kpf.new_move_positions([2,2])
 end
