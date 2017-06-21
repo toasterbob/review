@@ -9,3 +9,5 @@ n.times do
    x, y = gets.strip.split(" ").map(&:to_i)
     puts towers(x, y)
 end
+
+#(m == 1 || n % 2 == 0 ? 2 : 1)
