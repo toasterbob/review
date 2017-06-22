@@ -37,6 +37,14 @@ User.includes(:addresses)
 
 #background workers - delayed job, sidekiq, resque
 
+#learn how to properly index your database
+#denormalize frequently looked up data - store address on user table if you need it all the time
+#do your math in your database
+#select only what you need
+#use a CDN
+#remove gems and middlewares you don't use
+
+
 
 
 #
