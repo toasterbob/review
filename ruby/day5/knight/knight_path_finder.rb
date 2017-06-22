@@ -34,7 +34,17 @@ class KnightPathFinder
   end
 
   def build_move_tree()
-    
+    root = PolyTreeNode.new(@start)
+    queue = [root]
+    until queue.empty?
+      parent = queue.shift
+      new_move_positions(parent.value).each do |move|
+        child = PolyTreeNode.new(move)
+        parent.add_child(child)
+        queue << child
+      end
+    end
+
   end
 
   def find_path()
@@ -46,5 +56,5 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   kpf = KnightPathFinder.new([0, 0])
-  p kpf.new_move_positions([2,2])
+  p kpf.
 end
