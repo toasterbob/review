@@ -19,3 +19,24 @@ User.eager_load(:addresses)
 User.includes(:addresses)
 
 #becareful not to load lots of unnecessary data
+
+# 3. Cache
+# app servers not free - only use when you really need to
+#HTTP caching - great when your content doesn't change over time
+#Application caching
+
+#varnish - sits between client and app servers - keeps info cached - serves info back without going to
+# server on next request
+
+#key-value storage - memcache and redis
+#fast lookup - no trip to the database
+
+#cache invalidation
+
+# 4. do things later - transactional email sent later
+
+#background workers - delayed job, sidekiq, resque
+
+
+
+#
