@@ -44,7 +44,7 @@ User.includes(:addresses)
 #use a CDN
 #remove gems and middlewares you don't use
 
-
+#Anna
 
 
 #
