@@ -1,6 +1,7 @@
 require_relative  'poly_tree_node'
 
 class KnightPathFinder
+  attr_reader :root, :visited_positions
 
   def initialize(start)
     @start = start
@@ -28,14 +29,15 @@ class KnightPathFinder
       valid.delete(position)
     end
     valid.each do |position|
-      @visited_positions << [position]
+      @visited_positions << position
     end
     valid
   end
 
   def build_move_tree()
-    root = PolyTreeNode.new(@start)
-    queue = [root]
+    i = 0
+    @root = PolyTreeNode.new(@start)
+    queue = [@root]
     until queue.empty?
       parent = queue.shift
       new_move_positions(parent.value).each do |move|
@@ -56,5 +58,5 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   kpf = KnightPathFinder.new([0, 0])
-  p kpf.
+  p kpf.root
 end
