@@ -40,7 +40,9 @@
 # Wit.AI is free
 
  # Wit comes with a ruby gem - wit-ruby
- 
+ # wit singleton
+
+ #marlonjfrausto@gmail.com 
 
 
 
