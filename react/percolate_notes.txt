@@ -27,9 +27,9 @@ flow or typescript in react
 
 prop types with Flow
 
-Desmond Brand
 
- 
+
+
 
 
 
