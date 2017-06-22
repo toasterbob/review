@@ -49,8 +49,9 @@ class KnightPathFinder
 
   end
 
-  def find_path()
-
+  def find_path(pos)
+    node = @root.dfs(pos)
+    node.value
   end
 
 end
@@ -58,5 +59,5 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   kpf = KnightPathFinder.new([0, 0])
-  p kpf.root
+  p kpf.find_path([7, 7])
 end
