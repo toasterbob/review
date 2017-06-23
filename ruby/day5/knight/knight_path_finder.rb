@@ -17,7 +17,8 @@ class KnightPathFinder
     moves.each do |move|
       x2 = x + move[0]
       y2 = y + move[1]
-      valid = x2 >= 0 && x2 <= 7 && y2 >= 0 && y2 <= 7
+      # valid = x2 >= 0 && x2 <= 7 && y2 >= 0 && y2 <= 7
+      valid = x2.between?(0,7) && y2.between?(0,7)
       valid_moves << [x2, y2] if valid
     end
     valid_moves
@@ -35,7 +36,6 @@ class KnightPathFinder
   end
 
   def build_move_tree()
-    i = 0
     @root = PolyTreeNode.new(@start)
     queue = [@root]
     until queue.empty?
@@ -51,7 +51,7 @@ class KnightPathFinder
 
   def find_path(pos)
     node = @root.dfs(pos)
-    trace_path(node) + pos
+    trace_path(node) + [pos]
   end
 
   def trace_path(node)
@@ -69,5 +69,5 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   kpf = KnightPathFinder.new([0, 0])
-  p kpf.find_path([7, 7])
+  p kpf.find_path([2, 7])
 end
