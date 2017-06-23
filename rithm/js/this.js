@@ -109,16 +109,30 @@ whatIsThis.call(213)
 // apply always takes at most two arguments (thisArg, [])
 // call rather than passing in an array (call can take unlimited args)
 
+person.dog.bark = function(numWoofs) {
+  return this.name + " says " + " woof ".repeat.numWoofs.trim() + "!"
+}
 
+person.dog.favoriteFoods = function(food1, food2, food3){
+  return `${this.name} loves tot eat ${food1}, ${food2}, and ${food3}`
+}
+person.dog.favoriteFoods("chicken", "popcorn", "steak")
+//"Whiskey loves tot eat chicken, popcorn, and steak"
 
+person.dog.favoriteFoods.call({name: "Bruno Mars"}, "chicken", "popcorn", "steak")
+//"Bruno Mars loves tot eat chicken, popcorn, and steak"
 
+person.dog.favoriteFoods.apply({name: "Bruno Mars"}, ["chicken", "popcorn", "steak"])
+"Bruno Mars loves tot eat chicken, popcorn, and steak"
 
+person.dog.favoriteFoods.bind({name: "Bruno Mars"}, ["chicken", "popcorn", "steak"])
+// function (food1, food2, food3){
+//   return `${this.name} loves tot eat ${food1}, ${food2}, and ${food3}`
+// }
+// bind returns a new function with the context bound to the new this
 
-
-
-
-
-
+var onlySomeFoods = person.dog.favoriteFoods.bind({name: "Bruno Mars"}, "chicken", "popcorn")
+onlySomeFoods("steak") //"Bruno Mars loves tot eat chicken, popcorn, and steak"
 
 
 
