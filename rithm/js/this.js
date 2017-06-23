@@ -5,7 +5,7 @@
 // generally evaluates to the window if in the console.
 
 // 2. implicit
-// 3. explicit - call, apply, bind 
+// 3. explicit - call, apply, bind
 // 4. new
 
 
@@ -184,9 +184,36 @@ class Person {
 matt.__proto__;
 matt.__proto__ .__proto__;
 
+// arrow functions
+// lexical bindings
+// great for short functions on a single line
+function double(num){
+  return 2 * num;
+}
 
 
+var double = num => 2 * num; // don't need return on a single line
+var add = (x, y) => x + y;
+double(2)
+add(2, 4)
 
+var person = {
+  name: "Matt",
+  sayHi: function() { return `${this.name} says hi`;},
+  sayHiArrow: () => `${this.name} says hi`,
+  sayHiLater: function() {
+    setTimeout(function() {
+      { console.log(`${this.name} says hi`) }
+    }, 1000)
+  },
+  sayHiLaterArrow: function(){
+    setTimeout(() => console.log(`${this.name} says hi`), 1000);
+  }
+};
+person.sayHi(); //"Matt says hi"
+person.sayHiArrow(); //" says hi"
+person.sayHiLater(); //says hi
+person.sayHiLaterArrow(); //Matt says hi
 
 
 
