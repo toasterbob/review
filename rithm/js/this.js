@@ -5,7 +5,7 @@
 // generally evaluates to the window if in the console.
 
 // 2. implicit
-// 3. explicit
+// 3. explicit - call, apply, bind 
 // 4. new
 
 
@@ -133,6 +133,60 @@ person.dog.favoriteFoods.bind({name: "Bruno Mars"}, ["chicken", "popcorn", "stea
 
 var onlySomeFoods = person.dog.favoriteFoods.bind({name: "Bruno Mars"}, "chicken", "popcorn")
 onlySomeFoods("steak") //"Bruno Mars loves tot eat chicken, popcorn, and steak"
+
+function addThree(a, b, c){
+  return a + b + c;
+}
+
+var addTwo = addThree.bind(null, 3, 2)
+addTwo(4) // 9
+
+//constructor functions - by convention they start with capital letter - but
+// js doesn't care - other coders do
+
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+var matt = Person("Matt", "Lane")
+matt //undefined
+matt.firstName
+
+// using new keyword
+var matt = new Person("Matt", "Lane")
+matt //{firstName: "Matt", lastName: "Lane"}
+
+// invoking with new - object is created - keyword this points to newly
+// created empty object - implicit return this  - prototype link
+
+function foo () {}
+f = new foo(); // {}
+
+Person.prototype.sayHi = function() {
+  return `${this.firstName} says hi!`;
+};
+
+// Book - you don't know JS
+
+//ES6
+
+class Person {
+  constructor(firstName, lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  sayHi(){
+    return `${this.firstName} says hi!`;
+  }
+}
+matt.__proto__;
+matt.__proto__ .__proto__;
+
+
+
+
 
 
 
