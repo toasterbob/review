@@ -215,10 +215,7 @@ person.sayHiArrow(); //" says hi"
 person.sayHiLater(); //says hi
 person.sayHiLaterArrow(); //Matt says hi
 
-person.sayHi(); //"Matt says hi"
-person.sayHiArrow(); //" says hi"
-person.sayHiLater(); //says hi
-person.sayHiLaterArrow(); //Matt says hi
+
 
 
 //
