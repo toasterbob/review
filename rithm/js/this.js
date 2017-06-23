@@ -48,3 +48,32 @@ var person = {
 };
 person.sayHi(); //"Matt says hi!"
 person.dog.bark(); //"Whiskey says woof!"
+var anotherBark = person.dog.bark
+anotherBark(); // " says woof!"
+
+anotherBark  // function (){ return this.name + " says woof!";}
+// look where function is being invoked to see where the value of this
+
+person.sayHiLater = function(){
+  setTimeout(function(){
+    console.log(this.name + " says hi!");
+  }, 1000);
+};
+
+person.sayHiLater()  // says hi!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
