@@ -1,5 +1,6 @@
 # @param {String[]} strs
 # @return {String}
+#this solution actually checks all the strings 
 def longest_common_prefix(strs)
     return "" if strs.empty?
     return strs[0] if strs.length == 1
@@ -20,7 +21,7 @@ end
 
 #works to compare only two of the strings, but that is just bad tests
 #runtime beats 100% of solutions?????  weird!
-#52 ms 
+#52 ms
 def longest_common_prefix(strs)
   return "" if strs.empty?
   small = strs.min
