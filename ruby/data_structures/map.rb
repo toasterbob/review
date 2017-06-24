@@ -8,7 +8,12 @@ class Map
   end
 
   def assign(key, value)
-    @map << [key, value]
+    i = @map.index?([key, value])
+    if i
+      map[i] = value
+    else
+      @map << [key, value]
+    end
   end
 
   def lookup(key)
