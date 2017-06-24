@@ -23,8 +23,47 @@ Browser
 
 Load balancer
 Application servers
+  Heroku vs. AWS
+    Heroku is PaaS (Platform As A Service) - Heroku will figure out all of the settings (PaaS)
+    and therefore more expensive - not suitable for large scale app because it is simply too
+    expensive and not as configurable.
+
+    AWS is IaaS (Infrastructure As A Service) - Just servers without additional services. Provides
+    access to virtual machines that are just fresh linux box. DevOps will make sure these servers
+    have right configurations to run your codes correctly. -> Definitely cheaper than using PaaS
+    and generally cheaper than having and managing your own servers (unless you are a giant company
+    that needs a lot of data centers).
+
+  Services vs. Monolith
+
+    SOA (service-oriented architecture) AKA "microservices" (Modularity on the application level)
+      e.g. Multiple rails app (one for user, one for tweets, etc) -> tweet syntax error won't break
+      user authentication app.
+
+    Monoliths - e.g. Rails app -> one syntax error breaks everything.
+
+    Example of Services (Uber -> Big organizations love microservices as it's essential that
+    everything always appear working and is instant)
+      Routing service (How do I get from point A to point B)
+      Dispatch service (Connect riders to drivers)
+      Payment processing service
+      Reviewing service
+      User authentication service
+
+    Pros and cons of SOA
+      Failures can be isolated to particular services without taking down the entire system
+      Easy to divide among teams, a team can keep their codebase small and understandable
+        Microservices can be written in various languages unlike monolith
+        Easier to do small refactorings
+        Harder to do big refactoring across many services
+      A little bit of overhead in messages between apps unlike monolith
+
 Caching layer
   Caches are generally stored in memory (e.g. RAM) - e.g. Redis and Memcached
+  All caches are K-V stores
+  Anything that hits DB hits caching layer first and is stored
+  Cache invalidation such as LRU
+  How do I make a website faster? Caching & CDN
 
 CDN(s)
   Giant data centers designed to send big files to users and to their ISPs as fast as possible
