@@ -28,8 +28,13 @@ if __FILE__ == $PROGRAM_NAME
   p s.show # [1, 2, 3]
   s.remove
   p s.stack # [1, 2]
+  copy1 = s.show
+  copy2 = s.stack
+
   s.remove # [1]
   p s.show
   s.remove # []
   p s.show
+  p copy1 # [1, 2] - deep dup
+  p copy2 # [] - copied reference 
 end
