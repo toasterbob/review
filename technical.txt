@@ -22,6 +22,16 @@ Browser
     easy to undo: among the reasons why it's popular among startups
 
 Load balancer
+  Reduces load
+
+  What if this goes down? - More load balancers / failover
+
+  Put one into the database layer as well so cache can talk to load balancer
+  rather than directly to the database.
+
+  Any big website, when you get IP address, it's not actually application server.
+  It's load balancer that will send you to the server
+
 Application servers
   Heroku vs. AWS
     Heroku is PaaS (Platform As A Service) - Heroku will figure out all of the settings (PaaS)
@@ -94,3 +104,30 @@ CDN(s)
   Giant data centers designed to send big files to users and to their ISPs as fast as possible
 
 Database
+
+
+
+How much do your most common operations cost?
+
+Facebook Design
+  Giant NoSQL graph DB of users.
+  Each user has list of friends array. (exists in caching layer)
+  Triggers read for every single one of your friends every time the user wants newsfeed (which is
+  dynamic so cannot just store). (Writes are really cheap, reads are not)
+  5000 friends limit because this is unscalable beyond that point because read is performed every
+  single time.
+
+Twitter Design
+  Each user has a list of feed that contains array of tweet ids. (exists in caching layer)
+  Every time you write in Twitter, it writes to every one of your followers and put the id to end of
+  their feed array. (Writes are really expensive, Read are really cheap because feeds are already
+  there)
+
+Read vs Write
+  The most important question you have to ask when considering the scalability of your database is,
+  “What kind of system am I working with?” Are you working with a read-heavy or a write-heavy system?
+
+  An online shopping site, where most people spend the majority of their time browsing (reads) and
+  only a small amount of their time purchasing (writes), or a blog, where the majority of the time
+  people are consuming posts (reads), and only a small amount of the time are commenting or the
+  author is posting (writes).
