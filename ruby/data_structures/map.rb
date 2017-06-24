@@ -28,15 +28,33 @@ class Map
     @map.delete([key, value])
   end
 
+  def show
+    deep_dup(@map)
+  end
+
+  private
+  def deep_dup(arr)
+    result = []
+    arr.each do |el|
+      if el.class == Array
+        result << deep_dup(el)
+      else
+        result << el
+      end
+    end
+    result
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
   m = Map.new
   m.assign(1, "dog")
   m.assign(2, "cat")
+  m.assign(3, "bob")
   p m.lookup(1) # "dog"
   p m.map # [[1, "dog"], [2, "cat"], [3, "bob"]]
-  m.assign(3, "bob")
+  copy = m.show
   p m.lookup(3) # "bob"
   m.assign(3, "rooster")
   p m.lookup(3) # "rooster"
@@ -47,4 +65,5 @@ if __FILE__ == $PROGRAM_NAME
   p m.remove(3) # nil
   p m.map # [[2, "cat"]]
   p m.lookup(2) # "cat"
+  p copy
 end
