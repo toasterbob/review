@@ -58,6 +58,31 @@ Application servers
         Harder to do big refactoring across many services
       A little bit of overhead in messages between apps unlike monolith
 
+    Client vs. Server
+      Use HTTP via TCP or use UDP
+
+      TCP: this data must get to the end user. send request to server to build connection then sends
+      packets in order. Lots of overhead. Slower but more secure as delivery is guaranteed and in order.
+        WhatsApp -> Use TCP to make sure message is sent to a friend even if s/he is offline at the
+        moment.
+
+      UDP: similar but not in order and no guarantee in delivery. Very low latency compared to TCP but
+      meaning it's very fast.
+        Uber -> driver sends their location to Uber every 5 seconds and Uber app sends most recent
+        version of this information to users when they open the app. => for this, UDP is preferred
+        because this has to happen very fast, the order doesn't matter as much, and guaranteed
+        delivery is not as important as they are constantly sending this information.
+
+      What info should live on the client rather than the server?
+        What needs to be persistent and what's okay to lose?
+        Scalability tradeoffs
+        What if client and server become inconsistent?
+
+      Asynchronous jobs
+        Does it need to be done right this second?
+        If not, just queue it up in a background process and tell your user you'll get it done
+        Many things can be done asynchronously
+
 Caching layer
   Caches are generally stored in memory (e.g. RAM) - e.g. Redis and Memcached
   All caches are K-V stores
