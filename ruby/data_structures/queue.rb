@@ -7,6 +7,7 @@ class Queue
 
   def enqueue(el)
     @queue.unshift(el)
+    el #return el
   end
 
   def dequeue
@@ -14,7 +15,7 @@ class Queue
   end
 
   def show
-    p @queue
+    p @queue.dup # i guess we want to make it so that they can copy this using show? 
   end
 
 end
