@@ -1,0 +1,12 @@
+Architecture
+
+Standard Web App Architecture
+
+Basic Pieces 
+
+Browser
+Load balancer
+Application servers
+Caching layer
+CDN(s)
+Database
