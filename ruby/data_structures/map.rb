@@ -26,17 +26,18 @@ class Map
 end
 
 if __FILE__ == $PROGRAM_NAME
-  m = Queue.new
+  m = Map.new
   m.assign(1, "dog")
   m.assign(2, "cat")
-  m.lookup(1)
+  p m.lookup(1) # "dog"
   m.assign(3, "bob")
-  p m.map
-  m.lookup(2)
-  # m.remove()
-  # p m.map
-  # m.remove()
-  # m.lookup(3)
-  # m.remove()
-  # m.lookup(1)
+  p m.map # [[1, "dog"], [2, "cat"], [3, "bob"]]
+  p m.lookup(2) # "cat"
+  m.remove(1)
+  p m.map # [[2, "cat"], [3, "bob"]]
+  m.remove(3)
+  p m.lookup(3) #-1
+  p m.remove(3) # nil
+  p m.map # [[2, "cat"]]
+  p m.lookup(2) # "cat"
 end
