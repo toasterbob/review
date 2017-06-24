@@ -2,11 +2,31 @@ Architecture
 
 Standard Web App Architecture
 
-Basic Pieces 
+Basic Pieces
 
 Browser
+  Relational - join tables
+    Denormalize - can speed it up
+
+  NoSQL
+
+  Failover - Prevent a single point of failure, Leader and followers
+
+  Scaling a Relational Database
+    high read load (e.g. Twitter / Facebook)
+    Leader has many followers.  Followers send reads. Only leader can write to keep things in sync.
+
+    high write load, then shard
+      Not good for Relational DB.
+
+    easy to undo: among the reasons why it's popular among startups
+
 Load balancer
 Application servers
 Caching layer
+  Caches are generally stored in memory (e.g. RAM) - e.g. Redis and Memcached
+
 CDN(s)
+  Giant data centers designed to send big files to users and to their ISPs as fast as possible
+
 Database
