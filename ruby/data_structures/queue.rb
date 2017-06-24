@@ -21,16 +21,16 @@ end
 
 
 if __FILE__ == $PROGRAM_NAME
-  s = Queue.new
-  s.enqueue(1)
-  s.enqueue(2)
-  s.show
-  s.enqueue(3)
-  s.show
-  s.dequeue
-  p s.queue
-  s.dequeue
-  s.show
-  s.dequeue
-  s.show
+  q = Queue.new
+  q.enqueue(1)
+  q.enqueue(2)
+  q.show
+  q.enqueue(3)
+  q.show
+  q.dequeue
+  p q.queue
+  q.dequeue
+  q.show
+  q.dequeue
+  q.show
 end
