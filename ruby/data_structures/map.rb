@@ -8,9 +8,9 @@ class Map
   end
 
   def assign(key, value)
-    i = @map.index?([key, value])
+    i = @map.index { |pair| pair[0] == key }
     if i
-      map[i] = value
+      map[i][1] = value
     else
       @map << [key, value]
     end
@@ -35,9 +35,11 @@ if __FILE__ == $PROGRAM_NAME
   m.assign(1, "dog")
   m.assign(2, "cat")
   p m.lookup(1) # "dog"
-  m.assign(3, "bob")
   p m.map # [[1, "dog"], [2, "cat"], [3, "bob"]]
-  p m.lookup(2) # "cat"
+  m.assign(3, "bob")
+  p m.lookup(3) # "bob"
+  m.assign(3, "rooster")
+  p m.lookup(3) # "rooster"
   m.remove(1)
   p m.map # [[2, "cat"], [3, "bob"]]
   m.remove(3)
