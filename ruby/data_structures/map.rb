@@ -33,16 +33,21 @@ class Map
   end
 
   private
+  # def deep_dup(arr)
+  #   result = []
+  #   arr.each do |el|
+  #     if el.class == Array
+  #       result << deep_dup(el)
+  #     else
+  #       result << el
+  #     end
+  #   end
+  #   result
+  # end
+
+  # their version which is much cleaner 
   def deep_dup(arr)
-    result = []
-    arr.each do |el|
-      if el.class == Array
-        result << deep_dup(el)
-      else
-        result << el
-      end
-    end
-    result
+    arr.map { |el| el.is_a?(Array) ? deep_dup(el) : el }
   end
 
 end
