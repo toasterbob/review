@@ -9,8 +9,10 @@ class PolyTreeNode
   end
 
   def parent=(parent)
+    old_parent = @parent
+    old_parent.children.delete(self) if old_parent
     @parent = parent
-    parent.children << self
+    parent.children << self if parent 
   end
 
 end
