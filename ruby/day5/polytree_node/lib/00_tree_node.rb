@@ -12,7 +12,15 @@ class PolyTreeNode
     old_parent = @parent
     old_parent.children.delete(self) if old_parent
     @parent = parent
-    parent.children << self if parent 
+    parent.children << self if parent
+  end
+
+  def add_child(child_node)
+
+  end
+
+  def remove_child(child_node)
+    
   end
 
 end
