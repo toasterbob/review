@@ -1,0 +1,51 @@
+One of the three servers is slow. What can be the possible reasons and how would you take care of these things?
+
+Should you encrypt and then compress, or compress and then encrypt? why?
+
+why yelp, why backend, tell me about your project, coding question: isomorphic string
+
+REST API questions.
+
+There is a HashMap contains 7 Keys, which is Monday through Sunday. Each key is corresponding to a List of (Start time, end time) pairs. The pairs is unsorted. What I have to do is to merge the time slots that are adjacent. And finally return another HashMap that contains the same structure but with merged time slots.
+
+How would you improve the speed of a slowly loading web page?
+Given a list of strings, arrange them such that all anagrams are grouped together.
+I also got asked to say the big O time of my code too
+
+Interviewer asked a LOT of questions about databases..why is it slow, how do you make it faster…
+
+Anagram question..I implemented the std answer using hashtable..Interviewer said he didn&#039;t care about space complexity and asked me to come up with another answer. I implemented a solution using 26*n char count array ..he seemed happy..but i didnt get an onsite
+
+1) What would you like to change in Yelp
+2) What you know about Yelp?
+
+Given
+{
+//"Restaurant Types"."[categoryNames]"
+"American" : "[Burger, French fries, Potato Chips]",
+"Italian":"[Pizza,Bread Sticks, Potato Chips]"
+}
+Assume this kind of data is given as input and loaded into your choice of Data Structure.
+Using Category name return the no of resturarnt type. Ex: if i/p is Potato Chips, O/P should be : 2 (American and Italian).
+Please mention your Data structure and logic.
+
+
+ UNIX command to search for a specific text through files in a directory.
+- Binary search v/s linear search.
+- DNS resolution.
+etc...
+Then a programming test to be done and submitted in any language.
+Phone interview 1:
+- Given a log file with 1 entry per line, find out the 10 most frequently appearingentries.
+- What happens when you request a page to be loaded in your browser.
+Phone interview 2:
+- Some more typical interview programming questions.
+
+All interviews had many UNIX specific trivia style questions which required knowledge of UNIX utilities and their options.
+
+Technical question - Write a c++ program to generate random numbers with weighted probability.
+
+The first round was an easy phone interview. Most the questions test your basic knowledge about data structures, algorithms, dbms, OS, memory etc. The next round is a Skype interview.
+
+Eg. How can you find all instances of a class.
+  the question was, how can you find all instances of a class in a file. Answer would be "grep".
