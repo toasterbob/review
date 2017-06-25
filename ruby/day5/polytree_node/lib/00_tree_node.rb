@@ -5,8 +5,12 @@ class PolyTreeNode
   def initialize(value)
     @value = value
     @parent = nil
-    @children = [] 
+    @children = []
   end
 
+  def parent=(parent)
+    @parent = parent
+    parent.children << self 
+  end
 
 end
