@@ -216,6 +216,8 @@ person.sayHiLater(); //says hi
 person.sayHiLaterArrow(); //Matt says hi
 
 
-
-
+let duplicate = function(arr) {
+  return arr.concat(arr);
+}
+duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
 //
