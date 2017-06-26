@@ -52,4 +52,7 @@ Eg. How can you find all instances of a class.
 
 What are some exploits that web developers (particularly back-end engineers) have to keep in mind?
 
-What do you think would you do at Yelp? What does your current working day is structured? A number of technical questions (how many byte in 64bit, largest number of int32, immutable python type out of list, tuple & dictionary, how do i find a function by name in a number of source-code files, what is the HTTP port, what is…
+What do you think would you do at Yelp? What does your current working day is structured? A number
+of technical questions (how many byte in 64bit, largest number of int32, immutable python type out of
+list, tuple & dictionary, how do i find a function by name in a number of source-code files, what is
+the HTTP port, what is…
