@@ -91,3 +91,27 @@ Abstract Data Type (ADT)
 
     nil
   end
+
+DFS traversal
+      1
+     / \
+    2   5
+   /   / \
+  3   6   9
+ /   / \
+4   7   8
+
+BFS traversal
+       1
+      / \
+     2   3
+    /   / \
+   4   5   6
+  /   / \
+ 7   8   9
+
+What's the difference between an algorithm and a method? An algorithm is an idea, an unambiguous
+but unrealized process that solves a problem and which potentially could be written in any language.
+A method is the implementation, a conversion of an algorithm into Ruby code which can then be run.
+
+An algorithm can be coded up in any language.
