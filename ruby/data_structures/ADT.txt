@@ -67,4 +67,11 @@ Abstract Data Type (ADT)
   DFS looks for leaves first - BFS searches top first - If you know something
   is more likely to be at the bottom or top, it affects your decision
 
+  BFS - use a queue  = [root]
+  until queue.empty?
+    el = queue.shift
+    process!(el)
+    el.children.each{|child| queue << child}
+  end
+
   
