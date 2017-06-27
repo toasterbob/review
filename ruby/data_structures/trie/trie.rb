@@ -8,7 +8,7 @@ puts DICTIONARY.has_key?("abds").nil? #not in dictionary, returns nil
 puts DICTIONARY.has_key?("she").nil? #false
 puts DICTIONARY.has_key?("she") #true
 puts DICTIONARY.has_key?("he") #true
-
+puts !DICTIONARY.has_key?("hem").nil? #false
 
 
 # Performance Characteristics
