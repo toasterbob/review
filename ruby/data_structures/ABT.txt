@@ -1,1 +1,13 @@
+Data structures - array, hash, string
+
 Abstract Data Type (ABT)
+
+- set
+  include?, << (shovel), delete
+  can't include duplicates
+  you can implement a set with a hash map - value could equal true
+  inserting into a set when something exists, nothing happens
+
+- map / dictionary
+  set (key, value), get (k), delete(k)
+  map is just a set of key value pairs 
