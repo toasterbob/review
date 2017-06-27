@@ -36,4 +36,23 @@ Abstract Data Type (ADT)
   every node has at most one parent (it can have no parents)
   single node is a tree
   empty tree is still a tree
-  
+  directionality to a tree
+
+  ternary tree
+  every node has at most, three children
+
+  unary tree - one child
+  linked list
+
+  n-ary tree (polytree)
+  can have many children
+
+  top of the tree is called the root
+  the tree is rooted at this node
+
+  very bottom layer are the leaves (leaf nodes)
+
+  A is the parent of B and C.
+  The subtree rooted at B has children D and E
+
+  The depth of the tree.  
