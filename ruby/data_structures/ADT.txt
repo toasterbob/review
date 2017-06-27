@@ -55,4 +55,16 @@ Abstract Data Type (ADT)
   A is the parent of B and C.
   The subtree rooted at B has children D and E
 
-  The depth of the tree.  
+  The depth/height of the tree - how many layers
+  Tree traversal - how do we traverse a tree?
+
+  BFS - breadth first search (layer by layer) 1, 2, 3, 4, 5, 6, 7
+  DFS - depth first search () 4, 5, 2, 6, 7, 3, 1
+        1
+      2   3
+    4  5 6  7
+
+  DFS looks for leaves first - BFS searches top first - If you know something
+  is more likely to be at the bottom or top, it affects your decision
+
+  
