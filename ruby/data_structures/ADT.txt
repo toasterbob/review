@@ -11,3 +11,29 @@ Abstract Data Type (ADT)
 - map / dictionary
   set (key, value), get (k), delete(k)
   map is just a set of key value pairs
+
+- stack
+  two operations: push and pop
+  LIFO
+  things on top are the most recent
+  stack of cafeteria trays being wet
+  not fair
+  use an array with only push and pop. implements a stack.
+  STACK IS USED DURING RECURSION
+  implicit in any recursive algorithm
+
+- queue
+  enqueue and dequeue
+  FIFO
+  totally fair
+  push(for enqueue) and shift(dequeue)
+  or unshift(for enqueue) and pop (dequeue)
+
+- tree
+  most common type is a binary tree
+  parent/child relationship
+  called binary tree because each node (or vertex) has at most two children
+  every node has at most one parent (it can have no parents)
+  single node is a tree
+  empty tree is still a tree
+  
