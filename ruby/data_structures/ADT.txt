@@ -74,4 +74,20 @@ Abstract Data Type (ADT)
     el.children.each{|child| queue << child}
   end
 
-  
+  DFS - think about it recursively
+  Base case: root.nil? -> return nil
+             root.val == target => root
+  Inductive step dfs on the left side or defs on the right side
+            left.dfs or right.dfs
+  dfs is an age old algorithm
+
+  def dfs(root, target)
+    return root if root.val == target #base case
+
+    root.children.each do |child|
+      search_result = dfs(child, target)
+      return search_result unless search_result.nil?
+    end
+
+    nil
+  end
