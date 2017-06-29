@@ -1,6 +1,6 @@
 class PolyTreeNode
 
-  attr_reader :parent, :children, :value
+  attr_reader :parent, :value
 
   def initialize(value)
     @value = value
@@ -14,17 +14,17 @@ class PolyTreeNode
     old_parent = self.parent
     old_parent._children.delete(self) if old_parent
     @parent = parent
-    parent.children << self if parent
+    parent._children << self if parent
   end
 
-  #their solution - but I think that the attr_reader avoids this
-  # def children
-  #   # We dup to avoid someone inadvertently trying to modify our
-  #   # children directly through the children array. Note that
-  #   # `parent=` works hard to make sure children/parent always match
-  #   # up. We don't trust our users to do this.
-  #   @children.dup
-  # end
+  #their solution - I was using attr_reader for children 
+  def children
+    # We dup to avoid someone inadvertently trying to modify our
+    # children directly through the children array. Note that
+    # `parent=` works hard to make sure children/parent always match
+    # up. We don't trust our users to do this.
+    @children.dup
+  end
 
   def add_child(child_node)
     child_node.parent = self
