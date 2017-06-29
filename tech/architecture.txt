@@ -76,7 +76,7 @@ Application servers
         WhatsApp -> Use TCP to make sure message is sent to a friend even if s/he is offline at the
         moment.
 
-      UDP: similar but not in order and no guarantee in delivery. Very low latency compared to TCP but
+      UDP(User diagram protocol): similar but not in order and no guarantee in delivery. Very low latency compared to TCP but
       meaning it's very fast.
         Uber -> driver sends their location to Uber every 5 seconds and Uber app sends most recent
         version of this information to users when they open the app. => for this, UDP is preferred

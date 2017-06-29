@@ -1,9 +1,9 @@
 
 
 class KnightPathFinder
-  
-  def initialize
 
+  def initialize
+    
   end
 
 
