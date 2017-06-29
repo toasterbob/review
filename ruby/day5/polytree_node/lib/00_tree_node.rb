@@ -9,11 +9,20 @@ class PolyTreeNode
   end
 
   def parent=(parent)
-    old_parent = @parent
+    old_parent = self.parent
     old_parent.children.delete(self) if old_parent
     @parent = parent
     parent.children << self if parent
   end
+
+  #their solution - but I think that the attr_reader avoids this
+  # def children
+  #   # We dup to avoid someone inadvertently trying to modify our
+  #   # children directly through the children array. Note that
+  #   # `parent=` works hard to make sure children/parent always match
+  #   # up. We don't trust our users to do this.
+  #   @children.dup
+  # end
 
   def add_child(child_node)
     child_node.parent = self
