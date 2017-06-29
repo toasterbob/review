@@ -29,7 +29,7 @@ class PolyTreeNode
 
     self.children.each do |child|
       check = child.dfs(target_value)
-      return check if check && check.value == target
+      return check if check && check.value == target_value
     end
     nil
   end
