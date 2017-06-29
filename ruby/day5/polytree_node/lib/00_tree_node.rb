@@ -36,7 +36,7 @@ class PolyTreeNode
 
   def remove_child(child_node)
     raise "error" unless child_node.parent == self #can't remove a child who doesn't exist
-    #theirs - but my one line above seems better 
+    #theirs - but my one line above seems better
     # if child && !self.children.include?(child)
     #   raise "Tried to remove node that isn't a child"
     # end
@@ -60,7 +60,7 @@ class PolyTreeNode
   def bfs(target_value)
     queue = [self]
 
-    while !queue.empty?
+    until queue.empty?
       check = queue.pop
       return check if check.value == target_value
       check.children.each { |child| queue.unshift(child) }
