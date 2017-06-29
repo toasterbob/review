@@ -40,9 +40,9 @@ class PolyTreeNode
     while !queue.empty?
       check = queue.pop
       return check if check.value == target_value
-      check.children.each { |child| queue.shift(child) }
+      check.children.each { |child| queue.unshift(child) }
     end
-    nil 
+    nil
   end
 
 end
