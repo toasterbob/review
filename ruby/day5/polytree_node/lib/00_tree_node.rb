@@ -9,8 +9,10 @@ class PolyTreeNode
   end
 
   def parent=(parent)
+    return if self.parent == parent
+
     old_parent = self.parent
-    old_parent.children.delete(self) if old_parent
+    old_parent._children.delete(self) if old_parent
     @parent = parent
     parent.children << self if parent
   end
@@ -57,6 +59,13 @@ class PolyTreeNode
     end
     nil
   end # target 6 - 1, 2, 3, 4, 5, 6
+
+  protected
+  # Protected method to give a node direct access to another node's
+  # children.
+  def _children
+    @children
+  end
 
 end
 
