@@ -34,6 +34,10 @@ class PolyTreeNode
     nil
   end
 
+  def bfs(target_value)
+    
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
