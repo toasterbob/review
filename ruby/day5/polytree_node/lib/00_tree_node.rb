@@ -13,11 +13,15 @@ class PolyTreeNode
 
     old_parent = self.parent
     old_parent._children.delete(self) if old_parent
+
     @parent = parent
     parent._children << self if parent
+    # self.parent._children << self unless self.parent.nil? #theirs - but I like mine better
+    self
   end
 
-  #their solution - I was using attr_reader for children 
+  #their solution - I was using attr_reader for children
+
   def children
     # We dup to avoid someone inadvertently trying to modify our
     # children directly through the children array. Note that
