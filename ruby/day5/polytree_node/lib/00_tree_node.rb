@@ -31,11 +31,15 @@ class PolyTreeNode
   end
 
   def add_child(child_node)
-    child_node.parent = self
+    child_node.parent = self #uses the parent= method above to do the work
   end
 
   def remove_child(child_node)
-    raise "error" unless child_node.parent == self
+    raise "error" unless child_node.parent == self #can't remove a child who doesn't exist
+    #theirs - but my one line above seems better 
+    # if child && !self.children.include?(child)
+    #   raise "Tried to remove node that isn't a child"
+    # end
     child_node.parent = nil
   end
 
