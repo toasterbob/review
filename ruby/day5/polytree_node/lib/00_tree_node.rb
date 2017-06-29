@@ -32,7 +32,11 @@ class PolyTreeNode
       return check if check && check.value == target_value
     end
     nil
-  end
+  end # target 6 - 1, 2, 4, 5, 3, 6
+
+ #    1
+ #  2   3
+ # 4 5 6 7
 
   def bfs(target_value)
     queue = [self]
@@ -43,7 +47,7 @@ class PolyTreeNode
       check.children.each { |child| queue.unshift(child) }
     end
     nil
-  end
+  end # target 6 - 1, 2, 3, 4, 5, 6
 
 end
 
