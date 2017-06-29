@@ -61,9 +61,11 @@ class PolyTreeNode
     queue = [self]
 
     until queue.empty?
-      check = queue.pop
+      # check = queue.pop # change from pop so we can use concat 
+      check = queue.shift
       return check if check.value == target_value
-      check.children.each { |child| queue.unshift(child) }
+      # check.children.each { |child| queue.unshift(child) }
+      queue.concat(check._children)
     end
     nil
   end # target 6 - 1, 2, 3, 4, 5, 6
