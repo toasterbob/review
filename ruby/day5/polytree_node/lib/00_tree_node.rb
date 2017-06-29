@@ -24,6 +24,16 @@ class PolyTreeNode
     child_node.parent = nil
   end
 
+  def dfs(target_value)
+    return self if self.value && self.value == target_value
+
+    self.children.each do |child|
+      check = child.dfs(target_value)
+      return check if check && check.value == target
+    end
+    nil
+  end
+
 end
 
 if __FILE__ == $PROGRAM_NAME
