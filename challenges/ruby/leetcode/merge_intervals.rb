@@ -34,9 +34,20 @@ def merge(intervals)
             end
             j += 1
         end
-        new_intervals.length.times do
-          last_check = new_intervals.pop
-          
+        temp_intervals.length.times do
+          last_check = temp_intervals.pop
+          starts2, ends2 = last_check[0], last_check[1]
+          if starts2 < starts && ends2 > ends
+              starts = starts2
+              ends = ends2
+          elsif starts2 >= starts && ends2 <= ends
+              #do nothing - it's in the range - just let it die
+          elsif starts2 > ends || ends2 < starts #out of range - save it
+              temp_intervals.unshift(last_check)
+          else
+              starts = [starts, starts2].min
+              ends = [ends, ends2].max
+          end
         end
         new_intervals << [starts, ends]
         intervals2 = (new_intervals + temp_intervals).map(&:dup)
@@ -81,6 +92,21 @@ def merge2(intervals)
                 ends = [ends, ends2].max
             end
             j += 1
+        end
+        temp_intervals.length.times do
+          last_check = temp_intervals.pop
+          starts2, ends2 = last_check.start, last_check.end
+          if starts2 < starts && ends2 > ends
+              starts = starts2
+              ends = ends2
+          elsif starts2 >= starts && ends2 <= ends
+              #do nothing - it's in the range - just let it die
+          elsif starts2 > ends || ends2 < starts #out of range - save it
+              temp_intervals.unshift(last_check)
+          else
+              starts = [starts, starts2].min
+              ends = [ends, ends2].max
+          end
         end
         new_intervals << Interval.new(starts, ends)
         intervals2 = (new_intervals + temp_intervals).map(&:dup)
