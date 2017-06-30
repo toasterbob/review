@@ -21,15 +21,22 @@ def merge(intervals)
         j = i + 1
         while j < intervals2.length
             starts2, ends2 = intervals2[j][0], intervals2[j][1]
-            if starts2 >= starts && starts2 <= ends
-                ends = ends2 if ends2 > ends
-            elsif starts2 <= starts && ends2 >= starts
-                starts = starts2 if starts2 < starts
-                ends = ends2 if ends2 > ends
-            else
+            if starts2 < starts && ends2 > ends
+                starts = starts2
+                ends = ends2
+            elsif starts2 >= starts && ends2 <= ends
+                #do nothing - it's in the range - just let it die
+            elsif starts2 > ends || ends2 < starts #out of range - save it
                 temp_intervals << intervals2[j]
+            else
+                starts = [starts, starts2].min
+                ends = [ends, ends2].max
             end
             j += 1
+        end
+        new_intervals.length.times do
+          last_check = new_intervals.pop
+          
         end
         new_intervals << [starts, ends]
         intervals2 = (new_intervals + temp_intervals).map(&:dup)
@@ -43,8 +50,11 @@ if __FILE__ == $PROGRAM_NAME
   intervals = [[1,3],[2,6],[8,10],[15,18]]
   intervals2 = [[1,4],[0,5]] #[[0, 5]]
   intervals3 = [[1,10],[4,5],[6,7],[8,9]]
+  intervals4 = [[2,3],[4,5],[6,7],[8,9],[1,10]]
   p merge([[1,3],[2,6],[8,10],[15,18]])
+  p merge(intervals2)
   p merge(intervals3)
+  p merge(intervals4)
 end
 
 ######### submission
@@ -59,13 +69,16 @@ def merge2(intervals)
         j = i + 1
         while j < intervals2.length
             starts2, ends2 = intervals2[j].start, intervals2[j].end
-            if starts2 >= starts && starts2 <= ends
-                ends = ends2 if ends2 > ends
-            elsif starts2 <= starts && ends2 >= starts
-                starts = starts2 if starts2 < starts
-                ends = ends2 if ends2 > ends
-            else
+            if starts2 < starts && ends2 > ends
+                starts = starts2
+                ends = ends2
+            elsif starts2 >= starts && ends2 <= ends
+                #do nothing - it's in the range - just let it die
+            elsif starts2 > ends || ends2 < starts #out of range - save it
                 temp_intervals << intervals2[j]
+            else
+                starts = [starts, starts2].min
+                ends = [ends, ends2].max
             end
             j += 1
         end
