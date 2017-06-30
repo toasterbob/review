@@ -11,7 +11,7 @@
 # @return {Interval[]}
 
 def merge(intervals)
-    intervals2 = intervals.map(&:dup)
+    intervals2 = intervals.map(&:dup).sort_by {|arr| arr[0] }
     new_intervals = []
     i = 0
     while i < intervals2.length
@@ -29,6 +29,7 @@ def merge(intervals)
             elsif starts2 > ends || ends2 < starts #out of range - save it
                 temp_intervals << intervals2[j]
             else
+                p intervals2[j]
                 starts = [starts, starts2].min
                 ends = [ends, ends2].max
             end
@@ -62,15 +63,17 @@ if __FILE__ == $PROGRAM_NAME
   intervals2 = [[1,4],[0,5]] #[[0, 5]]
   intervals3 = [[1,10],[4,5],[6,7],[8,9]]
   intervals4 = [[2,3],[4,5],[6,7],[8,9],[1,10]]
-  p merge([[1,3],[2,6],[8,10],[15,18]])
-  p merge(intervals2)
-  p merge(intervals3)
-  p merge(intervals4)
+  intervals5 = [[2,3],[4,6],[5,7],[3,4]]
+  # p merge([[1,3],[2,6],[8,10],[15,18]])
+  # p merge(intervals2)
+  # p merge(intervals3)
+  # p merge(intervals4)
+  p merge(intervals5)
 end
 
 ######### submission
 def merge2(intervals)
-    intervals2 = intervals.map(&:dup)
+    intervals2 = intervals.map(&:dup).sort_by {|arr| arr.start }
     new_intervals = []
     i = 0
     while i < intervals2.length
@@ -93,21 +96,7 @@ def merge2(intervals)
             end
             j += 1
         end
-        temp_intervals.length.times do
-          last_check = temp_intervals.pop
-          starts2, ends2 = last_check.start, last_check.end
-          if starts2 < starts && ends2 > ends
-              starts = starts2
-              ends = ends2
-          elsif starts2 >= starts && ends2 <= ends
-              #do nothing - it's in the range - just let it die
-          elsif starts2 > ends || ends2 < starts #out of range - save it
-              temp_intervals.unshift(last_check)
-          else
-              starts = [starts, starts2].min
-              ends = [ends, ends2].max
-          end
-        end
+
         new_intervals << Interval.new(starts, ends)
         intervals2 = (new_intervals + temp_intervals).map(&:dup)
 
