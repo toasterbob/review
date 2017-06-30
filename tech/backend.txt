@@ -1,4 +1,5 @@
-One of the three servers is slow. What can be the possible reasons and how would you take care of these things?
+One of the three servers is slow. What can be the possible reasons and how would you take care of these
+things?
 
 Should you encrypt and then compress, or compress and then encrypt? why?
 
