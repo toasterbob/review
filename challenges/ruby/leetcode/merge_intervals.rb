@@ -1,27 +1,4 @@
-#refactor 2
-def merge(intervals)
-    result = []
-    hash = Hash.new {false}
-    intervals.each do |int|
-        int.start.upto(int.end) { |i| hash[i] = true }
-    end
-    arr = hash.keys.sort!
-
-    i = 0
-    start = arr[i]
-    while i < arr.length
-        if arr[i + 1] = arr[i] + 1
-            i += 1
-        else
-            result << Interval.new(start, arr[i])
-            start = arr[i + 1]
-            i += 1
-        end
-    end
-    result
-end
-
-
+#
 #refactor
 # Definition for an interval.
 # class Interval
@@ -35,7 +12,8 @@ end
 # @param {Interval[]} intervals
 # @return {Interval[]}
 def merge(intervals)
-    intervals2 = intervals.map(&:dup).sort_by {|arr| arr.start }
+    return intervals if intervals.length <= 1
+    intervals2 = intervals.sort_by {|arr| arr.start }
     new_intervals = []
     i = 0
     while intervals2.length > 0
