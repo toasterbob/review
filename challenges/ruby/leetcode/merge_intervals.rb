@@ -14,7 +14,7 @@ def merge(intervals)
     intervals2 = intervals.map(&:dup)
     new_intervals = []
     i = 0
-    while i < intervals2.length - 1
+    while i < intervals2.length
         temp_intervals = []
         starts, ends = intervals2[i][0], intervals2[i][1]
 
@@ -31,16 +31,14 @@ def merge(intervals)
             j += 1
         end
         new_intervals << [starts, ends]
-        new_intervals.concat(temp_intervals)
-        p new_intervals 
-        intervals2 = new_intervals.map(&:dup)
+        intervals2 = (new_intervals + temp_intervals).map(&:dup)
+
         i += 1
     end
-    intervals
+    new_intervals
 end
 
 if __FILE__ == $PROGRAM_NAME
   intervals = [[1,3],[2,6],[8,10],[15,18]]
-  p intervals.length
   p merge([[1,3],[2,6],[8,10],[15,18]])
 end
