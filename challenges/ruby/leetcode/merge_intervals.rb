@@ -25,6 +25,7 @@ def merge(intervals)
                 ends = ends2 if ends2 > ends
             elsif starts2 <= starts && ends2 >= starts
                 starts = starts2 if starts2 < starts
+                ends = ends2 if ends2 > ends
             else
                 temp_intervals << intervals2[j]
             end
@@ -40,9 +41,10 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   intervals = [[1,3],[2,6],[8,10],[15,18]]
-  intervals2 = [[1,4],[0,5]]
+  intervals2 = [[1,4],[0,5]] #[[0, 5]]
+  intervals3 = [[1,10],[4,5],[6,7],[8,9]]
   p merge([[1,3],[2,6],[8,10],[15,18]])
-  p merge(intervals2)
+  p merge(intervals3)
 end
 
 ######### submission
@@ -61,6 +63,7 @@ def merge2(intervals)
                 ends = ends2 if ends2 > ends
             elsif starts2 <= starts && ends2 >= starts
                 starts = starts2 if starts2 < starts
+                ends = ends2 if ends2 > ends
             else
                 temp_intervals << intervals2[j]
             end
