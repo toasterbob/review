@@ -35,3 +35,7 @@ def merge(intervals)
     end
     intervals
 end
+
+if __FILE__ == $PROGRAM_NAME
+  p merge([[1,3],[2,6],[8,10],[15,18]])
+end
