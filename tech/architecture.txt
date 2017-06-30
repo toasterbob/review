@@ -151,11 +151,11 @@ Scaling Writes
 
 If your website is primarily a write-heavy system, you’re probably going to want to think about using
 a horizontally scalable datastore such as Riak, Cassandra or HBase. Unlike most RDBMSes, these
-datastores usually grow by adding more nodes. Because your system is going to be mostly writing,
+data stores usually grow by adding more nodes. Because your system is going to be mostly writing,
 caching layers will not help you much like in a read-heavy system. Many write-heavy systems start
 out using a vertical scaling strategy, but soon run out of runway. Why? Because hard-drives and
 processor counts plateau at a certain point, and the marginal cost of adding one more core or a
-harddrive that does a few more I/O ops per second grows exponentially. If you instead choose a
+hard drive that does a few more I/O ops per second grows exponentially. If you instead choose a
 horizontally scalable strategy for your write-heavy system, you reach an inflection point where the
 marginal cost of adding one more node to the system becomes far cheaper than the cost of a harddrive
 that might eek out a few more disk seeks.
