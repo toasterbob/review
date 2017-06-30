@@ -1,5 +1,39 @@
 #refactor
+# Definition for an interval.
+# class Interval
+#     attr_accessor :start, :end
+#     def initialize(s=0, e=0)
+#         @start = s
+#         @end = e
+#     end
+# end
 
+# @param {Interval[]} intervals
+# @return {Interval[]}
+def merge(intervals)
+    intervals2 = intervals.map(&:dup).sort_by {|arr| arr.start }
+    new_intervals = []
+    i = 0
+    while intervals2.length > 0
+        first = intervals2.shift
+        second = intervals2.shift
+
+        if second
+            if second.end <= first.end
+                intervals2.unshift(first) #put it back
+            elsif second.start <= first.end && second.end >= first.end
+                first.end = second.end
+                intervals2.unshift(first) #put it back
+            else
+                new_intervals << first
+                intervals2.unshift(second) #put it back
+            end
+        else
+            new_intervals << first #put it back
+        end
+    end
+    new_intervals
+end
 
 
 
