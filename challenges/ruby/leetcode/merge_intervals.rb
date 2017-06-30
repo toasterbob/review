@@ -29,27 +29,12 @@ def merge(intervals)
             elsif starts2 > ends || ends2 < starts #out of range - save it
                 temp_intervals << intervals2[j]
             else
-                p intervals2[j]
                 starts = [starts, starts2].min
                 ends = [ends, ends2].max
             end
             j += 1
         end
-        temp_intervals.length.times do
-          last_check = temp_intervals.pop
-          starts2, ends2 = last_check[0], last_check[1]
-          if starts2 < starts && ends2 > ends
-              starts = starts2
-              ends = ends2
-          elsif starts2 >= starts && ends2 <= ends
-              #do nothing - it's in the range - just let it die
-          elsif starts2 > ends || ends2 < starts #out of range - save it
-              temp_intervals.unshift(last_check)
-          else
-              starts = [starts, starts2].min
-              ends = [ends, ends2].max
-          end
-        end
+
         new_intervals << [starts, ends]
         intervals2 = (new_intervals + temp_intervals).map(&:dup)
 
@@ -64,10 +49,10 @@ if __FILE__ == $PROGRAM_NAME
   intervals3 = [[1,10],[4,5],[6,7],[8,9]]
   intervals4 = [[2,3],[4,5],[6,7],[8,9],[1,10]]
   intervals5 = [[2,3],[4,6],[5,7],[3,4]]
-  # p merge([[1,3],[2,6],[8,10],[15,18]])
-  # p merge(intervals2)
-  # p merge(intervals3)
-  # p merge(intervals4)
+  p merge([[1,3],[2,6],[8,10],[15,18]])
+  p merge(intervals2)
+  p merge(intervals3)
+  p merge(intervals4)
   p merge(intervals5)
 end
 
