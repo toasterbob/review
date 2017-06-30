@@ -11,16 +11,19 @@ def is_isomorphic(s, t)
     t.split("").each { |ch| hash2[ch] += 1 }
     t = t.split("").map { |ch| "#{ch}#{hash2[ch]}" }
 
+    i = 0
+    s_string = s.join("")
+    t_string = t.join("")
     while i < s.length
-      t_string = t.join("")
       if s[i] == t[i]
           i += 1
       else
          t_string.gsub!(t[i], s[i])
+         i += 1
       end
     end
 
-    s.join("") == t
+    s_string == t_string
 end
 
 if __FILE__ == $PROGRAM_NAME
