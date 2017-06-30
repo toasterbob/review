@@ -30,3 +30,19 @@ end
 if __FILE__ == $PROGRAM_NAME
   p is_isomorphic("egg", "add")
 end
+
+
+#########
+def is_isomorphic(s, t)
+    return false unless s.length == t.length
+    map = Hash.new
+    s.chars.each_with_index do |c, i|
+        if map.has_key? c
+            return false if t[i] != map[c]
+        else
+            return false if map.has_value? t[i]
+            map[c] = t[i]
+        end
+    end
+    true
+end
