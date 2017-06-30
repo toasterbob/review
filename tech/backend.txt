@@ -57,4 +57,7 @@ of technical questions (how many byte in 64bit, largest number of int32, immutab
 list, tuple & dictionary, how do i find a function by name in a number of source-code files, what is
 the HTTP port, what is…
 
-8 bits in a byte 
+8 bits in a byte
+
+given a tree of locations from country, state, city
+print out every country state city in order
