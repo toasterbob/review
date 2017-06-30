@@ -5,15 +5,25 @@ def count_all_right_triangles(arr)
 
     arr.sort.each do |el|
       # look for c
-        el.downto(1) do |i|
-            c = el * el
-            if hash[i]
-              b = i * i
-              a = (c - b).sqrt
-              if hash[a]
-                if a == b && hash[a] > 1
-                count += (value_hash[a] * value_hash[b] ) 
+      c = el * el
+      found = {}
+      el.downto(1) do |i| # this will find a and b twice
+        next if found[i]
+          if hash[i]
+            b = i * i
+            missing = Math.sqrt(c - b)
+            a = missing.to_i if missing > 0 && (missing.floor == missing)
+            # only checks whole numbers
+            if a && hash[a]
+              if a != i
+                count += (value_hash[a] * value_hash[i])
+                found[a] = true
+              elsif (a == i && hash[a] > 1)
+                count += (value_hash[a] * value_hash[i])/2
+                found[a] = true
               end
+            end
+          end
         end
     end
 
