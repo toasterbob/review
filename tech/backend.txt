@@ -7,7 +7,10 @@ why yelp, why backend, tell me about your project, coding question: isomorphic s
 
 REST API questions.
 
-There is a HashMap contains 7 Keys, which is Monday through Sunday. Each key is corresponding to a List of (Start time, end time) pairs. The pairs is unsorted. What I have to do is to merge the time slots that are adjacent. And finally return another HashMap that contains the same structure but with merged time slots.
+There is a HashMap contains 7 Keys, which is Monday through Sunday. Each key is corresponding to a List of
+(Start time, end time) pairs. The pairs is unsorted. What I have to do is to merge the time slots that
+are adjacent. And finally return another HashMap that contains the same structure but with merged time
+slots.
 
 How would you improve the speed of a slowly loading web page?
 Given a list of strings, arrange them such that all anagrams are grouped together.

@@ -5,6 +5,28 @@ def length_of_longest_substring(s)
     hash = Hash.new
     pointer = 0
     result = ""
+
+    s.split("").each_with_index do |ch, i|
+        stop = i - 1 >= 0 ? i - 1 : 0
+        current = s[pointer..stop]
+        if hash[ch]
+            result = current if current.length > result.length
+            pointer = hash[ch] if hash[ch] > pointer
+            hash[ch] = i + 1
+        else
+          result = current if current.length > result.length
+        end
+        p current
+    end
+
+    result.length
+end
+
+def length_of_longest_substring9(s)
+    return s.length if s.length <= 1
+    hash = Hash.new
+    pointer = 0
+    result = ""
     current = ""
 
     s.split("").each_with_index do |ch, i|
@@ -68,6 +90,6 @@ def length_of_longest_substring3(s)
 end
 
 if __FILE__ == $PROGRAM_NAME
-  # p length_of_longest_substring("abba")
-  p length_of_longest_substring3("abcabcbb")
+  p length_of_longest_substring("abba")
+  # p length_of_longest_substring3("abcabcbb")
 end
