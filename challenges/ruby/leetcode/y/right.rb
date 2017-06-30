@@ -8,7 +8,7 @@ def count_all_right_triangles(arr)
       c = el * el
       found = {}
       el.downto(1) do |i| # this will find a and b twice
-        next if found[i]
+        next if found[i] # so we will store a in found if we find it to prevent it 
           if hash[i]
             b = i * i
             missing = Math.sqrt(c - b)
