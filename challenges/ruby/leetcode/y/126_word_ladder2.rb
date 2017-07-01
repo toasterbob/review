@@ -25,13 +25,14 @@ def process(beginnings, word_list)
   beginnings.each do |arr|
     word = arr[-1]
     check_word(word, word_list).each do |result|
-      new_beginnings << arr + result unless result.empty?
+      new_beginnings << (arr.dup << result) unless result.empty?
     end
   end
   new_beginnings
 end
 
 def find_ladders(begin_word, end_word, word_list)
+    final_result = []
     hash = Hash.new
     beginnings = []
     check_word(begin_word, word_list).each do |word|
@@ -47,7 +48,7 @@ def find_ladders(begin_word, end_word, word_list)
 
     p beginnings
     p endings
-    nil
+    final_result 
 end
 
 if __FILE__ == $PROGRAM_NAME
