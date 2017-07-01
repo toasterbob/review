@@ -13,17 +13,14 @@ def group_anagrams(strs)
     result
 end
 
-def get_key(str)
-   str.chars.sort.join('')
-end
-
-
 #optimization
-#change split to chars went from 15 to 85th percentile 
+#change split to chars went from 15 to 85th percentile - 302 ms
+
 def group_anagrams(strs)
-    hash = Hash.new { |h, k| h[k] = []}
+    hash = Hash.new
     strs.each do |str|
        holder = str.chars.sort.join("")
+       hash[key] ||= [] #might have optimized it a bit by lazy assigning
        hash[holder] << str
     end
     hash.values
