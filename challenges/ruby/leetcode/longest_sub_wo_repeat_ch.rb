@@ -7,13 +7,15 @@ def length_of_longest_substring(s)
     result = ""
 
     s.split("").each_with_index do |ch, i|
-		current = s[pointer..i]
-        if hash[ch]
-            current = s[i]
-            pointer = hash[ch] if hash[ch] > pointer
-            hash[ch] = i
+		    current = s[pointer..i]
+
+        if hash[ch] && hash[ch] >= pointer
+            pointer = hash[ch] + 1
+            current = s[pointer..i]
         end
-		result = current if current.length > result.length
+        hash[ch] = i
+        #p current
+		    result = current if current.length > result.length
     end
 
     result.length
@@ -87,6 +89,7 @@ end
 # end
 
 if __FILE__ == $PROGRAM_NAME
-  p length_of_longest_substring("abba")
-  # p length_of_longest_substring3("abcabcbb")
+  # p length_of_longest_substring("abba")
+  p length_of_longest_substring("abcabcbb")
+  p length_of_longest_substring("dvdf")
 end
