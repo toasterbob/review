@@ -11,11 +11,12 @@ def check_word(word, word_list)
         check[i] = '[a-z]'
         check = "#{check.join('+')}"
         check = Regexp.new check
-        p check
         words = word_list.join(" ").scan(check)
+        p words
         result.concat(words)
         i += 1
     end
+    result.delete(word)
     result
 end
 
