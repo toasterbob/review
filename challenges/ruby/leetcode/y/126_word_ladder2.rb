@@ -20,18 +20,31 @@ def check_word(word, word_list)
     result
 end
 
+def process(beginnings, word_list)
+  new_beginnings = []
+  beginnings.each do |arr|
+    word = arr[-1]
+    check_word(word, word_list).each do |result|
+      new_beginnings << arr + result unless result.empty?
+    end
+  end
+  new_beginnings
+end
+
 def find_ladders(begin_word, end_word, word_list)
     hash = Hash.new
     beginnings = []
-    endings = []
     check_word(begin_word, word_list).each do |word|
       beginnings << [word]
     end
     return [[begin_word, end_word]] if beginnings.include?([end_word])
 
-    check_word(end_word, word_list).each do |word|
-      endings << [word]
-    end
+    endings = check_word(end_word, word_list)
+    return [] if endings.empty?
+
+    #one cycle
+    beginnings = process(beginnings, word_list)
+
     p beginnings
     p endings
     nil
