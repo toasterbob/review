@@ -1,24 +1,29 @@
 # @param {String} s
 # @return {Integer}
 def length_of_longest_substring(s)
-    return s.length if s.length <= 1
+#    return s.length if s.length <= 1
     hash = Hash.new
     pointer = 0
-    result = ""
+    result = 0
 
-    s.split("").each_with_index do |ch, i|
-		    current = s[pointer..i]
+    #using a while loop speeds up runtime vs. split("").each_with_index
+    # moves from 50% to 98.84%
+    i = 0
+    while i < s.length
+        ch = s[i]
+		current = i - pointer + 1
 
         if hash[ch] && hash[ch] >= pointer
             pointer = hash[ch] + 1
-            current = s[pointer..i]
+            current = i - pointer + 1
         end
         hash[ch] = i
         #p current
-		    result = current if current.length > result.length
+		result = current if current > result
+        i += 1
     end
 
-    result.length
+    result
 end
 
 # def length_of_longest_substring9(s)
