@@ -12,7 +12,7 @@ def check_word(word, word_list)
         check = "#{check.join('+')}"
         check = Regexp.new check
         words = word_list.join(" ").scan(check)
-        p words
+
         result.concat(words)
         i += 1
     end
@@ -27,6 +27,7 @@ def find_ladders(begin_word, end_word, word_list)
     check_word(begin_word, word_list).each do |word|
       beginnings << [word]
     end
+    return [[begin_word, end_word]] if beginnings.include?([end_word])
 
     check_word(end_word, word_list).each do |word|
       endings << [word]
