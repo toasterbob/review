@@ -77,7 +77,7 @@ if __FILE__ == $PROGRAM_NAME
   p find_ladders("a", "b", ["a","b","c"])
 
 
-
+  #fails with large input 
   arr = ["kid","tag","pup","ail","tun","woo","erg","luz","brr","gay","sip","kay",
     "per","val","mes","ohs","now","boa","cet","pal","bar","die","war","hay","eco",
     "pub","lob","rue","fry","lit","rex","jan","cot","bid","ali","pay","col","gum",
@@ -125,5 +125,5 @@ if __FILE__ == $PROGRAM_NAME
     "sup","jay","hob","mow","jot","are","pol","arc","lax","aft","alb","len","air",
     "pug","pox","vow","got","meg","zoe","amp","ale","bud","gee","pin","dun","pat",
     "ten","mob"]
-  p find_ladders("cet", "ism", arr)
+    # p find_ladders("cet", "ism", arr)
   end
