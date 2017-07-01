@@ -20,7 +20,7 @@ def group_anagrams(strs)
     hash = Hash.new
     strs.each do |str|
        holder = str.chars.sort.join("")
-       hash[key] ||= [] #might have optimized it a bit by lazy assigning
+       hash[key] ||= [] #might have optimized it a bit by lazy assigning - 286 ms - 95%
        hash[holder] << str
     end
     hash.values
