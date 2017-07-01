@@ -8,8 +8,10 @@ def check_word(word, word_list)
     i = 0
     while i < word.length
         check = word.chars
-        check[i] = "[a-z]"
-        check = "/${check.join("+")}/"
+        check[i] = '[a-z]'
+        check = "#{check.join('+')}"
+        check = Regexp.new check
+        p check
         words = word_list.join(" ").scan(check)
         result.concat(words)
         i += 1
@@ -25,5 +27,8 @@ def find_ladders(begin_word, end_word, word_list)
 end
 
 if __FILE__ == $PROGRAM_NAME
-  
+  beginWord = "hit"
+  endWord = "cog"
+  wordList = ["hot","dot","dog","lot","log","cog"]
+  p check_word(beginWord, wordList)
 end
