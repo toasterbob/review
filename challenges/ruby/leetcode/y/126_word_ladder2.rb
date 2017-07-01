@@ -44,11 +44,17 @@ def find_ladders(begin_word, end_word, word_list)
     return [] if endings.empty?
 
     #one cycle
-    beginnings = process(beginnings, word_list)
+    while final_result.empty?
+      beginnings = process(beginnings, word_list)
+      beginnings.each do |arr|
+        check = arr[-1]
+        final_result << (arr.dup << end_word) if endings.include?(check)
+      end
+    end
 
-    p beginnings
-    p endings
-    final_result 
+    # p beginnings
+    # p endings
+    final_result
 end
 
 if __FILE__ == $PROGRAM_NAME
