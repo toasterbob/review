@@ -20,15 +20,24 @@ def check_word(word, word_list)
 end
 
 def find_ladders(begin_word, end_word, word_list)
-    check = /[a-z]+at/
-    words = ["hat", "cot", "cat"]
-    words.join(" ").scan(/[a-z]+at/)
-    begin_word
+    hash = Hash.new
+    beginnings = []
+    endings = []
+    check_word(begin_word, word_list).each do |word|
+      beginnings << [word]
+    end
+
+    check_word(end_word, word_list).each do |word|
+      endings << [word]
+    end
+    p beginnings
+    p endings
+    nil
 end
 
 if __FILE__ == $PROGRAM_NAME
   beginWord = "hit"
   endWord = "cog"
   wordList = ["hot","dot","dog","lot","log","cog"]
-  p check_word(beginWord, wordList)
+  p find_ladders(beginWord, endWord, wordList)
 end
