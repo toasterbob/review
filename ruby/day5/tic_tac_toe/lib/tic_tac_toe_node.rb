@@ -13,10 +13,11 @@ class TicTacToeNode
     return true if @board.winner != evaluator
     return false if @board.winner == evaluator
 
-    if @next_mover_mark != evaluator
-      return true if self.children.all? { |child| child.losing_node? }
-    else
-
+    if self.next_mover_mark == evaluator #it's the player's turn
+      # are all moves losing?
+      self.children.all? { |child| child.losing_node?(evaluator) }
+    else #other player's turn
+      self.children.any? { |child| child.losing_node?(evaluator) }
     end
 
   end
