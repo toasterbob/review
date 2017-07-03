@@ -12,6 +12,7 @@ class TicTacToeNode
   def losing_node?(evaluator)
 
     if self.board.over?
+      #won? returns false in the case of a draw.
       return self.board.won? && self.board.winner != evaluator
       #return false if @board.winner == evaluator
     end
@@ -26,8 +27,21 @@ class TicTacToeNode
   end
 
   def winning_node?(evaluator)
-    return true if @board.winner == evaluator
-    return false if @board.winner != evaluator
+    # return true if @board.winner == evaluator
+    # return false if @board.winner != evaluator
+    if self.board.over?
+      #won? returns false in the case of a draw.
+      return self.board.won? && self.board.winner == evaluator
+      #return false if @board.winner == evaluator
+    end
+
+    if self.next_mover_mark == evaluator #it's the player's turn
+      # are any moves winning?
+      self.children.any? { |child| child.winning_node?(evaluator) }
+    else #other player's turn - are all moves winning? 
+      self.children.all? { |child| child.winning_node?(evaluator) }
+    end
+
   end
 
   # This method generates an array of all moves that can be made after
