@@ -19,6 +19,7 @@ class TicTacToeNode
   # the current move.
   def children
     game_state_nodes = []
+    
     0.upto(2) do |i|
       0.upto(2) do |j|
         if @board.empty?([i, j])
