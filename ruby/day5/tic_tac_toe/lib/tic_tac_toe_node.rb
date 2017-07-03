@@ -10,8 +10,11 @@ class TicTacToeNode
   end
 
   def losing_node?(evaluator)
-    return true if @board.winner != evaluator
-    return false if @board.winner == evaluator
+
+    if self.board.over?
+      return self.board.won? && self.board.winner != evaluator
+      #return false if @board.winner == evaluator
+    end
 
     if self.next_mover_mark == evaluator #it's the player's turn
       # are all moves losing?
