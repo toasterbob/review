@@ -10,11 +10,11 @@ class TicTacToeNode
   end
 
   def losing_node?(evaluator)
-
+    return true if @board.winner != evaluator 
   end
 
   def winning_node?(evaluator)
-    
+
   end
 
   # This method generates an array of all moves that can be made after
