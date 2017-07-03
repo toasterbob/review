@@ -24,7 +24,8 @@ class TicTacToeNode
         if @board.empty?([i, j])
           new_board = @board.dup
           new_board[[i, j]] = @next_mover_mark
-          game_state_nodes << new_board
+          new_mover_mark = @next_mover_mark == :x ? :o : :x
+          game_state_nodes << TicTacToeNode.new(new_board, new_mover_mark, [i, j])
         end
       end
     end
