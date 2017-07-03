@@ -18,27 +18,23 @@ class TicTacToeNode
     end
 
     if self.next_mover_mark == evaluator #it's the player's turn
-      # are all moves losing?
+      # no matter where we go they can force a loss 
       self.children.all? { |child| child.losing_node?(evaluator) }
-    else #other player's turn
+    else #other player's turn - they can go somewhere that will force a loss
       self.children.any? { |child| child.losing_node?(evaluator) }
     end
 
   end
 
   def winning_node?(evaluator)
-    # return true if @board.winner == evaluator
-    # return false if @board.winner != evaluator
     if self.board.over?
-      #won? returns false in the case of a draw.
-      return self.board.won? && self.board.winner == evaluator
-      #return false if @board.winner == evaluator
+      return self.board.winner == evaluator
     end
 
     if self.next_mover_mark == evaluator #it's the player's turn
       # are any moves winning?
       self.children.any? { |child| child.winning_node?(evaluator) }
-    else #other player's turn - are all moves winning? 
+    else #other player's turn - no matter where they go we can force a win
       self.children.all? { |child| child.winning_node?(evaluator) }
     end
 
