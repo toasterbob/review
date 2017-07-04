@@ -105,8 +105,8 @@ def trace_path(node)
   path = [node.value]
   node2 = node.parent
   while node2.parent
-    path.unshift(node.value)
-    node2 = node.parent
+    path.unshift(node2.value)
+    node2 = node2.parent
   end
   path
 end
@@ -116,6 +116,7 @@ end
 def find_ladders(begin_word, end_word, word_list)
     return [] unless word_list.include?(end_word)
     final_result = []
+    visited = {}
     @hash = Hash.new
 
     @root = PolyTreeNode.new(begin_word)
@@ -123,7 +124,9 @@ def find_ladders(begin_word, end_word, word_list)
     until queue.empty?
       parent = queue.shift
       #unless already checked or we found the target
-      children = check_word(parent.value) unless @hash[parent.value] || parent.value == end_word
+      children = []
+      children = check_word(parent.value, word_list) unless visited[parent.value] || parent.value == end_word
+      visited[parent.value] = true
 
       if parent.value == end_word
         path = trace_path(parent)
