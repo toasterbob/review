@@ -118,7 +118,7 @@ end
 def find_ladders(begin_word, end_word, word_list)
     return [] unless word_list.include?(end_word)
     final_result = []
-    visited = {}
+    visited = Hash.new
     @hash = Hash.new
 
     @root = PolyTreeNode.new(begin_word)
@@ -126,12 +126,15 @@ def find_ladders(begin_word, end_word, word_list)
     until queue.empty?
       parent = queue.shift
       #unless already checked or we found the target
-
+      #p parent.visited
       children = []
       children = check_word(parent.value, word_list) unless parent.visited.include?(parent.value) || parent.value == end_word
       children = [] if !final_result.empty? && parent.visited.length > final_result[0].length
-      visited[parent.value] = true
-
+      parent.visited.each_with_index do |word, i|
+        visited[word] = i if visited[word].nil? || visited[word] < i
+      end
+      children = [] if visited[parent.value] && visited[parent.value] < parent.visited.length
+      #p children
       if parent.value == end_word
         path = trace_path(parent)
         path.unshift(begin_word)
@@ -206,7 +209,7 @@ if __FILE__ == $PROGRAM_NAME
     "sup","jay","hob","mow","jot","are","pol","arc","lax","aft","alb","len","air",
     "pug","pox","vow","got","meg","zoe","amp","ale","bud","gee","pin","dun","pat",
     "ten","mob"]
-    # p find_ladders("cet", "ism", arr)
+     p find_ladders("cet", "ism", arr)
 
 
 
