@@ -1,11 +1,12 @@
 class PolyTreeNode
 
-  attr_reader :parent, :value
+  attr_reader :parent, :value, :visited
 
   def initialize(value)
     @value = value
     @parent = nil
     @children = []
+    @visited = []
   end
 
   def parent=(parent)
@@ -16,6 +17,7 @@ class PolyTreeNode
 
     @parent = parent
     parent._children << self if parent
+    @visited = parent.visited + [parent.value]
     # self.parent._children << self unless self.parent.nil? #theirs - but I like mine better
     self
   end
@@ -124,8 +126,10 @@ def find_ladders(begin_word, end_word, word_list)
     until queue.empty?
       parent = queue.shift
       #unless already checked or we found the target
+
       children = []
-      children = check_word(parent.value, word_list) unless visited[parent.value] || parent.value == end_word
+      children = check_word(parent.value, word_list) unless parent.visited.include?(parent.value) || parent.value == end_word
+      children = [] if !final_result.empty? && parent.visited.length > final_result[0].length
       visited[parent.value] = true
 
       if parent.value == end_word
@@ -208,4 +212,5 @@ if __FILE__ == $PROGRAM_NAME
 
     arr2 = ["ted","tex","red","tax","tad","den","rex","pee"]
     p find_ladders("red", "tax", arr2)
+    #[["red","ted","tad","tax"],["red","ted","tex","tax"],["red","rex","tex","tax"]]
   end
