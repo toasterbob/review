@@ -150,8 +150,8 @@ if __FILE__ == $PROGRAM_NAME
   beginWord = "hit"
   endWord = "cog"
   wordList = ["hot","dot","dog","lot","log","cog"]
-  p find_ladders(beginWord, endWord, wordList)
-  p find_ladders("a", "b", ["a","b","c"])
+  # p find_ladders(beginWord, endWord, wordList)
+  # p find_ladders("a", "b", ["a","b","c"])
 
 
   #fails with large input
@@ -203,4 +203,9 @@ if __FILE__ == $PROGRAM_NAME
     "pug","pox","vow","got","meg","zoe","amp","ale","bud","gee","pin","dun","pat",
     "ten","mob"]
     # p find_ladders("cet", "ism", arr)
+
+
+
+    arr2 = ["ted","tex","red","tax","tad","den","rex","pee"]
+    p find_ladders("red", "tax", arr2)
   end
