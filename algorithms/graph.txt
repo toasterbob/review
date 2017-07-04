@@ -1,0 +1,13 @@
+Graphs
+
+Vertices - dots
+Edges - lines connecting them
+
+Edges can be weighted or directional
+
+Density = Edges/vert * (vert - 1)
+max density of 1
+min density is 0
+
+max density changes on a directed graph - max density is 2
+in edges and out edges 
