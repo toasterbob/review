@@ -10,4 +10,14 @@ max density of 1
 min density is 0
 
 max density changes on a directed graph - max density is 2
-in edges and out edges 
+in edges and out edges
+
+Facebook - no direction to edges
+Twitter - directional - you can follow or be followed independently
+
+Subgraphs with high density - nuclear family - everyone is connected to each other
+
+If density is close to 1 - algorithm can run very slow
+Sparse graph can come close to linear time with algorithms
+
+Tree example - DOM
