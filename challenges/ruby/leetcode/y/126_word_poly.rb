@@ -218,4 +218,5 @@ if __FILE__ == $PROGRAM_NAME
     arr2 = ["ted","tex","red","tax","tad","den","rex","pee"]
     p find_ladders("red", "tax", arr2)
     #[["red","ted","tad","tax"],["red","ted","tex","tax"],["red","rex","tex","tax"]]
+    
   end
