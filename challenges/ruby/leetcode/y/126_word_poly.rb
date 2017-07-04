@@ -118,26 +118,12 @@ def find_ladders(begin_word, end_word, word_list)
     @hash = Hash.new
 
     @root = PolyTreeNode.new(begin_word)
-    check_word(begin_word, word_list).each do |word|
-      beginnings << [begin_word, word]
-    end
-    return [[begin_word, end_word]] if beginnings.include?([begin_word, end_word])
+    queue = [@root]
+    until queue.empty?
+      parent = queue.shift
+      children = check_word(parent.value) unless @hash[parent.value] #unless already checked 
+      children.each do |child|
 
-    endings = check_word(end_word, word_list)
-    return [] if endings.empty?
-    return [] if beginnings.empty?
-    beginnings.each do |arr|
-      check = arr[-1]
-      final_result << (arr.dup << end_word) if endings.include?(check)
-    end
-
-    #one cycle
-    while final_result.empty?
-      beginnings = process(beginnings, word_list)
-      return [] if beginnings.empty?
-      beginnings.each do |arr|
-        check = arr[-1]
-        final_result << (arr.dup << end_word) if endings.include?(check)
       end
     end
 
