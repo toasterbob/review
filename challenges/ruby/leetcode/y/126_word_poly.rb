@@ -117,7 +117,7 @@ def find_ladders(begin_word, end_word, word_list)
     final_result = []
     @hash = Hash.new
 
-    
+    @root = PolyTreeNode.new(begin_word)
     check_word(begin_word, word_list).each do |word|
       beginnings << [begin_word, word]
     end
