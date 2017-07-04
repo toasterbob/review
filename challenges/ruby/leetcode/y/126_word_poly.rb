@@ -128,9 +128,11 @@ def find_ladders(begin_word, end_word, word_list)
       #unless already checked or we found the target
       #p parent.visited
       children = []
-      children = check_word(parent.value, word_list) unless parent.visited.include?(parent.value) || parent.value == end_word
+      children = check_word(parent.value, word_list) unless parent.value == end_word
       children = [] if !final_result.empty? && parent.visited.length > final_result[0].length
-      parent.visited.each_with_index do |word, i|
+      if parent.visited[-1]
+        word = parent.visited[-1]
+        i = parent.visited.length - 1
         visited[word] = i if visited[word].nil? || visited[word] < i
       end
       children = [] if visited[parent.value] && visited[parent.value] < parent.visited.length
