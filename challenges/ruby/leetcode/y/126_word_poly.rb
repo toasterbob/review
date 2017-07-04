@@ -121,9 +121,11 @@ def find_ladders(begin_word, end_word, word_list)
     queue = [@root]
     until queue.empty?
       parent = queue.shift
-      children = check_word(parent.value) unless @hash[parent.value] #unless already checked 
-      children.each do |child|
-
+      children = check_word(parent.value) unless @hash[parent.value] #unless already checked
+      children.each do |child_word|
+        child = PolyTreeNode.new(child_word)
+        parent.add_child(child)
+        queue << child 
       end
     end
 
