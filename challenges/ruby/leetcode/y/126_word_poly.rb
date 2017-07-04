@@ -1,4 +1,3 @@
-
 class PolyTreeNode
 
   attr_reader :parent, :value, :visited
@@ -182,6 +181,7 @@ def find_ladders(begin_word, end_word, word_list)
     p @index
     final_result
 end
+
 
 if __FILE__ == $PROGRAM_NAME
   beginWord = "hit"
