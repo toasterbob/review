@@ -1,3 +1,4 @@
+
 class PolyTreeNode
 
   attr_reader :parent, :value, :visited
@@ -85,21 +86,17 @@ def check_word(word, word_list)
     #find next step words
     def run_check(word, word_list)
       result = []
-      i = 0
-      p word_list
-      while i < word.length
-          check = word.dup
-
-          "a".upto("z") do |ch|
-            check[i] = ch
-            # p check
-            result << check if word_list[check]
-          end
-
-          i += 1
+      # p word
+      word_list.each do |check|
+        x = 0
+        @index += 1
+        word.length.times { |i| x += 1 if word[i] != check[i]}
+        if x == 1
+          result << check
+        end
       end
       # p result
-      result.delete(word)
+
       @hash[word] = result
     end
 
@@ -143,9 +140,10 @@ end
 
 
 def find_ladders(begin_word, end_word, word_list)
+    @index = 0
     return [] unless word_list.include?(end_word)
-    word_list2 = Hash.new
-    word_list.each { |word| word_list2[word] = true}
+    # word_list2 = Hash.new {false}
+    # word_list.each { |word| word_list2[word] = true}
     final_result = []
     visited = Hash.new
     @hash = Hash.new
@@ -157,7 +155,7 @@ def find_ladders(begin_word, end_word, word_list)
       #unless already checked or we found the target
       #p parent.visited
       children = []
-      children = check_word(parent.value, word_list2) unless parent.value == end_word
+      children = check_word(parent.value, word_list) unless parent.value == end_word
       children = [] if !final_result.empty? && parent.visited.length > final_result[0].length
       if parent.visited[-1]
         word = parent.visited[-1]
@@ -181,6 +179,7 @@ def find_ladders(begin_word, end_word, word_list)
 
     # p beginnings
     # p endings
+    p @index
     final_result
 end
 
@@ -240,12 +239,13 @@ if __FILE__ == $PROGRAM_NAME
     "sup","jay","hob","mow","jot","are","pol","arc","lax","aft","alb","len","air",
     "pug","pox","vow","got","meg","zoe","amp","ale","bud","gee","pin","dun","pat",
     "ten","mob"]
+    p arr.length
      p find_ladders("cet", "ism", arr)
 
 
 
     arr2 = ["ted","tex","red","tax","tad","den","rex","pee"]
-    # p find_ladders("red", "tax", arr2)
+    p find_ladders("red", "tax", arr2)
     #[["red","ted","tad","tax"],["red","ted","tex","tax"],["red","rex","tex","tax"]]
 
   end
