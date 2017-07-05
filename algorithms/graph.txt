@@ -21,3 +21,7 @@ If density is close to 1 - algorithm can run very slow
 Sparse graph can come close to linear time with algorithms
 
 Tree example - DOM
+vertices - DOM elements
+edges - connected in parent/child relationship
+
+Trees are typically sparse graphs - traversing the DOM is efficient
