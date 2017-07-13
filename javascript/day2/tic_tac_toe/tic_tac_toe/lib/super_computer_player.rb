@@ -7,10 +7,10 @@ class SuperComputerPlayer < ComputerPlayer
 
     children.shuffle! #so that it doesn't play the same move every time
     #if there is a move that guarantees a win the next play, take it
-    children.each do |child|
+    children.each do |child| 
       return child.prev_move_pos if child.winning_node?(mark)
     end
-    #alt way to write above 
+    #alt way to write above
     # node = children.find{ |child| child.winning_node?(mark) }
     # return node.prev_move_pos if node
 
