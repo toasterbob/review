@@ -32,4 +32,23 @@ def crawl
   end
 end
 
-crawl
+def three(link)
+  doc = Nokogiri::HTML(open(link))
+
+  links = doc.css('a').map { |link| link['href'] }
+  return links
+end
+
+arr =[]
+arr += three("https://scottduane.github.io/SecretClue7")
+arr += three("https://scottduane.github.io/SecretClue1191")
+arr += three("https://scottduane.github.io/SecretClue4444")
+
+
+# ["https://scottduane.github.io/SecretClue4444", "https://scottduane.github.io/TopSecretClue1999"]
+# ["https://scottduane.github.io/SecretClue4444"]
+# ["https://scottduane.github.io/SecretClue1191"]
+p arr #["https://scottduane.github.io/SecretClue4444", "https://scottduane.github.io/TopSecretClue1999", "https://scottduane.github.io/SecretClue4444", "https://scottduane.github.io/SecretClue1191"]
+
+# Final Link
+# https://scottduane.github.io/TopSecretClue1729/
