@@ -2,7 +2,9 @@ const { app, BrowserWindow} = require('electron')
 
 app.on('ready', () => {
   const mainWindow = new BrowserWindow({})
-  mainWindow.loadURL("http://google.com")
+
+  const file = 'file://' + __dirname + '/index.html'
+  mainWindow.loadURL(file)
 })
 
 // console.log('hi')
