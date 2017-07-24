@@ -16,4 +16,4 @@ loader().then((monaco) => {
 
     editor.setModel(monaco.editor.createModel(data, 'javascript'))
   })
-})
+}) 
