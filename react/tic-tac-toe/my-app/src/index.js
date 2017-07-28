@@ -6,8 +6,9 @@ class Square extends React.Component {
   constructor(){
     super();
     this.state = {
-      value: null
-    }
+      value: null,
+      squares: Array(9).fill(null)
+    };
   }
 
   render() {
