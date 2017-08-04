@@ -1,9 +1,11 @@
-function Square(props) {
-  return (
-    <button className="square" onClick={() => this.props.onClick()}>
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square" onClick={() => this.props.onClick()}>
         {this.props.value}
-    </button>
-  );
+      </button>
+    );
+  }
 }
 
 class Board extends React.Component {
