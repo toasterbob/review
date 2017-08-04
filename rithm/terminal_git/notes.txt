@@ -32,3 +32,12 @@ rm -rf - removes it and empties trash - no going back
 DON'T DO rm -rf / DELETES EVERYTHING ON YOUR MACHINE
 
 man rf - manual gives documentation on command
+
+touch - creates file
+touch index.html
+
+mkdir styles
+touch styles/nav.css
+
+touch {index,new,show,edit}.html - no spaces
+rm {index,new,show,edit}.html - remove files 
