@@ -3,6 +3,7 @@ cd - change directory
 
 pass in a flag - lists permissions
 ls -l
+ls -lah
 
 .. - means up a directory
 
@@ -12,3 +13,9 @@ tab completion is your friend
 Users/marknoizumi - root where ~ points
 
 cd /Users/marknoizumi/Desktop - use an absolute path
+
+mkdir - make directory
+
+mkdir second && cd second - chain commands with &&
+
+pwd - present working directory - lists current path to your working location
