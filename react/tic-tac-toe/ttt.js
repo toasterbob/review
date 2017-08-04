@@ -1,7 +1,7 @@
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
+    <button className="square" onClick={() => this.props.onClick()}>
+        {this.props.value}
     </button>
   );
 }
@@ -76,4 +76,4 @@ class Game extends React.Component {
 ReactDOM.render(
   <Game />,
   document.getElementById('root')
-); 
+);
