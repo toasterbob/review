@@ -19,3 +19,16 @@ mkdir - make directory
 mkdir second && cd second - chain commands with &&
 
 pwd - present working directory - lists current path to your working location
+
+rmdir fifth - remove directory
+rmdir {fourth,third} - apply command to both directories
+
+mkdir dir-{a,b,c,d,e}
+rmdir dir-{a,b,c,d,e}
+
+rm -rf - r flag is recursive and removes subdirectories
+rm -rf - removes it and empties trash - no going back
+
+DON'T DO rm -rf / DELETES EVERYTHING ON YOUR MACHINE
+
+man rf - manual gives documentation on command
