@@ -1,0 +1,14 @@
+ls - stands for list
+cd - change directory
+
+pass in a flag - lists permissions
+ls -l
+
+.. - means up a directory
+
+tab completion is your friend
+
+~ - root of system
+Users/marknoizumi - root where ~ points
+
+cd /Users/marknoizumi/Desktop - use an absolute path
