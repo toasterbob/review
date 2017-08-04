@@ -1,0 +1,10 @@
+git - version control system - VCS
+git - lists commands
+
+git init - initializes git
+git and github two independent things
+
+you can use git locally on your machine
+
+git status - gives current state of git
+git log 
