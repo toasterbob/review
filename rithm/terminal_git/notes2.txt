@@ -53,4 +53,4 @@ mv second third - renames second as third
 mv app.js javascript - moves into javascript folder if one exists - otherwise renames file
 mv *.js javascript - moves all files ending with js into javascript
 
-cp app.js app2.js
+cp app.js app2.js 
