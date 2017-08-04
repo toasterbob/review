@@ -8,3 +8,6 @@ you can use git locally on your machine
 
 git status - gives current state of git
 git log
+git diff -
+
+git commit - goes into vim - hit i to insert - write long message - hit esc - :wq
