@@ -19,3 +19,7 @@ git checkout master - to go back to current
 git checkout 3bced1dfee48459bfd1b1f2cd3d7029ed177a457 - paste in sha to go to that point
 
 git remote -v
+
+git push origin master - pushes commits to github
+
+git pull requests - documentation easy wins 
