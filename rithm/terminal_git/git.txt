@@ -11,3 +11,5 @@ git log
 git diff -
 
 git commit - goes into vim - hit i to insert - write long message - hit esc - :wq
+
+go back in time - in git
