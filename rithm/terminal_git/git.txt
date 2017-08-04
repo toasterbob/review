@@ -13,3 +13,9 @@ git diff -
 git commit - goes into vim - hit i to insert - write long message - hit esc - :wq
 
 go back in time - in git
+
+git checkout HEAD~2 - go back two commits
+git checkout master - to go back to current
+git checkout 3bced1dfee48459bfd1b1f2cd3d7029ed177a457 - paste in sha to go to that point
+
+git remote -v
