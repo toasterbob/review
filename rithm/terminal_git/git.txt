@@ -7,4 +7,4 @@ git and github two independent things
 you can use git locally on your machine
 
 git status - gives current state of git
-git log 
+git log
