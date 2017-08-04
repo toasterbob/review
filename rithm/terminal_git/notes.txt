@@ -40,4 +40,10 @@ mkdir styles
 touch styles/nav.css
 
 touch {index,new,show,edit}.html - no spaces
-rm {index,new,show,edit}.html - remove files 
+rm {index,new,show,edit}.html - remove files
+
+cat notes.txt
+
+echo 'console.log("sweet")' > app.js - writes into file - overwrites file
+
+echo 'console.log("sweet")' >> app.js - appends to the end of file
