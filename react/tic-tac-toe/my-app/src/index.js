@@ -21,6 +21,10 @@ class Board extends React.Component {
     };
   }
 
+  handleClick(){
+    
+  }
+
   renderSquare(i) {
     return (
              <Square
