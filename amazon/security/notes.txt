@@ -1,0 +1,14 @@
+Security Controls
+
+-Directive Controls
+  Establish the governance, risk and compliance models the environment will
+  operate
+  IAM - identity and access management
+  -IAM Users
+  -IAM Groups
+  -IAM Roles
+  -IAM Policies 
+
+-Detective Controls
+-Preventive Controls
+-Responsive Controls
