@@ -64,3 +64,16 @@ isString - implemented thousands of time in 100+ different implementations in to
 10k repositories
 
 40% of codebase repetitive
+ran@cocycles.com
+
+
+
+Slightly more advanced flow
+flow - way to type your properties in React - understanding the quicks
+of the Flow Type-System
+
+facebook engineer
+
+react-redux-flow.surge.sh
+
+one keyword type
