@@ -1,0 +1,50 @@
+Joel Chen
+Walmart Labs - Scaling app
+
+Walmart.com infrastructure
+Own data centers
+large load balancer
+
+Black Friday - can't handle traffic
+
+One Ops - open source - in-house platform
+
+Torbit  - in-house - Go Lang team
+Static content servers
+Akamai - partnership abound the world
+
+microService between database and app
+
+get data in - monitoring data from applications - checking site
+splunk, graylog, kafka
+
+Electrode backend - one line deploy
+Swagger - dynamic client
+
+Confippet - generate configurations
+
+deployment - nginx -> pm2 -> app instance -> electrode apm -> kafka cluster
+
+
+
+Electrode Front-end in React
+apps - homepage, search, item, account, cart, checkout
+Node.js, React
+archetype - node modules
+
+tests - karma, mocha
+
+universal React - same code will work on the server and browser - SSR - server side rendering
+SSR - faster display
+
+config, cookies, logs
+
+Electrode removes development code through Babel from React Modules
+React 15
+Next React 16
+Component cacheing
+
+Electrode Explorer - monitors GitHub instances
+
+Propose and Review - for building a new component - if it doesn't duplicate and makes
+sense, approved quickly
