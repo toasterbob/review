@@ -48,3 +48,19 @@ Electrode Explorer - monitors GitHub instances
 
 Propose and Review - for building a new component - if it doesn't duplicate and makes
 sense, approved quickly
+
+http://electrode.io
+
+CSS - SAS
+
+
+
+Managing React components with Bit
+Ran Mizrahi, Founder at Cocycles, Author of Bit
+
+left-pad 0 dependency
+
+isString - implemented thousands of time in 100+ different implementations in top
+10k repositories
+
+40% of codebase repetitive
