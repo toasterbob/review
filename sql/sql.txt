@@ -55,3 +55,18 @@ id  name       id    name
 2   Monkey     null  null
 3   Ninja      4     Ninja
 4   Spaghetti  null  null
+
+
+To produce the set of records only in Table A, but not in Table B, we
+perform the same left outer join, then exclude the records we don't want
+from the right side via a where clause.
+
+SELECT * FROM TableA
+LEFT OUTER JOIN TableB
+ON TableA.name = TableB.name
+WHERE TableB.id IS null
+id  name       id     name
+
+2   Monkey     null   null
+
+4   Spaghetti  null   null
