@@ -52,4 +52,9 @@ SELECT title, rating * 10 AS percent  FROM movies JOIN boxoffice ON movies.id=bo
 SELECT title  FROM movies WHERE year % 2 = 0
 
  -- Lesson 10
- 
+ SELECT MAX(years_employed) FROM employees;
+ SELECT role, AVG(years_employed) FROM employees GROUP BY role;
+ SELECT building, SUM(years_employed) FROM employees GROUP BY building;
+
+  -- Lesson 11
+  
