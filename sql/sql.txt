@@ -90,3 +90,12 @@ id    name       id    name
 null  null       1     Rutabaga
 
 null  null       3     Darth Vader
+
+
+There's also a cartesian product or cross join
+This joins "everything to everything", resulting in 4 x 4 = 16 rows,
+far more than we had in the original sets. If you do the math, you can
+see why this is a very dangerous join to run against large tables.
+
+SELECT * FROM TableA
+CROSS JOIN TableB
