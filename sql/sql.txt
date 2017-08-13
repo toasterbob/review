@@ -1,2 +1,18 @@
+id name       id  name
+-- ----       --  ----
+1  Pirate     1   Rutabaga
+2  Monkey     2   Pirate
+3  Ninja      3   Darth Vader
+4  Spaghetti  4   Ninja
+
 
 Inner join** produces only the set of records that match in both Table A and Table B.
+
+SELECT * FROM TableA
+INNER JOIN TableB
+ON TableA.name = TableB.name
+id  name       id   name
+
+1   Pirate     2    Pirate
+
+3   Ninja      4    Ninja
