@@ -288,3 +288,23 @@ SELECT
  COALESCE (excerpt, LEFT(CONTENT, 150))
 FROM
  posts;
+
+
+
+ SELECT
+  product,
+  (price - discount) AS net_price
+ FROM
+  items;
+
+
+  SELECT
+   product,
+   (price - COALESCE(discount,0)) AS net_price
+  FROM
+   items;
+
+
+In terms of performance, COALESCE function and CASE expression are the
+same. We prefer COALESCE function than CASE expression because COALESCE
+function makes the query shorter and easier to read.
