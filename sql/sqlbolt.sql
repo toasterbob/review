@@ -20,3 +20,9 @@ SELECT * FROM movies WHERE director != "John Lasseter";
 SELECT * FROM movies WHERE title LIKE "WALL-_";
 
 -- Lesson 4
+SELECT DISTINCT director FROM movies ORDER BY director ASC;
+SELECT title FROM movies ORDER BY year DESC LIMIT 4;
+SELECT title from Movies ORDER BY title LIMIT 5;
+SELECT title from Movies ORDER BY title LIMIT 5 OFFSET 5;
+
+-- Lesson 5
