@@ -187,3 +187,7 @@ WHERE
     WHERE
       musicians.birth_yr > 1940
   )
+
+NULL and Ternary Logic in SQL
+NULL value == NULL, we will always get false.
+always use IS NULL or IS NOT NULL in place of the traditional (== or !=) comparisons.
