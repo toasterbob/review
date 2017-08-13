@@ -47,3 +47,9 @@ SELECT title, rating FROM movies INNER JOIN boxoffice on movies.id=boxoffice.mov
  SELECT building_name from buildings LEFT JOIN employees ON buildings.building_name = building WHERE building IS NULL
 
  -- Lesson 9
+SELECT title, (domestic_sales + international_sales)/1000000 AS millions  FROM movies JOIN boxoffice ON movies.id=boxoffice.movie_id;
+SELECT title, rating * 10 AS percent  FROM movies JOIN boxoffice ON movies.id=boxoffice.movie_id;
+SELECT title  FROM movies WHERE year % 2 = 0
+
+ -- Lesson 10
+ 
