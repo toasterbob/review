@@ -140,3 +140,50 @@ FROM
   employee team_member
 JOIN
   employee manager ON manager.id = team_member.manager_id
+
+
+
+Here's an example of some well formatted SQL code:
+SELECT
+  table_two.column_one,
+  table_two.column_two,
+  table_two.column_three
+FROM
+  table_one
+LEFT OUTER JOIN
+  table_two ON table_one.column_one = table_two.column_x
+WHERE
+  (table_one.column_three > table_two.column_y
+    AND another_condition IS NULL)
+GROUP BY
+  table_two.column_four
+ORDER BY
+  table_two.column_four
+
+
+Subqueries
+SELECT
+  bands.*
+FROM
+  bands
+JOIN (
+  SELECT
+    albums.*
+  FROM
+    albums
+  WHERE
+    album.type = "POP"
+  GROUP BY
+    album.band_id
+  HAVING
+    COUNT(*) > 3
+  ) AS pop_group_albums ON bands.id = pop_group_albums.band_id
+WHERE
+  band.leader_id IN (
+    SELECT
+      musicians.id
+    FROM
+      musicians
+    WHERE
+      musicians.birth_yr > 1940
+  )
