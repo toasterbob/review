@@ -38,4 +38,8 @@ SELECT title, domestic_sales, international_sales FROM movies INNER JOIN boxoffi
 SELECT title, rating FROM movies INNER JOIN boxoffice on movies.id=boxoffice.movie_id ORDER BY rating DESC
 
 -- Lesson 7
- 
+ SELECT DISTINCT building_name FROM employees LEFT JOIN buildings ON employees.building=buildings.building_name;
+ SELECT * from buildings
+ SELECT DISTINCT building_name, role FROM buildings LEFT JOIN employees ON building_name = building;
+
+ -- Lesson 8
