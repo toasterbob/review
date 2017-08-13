@@ -26,3 +26,10 @@ SELECT title from Movies ORDER BY title LIMIT 5;
 SELECT title from Movies ORDER BY title LIMIT 5 OFFSET 5;
 
 -- Lesson 5
+SELECT city, population FROM north_american_cities WHERE latitude > 42;
+SELECT * FROM north_american_cities WHERE latitude BETWEEN 28 AND 42 ORDER BY latitude DESC;
+SELECT * FROM north_american_cities WHERE longitude < -88 ORDER BY longitude ASC
+SELECT * FROM north_american_cities WHERE latitude < 21 ORDER BY population DESC LIMIT 2
+SELECT * FROM north_american_cities WHERE latitude BETWEEN 22 AND 42 ORDER BY population DESC LIMIT 2 OFFSET 2
+
+-- Lesson 6
