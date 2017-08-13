@@ -43,3 +43,7 @@ SELECT title, rating FROM movies INNER JOIN boxoffice on movies.id=boxoffice.mov
  SELECT DISTINCT building_name, role FROM buildings LEFT JOIN employees ON building_name = building;
 
  -- Lesson 8
+ SELECT name, role FROM employees LEFT JOIN buildings on employees.building=buildings.building_name WHERE building_name IS NULL;
+ SELECT building_name from buildings LEFT JOIN employees ON buildings.building_name = building WHERE building IS NULL
+
+ -- Lesson 9
