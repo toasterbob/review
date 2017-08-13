@@ -191,3 +191,73 @@ WHERE
 NULL and Ternary Logic in SQL
 NULL value == NULL, we will always get false.
 always use IS NULL or IS NOT NULL in place of the traditional (== or !=) comparisons.
+
+PostgreSQL CASE
+
+CASE
+      WHEN condition_1  THEN result_1
+     WHEN condition_2  THEN result_2
+     [WHEN ...]
+     [ELSE result_n]
+END
+
+SELECT
+ SUM (
+ CASE
+ WHEN rental_rate = 0.99 THEN
+ 1
+ ELSE
+ 0
+ END
+ ) AS "Mass",
+ SUM (
+ CASE
+ WHEN rental_rate = 2.99 THEN
+ 1
+ ELSE
+ 0
+ END
+ ) AS "Economic",
+ SUM (
+ CASE
+ WHEN rental_rate = 4.99 THEN
+ 1
+ ELSE
+ 0
+ END
+ ) AS "Luxury"
+FROM
+ film;
+
+ The result of the query is as follows:
+
+mass 341 economic 323 luxury 336
+
+We can rewrite the general CASE expression using the simple one as follows:
+SELECT
+ SUM (
+ CASE rental_rate
+ WHEN 0.99 THEN
+ 1
+ ELSE
+ 0
+ END
+ ) AS "Mass",
+ SUM (
+ CASE rental_rate
+ WHEN 2.99 THEN
+ 1
+ ELSE
+ 0
+ END
+ ) AS "Economic",
+ SUM (
+ CASE rental_rate
+ WHEN 4.99 THEN
+ 1
+ ELSE
+ 0
+ END
+ ) AS "Luxury"
+FROM
+ film;
