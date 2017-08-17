@@ -1,3 +1,4 @@
+TableA        TableB
 id name       id  name
 -- ----       --  ----
 1  Pirate     1   Rutabaga
@@ -38,3 +39,19 @@ id    name       id    name
 null  null       1     Rutabaga
 
 null  null       3     Darth Vader
+
+
+Left outer join produces a complete set of records from Table A, with
+the matching records (where available) in Table B. If there is no match,
+the right side will contain null.
+
+SELECT * FROM TableA
+LEFT OUTER JOIN TableB
+ON TableA.name = TableB.name
+
+id  name       id    name
+--  ----       --    ----
+1   Pirate     2     Pirate
+2   Monkey     null  null
+3   Ninja      4     Ninja
+4   Spaghetti  null  null
