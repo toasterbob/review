@@ -38,4 +38,3 @@ SELECT title, domestic_sales, international_sales FROM movies INNER JOIN boxoffi
 SELECT title, rating FROM movies INNER JOIN boxoffice on movies.id=boxoffice.movie_id ORDER BY rating DESC
 
 -- Lesson 7
- 
