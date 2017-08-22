@@ -51,10 +51,16 @@ SELECT title, (domestic_sales + international_sales)/1000000 AS millions  FROM m
 SELECT title, rating * 10 AS percent  FROM movies JOIN boxoffice ON movies.id=boxoffice.movie_id;
 SELECT title  FROM movies WHERE year % 2 = 0
 
- -- Lesson 10
- SELECT MAX(years_employed) FROM employees;
- SELECT role, AVG(years_employed) FROM employees GROUP BY role;
- SELECT building, SUM(years_employed) FROM employees GROUP BY building;
+-- Lesson 10
+SELECT MAX(years_employed) FROM employees;
+SELECT role, AVG(years_employed) FROM employees GROUP BY role;
+SELECT building, SUM(years_employed) FROM employees GROUP BY building;
 
-  -- Lesson 11
-  
+-- Lesson 11
+SELECT COUNT(*) FROM employees WHERE role="Artist";
+SELECT role, COUNT(*) FROM employees GROUP BY role;
+SELECT role, SUM(years_employed) FROM employees WHERE role="Engineer";
+
+SELECT role, SUM(years_employed) FROM employees GROUP BY role HAVING role="Engineer";
+
+  -- Lesson 12
