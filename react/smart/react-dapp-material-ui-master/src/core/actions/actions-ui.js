@@ -41,7 +41,6 @@ export function initContract() {
   return(dispatch, getState) => {
     axios.get('Adoption.json')
       .then((response) => {
-        debugger;
 
         dispatch(() => {
           return {
