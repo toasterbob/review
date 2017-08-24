@@ -93,3 +93,16 @@ VALUES
 INSERT INTO boxoffice VALUES (4, 8.7, 340000000, 270000000);
 
 -- Lesson 14
+UPDATE movies
+SET director = "John Lasseter"
+WHERE id = 2;
+
+UPDATE movies
+SET year = 1999
+WHERE id = 3
+
+UPDATE movies
+SET title="Toy Story 3", director="Lee Unkrich"
+WHERE id=11
+
+-- Lesson 15
