@@ -93,4 +93,3 @@ VALUES
 INSERT INTO boxoffice VALUES (4, 8.7, 340000000, 270000000);
 
 -- Lesson 14
- 
