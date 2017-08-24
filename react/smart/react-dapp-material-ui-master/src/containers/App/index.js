@@ -9,7 +9,7 @@ import * as OfflinePluginRuntime  from 'offline-plugin/runtime';
 
 /* actions */
 import * as uiActionCreators from 'core/actions/actions-ui'
- 
+
 // global styles for entire app
 import './styles/app.scss';
 
