@@ -1,11 +1,17 @@
 import constants from 'core/types';
 
 const initialState = {
-  leftNavOpen: false
+  leftNavOpen : false,
+  web3        : null
 };
 
 export function uiReducer(state = initialState, action) {
   switch (action.type) {
+
+  case constants.INIT_APP:
+    return Object.assign({}, state, {
+      web3: action.web3
+    });
 
   case constants.OPEN_NAV:
     return Object.assign({}, state, {
