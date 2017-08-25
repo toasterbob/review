@@ -30,8 +30,7 @@ export class App extends Component {
   componentDidMount(){
     // Initialize web3 and set the provider to the testRPC.
     this.props.actions.ui.initApp();
-
-    console.log(window.web3);
+    this.props.actions.ui.initContract();
   }
 
   render() {
