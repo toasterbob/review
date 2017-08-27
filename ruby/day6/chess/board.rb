@@ -1,10 +1,10 @@
 require_relative 'pieces'
 
 class Board
-  attr_accessor :board
+  attr_accessor :rows
 
   def initialize
-    @board = make_starting_grid
+    @rows = make_starting_grid
   end
 
   def make_starting_grid
@@ -23,6 +23,23 @@ class Board
     board
   end
 
+  def [](pos)
+    row, col = pos
+    @rows[row][col]
+  end
+
+  def []=(pos, piece)
+    row, col = pos
+    @rows[row][col] = piece
+  end
+
+  def move_piece(start_pos, end_pos)
+    
+  end
+
+  def method_name
+
+  end
 
 
 end
