@@ -105,4 +105,13 @@ UPDATE movies
 SET title="Toy Story 3", director="Lee Unkrich"
 WHERE id=11
 
--- Lesson 15 
+-- Lesson 15
+-- DELETE FROM mytable
+-- WHERE condition;
+-- If you decide to leave out the WHERE constraint, then all rows are removed,
+-- which is a quick and easy way to clear out a table completely (if intentional).
+DELETE FROM movies WHERE year < 2005;
+
+DELETE FROM movies WHERE director = "Andrew Stanton"
+
+-- Lesson 16
