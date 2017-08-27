@@ -14,7 +14,7 @@ class Board
     end
 
     4.times do
-      board << Array.new(8) {NullPiece.new}
+      board << Array.new(8) {nil}#{NullPiece.new}
     end
 
     2.times do
@@ -34,12 +34,15 @@ class Board
   end
 
   def move_piece(start_pos, end_pos)
-    
+    raise 'start position is empty' if @rows[start_pos].nil?
+    raise 'piece cannot move to that location' unless valid_move
   end
 
-  def method_name
+  def valid_move
 
   end
+
+
 
 
 end
