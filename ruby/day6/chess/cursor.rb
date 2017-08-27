@@ -87,5 +87,15 @@ class Cursor
   end
 
   def update_pos(diff)
+    x1, y1 = @cursor_pos
+    x2, y2 = diff
+    new_x, new_y = x1 + x2, y1 + y2
+    return unless in_bounds?(new_x) && in_bounds?(new_y)
+    @cursor_pos = [new_x, new_y]
+  end
+
+  def in_bounds?(coordinate)
+    return false if coordinate < 0 || coordinate > 7
+    true
   end
 end
