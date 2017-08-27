@@ -35,10 +35,13 @@ class Board
 
   def move_piece(start_pos, end_pos)
     raise 'start position is empty' if @rows[start_pos].nil?
-    raise 'piece cannot move to that location' unless valid_move
+    raise 'piece cannot move to that location' unless valid_move?
+
+    @rows[end_pos] = @rows[start_pos]
+    @rows[start_pos] = nil
   end
 
-  def valid_move
+  def valid_move?
 
   end
 
