@@ -8,3 +8,8 @@ class Display
   end
 
 end
+
+if __FILE__ == $PROGRAM_NAME
+  d = Display.new
+  
+end
