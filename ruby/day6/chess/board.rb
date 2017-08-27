@@ -4,10 +4,10 @@ class Board
   attr_accessor :board
 
   def initialize
-    @board = setup
+    @board = make_starting_grid
   end
 
-  def setup
+  def make_starting_grid
     board = Array.new
     2.times do
       board << Array.new(8) {Piece.new("white")}
@@ -20,7 +20,7 @@ class Board
     2.times do
       board << Array.new(8) {Piece.new("black")}
     end
-    board 
+    board
   end
 
 
