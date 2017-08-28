@@ -4,7 +4,7 @@ class Piece
       @color = color
     end
 
-    def moves 
+    def moves
 
     end
 end
