@@ -4,6 +4,7 @@ require 'colorize'
 
 class Display
   attr_accessor :board
+  attr_reader :cursor
 
   def initialize(board = Board.new)
     @cursor = Cursor.new([0,0], board)
@@ -13,9 +14,13 @@ class Display
   def render
     display = ""
     board.rows.each_with_index do |row, i|
-      square_color = i % 2 == 0 ? :blue : :white
+      square_color = i % 2 == 1 ? :blue : :white
       row.each_with_index do |square, j|
-        display += "   ".colorize(:color => :black, :background => square_color)
+        if cursor.cursor_pos == [i, j]
+          display += "   ".colorize(:color => :black, :background => :yellow)
+        else
+          display += "   ".colorize(:color => :black, :background => square_color)
+        end
         square_color = square_color == :blue ? :white : :blue
       end
       display += "\n"
