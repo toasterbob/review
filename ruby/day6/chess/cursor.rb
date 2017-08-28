@@ -78,7 +78,7 @@ class Cursor
   end
 
   def toggle_selected
-    selected = !selected
+    self.selected = !self.selected
   end
 
   def handle_key(key)
