@@ -3,13 +3,24 @@ require_relative 'cursor'
 require 'colorize'
 
 class Display
+  attr_accessor :board
 
   def initialize(board = Board.new)
     @cursor = Cursor.new([0,0], board)
+    @board = board
   end
 
   def render
-    puts "Hello".colorize(:color => :black, :background => :blue)
+    display = ""
+    board.rows.each_with_index do |row, i|
+      square_color = i % 2 == 0 ? :blue : :white
+      row.each_with_index do |square, j|
+        display += "   ".colorize(:color => :black, :background => square_color)
+        square_color = square_color == :blue ? :white : :blue
+      end
+      display += "\n"
+    end
+    puts display
 
   end
 
