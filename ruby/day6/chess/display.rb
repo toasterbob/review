@@ -17,7 +17,11 @@ class Display
       square_color = i % 2 == 1 ? :blue : :white
       row.each_with_index do |square, j|
         if cursor.cursor_pos == [i, j]
-          display += "   ".colorize(:color => :black, :background => :yellow)
+          if cursor.selected == false
+            display += "   ".colorize(:color => :black, :background => :yellow)
+          else
+            display += "   ".colorize(:color => :black, :background => :green)
+          end
         else
           display += "   ".colorize(:color => :black, :background => square_color)
         end
