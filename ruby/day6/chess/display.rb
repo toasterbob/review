@@ -14,7 +14,7 @@ class Display
   def render
     display = ""
     board.rows.each_with_index do |row, i|
-      square_color = i % 2 == 1 ? :blue : :white
+      square_color = i % 2 == 1 ? :light_blue : :white
       row.each_with_index do |square, j|
         if cursor.cursor_pos == [i, j]
           if cursor.selected == false
@@ -25,7 +25,7 @@ class Display
         else
           display += "   ".colorize(:color => :black, :background => square_color)
         end
-        square_color = square_color == :blue ? :white : :blue
+        square_color = square_color == :light_blue ? :white : :light_blue
       end
       display += "\n"
     end
