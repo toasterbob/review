@@ -25,7 +25,7 @@ class Display
       end
       display += "\n"
     end
-    # system("clear")
+    system("clear")
     puts display
 
   end
@@ -33,7 +33,6 @@ class Display
   def move
     while true
       cursor.get_input
-
       render
       p cursor.cursor_pos
     end

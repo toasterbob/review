@@ -80,14 +80,13 @@ class Cursor
     when :return, :space
       return cursor_pos
     when :left, :right, :up, :down
-      update_pos(MOVES[:key])
+      update_pos(MOVES[key])
     when :ctrl_c
       Process.exit(0)
     end
   end
 
   def update_pos(diff)
-    puts diff
     return if diff.nil?
     x1, y1 = @cursor_pos
     x2, y2 = diff
