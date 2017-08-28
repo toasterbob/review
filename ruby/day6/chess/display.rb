@@ -9,7 +9,7 @@ class Display
   end
 
   def render
-    "Hello".colorize(:color => :black, :background => :white)
+    puts "Hello".colorize(:color => :black, :background => :blue)
 
   end
 
