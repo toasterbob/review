@@ -10,7 +10,11 @@ class Board
   def make_starting_grid
     board = Array.new
     2.times do
-      board << Array.new(8) {Piece.new("white")}
+      row = []
+      8.times do
+        row << Piece.new("white", [0,0], self, "\u2656")
+      end
+      board << row
     end
 
     4.times do
@@ -18,7 +22,7 @@ class Board
     end
 
     2.times do
-      board << Array.new(8) {Piece.new("black")}
+      board << Array.new(8) {Piece.new("black", [0,0], self, "\u2656".colorize(:red))}
     end
     board
   end

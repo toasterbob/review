@@ -16,14 +16,15 @@ class Display
     board.rows.each_with_index do |row, i|
       square_color = i % 2 == 1 ? :light_blue : :white
       row.each_with_index do |square, j|
+        piece = board[[i,j]].nil? ? " " : board[[i,j]].value
         if cursor.cursor_pos == [i, j]
           if cursor.selected == false
-            display += "   ".colorize(:color => :black, :background => :yellow)
+            display += " #{piece} ".colorize(:color => :black, :background => :yellow)
           else
-            display += "   ".colorize(:color => :black, :background => :green)
+            display += " #{piece} ".colorize(:color => :black, :background => :green)
           end
         else
-          display += "   ".colorize(:color => :black, :background => square_color)
+          display += " #{piece} ".colorize(:color => :black, :background => square_color)
         end
         square_color = square_color == :light_blue ? :white : :light_blue
       end
