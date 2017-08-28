@@ -87,6 +87,8 @@ class Cursor
   end
 
   def update_pos(diff)
+    puts diff
+    return if diff.nil?
     x1, y1 = @cursor_pos
     x2, y2 = diff
     new_x, new_y = x1 + x2, y1 + y2

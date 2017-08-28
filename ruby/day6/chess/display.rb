@@ -25,8 +25,18 @@ class Display
       end
       display += "\n"
     end
+    # system("clear")
     puts display
 
+  end
+
+  def move
+    while true
+      cursor.get_input
+
+      render
+      p cursor.cursor_pos
+    end
   end
 
 end
@@ -34,4 +44,5 @@ end
 if __FILE__ == $PROGRAM_NAME
   d = Display.new
   d.render
+  d.move
 end
