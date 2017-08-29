@@ -147,3 +147,7 @@ ADD Language TEXT
 DEFAULT "English"
 
 -- Lesson 18
+
+-- DROP TABLE IF EXISTS mytable;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS boxoffice;
