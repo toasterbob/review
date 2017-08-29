@@ -1,3 +1,5 @@
-class Rook
+require_relative 'piece'
 
-end 
+class Rook < Piece 
+
+end

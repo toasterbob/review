@@ -1,3 +1,5 @@
-class Bishop
+require_relative 'piece'
 
-end 
+class Bishop < Piece 
+
+end

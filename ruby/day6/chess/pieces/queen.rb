@@ -1,3 +1,5 @@
-class Queen
+require_relative 'piece'
 
-end 
+class Queen < Piece 
+
+end
