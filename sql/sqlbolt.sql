@@ -115,3 +115,16 @@ DELETE FROM movies WHERE year < 2005;
 DELETE FROM movies WHERE director = "Andrew Stanton"
 
 -- Lesson 16
+
+-- CREATE TABLE IF NOT EXISTS mytable (
+--     column DataType TableConstraint DEFAULT default_value,
+--     another_column DataType TableConstraint DEFAULT default_value,
+--     …
+-- );
+CREATE TABLE database (
+     name TEXT,
+     version FLOAT,
+     download_count INTEGER
+);
+
+-- Lesson 17
