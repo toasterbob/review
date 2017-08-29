@@ -128,3 +128,22 @@ CREATE TABLE database (
 );
 
 -- Lesson 17
+
+-- ALTER TABLE mytable
+-- ADD column DataType OptionalTableConstraint
+--     DEFAULT default_value;
+
+-- ALTER TABLE mytable
+-- DROP column_to_be_deleted;
+
+-- ALTER TABLE mytable
+-- RENAME TO new_table_name;
+ALTER TABLE movies
+ADD Aspect_ratio FLOAT
+DEFAULT 2.7
+
+ALTER TABLE movies
+ADD Language TEXT
+DEFAULT "English"
+
+-- Lesson 18
