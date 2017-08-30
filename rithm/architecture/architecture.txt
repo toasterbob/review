@@ -1,0 +1,41 @@
+Instructor: Matt
+
+Objectives
+- Describe how the internet works
+- History of web applications
+- Explain terms:
+  - HTTP
+  - TCP/IP
+  - DNS
+  - Request/response cycle
+- Describe components of an HTTP request/response
+
+Internet - rules and standards so computers can communicate with each other
+Servers were just remote file systems in the 90s
+
+Hypertext Transfer Protocol - HTTP
+FTP - uploading files to the server
+
+web is stateless - by default it doesn't remember anything - data doesn't persist
+request to request
+
+database to preserve state
+
+Browser only knows HTML, CSS, JS.  Servers are more flexible
+
+Clients do not communicate directly with databases
+
+Microservice architecture - each server manages a different service
+Decentralize - easier to have different teams on the code base
+
+Monolithic - one giant app
+
+Uber/Lyft - cars microservice, payment, user information
+JSON Web Token - JWT - used to persist authentication across different services
+
+
+
+Domain Name System - DNS - phone book for the internet - browser might be cacheing the address
+Entire network of DNS servers
+
+Code.org How The Internet Works - video series
