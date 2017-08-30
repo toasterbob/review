@@ -78,6 +78,8 @@ FROM mytable
 SELECT DISTINCT director, COUNT(*) FROM movies GROUP BY director;
 SELECT DISTINCT director, SUM(domestic_sales + international_sales) FROM movies JOIN boxoffice on id=movie_id GROUP BY director;
 
+SELECT director, COUNT(*) FROM movies GROUP BY director;
+SELECT director, SUM(domestic_sales + international_sales) FROM movies JOIN boxoffice ON id=movie_id GROUP BY director;
 -- Lesson 13
 INSERT INTO movies
 (title, director, year)
