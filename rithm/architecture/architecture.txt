@@ -1,4 +1,4 @@
-Instructor: Matt
+Instructor: Matt Lane
 
 Objectives
 - Describe how the internet works
@@ -39,3 +39,37 @@ Domain Name System - DNS - phone book for the internet - browser might be cachei
 Entire network of DNS servers
 
 Code.org How The Internet Works - video series
+
+Curl - in command line - HTTP
+curl https://www.rithmschool.com
+curl https://www.rithmschool.com -v
+v flag gives more information
+
+response headers - envelope
+response bodies - letter
+
+robots.txt file - on websites
+wayback machine - archives internet
+
+pokeapi/co - Pokemon api
+
+spotify web api
+
+http status code 200 - success,
+                 300 - redirects,
+                 400 - client error - 404 most common,
+                 500 - server error
+
+                 101 - change in protocol
+
+Protocols - HTTP, HTTPS, FTP, file, WS (web socket) - real time functionality
+http.cat/304 - web cats
+
+API - Application Program Interface
+
+github repo - public-apis - todd motto 
+
+AJAX - asynchronous and xml - don't really use xml anymore
+
+Fun fun function videos on YouTube
+CRUD - Create, Read, Update, Destroy
