@@ -3,6 +3,8 @@
 #  large class is >125 lines of code. Sometimes that's not a design mistake,
 # but it's suspicious after that. 300+ lines is a behemoth
 
+# Object oriented design is another way to decompose complex problems.
+
 class Minnow
   def swim
     # swim away from any sharks
