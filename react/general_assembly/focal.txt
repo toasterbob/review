@@ -1,0 +1,15 @@
+Sergey Yavnyi - Grammarly
+
+Focal
+Functional React Language
+
+Focal - state management for React
+
+Static typing - tests you don't have to write
+
+Redux - code verbosity
+
+Typescript
+
+Observables
+Atom - state store - (Atomic updates)
