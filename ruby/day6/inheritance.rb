@@ -38,4 +38,7 @@ end
 if __FILE__ == $PROGRAM_NAME
   u = User.new("Jamis", "Buck")
   p u.full_name
+  su = SuperUser.new("David", "Heinemeier Hansson", [:user_deletion])
+  p su.full_name
+  p su.delete_user(u)
 end
