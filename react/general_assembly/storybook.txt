@@ -1,0 +1,20 @@
+storybook - UI for react
+
+what is a design system?
+
+structured way to organize a collection of components
+produce new UI without inventing the wheel everytime
+
+Coursera-UI built in storybook
+
+accessibility checks of your components
+
+Lonely Planet - style guide
+
+Rebass - component library
+
+Contributors all over the world
+
+@mshilman
+
+Michael Shilman
