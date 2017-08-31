@@ -58,23 +58,42 @@ end
 
 ######################################
 
+# class Animal
+#   def make_n_noises(n = 2)
+#     n.times { print "Growl " }
+#   end
+# end
+#
+# class Liger < Animal
+#   def make_n_noises(num = 4)
+#     num.times { print "Roar " }
+#     # here we'll call super without any arguments. This will pass on `num`
+#     # implicitly to super. You can think of this call to super as:
+#     # `super(num)`
+#     super
+#   end
+# end
+
+########################################
 class Animal
-  def make_n_noises(n = 2)
-    n.times { print "Growl " }
+  attr_reader :species
+
+  def initialize(species)
+    @species = species
   end
 end
 
-class Liger < Animal
-  def make_n_noises(num = 4)
-    num.times { print "Roar " }
-    # here we'll call super without any arguments. This will pass on `num`
-    # implicitly to super. You can think of this call to super as:
-    # `super(num)`
-    super
+class Human < Animal
+  attr_reader :name
+
+  def initialize(name)
+    # super calls the original definition of the method
+    # If we hadn't passed "Homo Sapiens" to super, then `name` would have
+    # been passed by default.
+    super("Homo Sapiens")
+    @name = name
   end
 end
-
-
 
 
 
@@ -85,5 +104,9 @@ if __FILE__ == $PROGRAM_NAME
   p su.full_name
   p su.delete_user(u)
 
-  Liger.new.make_n_noises(3) # => Roar Roar Roar Growl Growl Growl
+  # Liger.new.make_n_noises(3) # => Roar Roar Roar Growl Growl Growl
+
+  h = Human.new("Bob")
+  p h.species
+  p h.name
 end
