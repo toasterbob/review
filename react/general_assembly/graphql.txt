@@ -1,0 +1,34 @@
+Jon Wong - Frontend Infrastructure team at Coursera
+@jnwng 
+React socks
+
+GraphQL
+
+APIs can be hard to work with - lots of APIs at Coursera
+
+Backend can easily break clients
+API Discoverability
+
+issues with data at Coursera
+It's hard for backend devs to build the perfect API
+Peformance
+
+GraphQL - built by Facebook
+
+GraphQL is a query langauge
+  Nested query
+
+All queries are backed by a typed schema
+
+Single entry point for all of your data
+One endpoint for all data at Coursera
+
+GraphQL is declarative
+
+Run GraphQL server in the browser
+
+Resources
+GraphQL.org
+launchpad.graphql.com - server for your browser
+
+Apollo, GraphQL Slack communities
