@@ -19,6 +19,8 @@ class SuperUser < User
 
   def initialize(first_name, last_name, super_powers)
     super(first_name, last_name)
+    # We can call the superclass's implementation of any method using the
+    # special super keyword.
     @super_powers = super_powers
   end
 
@@ -35,10 +37,53 @@ class SuperUser < User
   end
 end
 
+# class Magazine
+#   attr_accessor :editor
+# end
+#
+# class Book
+#   attr_accessor :editor
+# end
+#instead of above we can do this:
+
+class Publication
+  attr_accessor :editor
+end
+
+class Magazine < Publication
+end
+
+class Book < Publication
+end
+
+######################################
+
+class Animal
+  def make_n_noises(n = 2)
+    n.times { print "Growl " }
+  end
+end
+
+class Liger < Animal
+  def make_n_noises(num = 4)
+    num.times { print "Roar " }
+    # here we'll call super without any arguments. This will pass on `num`
+    # implicitly to super. You can think of this call to super as:
+    # `super(num)`
+    super
+  end
+end
+
+
+
+
+
 if __FILE__ == $PROGRAM_NAME
   u = User.new("Jamis", "Buck")
   p u.full_name
   su = SuperUser.new("David", "Heinemeier Hansson", [:user_deletion])
   p su.full_name
   p su.delete_user(u)
+
+  Liger.new.make_n_noises(3) # => Roar Roar Roar Growl Growl Growl
 end
