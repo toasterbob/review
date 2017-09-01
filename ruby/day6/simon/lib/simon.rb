@@ -29,12 +29,15 @@ class Simon
   def show_sequence
     add_random_color
     p seq
+    sleep 1
+    system ("clear")
   end
 
   def require_sequence
+    p "Please enter sequence:"
     sequence = gets.chomp.split(" ")
     if sequence != seq
-      @game_over = true 
+      @game_over = true
     end
   end
 
@@ -54,4 +57,9 @@ class Simon
   def reset_game
     initialize
   end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  game = Simon.new
+  game.play
 end
