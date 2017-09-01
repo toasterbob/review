@@ -18,7 +18,6 @@ class Simon
   end
 
   def take_turn
-    add_random_color
     show_sequence
     require_sequence
     unless game_over
@@ -28,6 +27,7 @@ class Simon
   end
 
   def show_sequence
+    add_random_color
     p seq
   end
 
@@ -49,6 +49,6 @@ class Simon
   end
 
   def reset_game
-
+    initialize
   end
 end
