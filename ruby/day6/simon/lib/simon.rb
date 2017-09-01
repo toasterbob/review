@@ -43,9 +43,9 @@ class Simon
   def require_sequence
     p "Please enter sequence:"
     sequence = gets.chomp.split(" ")
-    sequence.each_with_index do |color, i|
-      check = seq[i]
-      if color != check[0]
+    seq.each_with_index do |color, i|
+      check = sequence[i]
+      if color[0] != check
         @game_over = true
       end
     end
@@ -58,8 +58,8 @@ class Simon
   end
 
   def round_success_message
-    sleep 1
     p "Good work! Here's the next sequence."
+    sleep 1
   end
 
   def game_over_message
