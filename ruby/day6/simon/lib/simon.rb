@@ -28,9 +28,16 @@ class Simon
 
   def show_sequence
     add_random_color
-    p seq
-    sleep 1
-    system ("clear")
+    # p seq
+    # sleep 1
+    # system ("clear")
+    system("clear")
+    seq.each do |color|
+      puts color
+      sleep 0.75
+      system("clear")
+      sleep 0.25
+    end
   end
 
   def require_sequence
@@ -44,6 +51,7 @@ class Simon
   def add_random_color
     colors = %w(red blue yellow green)
     seq << colors[rand(4)]
+    # seq << COLORS.shuffle[0]
   end
 
   def round_success_message
@@ -51,11 +59,15 @@ class Simon
   end
 
   def game_over_message
-    p "game over"
+    p "You lose"
+    p seq
   end
 
   def reset_game
     initialize
+    sleep 5
+    p "Let's play again"
+    play
   end
 end
 
