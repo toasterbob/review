@@ -59,7 +59,7 @@ class Simon
 
   def round_success_message
     sleep 1
-    p "good work!"
+    p "Good work! Here's the next sequence."
   end
 
   def game_over_message
