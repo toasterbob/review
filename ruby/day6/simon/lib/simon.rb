@@ -6,7 +6,7 @@ class Simon
   def initialize
     @sequence_length = 1
     @game_over = false
-    @seq = [] 
+    @seq = []
   end
 
   def play
@@ -26,7 +26,8 @@ class Simon
   end
 
   def add_random_color
-
+    colors = %w(red blue yellow green)
+    seq << colors[rand(4)]
   end
 
   def round_success_message
