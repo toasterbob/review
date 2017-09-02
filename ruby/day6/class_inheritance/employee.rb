@@ -31,17 +31,17 @@ class Manager < Employee
       if emp.class == Manager
         total += emp.bonus(multiplier)
       end
-      total += emp.salary
+      total += emp.salary * multiplier
     end
     total
   end
 end
 
 if __FILE__ == $PROGRAM_NAME
-  p ned = Manager.new("Ned", "Founder", 1_000_000, nil)
-  p darren = Manager.new("Darren", "TA Manager", 78_000, ned)
-  p shawna = Employee.new("Shawna", "TA", 12_000, darren)
-  p david = Employee.new("David", "TA", 10_000, darren)
+  ned = Manager.new("Ned", "Founder", 1_000_000, nil)
+  darren = Manager.new("Darren", "TA Manager", 78_000, ned)
+  shawna = Employee.new("Shawna", "TA", 12_000, darren)
+  david = Employee.new("David", "TA", 10_000, darren)
 
   p ned.bonus(5) # => 500_000
   p darren.bonus(4) # => 88_000
