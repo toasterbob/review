@@ -89,12 +89,16 @@ end
 # end
 
 FRUITS = ["apple", "banana", "orange"]
-def CoffeeError < StandardError
-  message = "I LOVE coffee"
+class CoffeeError < StandardError
+  def message
+    "I LOVE coffee, but I need to eat"
+  end
 end
 
-def OtherError < StandardError
-  message = "NEED FRUIT!!!"
+class OtherError < StandardError
+  def message
+    "NEED FRUIT!!! NOT THAT"
+  end
 end
 
 def reaction(maybe_fruit)
@@ -113,10 +117,11 @@ def feed_me_a_fruit
     puts "Feed me a fruit! (Enter the name of a fruit:)"
     maybe_fruit = gets.chomp
     reaction(maybe_fruit)
-  rescue ArgumentError => e
-    if e == CoffeeError
-      retry
-    end 
+  rescue CoffeeError => e
+    p e.message
+    retry
+  rescue OtherError => e
+    p e.message
   end
 end
 
