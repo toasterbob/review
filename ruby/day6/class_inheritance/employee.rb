@@ -28,7 +28,7 @@ class Manager < Employee
   def bonus(multiplier)
     total = 0
     employees.each do |emp|
-      if emp.employees
+      if emp.class == Manager
         total += emp.bonus(multiplier)
       end
       total += emp.salary
@@ -44,6 +44,6 @@ if __FILE__ == $PROGRAM_NAME
   p david = Employee.new("David", "TA", 10_000, darren)
 
   p ned.bonus(5) # => 500_000
-  # p darren.bonus(4) # => 88_000
+  p darren.bonus(4) # => 88_000
   p david.bonus(3) # => 30_000
 end
