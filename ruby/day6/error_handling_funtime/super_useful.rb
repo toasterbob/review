@@ -128,23 +128,13 @@ end
 
 
 # PHASE 4
-class YearsKnown < StandardError
 
-end
-
-class NeedName < StandardError
-
-end
-
-class NeedPastime < StandardError
-
-end
 
 class BestFriend
   def initialize(name, yrs_known, fav_pastime)
-    raise YearsKnown unless yrs_known >= 5
-    raise NeedName if name == "" || name.nil?
-    raise NeedPastime if fav_pastime == "" || fav_pastime.nil? 
+    raise ArgumentError.new("Friendship cannot be less than 5 years") unless yrs_known >= 5
+    raise ArgumentError.new("Name cannot be blank") if name == "" || name.nil?
+    raise ArgumentError.new("Pastime cannot be blank") if fav_pastime == "" || fav_pastime.nil? 
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime
