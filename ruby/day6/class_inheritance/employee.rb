@@ -1,6 +1,6 @@
 
 class Employee
-  attr_accessor :salary
+  attr_reader :salary
 
 
   def initialize(name, title, salary, boss)
@@ -18,7 +18,8 @@ class Employee
 end
 
 class Manager < Employee
-  attr_accessor :salary, :employees
+  attr_reader :salary
+  attr_accessor :employees
 
   def initialize(name, title, salary, boss)
     super(name, title, salary, boss)
