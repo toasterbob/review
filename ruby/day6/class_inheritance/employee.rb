@@ -8,7 +8,7 @@ class Employee
     @title = title
     @salary = salary
     @boss = boss
-    boss.employees << self
+    boss.employees << self unless boss.nil?
   end
 
   def bonus(multiplier)
@@ -18,11 +18,11 @@ class Employee
 end
 
 class Manager < Employee
-  attr_accessor :salary, employees
+  attr_accessor :salary, :employees
 
-  def initialize(name, title, salary, boss, employees)
+  def initialize(name, title, salary, boss)
     super(name, title, salary, boss)
-    @employees = employees
+    @employees = []
   end
 
   def bonus(multiplier)
@@ -38,5 +38,8 @@ class Manager < Employee
 end
 
 if __FILE__ == $PROGRAM_NAME
-
-end 
+  ned = Manager.new("Ned", "Founder", 1_000_000, nil)
+  darren = Manager.new("Darren", "TA Manager", 78_000, ned)
+  shawna = Employee.new("Shawna", "TA", 12_000, darren)
+  david = Employee.new("David", "TA", 12_000, darren)
+end
