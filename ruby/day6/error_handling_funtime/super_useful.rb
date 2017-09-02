@@ -8,7 +8,7 @@ def convert_to_int(str)
   end
 end
 
-# theirs 
+# theirs
 # def convert_to_int(str)
 #   begin
 #     num = Integer(str)
@@ -26,19 +26,28 @@ end
 FRUITS = ["apple", "banana", "orange"]
 
 def reaction(maybe_fruit)
-  if FRUITS.include? maybe_fruit
-    puts "OMG, thanks so much for the #{maybe_fruit}!"
-  else
-    raise StandardError
-  end
+
+    if FRUITS.include? maybe_fruit
+      puts "OMG, thanks so much for the #{maybe_fruit}!"
+    else
+      throw maybe_fruit
+    end
+
 end
 
 def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
-
-  puts "Feed me a fruit! (Enter the name of a fruit:)"
-  maybe_fruit = gets.chomp
-  reaction(maybe_fruit)
+  begin
+    puts "Feed me a fruit! (Enter the name of a fruit:)"
+    maybe_fruit = gets.chomp
+    reaction(maybe_fruit)
+  rescue ArgumentError => e
+    p e
+    if maybe_fruit == "coffee"
+      puts "I love coffee! But I'm hungry!"
+      retry
+    end
+  end
 end
 
 # PHASE 4
