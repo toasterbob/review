@@ -128,15 +128,30 @@ end
 
 
 # PHASE 4
+class YearsKnown < StandardError
+
+end
+
+class NeedName < StandardError
+
+end
+
+class NeedPastime < StandardError
+
+end
+
 class BestFriend
   def initialize(name, yrs_known, fav_pastime)
+    raise YearsKnown unless yrs_known >= 5
+    raise NeedName if name == "" || name.nil?
+    raise NeedPastime if fav_pastime == "" || fav_pastime.nil? 
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime
   end
 
   def talk_about_friendship
-    puts "Wowza, we've been friends for #{@yrs_known}. Let's be friends for another #{1000 * @yrs_known}."
+    puts "Wowza, we've been friends for #{@yrs_known} years. Let's be friends for another #{100 * @yrs_known}."
   end
 
   def do_friendstuff
