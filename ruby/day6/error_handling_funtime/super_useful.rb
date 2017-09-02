@@ -50,43 +50,76 @@ end
 #   end
 # end
 
-#theirs
-class CoffeeError < StandardError
-  def message
-    "I can't have any more caffeine. My poor heart couldn't take it. You can try again."
-  end
+# #theirs
+# class CoffeeError < StandardError
+#   def message
+#     "I can't have any more caffeine. My poor heart couldn't take it. You can try again."
+#   end
+# end
+#
+# class NotAFruitError < StandardError
+#   def message
+#     "That doesn't look like a fruit. You tricked me. * runs away *"
+#   end
+# end
+#
+# def reaction(maybe_fruit)
+#   if FRUITS.include? maybe_fruit
+#     puts "OMG, thanks so much for the #{maybe_fruit}!"
+#   elsif maybe_fruit == 'coffee'
+#     raise CoffeeError
+#   else
+#     raise NotAFruitError
+#   end
+# end
+
+# def feed_me_a_fruit
+#   puts "Hello, I am a friendly monster. :)"
+#
+#   begin
+#     puts "Feed me a fruit! (Enter the name of a fruit:)"
+#     maybe_fruit = gets.chomp
+#     reaction(maybe_fruit)
+#   rescue CoffeeError => e
+#     puts e.message
+#     retry
+#   rescue NotAFruitError => e
+#     puts e.message
+#   end
+# end
+
+FRUITS = ["apple", "banana", "orange"]
+def CoffeeError < StandardError
+  message = "I LOVE coffee"
 end
 
-class NotAFruitError < StandardError
-  def message
-    "That doesn't look like a fruit. You tricked me. * runs away *"
-  end
+def OtherError < StandardError
+  message = "NEED FRUIT!!!"
 end
 
 def reaction(maybe_fruit)
   if FRUITS.include? maybe_fruit
     puts "OMG, thanks so much for the #{maybe_fruit}!"
-  elsif maybe_fruit == 'coffee'
+  elsif maybe_fruit == "coffee"
     raise CoffeeError
   else
-    raise NotAFruitError
+    raise OtherError
   end
 end
 
 def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
-
   begin
     puts "Feed me a fruit! (Enter the name of a fruit:)"
     maybe_fruit = gets.chomp
     reaction(maybe_fruit)
-  rescue CoffeeError => e
-    puts e.message
-    retry
-  rescue NotAFruitError => e
-    puts e.message
+  rescue ArgumentError => e
+    if e == CoffeeError
+      retry
+    end 
   end
 end
+
 
 
 # PHASE 4
