@@ -23,32 +23,71 @@ end
 
 
 # PHASE 3
-FRUITS = ["apple", "banana", "orange"]
+# FRUITS = ["apple", "banana", "orange"]
+#
+# def reaction(maybe_fruit)
+#
+#     if FRUITS.include? maybe_fruit
+#       puts "OMG, thanks so much for the #{maybe_fruit}!"
+#     else
+#       throw maybe_fruit
+#     end
+#
+# end
+#
+# def feed_me_a_fruit
+#   puts "Hello, I am a friendly monster. :)"
+#   begin
+#     puts "Feed me a fruit! (Enter the name of a fruit:)"
+#     maybe_fruit = gets.chomp
+#     reaction(maybe_fruit)
+#   rescue ArgumentError => e
+#     p e
+#     if maybe_fruit == "coffee"
+#       puts "I love coffee! But I'm hungry!"
+#       retry
+#     end
+#   end
+# end
+
+#theirs
+class CoffeeError < StandardError
+  def message
+    "I can't have any more caffeine. My poor heart couldn't take it. You can try again."
+  end
+end
+
+class NotAFruitError < StandardError
+  def message
+    "That doesn't look like a fruit. You tricked me. * runs away *"
+  end
+end
 
 def reaction(maybe_fruit)
-
-    if FRUITS.include? maybe_fruit
-      puts "OMG, thanks so much for the #{maybe_fruit}!"
-    else
-      throw maybe_fruit
-    end
-
+  if FRUITS.include? maybe_fruit
+    puts "OMG, thanks so much for the #{maybe_fruit}!"
+  elsif maybe_fruit == 'coffee'
+    raise CoffeeError
+  else
+    raise NotAFruitError
+  end
 end
 
 def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
+
   begin
     puts "Feed me a fruit! (Enter the name of a fruit:)"
     maybe_fruit = gets.chomp
     reaction(maybe_fruit)
-  rescue ArgumentError => e
-    p e
-    if maybe_fruit == "coffee"
-      puts "I love coffee! But I'm hungry!"
-      retry
-    end
+  rescue CoffeeError => e
+    puts e.message
+    retry
+  rescue NotAFruitError => e
+    puts e.message
   end
 end
+
 
 # PHASE 4
 class BestFriend
