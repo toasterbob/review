@@ -1,4 +1,4 @@
-
+require_relative 'null_piece'
 
 class Board
   attr_accessor :board

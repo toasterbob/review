@@ -3,10 +3,10 @@ require 'singleton'
 
 
 class NullPiece < Piece
-  include Singleton
+  # include Singleton
 
   def initialize
-    
+
   end
 
 end
