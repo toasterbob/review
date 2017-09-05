@@ -53,3 +53,17 @@ end
 
 Cat.new("Gizmo")
 Cat.find("Gizmo") # finds Gizmo Cat object
+
+# the diamond problem
+
+# The "diamond problem" (sometimes referred to as the "deadly diamond of
+# death"[4]) is an ambiguity that arises when two classes B and C inherit
+# from A, and class D inherits from both B and C. If there is a method in
+# A that B and C have overridden, and D does not override it, then which
+# version of the method does D inherit: that of B, or that of C?
+
+# Ruby classes have exactly one parent but may also inherit from multiple
+# modules; ruby class definitions are executed, and the (re)definition
+# of a method obscures any previously existing definition at the time of
+# execution. In the absence of runtime metaprogramming this has approximately
+# the same semantics as rightmost depth first resolution.
