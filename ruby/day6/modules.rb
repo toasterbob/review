@@ -67,3 +67,27 @@ Cat.find("Gizmo") # finds Gizmo Cat object
 # of a method obscures any previously existing definition at the time of
 # execution. In the absence of runtime metaprogramming this has approximately
 # the same semantics as rightmost depth first resolution.
+
+
+# Namespaces
+# Modules have a second, unrelated purpose: as namespaces.
+
+module A
+  def self.make_bacon
+    ...
+  end
+end
+
+module B
+  def self.make_bacon
+    ...
+  end
+end
+
+# Let's use A and B in a program to make some bacon.
+
+require "A"
+require "B"
+
+a_grade_bacon = A.make_bacon
+b_grade_bacon = B.make_bacon
