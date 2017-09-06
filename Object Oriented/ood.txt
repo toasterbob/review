@@ -1,0 +1,18 @@
+Object Oriented Design
+
+six W's - who, what, where, when, how, why
+
+coffee machine - massive restaurant w/ hundreds of customers per hour,
+10 different kinds of coffee products, or just a simple machine?
+
+OOD - restaurant - objects: Table, Guest, Party, Order, Meal, Employee,
+  Server, Host
+
+1. Handle Ambiguity - ask clarifying questions
+2. Define the Core Objects
+3. Analyze Relationships
+  -Party has an array of Guests
+  -Server and Host inherit from Employee
+  -Each Table has one Party but each Party may have multiple Tables
+  -There is one Host for each Restaurant
+4.
