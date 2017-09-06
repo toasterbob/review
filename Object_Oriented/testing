@@ -1,0 +1,9 @@
+Unit testing is a software development process in which the smallest
+testable parts of an application, called units, are individually and
+independently scrutinized for proper operation. Unit testing can be done
+manually but is often automated.
+
+Integration testing, also known as integration and testing (I&T), is a
+software development process which program units are combined and tested
+as groups in multiple ways. In this context, a unit is defined as the
+smallest testable part of an application.
