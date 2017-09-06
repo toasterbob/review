@@ -24,3 +24,13 @@ class Page:
 
     def get_content(self):
         return self.content
+
+first = Page(1)
+second = Page(2)
+third = Page(3)
+
+first.title = "The First Page"
+first.add_content("Welcome to the first page. Here is a bunch of content")
+print first.get_page_number()
+
+print first.get_title()
