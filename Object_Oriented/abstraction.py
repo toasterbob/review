@@ -37,3 +37,8 @@ class Animal:
     @abstractmethod
     def breathe():
         pass
+
+
+# Now, if we were to attempt to instantiate an object of the Animal class, we would get a TypeError. Let's confirm this:
+a = Animal("Something", "Somewhere")
+    TypeError: Can't instantiate abstract class Animal with abstract methods talk
