@@ -27,4 +27,16 @@ Design Patterns
 instance across the application.
   Con - can interfere with Unit Testing
 
-- Factory Method - an interface for creating an instance of the class 
+- Factory Method - an interface for creating an instance of the class
+
+#########################################################################
+
+Classes
+You can think of a class as a recipe or description of a type of object.
+
+Objects - collection of data and functions
+An object is a specific instance of a class.
+
+Method vs. Function
+The term method is used almost exclusively in object-oriented programming.
+A function is something that takes a bunch of inputs and returns one or more values.
