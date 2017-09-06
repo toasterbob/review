@@ -1,0 +1,23 @@
+Cardinality - In database design, the cardinality or fundamental principle of one data aspect with respect to another is a critical feature. The relationship of one to the other must be precise and exact between each other in order to explain how each aspect links together.
+
+In the relational model, tables can be related as any of "one-to-many", "many-to-many" "one-to-zero-or-one", etc.. This is said to be the cardinality of a given table in relation to another.
+
+In the context of databases, cardinality refers to the uniqueness of data values contained in a column. High cardinality means that the column contains a large percentage of totally unique values. Low cardinality means that the column contains a lot of “repeats” in its data range.
+
+In mathematics, the cardinality of a set is a measure of the "number of elements of the set".
+
+In data modelling terms, cardinality is how one table relates to another.
+
+1-1 (one row in table A relates to one row in tableB)
+1-Many (one row in table A relates to many rows in tableB)
+Many-Many (Many rows in table A relate to many rows in tableB)
+Cardinality refers to the uniqueness of data contained in a column. If a column has a lot of duplicate data (e.g. a column that stores either "true" or "false"), it has low cardinality, but if the values are highly unique (e.g. Social Security numbers), it has high cardinality.
+
+Multiplicity vs. Cardinality
+Simply put: a multiplicity is made up of a lower and an upper cardinality. A cardinality is how many elements are in a set. Thus, a multiplicity tells you the minimum and maximum allowed members of the set. They are not synonymous.
+
+When data modeling methods talk about relationships, they use the term cardinality to indicate how many entities may be linked together. So you might have a relationship between order and customer and say that the cardinality of the relationship is one-to-many. Or you might hear that the cardinality of customers for an order is 0-to-many.
+
+UML avoids the term cardinality preferring to use multiplicity. Often people with a data modeling background are surprised at this since cardinality has been so widely used in data modeling circles.
+
+The reason for the change is that the dictionary definition of cardinality is "the number of elements in a particular set or other grouping" (OED). According to this the data modeling usage is actually wrong. In the excellent UML Reference Manual, Rumbaugh defines multiplicity as "A specification of the range of allowable cardinality values - the size - that a set may assume". The UML uses multiplicity in various places, for a property (association or attribute) and also to show the multiplicity of parts in a composite structure. It's formally defined as a lower and upper bound. An association (the UML equivalent to a relationship in data modeling circles) has a multiplicity for each direction.
