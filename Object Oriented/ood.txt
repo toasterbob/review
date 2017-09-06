@@ -13,6 +13,18 @@ OOD - restaurant - objects: Table, Guest, Party, Order, Meal, Employee,
 3. Analyze Relationships
   -Party has an array of Guests
   -Server and Host inherit from Employee
-  -Each Table has one Party but each Party may have multiple Tables
+  -Each Table has one Party but each Party may have multiple Tables (or
+  do you have communal tables with multiple parties?)
   -There is one Host for each Restaurant
-4.
+4. Investigate Actions - key actions for objects and how they relate to each other
+  - Party walks into Restaurant
+  - Guest requests Table from Host
+  - Host looks up Reservation - assigns Party to a Table
+  - Otherwise Party is added to end of the List
+
+Design Patterns
+- Singleton Class - class only has one instance - ensures access to that
+instance across the application.
+  Con - can interfere with Unit Testing
+
+- Factory Method - an interface for creating an instance of the class 
