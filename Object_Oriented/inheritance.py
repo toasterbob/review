@@ -8,7 +8,7 @@
 # class ChildClass(ParentClass):
 #     # Class Definition goes here
 
-# Python allows multiple inheritance, where you can provide a comma-separated 
+# Python allows multiple inheritance, where you can provide a comma-separated
 # list of parent classes to inherit from. However, please be very careful
 # when doing this, and if you find yourself in a situation where you are
 # about to use multiple inheritance, ask yourself why it is necessary, as
@@ -74,3 +74,11 @@ my_farm.mark_available()
 
 # Display Advert
 my_farm.print_advert()
+
+
+# Types of Visibility
+#
+# There are three types of visibility:
+# Public: The attribute or function are accessible from inside as well as outside of the class/object.
+# Private: The attribute or function are only accessible within the class in which it is defined.
+# Protected: The attribute or function are accessible between classes involved in inheritance, but not outside of that.
