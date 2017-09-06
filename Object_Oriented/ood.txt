@@ -40,3 +40,8 @@ An object is a specific instance of a class.
 Method vs. Function
 The term method is used almost exclusively in object-oriented programming.
 A function is something that takes a bunch of inputs and returns one or more values.
+
+In most respects it is identical to a function except for two key differences:
+
+A method is implicitly passed the object on which it was called.
+A method is able to operate on data that is contained within the class (remembering that an object is an instance of a class - the class is the definition, the object is an instance of that data).
