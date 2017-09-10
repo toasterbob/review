@@ -16,7 +16,7 @@ class Autocomplete extends React.Component {
   }
 
   onChange(event){
-    // the state updates when the input changes 
+    // the state updates when the input changes
     this.setState({
       label: event.target.value
     });
@@ -44,18 +44,6 @@ class Autocomplete extends React.Component {
           onChange={this.onChange}
           />
           <datalist id="languages">
-            <option value="HTML" />
-            <option value="CSS" />
-            <option value="JavaScript" />
-            <option value="Java" />
-            <option value="Ruby" />
-            <option value="PHP" />
-            <option value="Go" />
-            <option value="Erlang" />
-            <option value="Python" />
-            <option value="C" />
-            <option value="C#" />
-            <option value="C++" />
             {this.resultsRender()}
           </datalist>
       </div>
@@ -67,3 +55,19 @@ ReactDOM.render(
   <Autocomplete />,
   document.getElementById('root')
 );
+
+// <datalist id="languages">
+//   <option value="HTML" />
+//   <option value="CSS" />
+//   <option value="JavaScript" />
+//   <option value="Java" />
+//   <option value="Ruby" />
+//   <option value="PHP" />
+//   <option value="Go" />
+//   <option value="Erlang" />
+//   <option value="Python" />
+//   <option value="C" />
+//   <option value="C#" />
+//   <option value="C++" />
+//   {this.resultsRender()}
+// </datalist>
