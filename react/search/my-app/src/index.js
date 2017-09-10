@@ -41,12 +41,14 @@ class Autocomplete extends React.Component {
     let searchBar;
     if (this.state.values){
       searchBar = <div>Search:&nbsp;
-                    <input value={this.state.label} list='languages' className='form-control'onChange={this.onChange} />
+                    <input value={this.state.label} list='languages'
+                     className='form-control'onChange={this.onChange} />
                       <datalist id="languages">{this.resultsRender()}</datalist>
                   </div>
     } else{
       searchBar = <div>Search:&nbsp;
-                    <input value={this.state.label} className='form-control'onChange={this.onChange} />
+                    <input value={this.state.label}
+                     className='form-control'onChange={this.onChange} />
                   </div>
     }
 
