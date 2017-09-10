@@ -32,20 +32,21 @@ class Autocomplete extends React.Component {
   }
 
   render(){
+    let searchBar;
+    if (this.state.values){
+      searchBar = <div>Search:&nbsp;
+                    <input value={this.state.label} list='languages' className='form-control'onChange={this.onChange} />
+                      <datalist id="languages">{this.resultsRender()}</datalist>
+                  </div>
+    } else{
+      searchBar = <div>Search:&nbsp;
+                    <input value={this.state.label} className='form-control'onChange={this.onChange} />
+                  </div>
+    }
 
     return (
       <div>
-        Here:
-        <input
-          value={this.state.label}
-          list='languages'
-          className='form-control'
-
-          onChange={this.onChange}
-          />
-          <datalist id="languages">
-            {this.resultsRender()}
-          </datalist>
+        {searchBar}
       </div>
     );
   }
@@ -55,19 +56,3 @@ ReactDOM.render(
   <Autocomplete />,
   document.getElementById('root')
 );
-
-// <datalist id="languages">
-//   <option value="HTML" />
-//   <option value="CSS" />
-//   <option value="JavaScript" />
-//   <option value="Java" />
-//   <option value="Ruby" />
-//   <option value="PHP" />
-//   <option value="Go" />
-//   <option value="Erlang" />
-//   <option value="Python" />
-//   <option value="C" />
-//   <option value="C#" />
-//   <option value="C++" />
-//   {this.resultsRender()}
-// </datalist>
