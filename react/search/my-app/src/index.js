@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 
 class Autocomplete extends React.Component {
 
@@ -16,9 +15,16 @@ class Autocomplete extends React.Component {
   }
 
   onChange(event){
-    // the state updates when the input changes
+    //make API call with label and get new values for state
+    let values;
+    if (event.target.value == "n"){
+      values = null
+    } else {
+      values = ["Apple", "Banana", "Cherry"]
+    }
     this.setState({
-      label: event.target.value
+      label: event.target.value,
+      values: values
     });
   }
 
