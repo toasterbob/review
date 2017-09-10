@@ -17,10 +17,13 @@ class Autocomplete extends React.Component {
   onChange(event){
     //make API call with label and get new values for state
     let values;
+    // the API call would go into values
+    // since I'm not doing a call, I just have a mockup statement below
     if (event.target.value == "n"){
-      values = null
+      values = null // if you type n - it's like getting a null return
+      // so the dropdown disappears
     } else {
-      values = ["Apple", "Banana", "Cherry"]
+      values = ["Apple", "Banana", "Cherry", "Grape", "Mango", "Nectarine"]
     }
     this.setState({
       label: event.target.value,
