@@ -7,8 +7,7 @@ class Autocomplete extends React.Component {
     super(props);
     this.state = {
       label: null,
-      values: ["France", "Germany", "England"],
-      results: null
+      values: null
     };
     this.onChange = this.onChange.bind(this)
     this.resultsRender = this.resultsRender.bind(this)
