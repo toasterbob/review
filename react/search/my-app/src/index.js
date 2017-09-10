@@ -8,24 +8,31 @@ class Autocomplete extends React.Component {
     super(props);
     this.state = {
       label: null,
-      values: ["France", "Germany", "England"]
+      values: ["France", "Germany", "England"],
+      results: null
     };
     this.onChange = this.onChange.bind(this)
+    this.resultsRender = this.resultsRender.bind(this)
   }
 
   onChange(event){
-    // Anytime the input change, the State change
-    // Anytime the state change, the component will be rendered with the new label
+    // the state updates when the input changes 
     this.setState({
       label: event.target.value
     });
   }
 
+  resultsRender(){
+    let results = this.state.values
+    if (results){
+      return this.state.values.map((term) => (
+                <option value={term} />
+              ));
+    }
+  }
+
   render(){
-    let data = this.state.values.map((term) => (
-              <option value="{term}" />
-            ));
-    console.log(data)
+
     return (
       <div>
         Here:
@@ -49,6 +56,7 @@ class Autocomplete extends React.Component {
             <option value="C" />
             <option value="C#" />
             <option value="C++" />
+            {this.resultsRender()}
           </datalist>
       </div>
     );
