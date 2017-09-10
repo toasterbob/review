@@ -8,25 +8,11 @@ class Autocomplete extends React.Component {
     super(props);
     this.state = {
       label: null,
-      dataList: ["France", "Germany", "England"]
+      values: ["France", "Germany", "England"]
     };
+    this.onChange = this.onChange.bind(this)
   }
 
-  // // on component loading
-  // componentDidMount(){
-  //   this.initAwesomplete();
-  // }
-  //
-  // // Init awesomplete
-  // initAwesomplete(){
-  //   var input = document.getElementById("autocomplete");
-  //   //use Awesomplete lib
-  //   new Awesomplete(input, {
-  //     list: this.state.dataList
-  //   });
-  // }
-
-  // on input change function
   onChange(event){
     // Anytime the input change, the State change
     // Anytime the state change, the component will be rendered with the new label
@@ -36,6 +22,10 @@ class Autocomplete extends React.Component {
   }
 
   render(){
+    let data = this.state.values.map((term) => (
+              <option value="{term}" />
+            ));
+    console.log(data)
     return (
       <div>
         Here:
@@ -44,7 +34,7 @@ class Autocomplete extends React.Component {
           list='languages'
           className='form-control'
 
-          onChange={this.onChange.bind(this)}
+          onChange={this.onChange}
           />
           <datalist id="languages">
             <option value="HTML" />
