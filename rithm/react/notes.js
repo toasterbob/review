@@ -1,3 +1,5 @@
+// https://docs.google.com/presentation/d/1gxpZ07j0m7cxJARJpKocu-bVQx5vPO9fWmU62_wcbfM/edit#slide=id.g1fdeb5d75d_0_8
+
 // Important concepts
 //
 // - Let and Const
