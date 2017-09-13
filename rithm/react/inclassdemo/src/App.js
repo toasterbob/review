@@ -10,10 +10,13 @@ class App extends Component {
     this.state = {
       hobbies: ["snowboarding", "coding"]
     }
-    setTimeout(() => {
-      const hobbies = [...this.state.hobbies, "hiking"];
-      this.setState({hobbies})
-    }, 5000)
+
+    this.deleteHobby = this.deleteHobby.bind(this);
+  }
+
+  deleteHobby(hobbyName){
+    const hobbies = this.state.hobbies.filter(h => h !== hobbyName)
+    this.setState({hobbies})
   }
 
   render() {
@@ -29,6 +32,7 @@ class App extends Component {
         <Person
           img="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAhuAAAAJGZlMzc0MzQwLTY1ZjktNGVmNy1hOWYzLWIzMWE1MDFjZDRiZg.jpg"
           hobbies={this.state.hobbies}
+          onDelete={this.deleteHobby}
           />
         <Picture />
       </div>
