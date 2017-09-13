@@ -55,3 +55,23 @@ var upperCaseWords = s => s.split(" ").map(upperCaseFirstLetter).join(" ");
 
 console.log(upperCaseWords("code example to refactor"));
 // Code Example To Refactor
+
+// Functional Programming - pure functions
+
+var myObj = {id: 53};
+function addName(obj, name){
+  return Object.assign({}, obj, {name}) //{name: name}
+}
+var res = addName(myObj, "Tim")
+
+
+
+
+
+
+
+
+
+
+
+//
