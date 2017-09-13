@@ -40,3 +40,17 @@ var newObj = {
 var {firstName, lastName} = newObj
 firstName // "Tim"
 lastName // "Garcia"
+
+
+let upperCaseFirstLetter = word => word[0].toUpperCase() + word.slice(1);
+
+let upperCaseWords = sentence => {
+  var words = sentence.split(" ");
+  for(let i = 0; i < words.length; i++){
+    words[i] = upperCaseFirstLetter(words[i])
+  }
+  return words
+}
+
+console.log(upperCaseWords("code example to refactor"));
+// ["Code", "Example", "To", "Refactor"]
