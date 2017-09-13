@@ -42,15 +42,16 @@ firstName // "Tim"
 lastName // "Garcia"
 
 
-let upperCaseFirstLetter = word => word[0].toUpperCase() + word.slice(1);
+let upperCaseFirstLetter = word => `${word[0].toUpperCase()}${word.slice(1)}`;
 
-let upperCaseWords = sentence => {
-  var words = sentence.split(" ");
-  for(let i = 0; i < words.length; i++){
-    words[i] = upperCaseFirstLetter(words[i])
-  }
-  return words
-}
+// let upperCaseWords = sentence => {
+//   var words = sentence.split(" ");
+//   for(let i = 0; i < words.length; i++){
+//     words[i] = upperCaseFirstLetter(words[i])
+//   }
+//   return words
+
+var upperCaseWords = s => s.split(" ").map(upperCaseFirstLetter).join(" ");
 
 console.log(upperCaseWords("code example to refactor"));
-// ["Code", "Example", "To", "Refactor"]
+// Code Example To Refactor
