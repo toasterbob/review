@@ -1,0 +1,42 @@
+// Important concepts
+//
+// - Let and Const
+
+let person = "Mark"
+
+// constructor function is new to JS - classes are just syntactic sugar for
+// functions put on prototypes
+
+// all the components you create are inheriting from React.Component
+
+//arrow functions
+function multiply(a,b) {
+  return a * b;
+}
+
+let multiply2 = (a,b) => a * b; //implicit return
+
+let multiply3 = (a,b) => {
+  return a * b;
+}
+
+// object.assign and destructuring
+// object.assign merges objects from right to left
+Object.assign({},
+  {firstName: "Tim", lastName: "Schoppik"},
+  {lastName: "Garcia"});
+
+// firstName: "Tim", lastName: "Garcia"}
+names = Object.assign({},
+  {firstName: "Tim", lastName: "Schoppik"},
+  {lastName: "Garcia"});
+
+var newObj = {
+  ...names,
+  favoriteFood: 'pizza'
+}
+
+// {firstName: "Tim", lastName: "Garcia", favoriteFood: "pizza"}
+var {firstName, lastName} = newObj
+firstName // "Tim"
+lastName // "Garcia"
