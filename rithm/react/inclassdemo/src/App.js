@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Person from './person';
 import Picture from './picture';
+import Grid from './grid';
 
 class App extends Component {
   constructor(props){
@@ -35,6 +36,8 @@ class App extends Component {
           onDelete={this.deleteHobby}
           />
         <Picture />
+        <br />
+        <Grid />
       </div>
     );
   }
