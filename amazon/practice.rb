@@ -24,8 +24,8 @@ def most_frequent(arr)
       end
     end
   end
-  high
+  "#{high}:#{count}"
 end
 
-most_frequent([1, 1, 2, 3, 2, 1, 2, 2]) # 2
-most_frequent([1, 1, 2, 3, 2, 1, 2, 2, 1]) # 1
+most_frequent([1, 1, 2, 3, 2, 1, 2, 2]) # 2:4
+most_frequent([1, 1, 2, 3, 2, 1, 2, 2, 1]) # 1:4
