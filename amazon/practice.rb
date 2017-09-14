@@ -45,3 +45,70 @@ def maximize(arr, n)
   arr.join("").to_i
 end
 maximize([1, 2, 4, 3], 2)
+
+
+
+
+def closestLocations(totalCrates, allLocations, truckCapacity)
+    result = []
+    return result if truckCapacity == 0
+    return allLocations if totalCrates == truckCapacity
+    return allLocations if totalCrates < truckCapacity
+
+    distances = Hash.new
+    distance_lowest = []
+
+    allLocations.each do |crate|
+        x = crate[0] ** 2
+        y = crate[1] ** 2
+        distance = Math.sqrt(x + y)
+        distance_lowest << distance
+        distances[distance] = crate
+    end
+
+    distance_lowest.sort!
+    distance_lowest = distance_lowest.take(truckCapacity)
+
+    distance_lowest.each do |d|
+        result << distances[d]
+    end
+
+    result
+end
+
+def getMovieRecommendations(movie, n)
+    results = []
+    return results if movie.getSimilarMovies().empty?
+    return results if n <= 0
+
+    best = Hash.new {|h,v| h[v] = []}
+    all_similar = {}
+    queue = [movie]
+
+    until queue.empty?
+        current = queue.shift
+        more_movies = []
+        current.getSimilarMovies().each do |sim_movie|
+            more_movies << sim_movie unless all_similar[sim_movie]
+            all_similar[sim_movie] = true
+            if sim_movie != movie
+                best[sim_movie.getRating()].push(sim_movie) unless best[sim_movie.getRating()].include?(sim_movie)
+            end
+        end
+        queue = queue + more_movies
+    end
+    all_similar.delete(movie)
+
+    all = all_similar.keys
+    return all if all.length < n
+
+    top = best.keys.sort.reverse.take(n)
+
+    while results.length < n || !top.empty?
+        rating = top.shift
+        results = results + best[rating]
+    end
+
+    results.take(n)
+
+end
