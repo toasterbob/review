@@ -18,7 +18,14 @@ def most_frequent(arr)
     if counter[el] > count
       high = el
       count = counter[el]
+    elsif counter[el] == count
+      if el < high
+        high = el
+      end
     end
   end
-  high 
+  high
 end
+
+most_frequent([1, 1, 2, 3, 2, 1, 2, 2]) # 2
+most_frequent([1, 1, 2, 3, 2, 1, 2, 2, 1]) # 1
