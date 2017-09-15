@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      hobbies: ["snowboarding", "coding", "cheese tasting"]
+      hobbies: ["snowboarding", "coding", "cheese tasting", "winning"]
     }
 
     this.deleteHobby = this.deleteHobby.bind(this);

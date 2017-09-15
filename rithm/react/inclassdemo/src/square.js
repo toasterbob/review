@@ -2,8 +2,13 @@ import React, {Component} from 'react';
 
 class Square extends Component {
   render(){
-
-    return (<div>
+    const style = {
+      width: '180px',
+      height: '180px',
+      display: 'inline-block',
+      backgroundColor: 'red'
+    };
+    return (<div style={style}>
               hi
             </div>);
   }
