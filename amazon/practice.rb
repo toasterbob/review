@@ -54,6 +54,7 @@ def closestLocations(totalCrates, allLocations, truckCapacity)
     return result if truckCapacity == 0
     return allLocations if totalCrates == truckCapacity
     return allLocations if totalCrates < truckCapacity
+    return allLocations.take(truckCapacity) if allLocations.all?{ |loc| loc == [0,0] }
 
     distances = Hash.new
     distance_lowest = []
