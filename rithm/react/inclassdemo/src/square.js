@@ -6,7 +6,7 @@ class Square extends Component {
       width: '180px',
       height: '180px',
       display: 'inline-block',
-      backgroundColor: 'red'
+      backgroundColor: this.props.color
     };
     return (<div style={style}>
               hi

@@ -5,7 +5,8 @@ class Grid extends Component {
   render(){
 
     return (<div>
-            <Square />
+            <Square color="yellow"/>
+            <Square color="red"/>
             </div>);
   }
 }
