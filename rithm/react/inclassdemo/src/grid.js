@@ -29,7 +29,7 @@ class Grid extends Component {
       this.setState({
         boxes: newBoxes
       })
-    }, 10)
+    }, 20)
   }
 
 
