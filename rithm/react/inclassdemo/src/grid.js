@@ -19,7 +19,7 @@ class Grid extends Component {
 
     setInterval(() => {
       const newBoxes = this.state.boxes.slice();
-      const randomTimes = Math.floor(Math.random() * 30)
+      const randomTimes = Math.floor(Math.random() * 30) + 1
 
       for(let i = 0; i < randomTimes; i++){
         const randomBox = Math.floor(Math.random() * newBoxes.length)
