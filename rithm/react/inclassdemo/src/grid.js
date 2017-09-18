@@ -5,7 +5,7 @@ class Grid extends Component {
   constructor(props){
     super(props);
     var boxes = [];
-    let boxCount = 28
+    let boxCount = 1008
     for(let i=0; i < boxCount; i++){
       let color = this.getRandomColor();
       boxes.push({
@@ -15,16 +15,22 @@ class Grid extends Component {
     }
     this.state = { boxes:boxes }
 
+
+
     setInterval(() => {
       const newBoxes = this.state.boxes.slice();
+      const randomTimes = Math.floor(Math.random() * 30)
+
       const randomBox = Math.floor(Math.random() * newBoxes.length)
       newBoxes[randomBox] = Object.assign({}, newBoxes[randomBox], {color: this.getRandomColor()})
       const randomBox2 = Math.floor(Math.random() * newBoxes.length)
       newBoxes[randomBox2] = Object.assign({}, newBoxes[randomBox2], {color: this.getRandomColor()})
+
+
       this.setState({
         boxes: newBoxes
       })
-    }, 100)
+    }, 1)
   }
 
 
