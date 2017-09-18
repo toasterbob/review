@@ -13,6 +13,7 @@ class Grid extends Component {
         color: color
       });
     }
+    this.state = { boxes:boxes }
   }
 
   getRandomColor(){
@@ -42,10 +43,11 @@ class Grid extends Component {
   }
 
   render(){
-
+    const boxes = this.state.boxes.map(b =>
+      <Square key={b.id} color={b.color} />
+    )
     return (<div>
-            <Square color={this.getRandomColor()}/>
-            <Square color={this.getRandomColor()}/>
+            {boxes}
             </div>);
   }
 }
