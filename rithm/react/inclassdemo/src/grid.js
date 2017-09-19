@@ -53,7 +53,8 @@ class Grid extends Component {
     "Purple","Red","RosyBrown","RoyalBlue","SaddleBrown","Salmon","SandyBrown","SeaGreen",
     "SeaShell","Sienna","Silver","SkyBlue","SlateBlue","SlateGray","SlateGrey","Snow","SpringGreen",
     "SteelBlue","Tan","Teal","Thistle","Tomato","Turquoise","Violet","Wheat","White","WhiteSmoke",
-    "Yellow","YellowGreen"]
+    "Yellow","YellowGreen", "Red", "Blue", "Red", "Blue", "Red", "Blue", "Red", "Blue", "Red", "Blue"
+  , "Red", "Blue", "Red", "Blue", "Red", "Blue", "Red", "Blue"]
 
     let colorIndex = Math.floor(Math.random() * allColors.length);
     return allColors[colorIndex];
