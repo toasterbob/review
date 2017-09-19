@@ -5,7 +5,7 @@ class Grid extends Component {
   constructor(props){
     super(props);
     var boxes = [];
-    let boxCount = 708
+    let boxCount = 735
     for(let i=0; i < boxCount; i++){
       let color = this.getRandomColor();
       boxes.push({
